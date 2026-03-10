@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<meta charset="UTF-8">
-<title>DevUtils - Simple Developer Tools</title>
-<link rel="stylesheet" href="css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>DevUtils - Simple Developer Tools</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
 
-<body>
+    <body>
 
-<h1>DevUtils</h1>
+        <h1>DevUtils</h1>
 
-<p>
-Simple developer tools that run directly in your browser.
-No installs, no complexity.
-</p>
+        <p>
+        Simple developer tools that run directly in your browser.
+        No installs, no complexity.
+        </p>
 
-<h2>Available Tools</h2>
+        <h2>Developer Tools</h2>
 
-<ul>
-<li><a href="tools/json-formatter/">JSON Formatter</a></li>
-<li><a href="tools/base64/">Base64 Encoder / Decoder</a></li>
-<li><a href="tools/uuid-generator/">UUID Generator</a></li>
-<li><a href="tools/regex-tester/">Regex Tester</a></li>
-<li><a href="tools/password-generator/">Password Generator</a></li>
+        <input 
+        type="text" 
+        id="toolSearch" 
+        placeholder="Search tools..."
+        onkeyup="filterTools()">
 
-</ul>
+        <ul>
+            <li class="tool-item">
+                <a href="tools/json-formatter/">JSON Formatter</a>
+            </li>
 
-<footer>
+            <li class="tool-item">
+                <a href="tools/regex-tester/">Regex Tester</a>
+            </li>
 
-<p>
-DevUtils — by SaskyDev
-</p>
+            <li class="tool-item">
+                <a href="tools/uuid-generator/">UUID Generator</a>
+            </li>
+            
+        </ul>
 
-</footer>
 
-</body>
+        <h2>Encoding Tools</h2>
+
+        <ul>
+            <li class="tool-item">
+                <a href="tools/base64/">Base64 Encoder / Decoder</a>
+            </li>
+        </ul>
+
+
+        <h2>Security Tools</h2>
+
+        <ul>
+            <li class="tool-item">
+                <a href="tools/password-generator/">Password Generator</a>
+            </li>
+        </ul>
+
+
+        <footer>
+
+        <p>
+        DevUtils — by SaskyDev
+        </p>
+
+        </footer>
+
+    </body>
 
 </html>

@@ -160,3 +160,24 @@ function generatePassword() {
     document.getElementById("output").textContent = password;
 
 }
+
+function filterTools() {
+
+    const input = document.getElementById("toolSearch");
+    const filter = input.value.toLowerCase();
+
+    const tools = document.querySelectorAll(".tool-item");
+
+    tools.forEach(tool => {
+
+        const text = tool.textContent.toLowerCase();
+
+        if (text.includes(filter)) {
+            tool.style.display = "";
+        } else {
+            tool.style.display = "none";
+        }
+
+    });
+
+}
