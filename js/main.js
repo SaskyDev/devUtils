@@ -92,3 +92,11 @@ function clearBase64() {
     document.getElementById("output").textContent = "";
 
 }
+
+function generateUUID() {
+
+    const uuid = crypto.randomUUID();
+
+    document.getElementById("output").textContent = uuid;
+
+}
