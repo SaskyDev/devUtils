@@ -100,3 +100,24 @@ function generateUUID() {
     document.getElementById("output").textContent = uuid;
 
 }
+
+function testRegex() {
+
+    const pattern = document.getElementById("pattern").value;
+    const text = document.getElementById("text").value;
+
+    try {
+
+        const regex = new RegExp(pattern);
+
+        const result = regex.test(text);
+
+        document.getElementById("output").textContent = result;
+
+    } catch {
+
+        document.getElementById("output").textContent = "Invalid Regex";
+
+    }
+
+}
