@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<meta charset="UTF-8">
-<title>Password Generator - DevUtils</title>
-<link rel="stylesheet" href="../../css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Password Generator - DevUtils</title>
+        <link rel="stylesheet" href="../../css/styles.css">
+    </head>
 
-<body>
+    <body>
 
-<h1>Password Generator</h1>
+        <nav>
 
-<label>Password length</label>
-<input type="number" id="length" value="12">
+            <a href="../../index.html">Home</a>
+            <a href="../json-formatter/">JSON Formatter</a>
+            <a href="../base64/">Base64</a>
+            <a href="../uuid-generator/">UUID</a>
+            <a href="../regex-tester/">Regex</a>
+            <a href="../password-generator/">Password</a>
 
-<br><br>
+        </nav>
 
-<button onclick="generatePassword()">Generate Password</button>
+        <h1>Password Generator</h1>
 
-<pre id="output"></pre>
+        <label>Password length</label>
+        <input type="number" id="length" value="12">
 
-<script src="../../js/main.js"></script>
+        <br><br>
 
-</body>
+        <button onclick="generatePassword()">Generate Password</button>
+
+        <pre id="output"></pre>
+
+        <script src="../../js/main.js"></script>
+
+    </body>
 
 </html>

@@ -40,3 +40,18 @@ pre {
     border-radius: 6px;
     overflow-x: auto;
 }
+
+nav {
+    margin-bottom: 30px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

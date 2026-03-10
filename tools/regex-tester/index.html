@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<meta charset="UTF-8">
-<title>Regex Tester - DevUtils</title>
-<link rel="stylesheet" href="../../css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Regex Tester - DevUtils</title>
+        <link rel="stylesheet" href="../../css/styles.css">
+    </head>
 
-<body>
+    <body>
 
-<h1>Regex Tester</h1>
+        <nav>
 
-<label>Regex pattern</label>
+            <a href="../../index.html">Home</a>
+            <a href="../json-formatter/">JSON Formatter</a>
+            <a href="../base64/">Base64</a>
+            <a href="../uuid-generator/">UUID</a>
+            <a href="../regex-tester/">Regex</a>
+            <a href="../password-generator/">Password</a>
 
-<textarea id="pattern" placeholder="Enter regex pattern"></textarea>
+        </nav>
 
-<br><br>
+        <h1>Regex Tester</h1>
 
-<label>Test text</label>
+        <label>Regex pattern</label>
 
-<textarea id="text" placeholder="Enter text to test"></textarea>
+        <textarea id="pattern" placeholder="Enter regex pattern"></textarea>
 
-<br><br>
+        <br><br>
 
-<button onclick="testRegex()">Test Regex</button>
+        <label>Test text</label>
 
-<pre id="output"></pre>
+        <textarea id="text" placeholder="Enter text to test"></textarea>
 
-<script src="../../js/main.js"></script>
+        <br><br>
 
-</body>
+        <button onclick="testRegex()">Test Regex</button>
+
+        <pre id="output"></pre>
+
+        <script src="../../js/main.js"></script>
+
+    </body>
 
 </html>
