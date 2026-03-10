@@ -56,3 +56,39 @@ function clearJSON() {
     document.getElementById("output").textContent = "";
 
 }
+
+function encodeBase64() {
+
+    const input = document.getElementById("input").value;
+
+    const encoded = btoa(input);
+
+    document.getElementById("output").textContent = encoded;
+
+}
+
+function decodeBase64() {
+
+    const input = document.getElementById("input").value;
+
+    try {
+
+        const decoded = atob(input);
+
+        document.getElementById("output").textContent = decoded;
+
+    } catch {
+
+        document.getElementById("output").textContent = "Invalid Base64";
+
+    }
+
+}
+
+function clearBase64() {
+
+    document.getElementById("input").value = "";
+
+    document.getElementById("output").textContent = "";
+
+}
