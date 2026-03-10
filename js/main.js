@@ -1,3 +1,22 @@
+function loadNavbar() {
+
+    const navbar = `
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../json-formatter/">JSON Formatter</a>
+        <a href="../base64/">Base64</a>
+        <a href="../uuid-generator/">UUID</a>
+        <a href="../regex-tester/">Regex</a>
+        <a href="../password-generator/">Password</a>
+    </nav>
+    `;
+
+    document.body.insertAdjacentHTML("afterbegin", navbar);
+
+}
+
+window.onload = loadNavbar;
+
 function formatJSON() {
 
     const input = document.getElementById("input").value;
