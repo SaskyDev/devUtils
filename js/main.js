@@ -1,4 +1,10 @@
-function loadNavbar() {
+// Helper per seleccionar elements
+const $ = (id) => document.getElementById(id);
+
+
+// ---------- NAVBAR ----------
+
+const loadNavbar = () => {
 
     const navbar = `
     <nav>
@@ -13,137 +19,127 @@ function loadNavbar() {
 
     document.body.insertAdjacentHTML("afterbegin", navbar);
 
-}
+};
 
-window.onload = loadNavbar;
-
-function formatJSON() {
-
-    const input = document.getElementById("input").value;
-
-    try {
-
-        const parsed = JSON.parse(input);
-
-        const formatted = JSON.stringify(parsed, null, 2);
-
-        document.getElementById("output").textContent = formatted;
-
-    } catch (error) {
-
-        document.getElementById("output").textContent = "Invalid JSON";
-
-    }
-
-}
+window.addEventListener("load", loadNavbar);
 
 
-function minifyJSON() {
+// ---------- JSON TOOL ----------
 
-    const input = document.getElementById("input").value;
+const formatJSON = () => {
 
     try {
 
-        const parsed = JSON.parse(input);
+        const parsed = JSON.parse($("input").value);
 
-        const minified = JSON.stringify(parsed);
-
-        document.getElementById("output").textContent = minified;
-
-    } catch (error) {
-
-        document.getElementById("output").textContent = "Invalid JSON";
-
-    }
-
-}
-
-
-function copyJSON() {
-
-    const output = document.getElementById("output").textContent;
-
-    navigator.clipboard.writeText(output);
-
-}
-
-
-function clearJSON() {
-
-    document.getElementById("input").value = "";
-
-    document.getElementById("output").textContent = "";
-
-}
-
-function encodeBase64() {
-
-    const input = document.getElementById("input").value;
-
-    const encoded = btoa(input);
-
-    document.getElementById("output").textContent = encoded;
-
-}
-
-function decodeBase64() {
-
-    const input = document.getElementById("input").value;
-
-    try {
-
-        const decoded = atob(input);
-
-        document.getElementById("output").textContent = decoded;
+        $("output").textContent = JSON.stringify(parsed, null, 2);
 
     } catch {
 
-        document.getElementById("output").textContent = "Invalid Base64";
+        $("output").textContent = "Invalid JSON";
 
     }
 
-}
+};
 
-function clearBase64() {
 
-    document.getElementById("input").value = "";
-
-    document.getElementById("output").textContent = "";
-
-}
-
-function generateUUID() {
-
-    const uuid = crypto.randomUUID();
-
-    document.getElementById("output").textContent = uuid;
-
-}
-
-function testRegex() {
-
-    const pattern = document.getElementById("pattern").value;
-    const text = document.getElementById("text").value;
+const minifyJSON = () => {
 
     try {
 
-        const regex = new RegExp(pattern);
+        const parsed = JSON.parse($("input").value);
 
-        const result = regex.test(text);
-
-        document.getElementById("output").textContent = result;
+        $("output").textContent = JSON.stringify(parsed);
 
     } catch {
 
-        document.getElementById("output").textContent = "Invalid Regex";
+        $("output").textContent = "Invalid JSON";
 
     }
 
-}
+};
 
-function generatePassword() {
 
-    const length = document.getElementById("length").value;
+const copyJSON = () => {
+
+    navigator.clipboard.writeText($("output").textContent);
+
+};
+
+
+const clearJSON = () => {
+
+    $("input").value = "";
+    $("output").textContent = "";
+
+};
+
+
+// ---------- BASE64 TOOL ----------
+
+const encodeBase64 = () => {
+
+    $("output").textContent = btoa($("input").value);
+
+};
+
+
+const decodeBase64 = () => {
+
+    try {
+
+        $("output").textContent = atob($("input").value);
+
+    } catch {
+
+        $("output").textContent = "Invalid Base64";
+
+    }
+
+};
+
+
+const clearBase64 = () => {
+
+    $("input").value = "";
+    $("output").textContent = "";
+
+};
+
+
+// ---------- UUID TOOL ----------
+
+const generateUUID = () => {
+
+    $("output").textContent = crypto.randomUUID();
+
+};
+
+
+// ---------- REGEX TOOL ----------
+
+const testRegex = () => {
+
+    try {
+
+        const regex = new RegExp($("pattern").value);
+
+        $("output").textContent = regex.test($("text").value);
+
+    } catch {
+
+        $("output").textContent = "Invalid Regex";
+
+    }
+
+};
+
+
+// ---------- PASSWORD TOOL ----------
+
+const generatePassword = () => {
+
+    const length = $("length").value;
 
     const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
 
@@ -157,27 +153,23 @@ function generatePassword() {
 
     }
 
-    document.getElementById("output").textContent = password;
+    $("output").textContent = password;
 
-}
+};
 
-function filterTools() {
 
-    const input = document.getElementById("toolSearch");
-    const filter = input.value.toLowerCase();
+// ---------- TOOL SEARCH ----------
 
-    const tools = document.querySelectorAll(".tool-item");
+const filterTools = () => {
 
-    tools.forEach(tool => {
+    const filter = $("toolSearch").value.toLowerCase();
+
+    document.querySelectorAll(".tool-item").forEach(tool => {
 
         const text = tool.textContent.toLowerCase();
 
-        if (text.includes(filter)) {
-            tool.style.display = "";
-        } else {
-            tool.style.display = "none";
-        }
+        tool.style.display = text.includes(filter) ? "" : "none";
 
     });
 
-}
+};
