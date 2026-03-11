@@ -1,9 +1,9 @@
 # Project Log
 
 
-## Savepoint – 5 Tools Implemented
+## Savepoint – 15 Tools Implemented
 
-Date: 2026-03-10
+Date: 2026-03-12
 
 Current status of the DevUtils project.
 
@@ -16,9 +16,9 @@ Main objectives:
 
 ---
 
-## Project Architecture
+# Project Architecture
 
-The project uses a simple structure:
+The project uses a modular and scalable structure.
 
 HTML  
 Each tool has its own page.
@@ -32,96 +32,147 @@ A single global stylesheet shared by all tools.
 css/styles.css
 
 JavaScript  
-All tool logic is implemented in one shared file.
 
-js/main.js
+The logic is separated by categories to keep the project organized.
 
-This makes maintenance easier and avoids duplicated code.
+Example structure:
 
----
-
-## Tools Implemented
-
-### JSON Formatter
-
-Purpose:
-Format and validate JSON data.
-
-Functions:
-- Format JSON
-- Minify JSON
-- Copy result
-- Clear input
-
-Key concepts used:
-- JSON.parse()
-- JSON.stringify()
-- try / catch error handling
-- DOM manipulation
+js/ui.js → navbar and UI elements  
+js/main.js → global helper functions  
+js/jsonTools.js → JSON tools  
+js/encodingTools.js → encoding tools  
+js/securityTools.js → security tools  
+js/textTools.js → text related tools  
+js/utilsTools.js → general utilities
 
 ---
 
-### Base64 Encoder / Decoder
+# UI Improvements
 
-Purpose:
-Convert text to Base64 and decode Base64 back to text.
+Several improvements were implemented to make the project look more like a real web product.
 
-Key concepts used:
-- btoa()
-- atob()
-- clipboard usage
-- text processing
+Hero Section
+- Added a hero section on the homepage
+- Includes project title, description and tool search
 
----
+Tool Cards
+- Tools are now displayed in a responsive grid
+- Each tool uses a card layout
 
-### UUID Generator
+Icons
+- Added icons to all tools for better visual identification
 
-Purpose:
-Generate random UUID v4 identifiers.
+Search
+- Implemented a search input to filter tools dynamically
 
-Example use cases:
-- database IDs
-- API identifiers
-- testing environments
-
-Key concept used:
-- crypto.randomUUID()
+Navbar
+- Simplified navigation to keep the interface clean
 
 ---
 
-### Regex Tester
+# Tool Pages Improvements
 
-Purpose:
-Test regular expressions against text input.
+Tools now include additional documentation sections.
 
-Key concepts used:
-- RegExp()
-- regex.test()
+Each tool page contains:
+
+Tool interface  
+Explanation  
+How to use section  
+Example  
+Tip section  
+
+This improves:
+
+- usability
+- SEO potential
+- clarity for users
+
+Example implemented in:
+
+JSON Formatter tool page.
 
 ---
 
-### Password Generator
+# Navigation Improvements
 
-Purpose:
-Generate random passwords with customizable length.
+Related Tools
 
-Key concepts used:
-- Math.random()
-- Math.floor()
-- loops
-- string indexing
+Each tool page now includes a "Related tools" section that links to other relevant tools.
+
+This improves:
+
+- user navigation
+- session duration
+- tool discovery
 
 ---
 
-## Current Tool Count
+# Additional Pages
 
-5 tools implemented.
+All Tools Page
 
-Planned future direction:
-- Add more developer tools
-- Improve UI and navigation
-- Introduce tool categories
-- Optimize pages for SEO
+A new page was created:
 
-Project brand:
+all-tools.html
+
+This page displays all tools in a grid using a JavaScript generated list.
+
+File used:
+
+js/toolsList.js
+
+This makes it easier to scale the project when new tools are added.
+
+---
+
+# Tools Implemented
+
+Developer Tools
+- JSON Formatter
+- JSON Validator
+- Regex Tester
+- UUID Generator
+- UUID Validator
+- Timestamp Converter
+
+Encoding Tools
+- Base64 Encoder / Decoder
+- URL Encoder / Decoder
+
+Security Tools
+- Password Generator
+
+Text Tools
+- Text Case Converter
+- Slug Generator
+- Word Counter
+- Lorem Ipsum Generator
+- Text Reverser
+
+Utility Tools
+- Random Number Generator
+
+---
+
+# Current Tool Count
+
+15 tools implemented.
+
+---
+
+# Project Brand
+
 DevUtils — by SaskyDev
+
+---
+
+# Next Steps
+
+Planned improvements for the next development sessions:
+
+- Improve SEO base (sitemap, robots.txt, meta tags)
+- Improve tool documentation pages
+- Continue expanding the tool collection
+- Improve UI polish
+- Prepare the project for potential public release
