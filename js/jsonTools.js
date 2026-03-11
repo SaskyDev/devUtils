@@ -47,3 +47,21 @@ const clearJSON = () => {
     $("output").textContent = "";
 
 };
+
+const validateJSON = () => {
+
+    const input = document.getElementById("jsonInput").value;
+
+    try {
+
+        JSON.parse(input);
+
+        document.getElementById("output").textContent = "Valid JSON";
+
+    } catch {
+
+        document.getElementById("output").textContent = "Invalid JSON";
+
+    }
+
+};

@@ -1,33 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title>JSON Formatter - DevUtils</title>
-    <meta name="description" content="Format, validate and minify JSON directly in your browser with this free online JSON formatter tool.">
-    <link rel="stylesheet" href="../../css/styles.css">
-    </head>
+    <html lang="en">
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <title>JSON Formatter - DevUtils</title>
+
+            <meta name="description" content="Format, validate and minify JSON directly in your browser with this free online JSON formatter tool.">
+
+            <link rel="stylesheet" href="../../css/styles.css">
+
+        </head>
+
 
     <body>
 
-        <h1>JSON Formatter</h1>
+    <h1>JSON Formatter</h1>
 
-        <textarea id="input" placeholder="Paste your JSON here"></textarea>
+    <p>
+        Format and validate JSON easily with this free online JSON formatter.
+        Paste your JSON in the input box and the tool will instantly format it into a readable structure.
+    </p>
 
-        <br><br>
 
-        <button onclick="formatJSON()">Format</button>
-        <button onclick="minifyJSON()">Minify</button>
-        <button onclick="copyJSON()">Copy</button>
-        <button onclick="clearJSON()">Clear</button>
+    <textarea id="input" placeholder="Paste your JSON here"></textarea>
 
-        <pre id="output"></pre>
+    <br><br>
 
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/jsonTools.js"></script>
-        <script src="../../js/regexTools.js"></script>
-        <script src="../../js/encodingTools.js"></script>
-        <script src="../../js/securityTools.js"></script>
-        <script src="../../js/main.js"></script>
+    <button onclick="formatJSON()">Format</button>
+    <button onclick="minifyJSON()">Minify</button>
+    <button onclick="copyJSON()">Copy formatted JSON</button>
+    <button onclick="clearJSON()">Clear</button>
+
+    <pre id="output"></pre>
+
+
+    <h2>What is JSON formatting?</h2>
+
+    <p>
+        JSON formatting converts compact JSON data into a structured and readable format.
+        This helps developers debug APIs, understand data structures and work with JSON more efficiently.
+    </p>
+
+
+    <h2>How to use this tool</h2>
+
+    <ol>
+
+        <li>Paste your JSON into the input box.</li>
+
+        <li>Click the format button.</li>
+
+        <li>The formatted JSON will appear below.</li>
+
+    </ol>
+
+
+    <h2>Example</h2>
+
+    <h3>Input example</h3>
+
+    <pre>{"name":"Luis","age":45}</pre>
+
+    <h3>Formatted result</h3>
+
+    <pre>{
+    "name": "Luis",
+    "age": 45
+    }</pre>
+
+
+    <h2>Tip</h2>
+
+    <p>
+        Formatting JSON makes it easier to read nested structures and debug API responses.
+        Most developers use JSON formatters when working with REST APIs.
+    </p>
+
+    <h2>Related tools</h2>
+
+    <div class="tools-grid">
+
+    <div class="tool-card">
+        <a href="../json-validator/">JSON Validator</a>
+    </div>
+
+    <div class="tool-card">
+        <a href="../base64/">Base64 Encoder / Decoder</a>
+    </div>
+
+    <div class="tool-card">
+        <a href="../regex-tester/">Regex Tester</a>
+    </div>
+
+    </div>
+
+    <script src="../../js/ui.js"></script>
+    <script src="../../js/jsonTools.js"></script>
+    <script src="../../js/main.js"></script>
 
     </body>
+
 </html>

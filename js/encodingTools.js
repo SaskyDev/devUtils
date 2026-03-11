@@ -28,3 +28,20 @@ const clearBase64 = () => {
     $("output").textContent = "";
 
 };
+
+const encodeURL = () => {
+
+    const input = document.getElementById("urlInput").value;
+
+    document.getElementById("output").textContent = encodeURIComponent(input);
+
+};
+
+
+const decodeURL = () => {
+
+    const input = document.getElementById("urlInput").value;
+
+    document.getElementById("output").textContent = decodeURIComponent(input);
+
+};

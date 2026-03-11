@@ -1,78 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>DevUtils - Simple Developer Tools</title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+<head>
 
-    <body>
+<meta charset="UTF-8">
 
-        <h1>DevUtils</h1>
+<title>DevUtils - Simple Developer Tools</title>
 
-        <p>
-        Simple developer tools that run directly in your browser.
-        No installs, no complexity.
-        </p>
+<meta name="description" content="Free developer tools that run directly in your browser. JSON formatter, Base64 encoder, regex tester and more.">
 
-        <h2>Developer Tools</h2>
+<link rel="stylesheet" href="css/styles.css">
 
-        <input 
-        type="text" 
-        id="toolSearch" 
-        placeholder="Search tools..."
-        onkeyup="filterTools()">
-
-        <ul>
-            <li class="tool-item">
-                <a href="tools/json-formatter/">JSON Formatter</a>
-            </li>
-
-            <li class="tool-item">
-                <a href="tools/regex-tester/">Regex Tester</a>
-            </li>
-
-            <li class="tool-item">
-                <a href="tools/uuid-generator/">UUID Generator</a>
-            </li>
-            
-        </ul>
+</head>
 
 
-        <h2>Encoding Tools</h2>
-
-        <ul>
-            <li class="tool-item">
-                <a href="tools/base64/">Base64 Encoder / Decoder</a>
-            </li>
-        </ul>
+<body>
 
 
-        <h2>Security Tools</h2>
+<div class="hero">
 
-        <ul>
-            <li class="tool-item">
-                <a href="tools/password-generator/">Password Generator</a>
-            </li>
-        </ul>
+<h1>DevUtils</h1>
+
+<p class="hero-subtitle">
+Free developer tools that run directly in your browser.
+No installs. No complexity.
+</p>
+
+<input
+type="text"
+id="toolSearch"
+placeholder="Search developer tools..."
+onkeyup="filterTools()">
+
+<a href="all-tools.html">View all tools</a>
+
+</div>
 
 
-        <footer>
+<p>
+DevUtils provides simple utilities for developers including JSON formatters, regex testers,
+encoding tools and text utilities.
+</p>
 
-        <p>
-        DevUtils — by SaskyDev
-        </p>
 
-        </footer>
+<h2>Developer Tools</h2>
 
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/jsonTools.js"></script>
-        <script src="../../js/encodingTools.js"></script>
-        <script src="../../js/securityTools.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/regexTools.js"></script>
+<div class="tools-grid">
 
-    </body>
+<div class="tool-card tool-item">
+<a href="tools/json-formatter/">🧩 JSON Formatter</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/regex-tester/">🧪 Regex Tester</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/uuid-generator/">🆔 UUID Generator</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/timestamp-converter/">⏱ Timestamp Converter</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/json-validator/">✔️ JSON Validator</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/uuid-validator/">🔎 UUID Validator</a>
+</div>
+
+</div>
+
+
+<h2>Encoding Tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card tool-item">
+<a href="tools/base64/">🔐 Base64 Encoder / Decoder</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/url-encoder/">🔗 URL Encoder / Decoder</a>
+</div>
+
+</div>
+
+
+<h2>Security Tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card tool-item">
+<a href="tools/password-generator/">🔑 Password Generator</a>
+</div>
+
+</div>
+
+
+<h2>Text Tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card tool-item">
+<a href="tools/text-case/">🔤 Text Case Converter</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/slug-generator/">🔗 Slug Generator</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/word-counter/">📊 Word Counter</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/lorem-generator/">📄 Lorem Ipsum Generator</a>
+</div>
+
+<div class="tool-card tool-item">
+<a href="tools/text-reverser/">🔁 Text Reverser</a>
+</div>
+
+</div>
+
+
+<h2>Utility Tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card tool-item">
+<a href="tools/random-number/">🎲 Random Number Generator</a>
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+DevUtils — by SaskyDev
+</p>
+
+</footer>
+
+
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
+</body>
 
 </html>

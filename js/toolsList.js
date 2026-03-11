@@ -1,0 +1,38 @@
+const tools = [
+
+{ name: "🧩 JSON Formatter", url: "tools/json-formatter/" },
+{ name: "✔️ JSON Validator", url: "tools/json-validator/" },
+{ name: "🧪 Regex Tester", url: "tools/regex-tester/" },
+{ name: "🆔 UUID Generator", url: "tools/uuid-generator/" },
+{ name: "🔎 UUID Validator", url: "tools/uuid-validator/" },
+{ name: "⏱ Timestamp Converter", url: "tools/timestamp-converter/" },
+
+{ name: "🔐 Base64 Encoder / Decoder", url: "tools/base64/" },
+{ name: "🔗 URL Encoder / Decoder", url: "tools/url-encoder/" },
+
+{ name: "🔑 Password Generator", url: "tools/password-generator/" },
+
+{ name: "🔤 Text Case Converter", url: "tools/text-case/" },
+{ name: "🔗 Slug Generator", url: "tools/slug-generator/" },
+{ name: "📊 Word Counter", url: "tools/word-counter/" },
+{ name: "📄 Lorem Ipsum Generator", url: "tools/lorem-generator/" },
+{ name: "🔁 Text Reverser", url: "tools/text-reverser/" },
+
+{ name: "🎲 Random Number Generator", url: "tools/random-number/" }
+
+];
+
+
+const container = document.getElementById("allTools");
+
+tools.forEach(tool => {
+
+const card = document.createElement("div");
+
+card.className = "tool-card";
+
+card.innerHTML = `<a href="${tool.url}">${tool.name}</a>`;
+
+container.appendChild(card);
+
+});
