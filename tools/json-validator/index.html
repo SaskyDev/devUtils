@@ -13,15 +13,93 @@
 
 </head>
 
+
 <body>
 
 <h1>JSON Validator</h1>
 
+<p>
+Check whether your JSON data is valid. This tool instantly verifies if your JSON structure
+is correctly formatted and helps detect syntax errors when working with APIs or configuration files.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
 <textarea id="jsonInput" placeholder="Paste JSON here"></textarea>
+
+<br><br>
 
 <button onclick="validateJSON()">Validate JSON</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is JSON validation?</h2>
+
+<p>
+JSON validation checks whether a JSON string follows the correct syntax rules.
+If the JSON structure is invalid, applications and APIs may fail to process the data.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Paste your JSON data into the input box.</li>
+
+<li>Click the "Validate JSON" button.</li>
+
+<li>The tool will indicate whether the JSON is valid or invalid.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Valid JSON</h3>
+
+<pre>{"name":"Luis","age":45}</pre>
+
+<h3>Invalid JSON</h3>
+
+<pre>{name:"Luis",age:45}</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Validating JSON is useful when debugging APIs or checking configuration files.
+Even small syntax mistakes such as missing quotes or commas can break JSON parsing.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../json-formatter/">🧩 JSON Formatter</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">🧪 Regex Tester</a>
+</div>
+
+<div class="tool-card">
+<a href="../base64/">🔐 Base64 Encoder / Decoder</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/jsonTools.js"></script>

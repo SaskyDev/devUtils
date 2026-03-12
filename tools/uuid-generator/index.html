@@ -1,28 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-    <meta charset="UTF-8">
-    <title>UUID Generator - DevUtils</title>
-    <meta name="description" content="Generate random UUID v4 identifiers instantly with this free online UUID generator for developers.">
-    <link rel="stylesheet" href="../../css/styles.css">
-    </head>
+<head>
 
-    <body>
+<meta charset="UTF-8">
 
-        <h1>UUID Generator</h1>
+<title>UUID Generator - DevUtils</title>
 
-        <button onclick="generateUUID()">Generate UUID</button>
+<meta name="description" content="Generate random UUID v4 identifiers instantly with this free online UUID generator for developers.">
 
-        <pre id="output"></pre>
+<link rel="stylesheet" href="../../css/styles.css">
 
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/jsonTools.js"></script>
-        <script src="../../js/encodingTools.js"></script>
-        <script src="../../js/securityTools.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/regexTools.js"></script>
+</head>
 
-    </body>
+
+<body>
+
+<h1>UUID Generator</h1>
+
+<p>
+Generate random UUID v4 identifiers instantly. UUIDs are commonly used in
+databases, APIs and distributed systems to uniquely identify resources.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<button onclick="generateUUID()">Generate UUID</button>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a UUID?</h2>
+
+<p>
+A UUID (Universally Unique Identifier) is a 128-bit value used to uniquely identify
+information in computer systems. Version 4 UUIDs are randomly generated and are widely
+used in APIs, databases and distributed applications.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Click the "Generate UUID" button.</li>
+
+<li>A random UUID v4 will be generated instantly.</li>
+
+<li>You can copy and use it in your application or database.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Generated UUID</h3>
+
+<pre>550e8400-e29b-41d4-a716-446655440000</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+UUIDs are useful when you need identifiers that are unique across different systems
+without relying on centralized ID generation.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../uuid-validator/">🔎 UUID Validator</a>
+</div>
+
+<div class="tool-card">
+<a href="../random-number/">🎲 Random Number Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../password-generator/">🔑 Password Generator</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
 
 </html>

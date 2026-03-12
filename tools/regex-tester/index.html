@@ -1,40 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Regex Tester - DevUtils</title>
-        <meta name="description" content="Test regular expressions online with this simple regex tester. Quickly check patterns against your text input.">
-        <link rel="stylesheet" href="../../css/styles.css">
-    </head>
+<head>
 
-    <body>
+<meta charset="UTF-8">
 
-        <h1>Regex Tester</h1>
+<title>Regex Tester - DevUtils</title>
 
-        <label>Regex pattern</label>
+<meta name="description" content="Test regular expressions online with this simple regex tester. Quickly check patterns against your text input.">
 
-        <textarea id="pattern" placeholder="Enter regex pattern"></textarea>
+<link rel="stylesheet" href="../../css/styles.css">
 
-        <br><br>
+</head>
 
-        <label>Test text</label>
 
-        <textarea id="text" placeholder="Enter text to test"></textarea>
+<body>
 
-        <br><br>
+<h1>Regex Tester</h1>
 
-        <button onclick="testRegex()">Test Regex</button>
+<p>
+Test regular expressions against text input to verify if your pattern matches correctly.
+This tool helps developers debug regex patterns used in validation, parsing and text processing.
+</p>
 
-        <pre id="output"></pre>
 
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/jsonTools.js"></script>
-        <script src="../../js/encodingTools.js"></script>
-        <script src="../../js/securityTools.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/regexTools.js"></script>
+<!-- TOOL INTERFACE -->
 
-    </body>
+<label>Regex pattern</label>
+
+<textarea id="pattern" placeholder="Enter regex pattern"></textarea>
+
+<br><br>
+
+<label>Test text</label>
+
+<textarea id="text" placeholder="Enter text to test"></textarea>
+
+<br><br>
+
+<button onclick="testRegex()">Test Regex</button>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a regular expression?</h2>
+
+<p>
+A regular expression (regex) is a pattern used to match character combinations in text.
+Regex is commonly used for validation, searching and text manipulation in programming.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the regex pattern you want to test.</li>
+
+<li>Enter the text that should be checked against the pattern.</li>
+
+<li>Click the "Test Regex" button to see if it matches.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Regex pattern</h3>
+
+<pre>\d+</pre>
+
+<h3>Test text</h3>
+
+<pre>Order number: 12345</pre>
+
+<h3>Result</h3>
+
+<pre>true</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Regular expressions are very powerful but can become complex.
+Testing regex patterns with real text examples helps ensure they behave as expected.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../json-validator/">✔️ JSON Validator</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">🧩 JSON Formatter</a>
+</div>
+
+<div class="tool-card">
+<a href="../text-case/">🔤 Text Case Converter</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/regexTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
 
 </html>

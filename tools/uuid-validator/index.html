@@ -7,21 +7,100 @@
 
 <title>UUID Validator - DevUtils</title>
 
-<meta name="description" content="Check if a UUID is valid.">
+<meta name="description" content="Check if a UUID is valid using this simple UUID validator tool.">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
 </head>
 
+
 <body>
 
 <h1>UUID Validator</h1>
 
-<input id="uuidInput">
+<p>
+Check whether a UUID string is valid. This tool verifies if an identifier follows
+the correct UUID format commonly used in APIs, databases and distributed systems.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<input id="uuidInput" placeholder="Enter UUID">
+
+<br><br>
 
 <button onclick="validateUUID()">Validate</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a UUID validator?</h2>
+
+<p>
+A UUID validator checks whether a string matches the expected format of a
+Universally Unique Identifier (UUID). This helps developers verify identifiers
+when working with APIs, databases or distributed systems.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the UUID you want to validate.</li>
+
+<li>Click the "Validate" button.</li>
+
+<li>The tool will indicate whether the UUID is valid.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Valid UUID</h3>
+
+<pre>550e8400-e29b-41d4-a716-446655440000</pre>
+
+<h3>Invalid UUID</h3>
+
+<pre>12345-invalid-uuid</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Validating UUIDs can help prevent errors when storing identifiers
+or sending data between systems that rely on unique IDs.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../uuid-generator/">🆔 UUID Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../random-number/">🎲 Random Number Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">🧪 Regex Tester</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/securityTools.js"></script>

@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <title>Timestamp Converter - DevUtils</title>
 
 <meta name="description" content="Convert Unix timestamps to human readable dates and vice versa.">
@@ -11,20 +13,97 @@
 
 </head>
 
+
 <body>
 
 <h1>Timestamp Converter</h1>
 
-<p>Convert Unix timestamps to readable dates.</p>
+<p>
+Convert Unix timestamps into human readable dates. This tool helps developers
+translate timestamps commonly used in APIs, logs and databases into standard date formats.
+</p>
+
+
+<!-- TOOL INTERFACE -->
 
 <input id="timestampInput" placeholder="Enter timestamp">
 
+<br><br>
+
 <button onclick="convertTimestamp()">Convert</button>
 
-<p id="output"></p>
 
-<script src="../../js/timeTools.js"></script>
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a Unix timestamp?</h2>
+
+<p>
+A Unix timestamp represents the number of seconds that have passed since
+January 1, 1970 (UTC). It is commonly used in programming, databases and APIs
+to store time values in a standardized format.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter a Unix timestamp value.</li>
+
+<li>Click the Convert button.</li>
+
+<li>The readable date will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Timestamp</h3>
+
+<pre>1700000000</pre>
+
+<h3>Converted date</h3>
+
+<pre>2023-11-14 22:13:20</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Unix timestamps are widely used in APIs and logs because they are easy to store
+and compare programmatically across different systems and time zones.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../uuid-generator/">🆔 UUID Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../random-number/">🎲 Random Number Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">🧩 JSON Formatter</a>
+</div>
+
+</div>
+
+
 <script src="../../js/ui.js"></script>
+<script src="../../js/timeTools.js"></script>
 <script src="../../js/main.js"></script>
 
 </body>

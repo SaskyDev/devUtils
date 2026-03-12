@@ -181,3 +181,10 @@ margin: auto;
 display: block;
 
 }
+
+.logo {
+width: 220px;
+display: block;
+margin: auto;
+margin-bottom: 20px;
+}

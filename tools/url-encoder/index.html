@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <title>URL Encoder / Decoder - DevUtils</title>
 
 <meta name="description" content="Encode and decode URLs easily with this online URL encoder and decoder tool.">
@@ -11,16 +13,94 @@
 
 </head>
 
+
 <body>
 
 <h1>URL Encoder / Decoder</h1>
 
-<textarea id="urlInput" placeholder="Enter text"></textarea>
+<p>
+Encode or decode URLs to make them safe for use in web addresses.
+URL encoding converts special characters into a format that can be transmitted over the internet.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<textarea id="urlInput" placeholder="Enter text or URL"></textarea>
+
+<br><br>
 
 <button onclick="encodeURL()">Encode</button>
 <button onclick="decodeURL()">Decode</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is URL encoding?</h2>
+
+<p>
+URL encoding converts special characters into a format that can be safely transmitted in a URL.
+Spaces and symbols are replaced with percent-encoded values such as %20 or %2F.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the text or URL you want to encode or decode.</li>
+
+<li>Click the Encode button to convert text into URL encoded format.</li>
+
+<li>Click the Decode button to convert encoded text back to readable form.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Original text</h3>
+
+<pre>Hello DevUtils!</pre>
+
+<h3>Encoded URL</h3>
+
+<pre>Hello%20DevUtils%21</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+URL encoding is commonly used when sending parameters in query strings
+or when building URLs that include special characters.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../base64/">🔐 Base64 Encoder / Decoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../slug-generator/">🔗 Slug Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">🧪 Regex Tester</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/encodingTools.js"></script>

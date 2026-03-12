@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <title>Slug Generator - DevUtils</title>
@@ -12,15 +13,94 @@
 
 </head>
 
+
 <body>
 
 <h1>Slug Generator</h1>
 
+<p>
+Convert text into SEO-friendly URL slugs. This tool transforms titles or phrases
+into clean URL strings that are commonly used in blogs, CMS systems and web pages.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
 <textarea id="slugInput" placeholder="Enter text"></textarea>
+
+<br><br>
 
 <button onclick="generateSlug()">Generate Slug</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a slug?</h2>
+
+<p>
+A slug is the readable part of a URL that identifies a page.
+Slugs are usually written in lowercase and use hyphens to separate words.
+They improve readability and help search engines understand page content.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the text or title you want to convert.</li>
+
+<li>Click the "Generate Slug" button.</li>
+
+<li>The SEO-friendly slug will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Input</h3>
+
+<pre>Best Developer Tools for Web Development</pre>
+
+<h3>Generated slug</h3>
+
+<pre>best-developer-tools-for-web-development</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Short and descriptive slugs help search engines understand your page content
+and make URLs easier to read and share.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../text-case/">🔤 Text Case Converter</a>
+</div>
+
+<div class="tool-card">
+<a href="../word-counter/">📊 Word Counter</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">🧪 Regex Tester</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/textTools.js"></script>

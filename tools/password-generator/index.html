@@ -1,33 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Password Generator - DevUtils</title>
-        <meta name="description" content="Generate secure random passwords instantly with this free online password generator tool.">
-        <link rel="stylesheet" href="../../css/styles.css">
-    </head>
+<head>
 
-    <body>
+<meta charset="UTF-8">
 
-        <h1>Password Generator</h1>
+<title>Password Generator - DevUtils</title>
 
-        <label>Password length</label>
-        <input type="number" id="length" value="12">
+<meta name="description" content="Generate secure random passwords instantly with this free online password generator tool.">
 
-        <br><br>
+<link rel="stylesheet" href="../../css/styles.css">
 
-        <button onclick="generatePassword()">Generate Password</button>
+</head>
 
-        <pre id="output"></pre>
 
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/jsonTools.js"></script>
-        <script src="../../js/regexTools.js"></script>
-        <script src="../../js/encodingTools.js"></script>
-        <script src="../../js/securityTools.js"></script>
-        <script src="../../js/main.js"></script>
+<body>
 
-    </body>
+<h1>Password Generator</h1>
+
+<p>
+Generate strong and random passwords for accounts, applications and security testing.
+This tool quickly creates secure passwords based on the length you choose.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<label>Password length</label>
+
+<input type="number" id="length" value="12">
+
+<br><br>
+
+<button onclick="generatePassword()">Generate Password</button>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a password generator?</h2>
+
+<p>
+A password generator creates random and complex passwords that are difficult to guess.
+Using randomly generated passwords improves security compared to using simple or reused passwords.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the desired password length.</li>
+
+<li>Click the "Generate Password" button.</li>
+
+<li>The generated password will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Password length</h3>
+
+<pre>12</pre>
+
+<h3>Generated password</h3>
+
+<pre>k9T#2vLp!7Qa</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Use long and random passwords for better security.
+Combining uppercase letters, lowercase letters, numbers and symbols creates stronger passwords.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../base64/">🔐 Base64 Encoder / Decoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../uuid-generator/">🆔 UUID Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">🧪 Regex Tester</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
 
 </html>

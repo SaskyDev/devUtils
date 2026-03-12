@@ -7,23 +7,102 @@
 
 <title>Random Number Generator - DevUtils</title>
 
-<meta name="description" content="Generate random numbers between two values.">
+<meta name="description" content="Generate random numbers between two values with this simple online random number generator.">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
 </head>
 
+
 <body>
 
 <h1>Random Number Generator</h1>
+
+<p>
+Generate a random number between a minimum and maximum value.
+This tool is useful for testing, simulations, games or selecting random values.
+</p>
+
+
+<!-- TOOL INTERFACE -->
 
 <input id="min" placeholder="Min">
 
 <input id="max" placeholder="Max">
 
+<br><br>
+
 <button onclick="generateRandom()">Generate</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is a random number generator?</h2>
+
+<p>
+A random number generator (RNG) produces numbers that cannot be easily predicted.
+In programming, random numbers are commonly used in simulations, games, testing and sampling data.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the minimum value.</li>
+
+<li>Enter the maximum value.</li>
+
+<li>Click the Generate button to produce a random number.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Input</h3>
+
+<pre>Min: 1  
+Max: 100</pre>
+
+<h3>Generated result</h3>
+
+<pre>57</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Random numbers are useful for testing applications, generating sample data
+or making random selections from a set of values.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../uuid-generator/">🆔 UUID Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../password-generator/">🔑 Password Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../word-counter/">📊 Word Counter</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/utilsTools.js"></script>

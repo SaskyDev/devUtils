@@ -7,21 +7,100 @@
 
 <title>Text Reverser - DevUtils</title>
 
-<meta name="description" content="Reverse any text instantly.">
+<meta name="description" content="Reverse any text instantly with this simple text reverser tool.">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
 </head>
 
+
 <body>
 
 <h1>Text Reverser</h1>
 
-<textarea id="textInput"></textarea>
+<p>
+Reverse any text instantly. This tool flips the order of characters in your input text,
+which can be useful for testing, puzzles or experimenting with string manipulation.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<textarea id="textInput" placeholder="Enter text"></textarea>
+
+<br><br>
 
 <button onclick="reverseText()">Reverse</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is text reversing?</h2>
+
+<p>
+Text reversing changes the order of characters in a string so that the last character
+becomes the first and the first becomes the last.
+This is commonly used in programming exercises and string manipulation examples.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the text you want to reverse.</li>
+
+<li>Click the Reverse button.</li>
+
+<li>The reversed text will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Input text</h3>
+
+<pre>DevUtils</pre>
+
+<h3>Reversed result</h3>
+
+<pre>slitUveD</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Text reversing is often used in programming exercises to demonstrate how strings
+can be manipulated using loops or built-in functions.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../text-case/">🔤 Text Case Converter</a>
+</div>
+
+<div class="tool-card">
+<a href="../word-counter/">📊 Word Counter</a>
+</div>
+
+<div class="tool-card">
+<a href="../slug-generator/">🔗 Slug Generator</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/textTools.js"></script>

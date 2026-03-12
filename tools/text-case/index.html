@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <title>Text Case Converter - DevUtils</title>
@@ -12,17 +13,95 @@
 
 </head>
 
+
 <body>
 
 <h1>Text Case Converter</h1>
 
+<p>
+Convert text between different letter cases such as uppercase, lowercase and capitalized format.
+This tool is useful when editing text, preparing titles or formatting content.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
 <textarea id="textInput" placeholder="Enter text"></textarea>
+
+<br><br>
 
 <button onclick="toUpperCaseText()">UPPERCASE</button>
 <button onclick="toLowerCaseText()">lowercase</button>
 <button onclick="capitalizeText()">Capitalize</button>
 
-<p id="output"></p>
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- DOCUMENTATION -->
+
+<h2>What is text case conversion?</h2>
+
+<p>
+Text case conversion changes how letters are capitalized.
+Different formats such as uppercase, lowercase and capitalized text are commonly used in writing, programming and formatting titles.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the text you want to convert.</li>
+
+<li>Choose the case format using one of the buttons.</li>
+
+<li>The converted text will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<h3>Input text</h3>
+
+<pre>devutils tools are useful</pre>
+
+<h3>Uppercase result</h3>
+
+<pre>DEVUTILS TOOLS ARE USEFUL</pre>
+
+
+<h2>Tip</h2>
+
+<p>
+Different writing styles require different text cases.
+Uppercase is useful for headings, while lowercase or capitalized text is more common in regular content.
+</p>
+
+
+<!-- RELATED TOOLS -->
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../slug-generator/">🔗 Slug Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../word-counter/">📊 Word Counter</a>
+</div>
+
+<div class="tool-card">
+<a href="../text-reverser/">🔁 Text Reverser</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
 <script src="../../js/textTools.js"></script>
