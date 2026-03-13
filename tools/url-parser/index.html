@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>URL Parser - DevUtils</title>
+
+<meta name="description" content="Parse a URL and extract protocol, hostname, path and query parameters.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>URL Parser</h1>
+
+<p>
+Analyze any URL and extract its components.
+</p>
+
+<div class="tool-container">
+
+<input id="urlInput" placeholder="Enter URL">
+
+<button onclick="parseURL()">Parse URL</button>
+
+</div>
+
+<pre id="output"></pre>
+
+
+<h2>What is a URL parser?</h2>
+
+<p>
+A URL parser breaks a URL into its individual components such as protocol, host, path and query parameters.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Paste a URL.</li>
+<li>Click parse.</li>
+<li>See the extracted parts.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>https://example.com/page?id=10</pre>
+
+<p>Parsed result:</p>
+
+<pre>
+protocol: https
+hostname: example.com
+path: /page
+query: ?id=10
+</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../url-encoder/">URL Encoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">JSON Formatter</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">Regex Tester</a>
+</div>
+
+</div>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/utilsTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

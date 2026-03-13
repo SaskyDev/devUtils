@@ -61,3 +61,27 @@ const b = parseInt(input[2]).toString(16).padStart(2,"0");
 output.textContent = `#${r}${g}${b}`;
 
 }
+
+function parseURL() {
+
+const input = document.getElementById("urlInput").value;
+const output = document.getElementById("output");
+
+try {
+
+const url = new URL(input);
+
+output.textContent =
+"protocol: " + url.protocol + "\n" +
+"hostname: " + url.hostname + "\n" +
+"path: " + url.pathname + "\n" +
+"query: " + url.search + "\n" +
+"hash: " + url.hash;
+
+} catch {
+
+output.textContent = "Invalid URL";
+
+}
+
+};
