@@ -1,13 +1,27 @@
 const generateRandom = () => {
 
-    const min = parseInt(document.getElementById("min").value);
+    const minValue = document.getElementById("min").value.trim();
 
-    const max = parseInt(document.getElementById("max").value);
+    const maxValue = document.getElementById("max").value.trim();
+
+    const output = document.getElementById("output");
+
+    if (!minValue || !maxValue) {
+
+        output.textContent = "Please enter both minimum and maximum values.";
+
+        return;
+
+    }
+
+    const min = parseInt(minValue);
+
+    const max = parseInt(maxValue);
 
     const number =
         Math.floor(Math.random() * (max - min + 1)) + min;
 
-    document.getElementById("output").textContent = number;
+    output.textContent = number;
 
 };
 
