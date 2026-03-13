@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Color Converter - DevUtils</title>
+
+<meta name="description" content="Convert HEX colors to RGB and RGB to HEX instantly with this simple color converter tool.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>Color Converter</h1>
+
+<p>
+Convert colors between HEX and RGB formats.
+</p>
+
+<div class="tool-container">
+
+<input id="colorInput" placeholder="Enter HEX (#ff0000) or RGB (255,0,0)">
+
+<button onclick="hexToRGB()">HEX → RGB</button>
+<button onclick="rgbToHEX()">RGB → HEX</button>
+
+</div>
+
+<pre id="output"></pre>
+
+
+<h2>What is a color converter?</h2>
+
+<p>
+A color converter allows developers and designers to convert colors between different formats such as HEX and RGB.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter a HEX color or RGB value.</li>
+<li>Select the conversion type.</li>
+<li>The converted value will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>#ff0000</pre>
+
+<p>RGB output:</p>
+
+<pre>rgb(255, 0, 0)</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../base64/">Base64 Encoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../hash-generator/">Hash Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../uuid-generator/">UUID Generator</a>
+</div>
+
+</div>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/utilsTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
