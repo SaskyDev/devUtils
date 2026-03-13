@@ -57,6 +57,7 @@ button {
 
 button:hover {
     background: #1e4fd6;
+    transform: translateY(-1px);
 }
 
 /* ===== OUTPUT ===== */
@@ -187,4 +188,74 @@ width: 220px;
 display: block;
 margin: auto;
 margin-bottom: 20px;
+}
+
+/* ===== NAVBAR IMPROVED ===== */
+
+nav {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 30px;
+
+padding: 15px 0;
+
+border-bottom: 1px solid #e5e7eb;
+
+margin-bottom: 40px;
+
+background: transparent;
+
+}
+
+nav a {
+
+color: #374151;
+
+font-weight: 500;
+
+font-size: 15px;
+
+transition: color 0.15s ease;
+
+}
+
+nav a:hover {
+
+color: #2563eb;
+
+text-decoration: none;
+
+}
+
+/* ===== INPUTS ===== */
+
+input {
+
+width: 100%;
+
+padding: 12px;
+
+border: 1px solid #ddd;
+
+border-radius: 6px;
+
+font-size: 14px;
+
+}
+
+main {
+
+margin-top: 30px;
+
+}
+
+section {
+
+margin-bottom: 40px;
+
 }
