@@ -41,3 +41,34 @@ const validateUUID = () => {
         valid ? "Valid UUID" : "Invalid UUID";
 
 };
+
+function decodeJWT() {
+
+const token = document.getElementById("jwtInput").value.trim();
+const output = document.getElementById("output");
+
+try {
+
+const parts = token.split(".");
+
+if (parts.length !== 3) {
+output.textContent = "Invalid JWT format";
+return;
+}
+
+const header = JSON.parse(atob(parts[0]));
+const payload = JSON.parse(atob(parts[1]));
+
+output.textContent =
+"HEADER:\n" +
+JSON.stringify(header, null, 2) +
+"\n\nPAYLOAD:\n" +
+JSON.stringify(payload, null, 2);
+
+} catch {
+
+output.textContent = "Unable to decode token";
+
+}
+
+}

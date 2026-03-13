@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>JWT Decoder - DevUtils</title>
+
+<meta name="description" content="Decode JSON Web Tokens and inspect header and payload easily.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>JWT Decoder</h1>
+
+<p>
+Decode a JSON Web Token and inspect its header and payload.
+</p>
+
+<div class="tool-container">
+
+<textarea id="jwtInput" placeholder="Paste JWT token here"></textarea>
+
+<button onclick="decodeJWT()">Decode JWT</button>
+
+</div>
+
+<pre id="output"></pre>
+
+
+<h2>What is a JWT?</h2>
+
+<p>
+A JSON Web Token (JWT) is a compact token format used for authentication and information exchange.
+It consists of three parts: header, payload and signature.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Paste your JWT token.</li>
+<li>Click decode.</li>
+<li>View header and payload.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</pre>
+
+<p>Decoded payload example:</p>
+
+<pre>{ "user": "Alex", "admin": true }</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../base64/">Base64 Encoder / Decoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">JSON Formatter</a>
+</div>
+
+<div class="tool-card">
+<a href="../uuid-generator/">UUID Generator</a>
+</div>
+
+</div>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
