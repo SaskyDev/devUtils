@@ -2,8 +2,8 @@ const loadNavbar = () => {
 
     const navbar = `
     <nav>
-        <a href="/devUtils/index.html">Home</a>
-        <a href="/devUtils/all-tools.html">All tools</a>
+        <a href="../..">Home</a>
+        <a href="../../all-tools.html">All tools</a>
     </nav>
     `;
 
