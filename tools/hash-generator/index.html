@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Hash Generator - DevUtils</title>
+
+<meta name="description" content="Generate MD5, SHA1 and SHA256 hashes from text instantly.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>Hash Generator</h1>
+
+<p>
+Generate MD5, SHA1 and SHA256 hashes from any text input.
+</p>
+
+<div class="tool-container">
+
+<textarea id="hashInput" placeholder="Enter text"></textarea>
+
+<button onclick="generateHash('MD5')">MD5</button>
+<button onclick="generateHash('SHA-1')">SHA1</button>
+<button onclick="generateHash('SHA-256')">SHA256</button>
+
+</div>
+
+<pre id="output"></pre>
+
+
+<h2>What is a hash?</h2>
+
+<p>
+A hash function converts data into a fixed-length string of characters. Hashes are commonly used for passwords, security and data integrity.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter your text.</li>
+<li>Select a hash algorithm.</li>
+<li>The generated hash will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>Hello world</pre>
+
+<p>Example SHA256 hash:</p>
+
+<pre>a948904f2f0f479b8f8197694b30184b0d2e42...</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../base64/">Base64 Encoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../jwt-decoder/">JWT Decoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../uuid-generator/">UUID Generator</a>
+</div>
+
+</div>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
