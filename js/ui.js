@@ -1,10 +1,9 @@
-// ---------- NAVBAR ----------
-
 const loadNavbar = () => {
 
     const navbar = `
     <nav>
-        <a href="../../index.html">Home</a>
+        <a href="/devUtils/index.html">Home</a>
+        <a href="/devUtils/all-tools.html">All tools</a>
     </nav>
     `;
 
@@ -13,6 +12,7 @@ const loadNavbar = () => {
 };
 
 window.addEventListener("load", loadNavbar);
+
 
 // ---------- TOOL SEARCH ----------
 
