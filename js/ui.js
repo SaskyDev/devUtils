@@ -1,29 +1,25 @@
 const loadNavbar = () => {
 
-    const getRootPrefix = () => {
+const navbar = `
+<nav class="navbar">
 
-        const path = window.location.pathname;
+<div class="nav-left">
+<a href="/devUtils/" class="nav-brand">DevUtils</a>
+</div>
 
-        if (path.includes("/tools/")) return "../../";
+<div class="nav-right">
+<a href="/devUtils/">Home</a>
+<a href="/devUtils/all-tools.html">All tools</a>
+</div>
 
-        if (path.includes("/templates/")) return "../";
+</nav>
+`;
 
-        return "";
-
-    };
-
-    const prefix = getRootPrefix();
-
-    const navbar = `
-    <nav>
-        <a href="${prefix}index.html">Home</a>
-        <a href="${prefix}all-tools.html">All tools</a>
-    </nav>
-    `;
-
-    document.body.insertAdjacentHTML("afterbegin", navbar);
+document.body.insertAdjacentHTML("afterbegin", navbar);
 
 };
+
+window.addEventListener("load", loadNavbar);
 
 window.addEventListener("load", loadNavbar);
 
