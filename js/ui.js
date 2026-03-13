@@ -1,9 +1,23 @@
 const loadNavbar = () => {
 
+    const getRootPrefix = () => {
+
+        const path = window.location.pathname;
+
+        if (path.includes("/tools/")) return "../../";
+
+        if (path.includes("/templates/")) return "../";
+
+        return "";
+
+    };
+
+    const prefix = getRootPrefix();
+
     const navbar = `
     <nav>
-        <a href="/devUtils/">Home</a>
-        <a href="/devUtils/all-tools.html">All tools</a>
+        <a href="${prefix}index.html">Home</a>
+        <a href="${prefix}all-tools.html">All tools</a>
     </nav>
     `;
 
