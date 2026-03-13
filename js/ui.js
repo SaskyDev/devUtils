@@ -18,7 +18,11 @@ window.addEventListener("load", loadNavbar);
 
 const filterTools = () => {
 
-    const filter = $("toolSearch").value.toLowerCase();
+    const input = document.getElementById("toolSearch");
+
+    if (!input) return;
+
+    const filter = input.value.toLowerCase();
 
     document.querySelectorAll(".tool-item").forEach(tool => {
 
