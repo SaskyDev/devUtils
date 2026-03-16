@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Query String Parser - DevUtils</title>
+
+<meta name="description" content="Parse URL query parameters and extract values easily.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<h1>Query String Parser</h1>
+
+<p>
+Extract and analyze parameters from a URL query string.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container tool-ui">
+
+<input id="queryInput" placeholder="?user=alex&id=5">
+
+<button onclick="parseQuery()">Parse Query</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<h2>What is a query string?</h2>
+
+<p>
+A query string is the part of a URL that contains parameters after the question mark.
+These parameters are commonly used to send data to web applications.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Paste a query string.</li>
+<li>Click parse.</li>
+<li>The parameters will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>?user=alex&id=5</pre>
+
+<p>Example output:</p>
+
+<pre>
+user: alex
+id: 5
+</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../url-parser/">URL Parser</a>
+</div>
+
+<div class="tool-card">
+<a href="../url-encoder/">URL Encoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../regex-tester/">Regex Tester</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/utilsTools.js"></script>
+
+</body>
+</html>

@@ -85,3 +85,28 @@ output.textContent = "Invalid URL";
 }
 
 };
+
+function parseQuery() {
+
+const input = document.getElementById("queryInput").value.trim();
+const output = document.getElementById("output");
+
+try {
+
+const params = new URLSearchParams(input);
+
+let result = "";
+
+params.forEach((value, key) => {
+result += key + ": " + value + "\n";
+});
+
+output.textContent = result || "No parameters found";
+
+} catch {
+
+output.textContent = "Invalid query string";
+
+}
+
+};
