@@ -1,51 +1,68 @@
 const tools = [
 
-{ name: "🧩 JSON Formatter", url: "tools/json-formatter/" },
-{ name: "✔️ JSON Validator", url: "tools/json-validator/" },
-{ name: "🧪 Regex Tester", url: "tools/regex-tester/" },
-{ name: "🆔 UUID Generator", url: "tools/uuid-generator/" },
-{ name: "🔎 UUID Validator", url: "tools/uuid-validator/" },
-{ name: "⏱ Timestamp Converter", url: "tools/timestamp-converter/" },
+{ name: "🧩 JSON Formatter", url: "tools/json-formatter/", category: "Developer Tools" },
+{ name: "✔️ JSON Validator", url: "tools/json-validator/", category: "Developer Tools" },
+{ name: "🧪 Regex Tester", url: "tools/regex-tester/", category: "Developer Tools" },
+{ name: "🆔 UUID Generator", url: "tools/uuid-generator/", category: "Developer Tools" },
+{ name: "🔎 UUID Validator", url: "tools/uuid-validator/", category: "Developer Tools" },
+{ name: "⏱ Timestamp Converter", url: "tools/timestamp-converter/", category: "Developer Tools" },
+{ name: "🔍 Query String Parser", url: "tools/query-string-parser/", category: "Developer Tools" },
+{ name: "📄 CSV → JSON", url: "tools/csv-to-json/", category: "Developer Tools" },
+{ name: "📄 JSON → CSV", url: "tools/json-to-csv/", category: "Developer Tools" },
 
-{ name: "🔐 Base64 Encoder / Decoder", url: "tools/base64/" },
-{ name: "🔗 URL Encoder / Decoder", url: "tools/url-encoder/" },
+{ name: "🔐 Base64 Encoder / Decoder", url: "tools/base64/", category: "Encoding Tools" },
+{ name: "🔗 URL Encoder / Decoder", url: "tools/url-encoder/", category: "Encoding Tools" },
 
-{ name: "🔑 Password Generator", url: "tools/password-generator/" },
+{ name: "🔑 Password Generator", url: "tools/password-generator/", category: "Security Tools" },
+{ name: "🛡 Password Strength Checker", url: "tools/password-strength/", category: "Security Tools" },
 
-{ name: "🔤 Text Case Converter", url: "tools/text-case/" },
-{ name: "🔗 Slug Generator", url: "tools/slug-generator/" },
-{ name: "📊 Word Counter", url: "tools/word-counter/" },
-{ name: "📄 Lorem Ipsum Generator", url: "tools/lorem-generator/" },
-{ name: "🔁 Text Reverser", url: "tools/text-reverser/" },
+{ name: "🔤 Text Case Converter", url: "tools/text-case/", category: "Text Tools" },
+{ name: "🔗 Slug Generator", url: "tools/slug-generator/", category: "Text Tools" },
+{ name: "📊 Word Counter", url: "tools/word-counter/", category: "Text Tools" },
+{ name: "📄 Lorem Ipsum Generator", url: "tools/lorem-generator/", category: "Text Tools" },
+{ name: "🔁 Text Reverser", url: "tools/text-reverser/", category: "Text Tools" },
 
-{ name: "🎲 Random Number Generator", url: "tools/random-number/" },
-
-/* ===== NEW TOOLS ===== */
-
-{ name: "🔓 JWT Decoder", url: "tools/jwt-decoder/" },
-{ name: "🔐 Hash Generator", url: "tools/hash-generator/" },
-{ name: "🎨 Color Converter", url: "tools/color-converter/" },
-{ name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/" },
-{ name: "🔎 URL Parser", url: "tools/url-parser/" },
-{ name: "🛡 Password Strength Checker", url: "tools/password-strength/" },
-{ name: "🔍 Query String Parser", url: "tools/query-string-parser/" },
-{ name: "📄 CSV → JSON", url: "tools/csv-to-json/" },
-{ name: "📄 JSON → CSV", url: "tools/json-to-csv/" },
-{ name: "🎨 Color Picker", url: "tools/color-picker/" },
+{ name: "🎲 Random Number Generator", url: "tools/random-number/", category: "Utility Tools" },
+{ name: "🎨 Color Picker", url: "tools/color-picker/", category: "Utility Tools" }
 
 ];
 
 
 const container = document.getElementById("allTools");
 
+const categories = {};
+
 tools.forEach(tool => {
 
-const card = document.createElement("div");
+if (!categories[tool.category]) {
+categories[tool.category] = [];
+}
 
-card.className = "tool-card";
+categories[tool.category].push(tool);
+
+});
+
+Object.keys(categories).forEach(category => {
+
+const title = document.createElement("h2");
+title.textContent = category;
+
+container.appendChild(title);
+
+const grid = document.createElement("div");
+grid.className = "tools-grid";
+
+categories[category].forEach(tool => {
+
+const card = document.createElement("div");
+card.className = "tool-card tool-item";
 
 card.innerHTML = `<a href="${tool.url}">${tool.name}</a>`;
 
-container.appendChild(card);
+grid.appendChild(card);
+
+});
+
+container.appendChild(grid);
 
 });
