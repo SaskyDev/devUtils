@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Color Picker - DevUtils</title>
+
+<meta name="description" content="Pick a color and get its HEX and RGB values instantly.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>Color Picker</h1>
+
+<p>
+Select a color and instantly get its HEX and RGB values.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container tool-ui">
+
+<input type="color" id="colorInput">
+
+<button onclick="getColorValues()">Get Color Values</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<h2>What is a color picker?</h2>
+
+<p>
+A color picker allows you to select a color visually and retrieve its color codes
+such as HEX or RGB for use in CSS or design tools.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Select a color.</li>
+<li>Click get color values.</li>
+<li>The HEX and RGB values will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>#ff0000</pre>
+
+<p>Example output:</p>
+
+<pre>
+HEX: #ff0000
+RGB: rgb(255,0,0)
+</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../color-converter/">Color Converter</a>
+</div>
+
+<div class="tool-card">
+<a href="../random-number/">Random Number Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../text-case/">Text Case Converter</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/utilsTools.js"></script>
+
+</body>
+
+</html>

@@ -181,3 +181,18 @@ output.textContent = "Invalid JSON data";
 }
 
 };
+
+function getColorValues() {
+
+const color = document.getElementById("colorInput").value;
+const output = document.getElementById("output");
+
+const r = parseInt(color.substring(1,3),16);
+const g = parseInt(color.substring(3,5),16);
+const b = parseInt(color.substring(5,7),16);
+
+output.textContent =
+"HEX: " + color +
+"\nRGB: rgb(" + r + "," + g + "," + b + ")";
+
+};

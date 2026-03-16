@@ -31,9 +31,10 @@ const tools = [
 { name: "🔍 Query String Parser", url: "tools/query-string-parser/" },
 { name: "📄 CSV → JSON", url: "tools/csv-to-json/" },
 { name: "📄 JSON → CSV", url: "tools/json-to-csv/" },
+{ name: "🎨 Color Picker", url: "tools/color-picker/" },
 
 ];
-    
+
 
 const container = document.getElementById("allTools");
 
