@@ -85,7 +85,7 @@ text-align: center;
 
 margin-bottom: 60px;
 
-padding: 40px 20px;
+padding: 30px 20px;
 
 background: white;
 
@@ -141,6 +141,8 @@ margin-bottom: 30px;
 /* ===== BUTTONS ===== */
 
 button {
+margin-right: 8px;
+margin-top: 6px;
 background: #2563eb;
 color: white;
 border: none;
@@ -181,7 +183,7 @@ margin-bottom: 40px;
 
 .tool-card {
 border: 1px solid #e5e5e5;
-padding: 20px;
+padding: 24px;
 border-radius: 10px;
 background: white;
 text-align: center;

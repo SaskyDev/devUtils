@@ -26,7 +26,8 @@ const tools = [
 { name: "🔐 Hash Generator", url: "tools/hash-generator/" },
 { name: "🎨 Color Converter", url: "tools/color-converter/" },
 { name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/" },
-{ name: "🔎 URL Parser", url: "tools/url-parser/" }
+{ name: "🔎 URL Parser", url: "tools/url-parser/" },
+{ name: "🛡 Password Strength Checker", url: "tools/password-strength/" },
 
 ];
 

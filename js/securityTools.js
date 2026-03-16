@@ -91,4 +91,28 @@ const hashHex = hashArray
 
 output.textContent = hashHex;
 
+};
+
+function checkPasswordStrength() {
+
+const password = document.getElementById("passwordInput").value;
+const output = document.getElementById("output");
+
+let score = 0;
+
+if (password.length >= 8) score++;
+if (/[A-Z]/.test(password)) score++;
+if (/[0-9]/.test(password)) score++;
+if (/[^A-Za-z0-9]/.test(password)) score++;
+
+if (score <= 1) {
+output.textContent = "Weak password";
 }
+else if (score <= 3) {
+output.textContent = "Medium password";
+}
+else {
+output.textContent = "Strong password";
+}
+
+};
