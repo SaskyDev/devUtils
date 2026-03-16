@@ -29,6 +29,7 @@ const tools = [
 { name: "🔎 URL Parser", url: "tools/url-parser/" },
 { name: "🛡 Password Strength Checker", url: "tools/password-strength/" },
 { name: "🔍 Query String Parser", url: "tools/query-string-parser/" },
+{ name: "📄 CSV → JSON", url: "tools/csv-to-json/" },
 
 ];
 

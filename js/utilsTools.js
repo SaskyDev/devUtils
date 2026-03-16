@@ -110,3 +110,36 @@ output.textContent = "Invalid query string";
 }
 
 };
+
+function convertCSVtoJSON() {
+
+const csv = document.getElementById("csvInput").value.trim();
+const output = document.getElementById("output");
+
+try {
+
+const lines = csv.split("\n");
+const headers = lines[0].split(",");
+
+const result = lines.slice(1).map(line => {
+
+const values = line.split(",");
+let obj = {};
+
+headers.forEach((header, index) => {
+obj[header.trim()] = values[index]?.trim();
+});
+
+return obj;
+
+});
+
+output.textContent = JSON.stringify(result, null, 2);
+
+} catch {
+
+output.textContent = "Invalid CSV data";
+
+}
+
+};
