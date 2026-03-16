@@ -143,3 +143,41 @@ output.textContent = "Invalid CSV data";
 }
 
 };
+
+function convertJSONtoCSV() {
+
+const json = document.getElementById("jsonInput").value.trim();
+const output = document.getElementById("output");
+
+try {
+
+const data = JSON.parse(json);
+
+if (!Array.isArray(data)) {
+output.textContent = "JSON must be an array";
+return;
+}
+
+const headers = Object.keys(data[0]);
+
+const csvRows = [];
+
+csvRows.push(headers.join(","));
+
+data.forEach(obj => {
+
+const values = headers.map(header => obj[header]);
+
+csvRows.push(values.join(","));
+
+});
+
+output.textContent = csvRows.join("\n");
+
+} catch {
+
+output.textContent = "Invalid JSON data";
+
+}
+
+};

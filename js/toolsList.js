@@ -30,9 +30,10 @@ const tools = [
 { name: "🛡 Password Strength Checker", url: "tools/password-strength/" },
 { name: "🔍 Query String Parser", url: "tools/query-string-parser/" },
 { name: "📄 CSV → JSON", url: "tools/csv-to-json/" },
+{ name: "📄 JSON → CSV", url: "tools/json-to-csv/" },
 
 ];
-
+    
 
 const container = document.getElementById("allTools");
 

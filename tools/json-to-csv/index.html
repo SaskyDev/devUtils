@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON to CSV Converter - DevUtils</title>
+
+<meta name="description" content="Convert JSON data into CSV format instantly.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<h1>JSON to CSV Converter</h1>
+
+<p>
+Convert JSON data into CSV format instantly.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container tool-ui">
+
+<textarea id="jsonInput" placeholder='[{"name":"alex","age":28}]'></textarea>
+
+<button onclick="convertJSONtoCSV()">Convert</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<h2>What is JSON?</h2>
+
+<p>
+JSON (JavaScript Object Notation) is a popular data format used for APIs and web applications.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Paste your JSON array.</li>
+<li>Click convert.</li>
+<li>The CSV result will appear below.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>
+[
+ { "name": "alex", "age": 28 }
+]
+</pre>
+
+<p>Example output:</p>
+
+<pre>
+name,age
+alex,28
+</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../csv-to-json/">CSV → JSON</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">JSON Formatter</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-validator/">JSON Validator</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/utilsTools.js"></script>
+
+</body>
+
+</html>
