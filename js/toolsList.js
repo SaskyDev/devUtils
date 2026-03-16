@@ -18,7 +18,15 @@ const tools = [
 { name: "📄 Lorem Ipsum Generator", url: "tools/lorem-generator/" },
 { name: "🔁 Text Reverser", url: "tools/text-reverser/" },
 
-{ name: "🎲 Random Number Generator", url: "tools/random-number/" }
+{ name: "🎲 Random Number Generator", url: "tools/random-number/" },
+
+/* ===== NEW TOOLS ===== */
+
+{ name: "🔓 JWT Decoder", url: "tools/jwt-decoder/" },
+{ name: "🔐 Hash Generator", url: "tools/hash-generator/" },
+{ name: "🎨 Color Converter", url: "tools/color-converter/" },
+{ name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/" },
+{ name: "🔎 URL Parser", url: "tools/url-parser/" }
 
 ];
 
