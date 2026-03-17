@@ -2,29 +2,35 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>JWT Encoder - DevUtils</title>
+
 <meta name="description" content="Generate secure JWT tokens (HS256) online.">
 
+<meta name="robots" content="index, follow">
+
 <link rel="stylesheet" href="../../css/styles.css">
+
 <link rel="icon" href="../../favicon.svg">
+
 </head>
+
 
 <body>
 
-<div id="navbar"></div>
-
-<main>
-
-<section class="tool-container">
-
 <h1>JWT Encoder</h1>
 
-<p class="hero-subtitle">
+<p>
 Generate a secure JWT (HS256) from header, payload and secret.
 </p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container">
 
 <label>Header (JSON)</label>
 <textarea id="jwtHeader">
@@ -47,14 +53,77 @@ Generate a secure JWT (HS256) from header, payload and secret.
 
 <button onclick="generateJWT()">Generate JWT</button>
 
-<pre id="jwtResult"></pre>
+</div>
 
-</section>
 
-</main>
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- TOOL DOCUMENTATION -->
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool generates a secure JSON Web Token (JWT) using the HS256 algorithm.
+It encodes a header and payload, then signs the token using a secret key.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter a valid JSON header.</li>
+<li>Enter a valid JSON payload.</li>
+<li>Enter a secret key.</li>
+<li>Click "Generate JWT".</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>
+Header:
+{ "alg": "HS256", "typ": "JWT" }
+
+Payload:
+{ "userId": 123 }
+</pre>
+
+<p>Example output:</p>
+
+<pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../jwt-decoder/">JWT Decoder</a>
+</div>
+
+<div class="tool-card">
+<a href="../hash-generator/">Hash Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../base64/">Base64 Encoder</a>
+</div>
+
+</div>
+
 
 <script src="../../js/ui.js"></script>
+
+<!-- TOOL JS FILE -->
 <script src="../../js/security-tools.js"></script>
 
+<script src="../../js/main.js"></script>
+
 </body>
+
 </html>
