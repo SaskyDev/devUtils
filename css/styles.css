@@ -4,7 +4,7 @@
 
 body{
 font-family:system-ui,Arial,sans-serif;
-background:#eef2f7;
+background:#e2e8f0; /* 🔥 millor contrast */
 max-width:1100px;
 margin:auto;
 padding:40px;
@@ -242,10 +242,10 @@ max-width:1000px;
 /* ===================================================== */
 
 .tool-card{
-border:1px solid #e5e7eb;
+border:1px solid #d1d5db; /* 🔥 millor */
 padding:24px;
 border-radius:12px;
-background:#ffffff; /* 🔥 sòlid */
+background:#ffffff;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -253,19 +253,19 @@ justify-content:center;
 gap:10px;
 text-align:center;
 transition:all .25s cubic-bezier(.4,0,.2,1);
-box-shadow:0 8px 24px rgba(0,0,0,0.08); /* 🔥 més profunditat */
+box-shadow:0 10px 30px rgba(0,0,0,0.10); /* 🔥 millor */
 cursor:pointer;
 }
 
 .tool-card:hover{
 transform:translateY(-6px) scale(1.02);
-box-shadow:0 20px 40px rgba(0,0,0,0.15); /* 🔥 hover potent */
+box-shadow:0 20px 40px rgba(0,0,0,0.18);
 }
 
 .tool-card a{
 text-decoration:none;
-color:#111827;
-font-weight:600;
+color:#0f172a; /* 🔥 més fosc */
+font-weight:700; /* 🔥 més fort */
 font-size:15px;
 transition:.2s;
 }
@@ -302,17 +302,19 @@ max-width:1000px;
 }
 
 .filter-btn{
-background:#f1f5f9;
-border:1px solid #e5e7eb;
+background:#e2e8f0;
+border:1px solid #cbd5e1;
 padding:10px 16px;
 border-radius:999px;
 cursor:pointer;
 font-size:14px;
 transition:.2s;
+color:#111827;
+font-weight:500;
 }
 
 .filter-btn:hover{
-background:#e2e8f0;
+background:#cbd5e1;
 }
 
 .filter-btn.active{
@@ -369,6 +371,16 @@ body.dark .tool-card{
 background:#1f2937;
 border-color:#374151;
 box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+
+body.dark .filter-btn{
+background:#1f2937;
+border:1px solid #374151;
+color:#e5e7eb;
+}
+
+body.dark .filter-btn:hover{
+background:#374151;
 }
 
 body.dark a{
