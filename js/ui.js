@@ -12,14 +12,13 @@ const loadNavbar = () => {
         <div class="nav-right">
             <a href="/devUtils/">Home</a>
             <a href="/devUtils/all-tools.html">All tools</a>
-            <button id="themeToggle">🌙</button>
+            <button id="themeToggle" aria-label="Toggle theme">🌙</button>
         </div>
 
     </nav>
     `;
 
     document.body.insertAdjacentHTML("afterbegin", navbar);
-
 };
 
 
@@ -38,14 +37,16 @@ const loadTheme = () => {
 
     const saved = localStorage.getItem("theme");
 
-    if(saved === "dark"){
+    if (saved === "dark") {
         document.body.classList.add("dark");
     }
 };
 
 const updateIcon = () => {
+
     const btn = document.getElementById("themeToggle");
-    if(btn){
+
+    if (btn) {
         btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
     }
 };
@@ -74,21 +75,16 @@ const filterTools = () => {
 
 // ================= INIT =================
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     loadNavbar();
     loadTheme();
+    updateIcon();
 
-    setTimeout(() => {
+    const btn = document.getElementById("themeToggle");
 
-        const btn = document.getElementById("themeToggle");
-
-        if(btn){
-            btn.addEventListener("click", toggleTheme);
-        }
-
-        updateIcon();
-
-    }, 0);
+    if (btn) {
+        btn.addEventListener("click", toggleTheme);
+    }
 
 });

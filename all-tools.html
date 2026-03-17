@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>All Developer Tools - DevUtils</title>
@@ -12,19 +11,22 @@
 <meta name="description" content="Browse all developer tools available on DevUtils.">
 
 <link rel="stylesheet" href="css/styles.css">
-
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 </head>
 
-<body>     
+<body>
+
+<!-- NAVBAR es carrega amb JS -->
+
+
+<header class="hero">
 
 <h1>All DevUtils Tools</h1>
 
-<p>
+<p class="hero-subtitle">
 Browse all developer tools available on DevUtils.
-Each tool includes clear usage instructions and a practical example below.
-No installation required. Just simple, efficient workflows.
+Filter by category or search instantly.
 </p>
 
 <input
@@ -33,7 +35,48 @@ id="toolSearch"
 placeholder="Search all tools..."
 onkeyup="filterTools()">
 
+</header>
+
+
+<main>
+
+<!-- CATEGORY FILTERS -->
+
+<div class="category-filters">
+
+<button class="filter-btn active" data-category="All">All</button>
+<button class="filter-btn" data-category="Developer Tools">Developer</button>
+<button class="filter-btn" data-category="Encoding Tools">Encoding</button>
+<button class="filter-btn" data-category="Security Tools">Security</button>
+<button class="filter-btn" data-category="Text Tools">Text</button>
+<button class="filter-btn" data-category="Utility Tools">Utility</button>
+
+</div>
+
+
+<!-- TOOLS -->
+
 <div id="allTools"></div>
+
+</main>
+
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<p>© 2026 DevUtils — by SaskyDev</p>
+
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
+<a href="#">Cookies</a>
+</div>
+
+</div>
+
+</footer>
+
 
 <script src="js/ui.js"></script>
 <script src="js/main.js"></script>
