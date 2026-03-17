@@ -103,7 +103,7 @@ width:100%;
 .hero{
 text-align:center;
 margin-bottom:70px;
-padding:50px 25px;
+padding:60px 30px; /* 🔥 més aire */
 background:white;
 border:1px solid #e5e7eb;
 border-radius:14px;
@@ -115,7 +115,8 @@ margin-right:auto;
 
 .hero h1{
 font-size:40px;
-margin-bottom:15px;
+margin-bottom:25px;
+
 }
 
 .hero-subtitle{
@@ -123,8 +124,8 @@ color:#555;
 margin-bottom:25px;
 font-size:18px;
 max-width:700px;
-margin:auto;
-line-height:1.5;
+margin:0 auto 30px auto;
+line-height:1.6;
 }
 
 .hero-actions{
@@ -166,8 +167,10 @@ font-family:monospace;
 
 #toolSearch{
 max-width:400px;
-margin:15px auto 25px auto;
+margin:10px auto 0px auto;
 display:block;
+padding: 12px;
+border-radius: 8px;
 }
 
 
