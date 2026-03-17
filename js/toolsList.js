@@ -1,7 +1,6 @@
 // ================= DATA =================
 
 const tools = [
-
 { name: "🧩 JSON Formatter", url: "tools/json-formatter/", category: "Developer Tools" },
 { name: "✔️ JSON Validator", url: "tools/json-validator/", category: "Developer Tools" },
 { name: "🧪 Regex Tester", url: "tools/regex-tester/", category: "Developer Tools" },
@@ -31,7 +30,6 @@ const tools = [
 { name: "🎨 Color Picker", url: "tools/color-picker/", category: "Utility Tools" },
 { name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/", category: "Utility Tools" },
 { name: "🎨 Color Converter", url: "tools/color-converter/", category: "Utility Tools" }
-
 ];
 
 
@@ -40,37 +38,17 @@ const tools = [
 document.addEventListener("DOMContentLoaded", () => {
 
 const container = document.getElementById("allTools");
-
 if (!container) return;
 
 
-// ================= GROUP BY CATEGORY =================
+// ================= STATE =================
 
-const categories = {};
-
-tools.forEach(tool => {
-
-if (!categories[tool.category]) {
-categories[tool.category] = [];
-}
-
-categories[tool.category].push(tool);
-
-});
+let currentCategory = "All";
 
 
 // ================= RENDER =================
 
-Object.keys(categories).forEach(category => {
-
-// const title = document.createElement("h2");
-// title.textContent = category;
-// container.appendChild(title);
-
-const grid = document.createElement("div");
-grid.className = "tools-grid";
-
-categories[category].forEach(tool => {
+tools.forEach(tool => {
 
 const card = document.createElement("div");
 card.className = "tool-card tool-item";
@@ -78,40 +56,43 @@ card.setAttribute("data-category", tool.category);
 
 card.innerHTML = `
 <a href="${tool.url}">
-    <span class="tool-icon">${tool.name.split(" ")[0]}</span>
-    <span class="tool-title">${tool.name.replace(tool.name.split(" ")[0], "").trim()}</span>
+  <span class="tool-icon">${tool.name.split(" ")[0]}</span>
+  <span class="tool-title">${tool.name.replace(tool.name.split(" ")[0], "").trim()}</span>
 </a>
 `;
 
-grid.appendChild(card);
-
-});
-
-container.appendChild(grid);
+container.appendChild(card);
 
 });
 
 
-// ================= FILTER =================
+// ================= FILTER FUNCTION =================
 
-const filterByCategory = (category) => {
+const applyFilters = () => {
+
+const searchValue = document.getElementById("toolSearch").value.toLowerCase();
 
 document.querySelectorAll(".tool-item").forEach(tool => {
 
-const toolCategory = tool.getAttribute("data-category");
+const text = tool.textContent.toLowerCase();
+const category = tool.getAttribute("data-category");
 
-if (category === "All" || toolCategory === category) {
-tool.style.display = "";
-} else {
-tool.style.display = "none";
-}
+const matchSearch = text.includes(searchValue);
+const matchCategory = currentCategory === "All" || category === currentCategory;
+
+tool.style.display = (matchSearch && matchCategory) ? "" : "none";
 
 });
 
 };
 
 
-// ================= FILTER BUTTON EVENTS =================
+// ================= SEARCH =================
+
+document.getElementById("toolSearch").addEventListener("input", applyFilters);
+
+
+// ================= FILTER BUTTONS =================
 
 document.querySelectorAll(".filter-btn").forEach(btn => {
 
@@ -121,9 +102,9 @@ document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active
 
 btn.classList.add("active");
 
-const category = btn.getAttribute("data-category");
+currentCategory = btn.getAttribute("data-category");
 
-filterByCategory(category);
+applyFilters();
 
 });
 
