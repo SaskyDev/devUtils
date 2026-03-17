@@ -17,12 +17,12 @@ margin-top:30px;
 }
 
 section{
-margin-top:60px;
-margin-bottom:60px;
+margin:60px auto;
 background:#f8fafc;
 padding:30px;
 border-radius:12px;
 border:1px solid #e5e7eb;
+max-width:1000px;
 }
 
 
@@ -35,7 +35,6 @@ h1{ margin-bottom:20px; }
 h2{
 text-align:center;
 margin-bottom:25px;
-margin-top:0;
 font-size:28px;
 }
 
@@ -109,6 +108,9 @@ background:white;
 border:1px solid #e5e7eb;
 border-radius:14px;
 box-shadow:0 4px 16px rgba(0,0,0,0.05);
+max-width:1000px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .hero h1{
@@ -164,10 +166,8 @@ font-family:monospace;
 
 #toolSearch{
 max-width:400px;
-margin:auto;
+margin:15px auto 25px auto;
 display:block;
-margin-top:15px;
-margin-bottom:25px;
 }
 
 
@@ -218,6 +218,9 @@ padding:30px;
 border-radius:12px;
 box-shadow:0 4px 16px rgba(0,0,0,0.05);
 margin-top:20px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
 }
 
 
@@ -227,10 +230,10 @@ margin-top:20px;
 
 .tools-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-gap:20px;
-margin-bottom:40px;
-justify-content:center;
+grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+gap:24px;
+margin:0 auto 40px auto;
+max-width:1000px;
 }
 
 
@@ -252,7 +255,6 @@ text-align:center;
 transition:all .25s cubic-bezier(.4,0,.2,1);
 box-shadow:0 4px 12px rgba(0,0,0,0.04);
 cursor:pointer;
-width:100%;
 }
 
 .tool-card:hover{
@@ -288,56 +290,36 @@ transform:translateX(0);
 
 
 /* ===================================================== */
-/* ==================== DARK MODE ====================== */
+/* ================= CATEGORY FILTER =================== */
 /* ===================================================== */
 
-body.dark{
-background:#0f172a;
-color:#e5e7eb;
+.category-filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin:30px auto 40px auto;
+max-width:1000px;
 }
 
-body.dark .navbar{
-background:#111827;
-border-color:#1f2937;
+.filter-btn{
+background:#f1f5f9;
+border:1px solid #e5e7eb;
+padding:10px 16px;
+border-radius:999px;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
 }
 
-body.dark .hero,
-body.dark section{
-background:#111827;
-border-color:#1f2937;
+.filter-btn:hover{
+background:#e2e8f0;
 }
 
-body.dark .tool-card{
-background:#1f2937;
-border-color:#374151;
-}
-
-body.dark a{
-color:#93c5fd;
-}
-
-body.dark a:visited{
-color:#c4b5fd;
-}
-
-body.dark .nav-brand{
-color:#f9fafb;
-}
-
-body.dark .nav-right a{
-color:#cbd5f5;
-}
-
-body.dark input,
-body.dark textarea{
-background:#1f2937;
-color:#e5e7eb;
-border:1px solid #374151;
-}
-
-body.dark pre{
-background:#1f2937;
-border:1px solid #374151;
+.filter-btn.active{
+background:#2563eb;
+color:white;
+border-color:#2563eb;
 }
 
 
@@ -365,43 +347,52 @@ text-decoration:none;
 color:#2563eb;
 }
 
+
+/* ===================================================== */
+/* ==================== DARK MODE ====================== */
+/* ===================================================== */
+
+body.dark{
+background:#0f172a;
+color:#e5e7eb;
+}
+
+body.dark .navbar,
+body.dark .hero,
+body.dark section,
+body.dark .tool-container,
 body.dark .footer{
 background:#111827;
+border-color:#1f2937;
 }
 
-
-/* ===================================================== */
-/* ================= CATEGORY FILTER =================== */
-/* ===================================================== */
-
-.category-filters{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:40px;
-margin-top:20px;
+body.dark .tool-card{
+background:#1f2937;
+border-color:#374151;
 }
 
-.filter-btn{
-background:#e2e8f0;
-color:#111827;
-border:none;
-padding:8px 14px;
-border-radius:20px;
-cursor:pointer;
-font-size:14px;
-transition:.2s;
+body.dark a{
+color:#93c5fd;
 }
 
-.filter-btn.active{
-background:#2563eb;
-color:white;
+body.dark a:visited{
+color:#c4b5fd;
 }
 
-body.dark .filter-btn{
+body.dark .nav-brand{
+color:#f9fafb;
+}
+
+body.dark input,
+body.dark textarea{
 background:#1f2937;
 color:#e5e7eb;
+border:1px solid #374151;
+}
+
+body.dark pre{
+background:#1f2937;
+border:1px solid #374151;
 }
 
 
@@ -419,49 +410,8 @@ padding:20px;
 padding:30px 15px;
 }
 
+.tools-grid{
+grid-template-columns:1fr;
 }
 
-/* HERO SMALL (all tools) */
-.small-hero{
-padding:30px 20px;
-margin-bottom:40px;
-}
-
-/* FILTERS STYLE PRO */
-.category-filters{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:12px;
-margin-bottom:40px;
-}
-
-.filter-btn{
-background:#f1f5f9;
-border:1px solid #e5e7eb;
-padding:10px 16px;
-border-radius:999px;
-cursor:pointer;
-font-size:14px;
-transition:.2s;
-}
-
-.filter-btn:hover{
-background:#e2e8f0;
-}
-
-.filter-btn.active{
-background:#2563eb;
-color:white;
-border-color:#2563eb;
-}
-
-/* DARK MODE FILTERS */
-body.dark .filter-btn{
-background:#1f2937;
-border-color:#374151;
-}
-
-body.dark .filter-btn.active{
-background:#2563eb;
 }
