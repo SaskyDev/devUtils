@@ -114,12 +114,12 @@ box-shadow:0 4px 16px rgba(0,0,0,0.05);
 
 .hero h1{
 font-size:40px;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 .hero-subtitle{
 color:#555;
-margin-bottom:25px;
+margin-bottom:20px;
 font-size:18px;
 max-width:700px;
 margin:auto;
@@ -148,7 +148,8 @@ font-family:monospace;
 max-width:400px;
 margin:auto;
 display:block;
-margin-bottom:30px;
+margin-bottom:20px;
+margin-top: 10px;
 }
 
 
@@ -233,6 +234,14 @@ text-align:center;
 transition:all .25s cubic-bezier(.4,0,.2,1);
 box-shadow:0 4px 12px rgba(0,0,0,0.04);
 cursor:pointer;
+max-width: 260px;
+width: 100%;
+}
+
+.tools-grid{
+    justify-items: center;
+    max-width: 260px;
+    width: 100%;
 }
 
 .tool-card:hover{
@@ -366,11 +375,13 @@ display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:30px;
+margin-bottom:40px;
+margin-top: 20px;
 }
 
 .filter-btn{
-background:#f1f5f9;
+background:#e2e8f0;
+color:#111827;
 border:none;
 padding:8px 14px;
 border-radius:20px;
@@ -387,4 +398,13 @@ color:white;
 body.dark .filter-btn{
 background:#1f2937;
 color:#e5e7eb;
+}
+
+.logo{
+width:180px;
+max-width:100%;
+height:auto;
+display:block;
+margin:auto;
+margin-bottom:20px;
 }

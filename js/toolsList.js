@@ -63,10 +63,9 @@ categories[tool.category].push(tool);
 
 Object.keys(categories).forEach(category => {
 
-const title = document.createElement("h2");
-title.textContent = category;
-
-container.appendChild(title);
+// const title = document.createElement("h2");
+// title.textContent = category;
+// container.appendChild(title);
 
 const grid = document.createElement("div");
 grid.className = "tools-grid";
