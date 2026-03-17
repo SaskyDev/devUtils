@@ -169,10 +169,10 @@ try {
 
     const token = `${data}.${signature}`;
 
-    document.getElementById("jwtResult").textContent = token;
+    document.getElementById("output").textContent = token;
 
 } catch (e) {
-    document.getElementById("jwtResult").textContent = "Invalid JSON";
+    document.getElementById("output").textContent = "Invalid JSON";
 }
 };
 
