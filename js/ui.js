@@ -1,30 +1,57 @@
+// ================= NAVBAR =================
+
 const loadNavbar = () => {
 
-const navbar = `
-<nav class="navbar">
+    const navbar = `
+    <nav class="navbar">
 
-<div class="nav-left">
-<a href="/devUtils/" class="nav-brand">DevUtils</a>
-</div>
+        <div class="nav-left">
+            <a href="/devUtils/" class="nav-brand">DevUtils</a>
+        </div>
 
-<div class="nav-right">
-<a href="/devUtils/">Home</a>
-<a href="/devUtils/all-tools.html">All tools</a>
-</div>
+        <div class="nav-right">
+            <a href="/devUtils/">Home</a>
+            <a href="/devUtils/all-tools.html">All tools</a>
+            <button id="themeToggle">🌙</button>
+        </div>
 
-</nav>
-`;
+    </nav>
+    `;
 
-document.body.insertAdjacentHTML("afterbegin", navbar);
+    document.body.insertAdjacentHTML("afterbegin", navbar);
 
 };
 
-window.addEventListener("load", loadNavbar);
 
-window.addEventListener("load", loadNavbar);
+// ================= DARK MODE =================
+
+const toggleTheme = () => {
+
+    const isDark = document.body.classList.toggle("dark");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    updateIcon();
+};
+
+const loadTheme = () => {
+
+    const saved = localStorage.getItem("theme");
+
+    if(saved === "dark"){
+        document.body.classList.add("dark");
+    }
+};
+
+const updateIcon = () => {
+    const btn = document.getElementById("themeToggle");
+    if(btn){
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+};
 
 
-// ---------- TOOL SEARCH ----------
+// ================= TOOL SEARCH =================
 
 const filterTools = () => {
 
@@ -43,3 +70,25 @@ const filterTools = () => {
     });
 
 };
+
+
+// ================= INIT =================
+
+window.addEventListener("load", () => {
+
+    loadNavbar();
+    loadTheme();
+
+    setTimeout(() => {
+
+        const btn = document.getElementById("themeToggle");
+
+        if(btn){
+            btn.addEventListener("click", toggleTheme);
+        }
+
+        updateIcon();
+
+    }, 0);
+
+});
