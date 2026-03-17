@@ -196,3 +196,75 @@ output.textContent =
 "\nRGB: rgb(" + r + "," + g + "," + b + ")";
 
 };
+
+// ================= BASE CONVERTER =================
+
+function convertBase() {
+const input = document.getElementById("baseInput").value.trim();
+const fromBase = parseInt(document.getElementById("fromBase").value);
+
+if (!input) {
+    document.getElementById("output").textContent = "Enter a number";
+    return;
+}
+
+try {
+    const decimal = parseInt(input, fromBase);
+
+    if (isNaN(decimal)) {
+    throw new Error();
+    }
+
+    const binary = decimal.toString(2);
+    const hex = decimal.toString(16).toUpperCase();
+
+    document.getElementById("output").textContent =
+`Decimal: ${decimal}
+Binary: ${binary}
+Hex: ${hex}`;
+
+} catch {
+    document.getElementById("output").textContent = "Invalid input for selected base";
+}
+};
+
+// ================= DATE FORMATTER =================
+
+function formatDate() {
+const input = document.getElementById("dateInput").value.trim();
+
+if (!input) {
+    document.getElementById("output").textContent = "Enter a date or timestamp";
+    return;
+}
+
+let date;
+
+  // Detecta si és timestamp
+if (!isNaN(input)) {
+    const timestamp = parseInt(input);
+
+    // Detecta segons o mil·lisegons
+    date = input.length === 13
+    ? new Date(timestamp)
+    : new Date(timestamp * 1000);
+
+} else {
+    // Intenta parsejar com data
+    date = new Date(input);
+}
+
+if (isNaN(date.getTime())) {
+    document.getElementById("output").textContent = "Invalid date";
+    return;
+}
+
+const iso = date.toISOString();
+const local = date.toLocaleString();
+const unix = Math.floor(date.getTime() / 1000);
+
+document.getElementById("output").textContent =
+`ISO: ${iso}
+Local: ${local}
+Unix: ${unix}`;
+};

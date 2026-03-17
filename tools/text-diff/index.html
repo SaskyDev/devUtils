@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Text Diff Checker - DevUtils</title>
+
+<meta name="description" content="Compare two texts and highlight differences instantly.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<h1>Text Diff Checker</h1>
+
+<p>
+Compare two texts and instantly see the differences between them.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container">
+
+<label>Text 1</label>
+<textarea id="text1" placeholder="Enter first text..."></textarea>
+
+<label>Text 2</label>
+<textarea id="text2" placeholder="Enter second text..."></textarea>
+
+<button onclick="compareText()">Compare</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- TOOL DOCUMENTATION -->
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool compares two pieces of text and highlights where they differ character by character.
+It is useful for developers, writers, and anyone who needs to quickly spot differences.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the first text.</li>
+<li>Enter the second text.</li>
+<li>Click "Compare" to see the differences.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>Hello world</pre>
+
+<p>Example output:</p>
+
+<pre>Hello [w|W]orld</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../text-case/">Text Case Converter</a>
+</div>
+
+<div class="tool-card">
+<a href="../slug-generator/">Slug Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../word-counter/">Word Counter</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+
+<!-- TOOL JS FILE -->
+<script src="../../js/text-tools.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+
+</html>

@@ -31,6 +31,10 @@ const tools = [
 { name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/", category: "Utility Tools" },
 { name: "🎨 Color Converter", url: "tools/color-converter/", category: "Utility Tools" },
 { name: "🔓 JWT Encoder", url: "tools/jwt-encoder/", category: "Security Tools" },
+{ name: "📏 Text Diff Checker", url: "tools/text-diff/", category: "Text Tools" },
+{ name: "🔢 Base Converter", url: "tools/base-converter/", category: "Utility Tools" },
+{ name: "📅 Date Formatter", url: "tools/date-formatter/", category: "Utility Tools" },
+{ name: "🧬 Hash Compare", url: "tools/hash-compare/", category: "Security Tools" },
 ];
 
 

@@ -174,4 +174,22 @@ try {
 } catch (e) {
     document.getElementById("jwtResult").textContent = "Invalid JSON";
 }
+};
+
+// ================= HASH COMPARE =================
+
+function compareHash() {
+const h1 = document.getElementById("hash1").value.trim();
+const h2 = document.getElementById("hash2").value.trim();
+
+if (!h1 || !h2) {
+    document.getElementById("output").textContent = "Enter both hashes";
+    return;
 }
+
+if (h1 === h2) {
+    document.getElementById("output").textContent = "Match ✅";
+} else {
+    document.getElementById("output").textContent = "Do not match ❌";
+}
+};

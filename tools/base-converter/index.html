@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Base Converter - DevUtils</title>
+
+<meta name="description" content="Convert numbers between binary, decimal and hexadecimal.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<h1>Base Converter</h1>
+
+<p>
+Convert numbers between binary, decimal and hexadecimal formats instantly.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container">
+
+<label>Enter Number</label>
+<input type="text" id="baseInput" placeholder="Enter number...">
+
+<label>From</label>
+<select id="fromBase">
+<option value="2">Binary</option>
+<option value="10" selected>Decimal</option>
+<option value="16">Hexadecimal</option>
+</select>
+
+<button onclick="convertBase()">Convert</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- TOOL DOCUMENTATION -->
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool allows you to convert numbers between binary (base 2), decimal (base 10), and hexadecimal (base 16).
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter a number.</li>
+<li>Select the base of the number.</li>
+<li>Click convert.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>Input: 255 (Decimal)</pre>
+
+<p>Example output:</p>
+
+<pre>
+Binary: 11111111
+Hex: FF
+</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../random-number/">Random Number Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../timestamp-converter/">Timestamp Converter</a>
+</div>
+
+<div class="tool-card">
+<a href="../json-formatter/">JSON Formatter</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+
+<!-- TOOL JS FILE -->
+<script src="../../js/utility-tools.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+
+</html>

@@ -85,3 +85,29 @@ const reverseText = () => {
     document.getElementById("output").textContent = reversed;
 
 };
+
+// ================= TEXT DIFF =================
+
+function compareText() {
+const t1 = document.getElementById("text1").value;
+const t2 = document.getElementById("text2").value;
+
+if (!t1 || !t2) {
+    document.getElementById("diffResult").textContent = "Enter both texts";
+    return;
+}
+
+let result = "";
+
+const maxLength = Math.max(t1.length, t2.length);
+
+for (let i = 0; i < maxLength; i++) {
+    if (t1[i] === t2[i]) {
+    result += t1[i] || "";
+    } else {
+    result += `[${t1[i] || ""}|${t2[i] || ""}]`;
+    }
+}
+
+document.getElementById("diffResult").textContent = result;
+};

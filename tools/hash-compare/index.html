@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hash Compare Tool - DevUtils</title>
+
+<meta name="description" content="Compare two hashes and check if they match.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<h1>Hash Compare Tool</h1>
+
+<p>
+Compare two hashes and check if they are identical.
+</p>
+
+
+<!-- TOOL INTERFACE -->
+
+<div class="tool-container">
+
+<label>Hash 1</label>
+<input type="text" id="hash1" placeholder="Enter first hash">
+
+<label>Hash 2</label>
+<input type="text" id="hash2" placeholder="Enter second hash">
+
+<button onclick="compareHash()">Compare</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<pre id="output"></pre>
+
+
+<!-- TOOL DOCUMENTATION -->
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool allows you to compare two hash values and verify if they are the same.
+</p>
+
+
+<h2>How to use this tool</h2>
+
+<ol>
+
+<li>Enter the first hash.</li>
+<li>Enter the second hash.</li>
+<li>Click compare.</li>
+
+</ol>
+
+
+<h2>Example</h2>
+
+<pre>
+Input:
+abc123
+abc123
+</pre>
+
+<p>Example output:</p>
+
+<pre>Match ✅</pre>
+
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<a href="../hash-generator/">Hash Generator</a>
+</div>
+
+<div class="tool-card">
+<a href="../password-strength/">Password Strength Checker</a>
+</div>
+
+<div class="tool-card">
+<a href="../base64/">Base64 Encoder</a>
+</div>
+
+</div>
+
+
+<script src="../../js/ui.js"></script>
+
+<!-- TOOL JS FILE -->
+<script src="../../js/security-tools.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+
+</html>
