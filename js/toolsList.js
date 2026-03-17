@@ -23,7 +23,12 @@ const tools = [
 { name: "🔁 Text Reverser", url: "tools/text-reverser/", category: "Text Tools" },
 
 { name: "🎲 Random Number Generator", url: "tools/random-number/", category: "Utility Tools" },
-{ name: "🎨 Color Picker", url: "tools/color-picker/", category: "Utility Tools" }
+{ name: "🎨 Color Picker", url: "tools/color-picker/", category: "Utility Tools" },
+{ name: "🔎 URL Parser", url: "tools/url-parser/", category: "Developer Tools" },
+{ name: "🔐 Hash Generator", url: "tools/hash-generator/", category: "Security Tools" },
+{ name: "🔓 JWT Decoder", url: "tools/jwt-decoder/", category: "Security Tools" },
+{ name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/", category: "Utility Tools" },
+{ name: "🎨 Color Converter", url: "tools/color-converter/", category: "Utility Tools" },
 
 ];
 
