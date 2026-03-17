@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JWT Encoder - DevUtils</title>
+<meta name="description" content="Generate secure JWT tokens (HS256) online.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="icon" href="../../favicon.svg">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main>
+
+<section class="tool-container">
+
+<h1>JWT Encoder</h1>
+
+<p class="hero-subtitle">
+Generate a secure JWT (HS256) from header, payload and secret.
+</p>
+
+<label>Header (JSON)</label>
+<textarea id="jwtHeader">
+{
+"alg": "HS256",
+"typ": "JWT"
+}
+</textarea>
+
+<label>Payload (JSON)</label>
+<textarea id="jwtPayload">
+{
+"userId": 123,
+"role": "admin"
+}
+</textarea>
+
+<label>Secret</label>
+<input type="text" id="jwtSecret" placeholder="Enter secret key">
+
+<button onclick="generateJWT()">Generate JWT</button>
+
+<pre id="jwtResult"></pre>
+
+</section>
+
+</main>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/security-tools.js"></script>
+
+</body>
+</html>

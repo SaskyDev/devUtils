@@ -116,3 +116,62 @@ output.textContent = "Strong password";
 }
 
 };
+
+// ================= HELPERS =================
+
+function base64url(input) {
+return btoa(String.fromCharCode(...new Uint8Array(input)))
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
+function encodeJSON(obj) {
+return base64url(new TextEncoder().encode(JSON.stringify(obj)));
+}
+
+
+// ================= MAIN =================
+
+async function generateJWT() {
+try {
+    const header = JSON.parse(document.getElementById("jwtHeader").value);
+    const payload = JSON.parse(document.getElementById("jwtPayload").value);
+    const secret = document.getElementById("jwtSecret").value;
+
+    if (!secret) {
+    alert("Secret is required");
+    return;
+    }
+
+    const headerEncoded = encodeJSON(header);
+    const payloadEncoded = encodeJSON(payload);
+
+    const data = `${headerEncoded}.${payloadEncoded}`;
+
+    // 🔐 Crear clave HMAC SHA256
+    const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+    );
+
+    // 🔐 Firmar
+    const signatureBuffer = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    new TextEncoder().encode(data)
+    );
+
+    const signature = base64url(signatureBuffer);
+
+    const token = `${data}.${signature}`;
+
+    document.getElementById("jwtResult").textContent = token;
+
+} catch (e) {
+    document.getElementById("jwtResult").textContent = "Invalid JSON";
+}
+}

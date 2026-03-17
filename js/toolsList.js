@@ -29,7 +29,8 @@ const tools = [
 { name: "🎲 Random Number Generator", url: "tools/random-number/", category: "Utility Tools" },
 { name: "🎨 Color Picker", url: "tools/color-picker/", category: "Utility Tools" },
 { name: "⏱ Timestamp Generator", url: "tools/timestamp-generator/", category: "Utility Tools" },
-{ name: "🎨 Color Converter", url: "tools/color-converter/", category: "Utility Tools" }
+{ name: "🎨 Color Converter", url: "tools/color-converter/", category: "Utility Tools" },
+{ name: "🔓 JWT Encoder", url: "tools/jwt-encoder/", category: "Security Tools" },
 ];
 
 
