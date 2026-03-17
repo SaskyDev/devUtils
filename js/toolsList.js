@@ -76,7 +76,12 @@ const card = document.createElement("div");
 card.className = "tool-card tool-item";
 card.setAttribute("data-category", tool.category);
 
-card.innerHTML = `<a href="${tool.url}">${tool.name}</a>`;
+card.innerHTML = `
+<a href="${tool.url}">
+    <span class="tool-icon">${tool.name.split(" ")[0]}</span>
+    <span class="tool-title">${tool.name.replace(tool.name.split(" ")[0], "").trim()}</span>
+</a>
+`;
 
 grid.appendChild(card);
 

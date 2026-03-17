@@ -420,3 +420,48 @@ padding:30px 15px;
 }
 
 }
+
+/* HERO SMALL (all tools) */
+.small-hero{
+padding:30px 20px;
+margin-bottom:40px;
+}
+
+/* FILTERS STYLE PRO */
+.category-filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:40px;
+}
+
+.filter-btn{
+background:#f1f5f9;
+border:1px solid #e5e7eb;
+padding:10px 16px;
+border-radius:999px;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+.filter-btn:hover{
+background:#e2e8f0;
+}
+
+.filter-btn.active{
+background:#2563eb;
+color:white;
+border-color:#2563eb;
+}
+
+/* DARK MODE FILTERS */
+body.dark .filter-btn{
+background:#1f2937;
+border-color:#374151;
+}
+
+body.dark .filter-btn.active{
+background:#2563eb;
+}
