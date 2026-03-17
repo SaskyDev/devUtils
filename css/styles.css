@@ -244,22 +244,26 @@ align-items:stretch; /* 🔥 FIX */
 
 .tool-card{
 border:1px solid #d1d5db;
-padding:24px;
+padding:18px; /* 🔥 menys padding = cards més compactes */
 border-radius:12px;
 background:#ffffff;
+
 display:flex;
 flex-direction:column;
-align-items:center;
+align-items:flex-start; /* 🔥 millor lectura */
 justify-content:center;
-gap:10px;
-text-align:center;
+
+gap:6px; /* 🔥 menys espai intern */
+
+text-align:left; /* 🔥 més natural */
+
 transition:all .25s cubic-bezier(.4,0,.2,1);
-box-shadow:0 10px 30px rgba(0,0,0,0.10);
+box-shadow:0 8px 20px rgba(0,0,0,0.08); /* 🔥 més subtil */
 cursor:pointer;
-min-height:110px; /* 🔥 FIX */
-height:100%; /* 🔥 FIX */
-position:relative; /* 🔥 FIX */
-overflow:hidden; /* 🔥 FIX */
+
+min-height:90px; /* 🔥 mida correcta real */
+position:relative;
+overflow:hidden;
 }
 
 .tool-card:hover{
