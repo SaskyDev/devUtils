@@ -116,33 +116,46 @@ function convertCSVtoJSON() {
 const csv = document.getElementById("csvInput").value.trim();
 const output = document.getElementById("output");
 
+if (!csv) {
+output.textContent = "Enter CSV data";
+return;
+}
+
 try {
 
-const lines = csv.split("\n");
-const headers = lines[0].split(",");
+// 🔥 separar línies + eliminar buides
+const lines = csv
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(line => line !== "");
+
+// 🔥 validar mínim
+if (lines.length < 2) {
+    output.textContent = "CSV must have headers and at least one row";
+    return;
+}
+
+const headers = lines[0].split(",").map(h => h.trim());
 
 const result = lines.slice(1).map(line => {
 
-const values = line.split(",");
-let obj = {};
+    const values = line.split(",");
+    let obj = {};
 
-headers.forEach((header, index) => {
-obj[header.trim()] = values[index]?.trim();
-});
+    headers.forEach((header, index) => {
+    obj[header] = values[index]?.trim() || "";
+    });
 
-return obj;
+    return obj;
 
 });
 
 output.textContent = JSON.stringify(result, null, 2);
 
-} catch {
-
+} catch (error) {
 output.textContent = "Invalid CSV data";
-
 }
-
-};
+}
 
 function convertJSONtoCSV() {
 

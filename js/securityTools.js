@@ -17,6 +17,20 @@ const generatePassword = () => {
     }
 
     $("output").textContent = password;
+    function copyPassword() {
+
+    const password = document.getElementById("passwordOutput").value;
+
+    if (!password) return;
+
+    navigator.clipboard.writeText(password);
+
+    const output = document.getElementById("output");
+    if (output) {
+        output.textContent = "Copied to clipboard ✅";
+    }
+
+}
 
 };
 
