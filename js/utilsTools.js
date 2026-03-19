@@ -268,3 +268,33 @@ document.getElementById("output").textContent =
 Local: ${local}
 Unix: ${unix}`;
 };
+
+// ================= TIMESTAMP CONVERTER =================
+
+function convertTimestamp() {
+const input = document.getElementById("timestampInput").value.trim();
+const output = document.getElementById("output");
+
+if (!input) {
+    output.textContent = "Enter a timestamp";
+    return;
+}
+
+let date;
+
+  // segons o mil·lisegons
+if (input.length === 13) {
+    date = new Date(parseInt(input));
+} else {
+    date = new Date(parseInt(input) * 1000);
+}
+
+if (isNaN(date.getTime())) {
+    output.textContent = "Invalid timestamp";
+    return;
+}
+
+output.textContent =
+    "ISO: " + date.toISOString() + "\n" +
+    "Local: " + date.toLocaleString();
+}
