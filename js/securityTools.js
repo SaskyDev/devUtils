@@ -18,15 +18,42 @@ const generatePassword = () => {
 
 
 // ✅ FORA de la funció
-function copyPassword() {
+async function copyPassword(buttonEl) {
 
-    const password = document.getElementById("output").textContent;
+    const output = document.getElementById("output");
+    const password = output.textContent.trim();
+    const copyButton = buttonEl || document.getElementById("copyPasswordButton");
 
-    if (!password) return;
+    if (!password) {
+        if (copyButton) {
+            const originalText = copyButton.textContent;
+            copyButton.textContent = "Generate first";
+            setTimeout(() => {
+                copyButton.textContent = originalText;
+            }, 1200);
+        }
+        return;
+    }
 
-    navigator.clipboard.writeText(password);
+    try {
+        await navigator.clipboard.writeText(password);
+        if (copyButton) {
+            const originalText = copyButton.textContent;
+            copyButton.textContent = "Copied!";
 
-    document.getElementById("output").textContent = "Copied to clipboard ✅";
+            setTimeout(() => {
+                copyButton.textContent = originalText;
+            }, 1200);
+        }
+    } catch {
+        if (copyButton) {
+            const originalText = copyButton.textContent;
+            copyButton.textContent = "Copy failed";
+            setTimeout(() => {
+                copyButton.textContent = originalText;
+            }, 1200);
+        }
+    }
 }
 
 // ---------- UUID TOOL ----------
