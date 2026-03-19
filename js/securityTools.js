@@ -92,8 +92,21 @@ output.textContent = "Invalid JWT format";
 return;
 }
 
-const header = JSON.parse(atob(parts[0]));
-const payload = JSON.parse(atob(parts[1]));
+const decodeBase64UrlJSON = (segment) => {
+const base64 = segment
+    .replace(/-/g, "+")
+    .replace(/_/g, "/")
+    .padEnd(Math.ceil(segment.length / 4) * 4, "=");
+
+const binary = atob(base64);
+const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+const jsonText = new TextDecoder().decode(bytes);
+
+return JSON.parse(jsonText);
+};
+
+const header = decodeBase64UrlJSON(parts[0]);
+const payload = decodeBase64UrlJSON(parts[1]);
 
 output.textContent =
 "HEADER:\n" +
