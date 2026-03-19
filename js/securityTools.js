@@ -9,30 +9,25 @@ const generatePassword = () => {
     let password = "";
 
     for (let i = 0; i < length; i++) {
-
         const randomIndex = Math.floor(Math.random() * chars.length);
-
         password += chars[randomIndex];
-
     }
 
     $("output").textContent = password;
-    function copyPassword() {
+};
 
-    const password = document.getElementById("passwordOutput").value;
+
+// ✅ FORA de la funció
+function copyPassword() {
+
+    const password = document.getElementById("output").textContent;
 
     if (!password) return;
 
     navigator.clipboard.writeText(password);
 
-    const output = document.getElementById("output");
-    if (output) {
-        output.textContent = "Copied to clipboard ✅";
-    }
-
+    document.getElementById("output").textContent = "Copied to clipboard ✅";
 }
-
-};
 
 // ---------- UUID TOOL ----------
 
