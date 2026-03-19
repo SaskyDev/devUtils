@@ -27,7 +27,7 @@ Generate MD5, SHA1 and SHA256 hashes from any text input.
 
 <textarea id="hashInput" placeholder="Enter text"></textarea>
 
-<button onclick="generateHash('MD5')">MD5</button>
+<button onclick="generateHash('md5')">MD5</button>
 <button onclick="generateHash('SHA-1')">SHA1</button>
 <button onclick="generateHash('SHA-256')">SHA256</button>
 
@@ -81,6 +81,7 @@ A hash function converts data into a fixed-length string of characters. Hashes a
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script src="../../js/ui.js"></script>
 <script src="../../js/securityTools.js"></script>
 <script src="../../js/main.js"></script>

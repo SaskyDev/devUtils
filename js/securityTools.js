@@ -114,6 +114,18 @@ async function generateHash(type) {
 const text = document.getElementById("hashInput").value;
 const output = document.getElementById("output");
 
+if (!text) {
+output.textContent = "Enter text";
+return;
+}
+
+// 🔐 MD5 → CryptoJS
+if (type === "md5") {
+output.textContent = CryptoJS.MD5(text).toString();
+return;
+}
+
+// 🔐 SHA → Web Crypto
 const encoder = new TextEncoder();
 const data = encoder.encode(text);
 
@@ -126,8 +138,7 @@ const hashHex = hashArray
 .join("");
 
 output.textContent = hashHex;
-
-};
+}
 
 function checkPasswordStrength() {
 
