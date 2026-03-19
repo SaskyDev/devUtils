@@ -4,7 +4,7 @@
 
 body{
 font-family:system-ui,Arial,sans-serif;
-background:#e2e8f0;
+background:rgb(179, 179, 179);
 max-width:1100px;
 margin:auto;
 padding:40px;
@@ -104,7 +104,7 @@ width:100%;
 text-align:center;
 margin-bottom:70px;
 padding:60px 30px; /* 🔥 més aire */
-background:white;
+background:rgb(255, 255, 255);
 border:1px solid #e5e7eb;
 border-radius:14px;
 box-shadow:0 4px 16px rgba(0,0,0,0.05);

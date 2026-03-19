@@ -1,17 +1,38 @@
 // ================= NAVBAR =================
 
+const getSiteBasePath = () => {
+
+    const script = Array.from(document.scripts).find(currentScript => {
+
+        const source = currentScript.getAttribute("src") || "";
+
+        return source.endsWith("js/ui.js");
+
+    });
+
+    if (!script) {
+        return "./";
+    }
+
+    const source = script.getAttribute("src") || "";
+
+    return source.slice(0, -"js/ui.js".length);
+};
+
 const loadNavbar = () => {
+
+    const basePath = getSiteBasePath();
 
     const navbar = `
     <nav class="navbar">
 
         <div class="nav-left">
-            <a href="/devUtils/" class="nav-brand">DevUtils</a>
+            <a href="${basePath}index.html" class="nav-brand">DevUtils</a>
         </div>
 
         <div class="nav-right">
-            <a href="/devUtils/">Home</a>
-            <a href="/devUtils/all-tools.html">All tools</a>
+            <a href="${basePath}index.html">Home</a>
+            <a href="${basePath}all-tools.html">All tools</a>
             <button id="themeToggle" aria-label="Toggle theme">🌙</button>
         </div>
 
