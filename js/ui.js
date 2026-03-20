@@ -168,6 +168,15 @@ const initOutputStateObserver = () => {
     });
 };
 
+document.addEventListener("click", (event) => {
+
+    const { target } = event;
+
+    if (target && target.id === "themeToggle") {
+        toggleTheme();
+    }
+});
+
 
 // ================= TOOL SEARCH =================
 
@@ -197,12 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadNavbar();
     loadTheme();
     updateIcon();
-
-    const btn = document.getElementById("themeToggle");
-
-    if (btn) {
-        btn.addEventListener("click", toggleTheme);
-    }
 
     initOutputStateObserver();
 
