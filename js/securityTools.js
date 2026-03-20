@@ -32,6 +32,9 @@ async function copyPassword(buttonEl) {
                 copyButton.textContent = originalText;
             }, 1200);
         }
+        if (window.showToast) {
+            window.showToast("Generate a password first", "info");
+        }
         return;
     }
 
@@ -45,6 +48,9 @@ async function copyPassword(buttonEl) {
                 copyButton.textContent = originalText;
             }, 1200);
         }
+        if (window.showToast) {
+            window.showToast("Password copied", "success");
+        }
     } catch {
         if (copyButton) {
             const originalText = copyButton.textContent;
@@ -52,6 +58,9 @@ async function copyPassword(buttonEl) {
             setTimeout(() => {
                 copyButton.textContent = originalText;
             }, 1200);
+        }
+        if (window.showToast) {
+            window.showToast("Clipboard blocked", "error");
         }
     }
 }

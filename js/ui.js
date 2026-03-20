@@ -72,6 +72,88 @@ const updateIcon = () => {
     }
 };
 
+const ensureToastStack = () => {
+
+    let stack = document.getElementById("toastStack");
+
+    if (!stack) {
+        stack = document.createElement("div");
+        stack.id = "toastStack";
+        stack.className = "toast-stack";
+        document.body.appendChild(stack);
+    }
+
+    return stack;
+};
+
+const showToast = (message, type = "info", duration = 1800) => {
+
+    const safeType = ["success", "error", "info"].includes(type) ? type : "info";
+    const stack = ensureToastStack();
+    const toast = document.createElement("div");
+
+    toast.className = `toast toast-${safeType}`;
+    toast.textContent = message;
+    stack.appendChild(toast);
+
+    window.setTimeout(() => {
+        toast.style.animation = "toastOut .2s ease forwards";
+        window.setTimeout(() => {
+            toast.remove();
+        }, 220);
+    }, duration);
+};
+
+const classifyOutputState = (text) => {
+
+    const normalized = (text || "").trim().toLowerCase();
+
+    if (!normalized) {
+        return "info";
+    }
+
+    if (/(invalid|error|failed|unable|do not match|required|enter both|enter text|copy failed)/.test(normalized)) {
+        return "error";
+    }
+
+    if (/(match|valid|strong|copied|generated|success|rgb\(|^#([0-9a-f]{6}|[0-9a-f]{3}))/i.test(normalized)) {
+        return "success";
+    }
+
+    return "info";
+};
+
+const applyOutputStateClass = (preEl) => {
+
+    if (!preEl) return;
+
+    const state = classifyOutputState(preEl.textContent);
+
+    preEl.classList.add("output-state");
+    preEl.classList.remove("output-success", "output-error", "output-info");
+    preEl.classList.add(`output-${state}`);
+};
+
+const initOutputStateObserver = () => {
+
+    const outputs = document.querySelectorAll("pre#output");
+
+    outputs.forEach((pre) => {
+
+        applyOutputStateClass(pre);
+
+        const observer = new MutationObserver(() => {
+            applyOutputStateClass(pre);
+        });
+
+        observer.observe(pre, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+    });
+};
+
 
 // ================= TOOL SEARCH =================
 
@@ -107,5 +189,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btn) {
         btn.addEventListener("click", toggleTheme);
     }
+
+    initOutputStateObserver();
+
+    window.showToast = showToast;
+
+    requestAnimationFrame(() => {
+        document.body.classList.add("ui-ready");
+    });
 
 });

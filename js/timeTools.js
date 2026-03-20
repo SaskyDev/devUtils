@@ -6,6 +6,7 @@ const convertTimestamp = () => {
 
     if (!input) {
         output.textContent = "Enter a timestamp";
+        if (window.showToast) window.showToast("Enter a timestamp", "info");
         return;
     }
 
@@ -13,11 +14,13 @@ const convertTimestamp = () => {
 
     if (isNaN(baseDate.getTime())) {
         output.textContent = "Invalid base date. Use ISO format like 1970-01-01T00:00:00Z";
+        if (window.showToast) window.showToast("Invalid base date", "error");
         return;
     }
 
     if (!/^-?\d+$/.test(input)) {
         output.textContent = "Timestamp must be a valid integer";
+        if (window.showToast) window.showToast("Timestamp must be an integer", "error");
         return;
     }
 
@@ -27,6 +30,7 @@ const convertTimestamp = () => {
 
     if (isNaN(date.getTime())) {
         output.textContent = "Invalid timestamp";
+        if (window.showToast) window.showToast("Invalid timestamp", "error");
         return;
     }
 
@@ -34,6 +38,8 @@ const convertTimestamp = () => {
         "Base (UTC): " + baseDate.toISOString() + "\n" +
         "ISO: " + date.toISOString() + "\n" +
         "Local: " + date.toLocaleString();
+
+    if (window.showToast) window.showToast("Timestamp converted", "success", 1400);
 
 };
 
@@ -45,6 +51,7 @@ const baseDate = new Date(baseInput);
 
 if (isNaN(baseDate.getTime())) {
 output.textContent = "Invalid base date. Use ISO format like 1970-01-01T00:00:00Z";
+if (window.showToast) window.showToast("Invalid base date", "error");
 return;
 }
 
@@ -57,5 +64,7 @@ output.textContent =
 Milliseconds: ${elapsedMs}
 Base (UTC): ${baseDate.toISOString()}
 Now (UTC): ${new Date(nowMs).toISOString()}`;
+
+if (window.showToast) window.showToast("Timestamp generated", "success", 1400);
 
 };

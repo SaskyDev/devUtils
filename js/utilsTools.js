@@ -32,6 +32,7 @@ const output = document.getElementById("output");
 
 if (hex.length !== 6) {
 output.textContent = "Invalid HEX color";
+if (window.showToast) window.showToast("Invalid HEX color", "error");
 return;
 }
 
@@ -40,6 +41,7 @@ const g = parseInt(hex.substring(2,4),16);
 const b = parseInt(hex.substring(4,6),16);
 
 output.textContent = `rgb(${r}, ${g}, ${b})`;
+if (window.showToast) window.showToast("Color converted to RGB", "success", 1400);
 
 }
 
@@ -54,6 +56,7 @@ const input = raw.split(",");
 
 if (input.length !== 3) {
 output.textContent = "Invalid RGB format. Use: 255,0,0 or rgb(255,0,0)";
+if (window.showToast) window.showToast("Invalid RGB format", "error");
 return;
 }
 
@@ -61,11 +64,13 @@ const nums = input.map(v => parseInt(v.trim(), 10));
 
 if (nums.some(n => isNaN(n) || n < 0 || n > 255)) {
 output.textContent = "Invalid RGB values. Each component must be 0–255";
+if (window.showToast) window.showToast("RGB values must be between 0 and 255", "error");
 return;
 }
 
 const toHex = n => n.toString(16).padStart(2, "0");
 output.textContent = `#${toHex(nums[0])}${toHex(nums[1])}${toHex(nums[2])}`;
+if (window.showToast) window.showToast("Color converted to HEX", "success", 1400);
 
 }
 
@@ -225,6 +230,7 @@ const fromBase = parseInt(document.getElementById("fromBase").value);
 
 if (!input) {
     document.getElementById("output").textContent = "Enter a number";
+    if (window.showToast) window.showToast("Enter a number first", "info");
     return;
 }
 
@@ -242,9 +248,11 @@ try {
 `Decimal: ${decimal}
 Binary: ${binary}
 Hex: ${hex}`;
+    if (window.showToast) window.showToast("Base converted", "success", 1400);
 
 } catch {
     document.getElementById("output").textContent = "Invalid input for selected base";
+    if (window.showToast) window.showToast("Invalid value for selected base", "error");
 }
 };
 
@@ -255,6 +263,7 @@ const input = document.getElementById("dateInput").value.trim();
 
 if (!input) {
     document.getElementById("output").textContent = "Enter a date or timestamp";
+    if (window.showToast) window.showToast("Enter a date or timestamp", "info");
     return;
 }
 
@@ -276,6 +285,7 @@ if (!isNaN(input)) {
 
 if (isNaN(date.getTime())) {
     document.getElementById("output").textContent = "Invalid date";
+    if (window.showToast) window.showToast("Invalid date format", "error");
     return;
 }
 
@@ -287,6 +297,7 @@ document.getElementById("output").textContent =
 `ISO: ${iso}
 Local: ${local}
 Unix: ${unix}`;
+if (window.showToast) window.showToast("Date converted", "success", 1400);
 };
 
 // ================= TIMESTAMP CONVERTER =================
@@ -298,6 +309,7 @@ const baseInput = document.getElementById("epochBase")?.value.trim() || "1970-01
 
 if (!input) {
     output.textContent = "Enter a timestamp";
+    if (window.showToast) window.showToast("Enter a timestamp", "info");
     return;
 }
 
@@ -305,11 +317,13 @@ const baseDate = new Date(baseInput);
 
 if (isNaN(baseDate.getTime())) {
     output.textContent = "Invalid base date. Use ISO format like 1970-01-01T00:00:00Z";
+    if (window.showToast) window.showToast("Invalid base date", "error");
     return;
 }
 
 if (!/^-?\d+$/.test(input)) {
     output.textContent = "Timestamp must be a valid integer";
+    if (window.showToast) window.showToast("Timestamp must be an integer", "error");
     return;
 }
 
@@ -322,6 +336,7 @@ date = new Date(baseDate.getTime() + timestampMs);
 
 if (isNaN(date.getTime())) {
     output.textContent = "Invalid timestamp";
+    if (window.showToast) window.showToast("Invalid timestamp", "error");
     return;
 }
 
@@ -329,4 +344,5 @@ output.textContent =
     "Base (UTC): " + baseDate.toISOString() + "\n" +
     "ISO: " + date.toISOString() + "\n" +
     "Local: " + date.toLocaleString();
+if (window.showToast) window.showToast("Timestamp converted", "success", 1400);
 }
