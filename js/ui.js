@@ -33,7 +33,7 @@ const loadNavbar = () => {
         <div class="nav-right">
             <a href="${basePath}index.html" class="nav-btn">Home</a>
             <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
-            <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+            <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
         </div>
 
     </nav>
@@ -49,14 +49,28 @@ const toggleTheme = () => {
 
     const isDark = document.body.classList.toggle("dark");
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch {
+        // No bloquear el toggle si el storage está restringido.
+    }
 
     updateIcon();
+
+    if (window.showToast) {
+        window.showToast(isDark ? "Dark mode enabled" : "Light mode enabled", "info", 1200);
+    }
 };
 
 const loadTheme = () => {
 
-    const saved = localStorage.getItem("theme");
+    let saved = null;
+
+    try {
+        saved = localStorage.getItem("theme");
+    } catch {
+        saved = null;
+    }
 
     if (saved === "dark") {
         document.body.classList.add("dark");

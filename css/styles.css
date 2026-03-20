@@ -629,6 +629,11 @@ body.dark a:visited{
 color:#c4b5fd;
 }
 
+body.dark .nav-right a.nav-btn,
+body.dark .nav-right a.nav-btn:visited{
+color:#ffffff;
+}
+
 body.dark .nav-brand{
 color:#f9fafb;
 }
