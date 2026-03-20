@@ -1,6 +1,5 @@
 # Project Log
 
-
 ## Savepoint – 20 Tools Implemented
 
 Date: 2026-03-13
@@ -10,14 +9,14 @@ Current status of the DevUtils project.
 The goal of the project is to build a collection of lightweight developer tools that run directly in the browser.
 
 Main objectives:
+
 - Practice programming
 - Build useful tools
 - Potential future passive income through SEO and ads
 
-
 ---
 
-# Project Architecture
+## Project Architecture
 
 The project uses a modular and scalable structure.
 
@@ -47,44 +46,48 @@ js/textTools.js → text related tools
 js/utilsTools.js → general utilities  
 js/timeTools.js → timestamp related tools
 
-
 ---
 
-# UI Improvements
+## UI Improvements
 
 Several improvements were implemented to make the project look more like a real web product.
 
 Hero Section
+
 - Added a hero section on the homepage
 - Includes project title, description and tool search
 - Hero section visually separated from tools with background and spacing
 
 Tool Cards
+
 - Tools are displayed in a responsive grid
 - Each tool uses a card layout with hover effects
 
 Icons
+
 - Added icons to tools for better visual identification
 
 Search
+
 - Implemented a search input to filter tools dynamically
 
 Navbar
+
 - Improved navigation bar layout
 - Brand name displayed on the left
 - Navigation links on the right
 - Visual separation with background and shadow
 
 CSS Improvements
+
 - Cleaned and reorganized the stylesheet
 - Removed duplicated styles
 - Improved readability structure
 - Added content width constraints for better text readability
 
-
 ---
 
-# Tool Pages Improvements
+## Tool Pages Improvements
 
 Tool pages now follow a consistent structure.
 
@@ -102,10 +105,9 @@ This improves:
 - SEO potential
 - clarity for users
 
-
 ---
 
-# Navigation Improvements
+## Navigation Improvements
 
 Related Tools
 
@@ -118,10 +120,9 @@ This improves:
 - session duration
 - tool discovery
 
-
 ---
 
-# Additional Pages
+## Additional Pages
 
 All Tools Page
 
@@ -137,31 +138,33 @@ js/toolsList.js
 
 This allows the project to scale easily as new tools are added.
 
-
 ---
 
-# SEO Setup
+## SEO Setup
 
 Basic SEO configuration has been implemented.
 
 Google Search Console
+
 - Project verified in Google Search Console
 
 Sitemap
+
 - sitemap.xml created and submitted
 
 Meta Tags
+
 - Meta description added to tool pages
 - Robots tag configured
 
 These changes allow search engines to start indexing the site.
 
-
 ---
 
-# Tools Implemented
+## Tools Implemented
 
 Developer Tools
+
 - JSON Formatter
 - JSON Validator
 - Regex Tester
@@ -171,15 +174,18 @@ Developer Tools
 - URL Parser
 
 Encoding Tools
+
 - Base64 Encoder / Decoder
 - URL Encoder / Decoder
 
 Security Tools
+
 - Password Generator
 - Hash Generator
 - JWT Decoder
 
 Text Tools
+
 - Text Case Converter
 - Slug Generator
 - Word Counter
@@ -187,28 +193,26 @@ Text Tools
 - Text Reverser
 
 Utility Tools
+
 - Random Number Generator
 - Color Converter
 - Timestamp Generator
 
-
 ---
 
-# Current Tool Count
+## Current Tool Count
 
 20 tools implemented.
 
-
 ---
 
-# Project Brand
+## Project Brand
 
 DevUtils — by SaskyDev
 
-
 ---
 
-# Current Project Status
+## Current Project Status
 
 The project is now publicly accessible online and indexed by search engines.
 
@@ -220,10 +224,9 @@ The foundation of the project is complete:
 - Category structure
 - SEO base configuration
 
-
 ---
 
-# Next Steps
+## Next Steps
 
 Planned improvements for the next development sessions:
 

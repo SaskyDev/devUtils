@@ -25,6 +25,11 @@ Generate the current Unix timestamp instantly.
 
 <div class="tool-container">
 
+<label for="epochBase">Base date (ISO, UTC)</label>
+<input id="epochBase" value="1970-01-01T00:00:00Z" placeholder="1970-01-01T00:00:00Z">
+
+<br><br>
+
 <button onclick="generateTimestamp()">Generate Timestamp</button>
 
 </div>
@@ -36,6 +41,7 @@ Generate the current Unix timestamp instantly.
 
 <p>
 A Unix timestamp represents the number of seconds that have passed since January 1, 1970 (UTC).
+In this tool you can choose a different base date and generate the timestamp from that point.
 </p>
 
 
@@ -43,6 +49,7 @@ A Unix timestamp represents the number of seconds that have passed since January
 
 <ol>
 
+<li>Set the base date (or keep Unix default).</li>
 <li>Click the generate button.</li>
 <li>The current timestamp will appear below.</li>
 

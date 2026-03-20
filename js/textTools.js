@@ -20,13 +20,27 @@ const capitalizeText = () => {
 
     const input = document.getElementById("textInput").value;
 
-    const words = input.split(" ");
+    const capitalized = input
+        .toLowerCase()
+        .replace(/(^|[\s([{"'¿¡-]+)(\p{L})/gu, (_, prefix, letter) => {
+            return `${prefix}${letter.toUpperCase()}`;
+        });
 
-    const capitalized = words.map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    );
+    document.getElementById("output").textContent = capitalized;
 
-    document.getElementById("output").textContent = capitalized.join(" ");
+};
+
+const toSentenceCaseText = () => {
+
+    const input = document.getElementById("textInput").value;
+
+    const sentenceCase = input
+        .toLowerCase()
+        .replace(/(^\s*|[.!?]\s+)([¿¡"'([{]*)(\p{L})/gu, (_, prefix, opening, letter) => {
+            return `${prefix}${opening}${letter.toUpperCase()}`;
+        });
+
+    document.getElementById("output").textContent = sentenceCase;
 
 };
 

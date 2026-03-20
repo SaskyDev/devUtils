@@ -287,20 +287,31 @@ Unix: ${unix}`;
 function convertTimestamp() {
 const input = document.getElementById("timestampInput").value.trim();
 const output = document.getElementById("output");
+const baseInput = document.getElementById("epochBase")?.value.trim() || "1970-01-01T00:00:00Z";
 
 if (!input) {
     output.textContent = "Enter a timestamp";
     return;
 }
 
-let date;
+const baseDate = new Date(baseInput);
 
-  // segons o mil·lisegons
-if (input.length === 13) {
-    date = new Date(parseInt(input));
-} else {
-    date = new Date(parseInt(input) * 1000);
+if (isNaN(baseDate.getTime())) {
+    output.textContent = "Invalid base date. Use ISO format like 1970-01-01T00:00:00Z";
+    return;
 }
+
+if (!/^-?\d+$/.test(input)) {
+    output.textContent = "Timestamp must be a valid integer";
+    return;
+}
+
+let date;
+const numericTimestamp = parseInt(input, 10);
+const timestampMs = input.length === 13 ? numericTimestamp : numericTimestamp * 1000;
+
+  // Count from custom base date instead of always using Unix epoch.
+date = new Date(baseDate.getTime() + timestampMs);
 
 if (isNaN(date.getTime())) {
     output.textContent = "Invalid timestamp";
@@ -308,6 +319,7 @@ if (isNaN(date.getTime())) {
 }
 
 output.textContent =
+    "Base (UTC): " + baseDate.toISOString() + "\n" +
     "ISO: " + date.toISOString() + "\n" +
     "Local: " + date.toLocaleString();
 }
