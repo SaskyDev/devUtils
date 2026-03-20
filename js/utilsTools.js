@@ -46,19 +46,26 @@ output.textContent = `rgb(${r}, ${g}, ${b})`;
 
 function rgbToHEX() {
 
-const input = document.getElementById("colorInput").value.split(",");
+const raw = document.getElementById("colorInput").value
+  .replace(/rgb\s*\(/i, "").replace(/\)/, "").trim();
 const output = document.getElementById("output");
 
+const input = raw.split(",");
+
 if (input.length !== 3) {
-output.textContent = "Invalid RGB format";
+output.textContent = "Invalid RGB format. Use: 255,0,0 or rgb(255,0,0)";
 return;
 }
 
-const r = parseInt(input[0]).toString(16).padStart(2,"0");
-const g = parseInt(input[1]).toString(16).padStart(2,"0");
-const b = parseInt(input[2]).toString(16).padStart(2,"0");
+const nums = input.map(v => parseInt(v.trim(), 10));
 
-output.textContent = `#${r}${g}${b}`;
+if (nums.some(n => isNaN(n) || n < 0 || n > 255)) {
+output.textContent = "Invalid RGB values. Each component must be 0–255";
+return;
+}
+
+const toHex = n => n.toString(16).padStart(2, "0");
+output.textContent = `#${toHex(nums[0])}${toHex(nums[1])}${toHex(nums[2])}`;
 
 }
 

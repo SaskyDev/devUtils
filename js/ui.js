@@ -31,8 +31,8 @@ const loadNavbar = () => {
         </div>
 
         <div class="nav-right">
-            <a href="${basePath}index.html">Home</a>
-            <a href="${basePath}all-tools.html">All tools</a>
+            <a href="${basePath}index.html" class="nav-btn">Home</a>
+            <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
             <button id="themeToggle" aria-label="Toggle theme">🌙</button>
         </div>
 
