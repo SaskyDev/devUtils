@@ -52,6 +52,7 @@ Generate a secure JWT (HS256) from header, payload and secret.
 <input type="text" id="jwtSecret" placeholder="Enter secret key">
 
 <button onclick="generateJWT()">Generate JWT</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Generate a token first" data-copy-success="JWT copied">Copy</button>
 
 </div>
 
@@ -59,6 +60,7 @@ Generate a secure JWT (HS256) from header, payload and secret.
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <!-- TOOL DOCUMENTATION -->

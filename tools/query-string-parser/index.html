@@ -33,6 +33,7 @@ Extract and analyze parameters from a URL query string.
 <input id="queryInput" placeholder="?user=alex&id=5">
 
 <button onclick="parseQuery()">Parse Query</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Parse a query first" data-copy-success="Parsed query copied">Copy</button>
 
 </div>
 
@@ -40,6 +41,7 @@ Extract and analyze parameters from a URL query string.
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <h2>What is a query string?</h2>

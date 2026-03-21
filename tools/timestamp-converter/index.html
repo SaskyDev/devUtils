@@ -36,11 +36,13 @@ translate timestamps commonly used in APIs, logs and databases into standard dat
 <br><br>
 
 <button onclick="convertTimestamp()">Convert</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Convert a timestamp first" data-copy-success="Timestamp result copied">Copy</button>
 
 
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <!-- DOCUMENTATION -->

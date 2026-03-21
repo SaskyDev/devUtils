@@ -32,14 +32,14 @@ Paste your JSON in the input box and the tool will instantly format it into a re
 
 <button onclick="formatJSON()">Format</button>
 <button onclick="minifyJSON()">Minify</button>
-<button onclick="copyJSON()">Copy formatted JSON</button>
+<button class="btn-copy" onclick="copyJSON(this)">Copy formatted JSON</button>
 <button onclick="clearJSON()">Clear</button>
 
 
 <!-- RESULT -->
 
 <pre id="output"></pre>
-
+<div id="status"></div>
 
 <!-- DOCUMENTATION -->
 

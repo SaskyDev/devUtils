@@ -28,11 +28,12 @@ Analyze any URL and extract its components.
 <input id="urlInput" placeholder="Enter URL">
 
 <button onclick="parseURL()">Parse URL</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Parse a URL first" data-copy-success="Parsed URL copied">Copy</button>
 
 </div>
 
 <pre id="output"></pre>
-
+<div id="status"></div>
 
 <h2>What is a URL parser?</h2>
 

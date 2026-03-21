@@ -33,6 +33,7 @@ Convert CSV data into JSON format instantly.
 <textarea id="csvInput" placeholder="name,age&#10;alex,28"></textarea>
 
 <button onclick="convertCSVtoJSON()">Convert</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Convert CSV first" data-copy-success="JSON copied">Copy</button>
 
 </div>
 
@@ -40,6 +41,7 @@ Convert CSV data into JSON format instantly.
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <h2>What is CSV?</h2>

@@ -24,24 +24,55 @@
 
 <header class="hero">
 
+<p class="hero-eyebrow">Fast browser-based developer toolkit</p>
+
 <img src="logo-devutils.png" alt="DevUtils logo" class="logo">
 
-<h1>DevUtils</h1>
+<h1>Ship faster with practical tools for daily dev work</h1>
 
 <p class="hero-subtitle">
-Free developer tools that run directly in your browser.
-Each tool includes clear usage instructions and examples.
+Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds.
+No sign-up, no installs, no backend required.
 
 </p>
 
+<div class="hero-search-wrap">
 <input
 type="text"
 id="toolSearch"
-placeholder="Search developer tools..."
+placeholder="Search tools: json, base64, jwt, csv, url..."
 onkeyup="filterTools()">
+</div>
+
+<p class="hero-note">30 tools available and growing</p>
 
 <div class="hero-actions">
 <a href="all-tools.html" class="btn-primary">View all tools</a>
+<a href="#categories" class="btn-secondary">Explore categories</a>
+</div>
+
+<div class="hero-stats">
+<div class="stat-card">
+<strong>30</strong>
+<span>Tools</span>
+</div>
+<div class="stat-card">
+<strong>100%</strong>
+<span>Client-side</span>
+</div>
+<div class="stat-card">
+<strong>0</strong>
+<span>Sign-up friction</span>
+</div>
+</div>
+
+<div class="quick-links">
+<a href="tools/json-formatter/" class="quick-chip">JSON Formatter</a>
+<a href="tools/base64/" class="quick-chip">Base64</a>
+<a href="tools/jwt-encoder/" class="quick-chip">JWT Encoder</a>
+<a href="tools/hash-generator/" class="quick-chip">Hash Generator</a>
+<a href="tools/csv-to-json/" class="quick-chip">CSV to JSON</a>
+<a href="tools/timestamp-converter/" class="quick-chip">Timestamp</a>
 </div>
 
 </header>
@@ -52,10 +83,16 @@ onkeyup="filterTools()">
 
 <section>
 
+<div class="home-intro">
+<h2>Built For Real Development Workflows</h2>
 <p>
-DevUtils provides simple utilities for developers including JSON formatters,
-regex testers, encoding tools and many other small tools that help speed up development workflows.
+DevUtils focuses on practical utilities you need while building APIs, debugging payloads,
+testing data formats and handling security-related strings.
 </p>
+<p>
+Each tool is lightweight, direct and designed to return useful output fast.
+</p>
+</div>
 
 </section>
 
@@ -132,35 +169,40 @@ regex testers, encoding tools and many other small tools that help speed up deve
 </section>
 
 
-<section>
+<section id="categories">
 
 <h2>Explore Categories</h2>
 
-<div class="tools-grid">
+<div class="tools-grid category-grid">
 
-<a href="all-tools.html" class="tool-card">
+<a href="all-tools.html" class="tool-card category-card">
 <span class="tool-icon">🧩</span>
 <span class="tool-title">Developer Tools</span>
+<span class="category-meta">JSON, Regex, UUID, URL, CSV</span>
 </a>
 
-<a href="all-tools.html" class="tool-card">
+<a href="all-tools.html" class="tool-card category-card">
 <span class="tool-icon">🔐</span>
 <span class="tool-title">Encoding Tools</span>
+<span class="category-meta">Base64 and URL encoding helpers</span>
 </a>
 
-<a href="all-tools.html" class="tool-card">
+<a href="all-tools.html" class="tool-card category-card">
 <span class="tool-icon">🛡</span>
 <span class="tool-title">Security Tools</span>
+<span class="category-meta">Password, hash and JWT utilities</span>
 </a>
 
-<a href="all-tools.html" class="tool-card">
+<a href="all-tools.html" class="tool-card category-card">
 <span class="tool-icon">🔤</span>
 <span class="tool-title">Text Tools</span>
+<span class="category-meta">Case, slug, counters and diff</span>
 </a>
 
-<a href="all-tools.html" class="tool-card">
+<a href="all-tools.html" class="tool-card category-card">
 <span class="tool-icon">⚙️</span>
 <span class="tool-title">Utility Tools</span>
+<span class="category-meta">Dates, timestamps, random and color</span>
 </a>
 
 </div>

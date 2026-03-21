@@ -34,6 +34,7 @@ Convert dates between readable formats and Unix timestamps instantly.
 <input type="text" id="dateInput" placeholder="e.g. 2024-01-01 or 1704067200">
 
 <button onclick="formatDate()">Convert</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Convert a date first" data-copy-success="Date result copied">Copy</button>
 
 </div>
 
@@ -41,6 +42,7 @@ Convert dates between readable formats and Unix timestamps instantly.
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <!-- TOOL DOCUMENTATION -->

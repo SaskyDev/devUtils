@@ -42,6 +42,24 @@ const loadNavbar = () => {
     document.body.insertAdjacentHTML("afterbegin", navbar);
 };
 
+const updateNavbarOnScroll = () => {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    const shouldCompact = window.scrollY > 14;
+
+    navbar.classList.toggle("nav-compact", shouldCompact);
+};
+
+const initNavbarScrollState = () => {
+
+    updateNavbarOnScroll();
+
+    window.addEventListener("scroll", updateNavbarOnScroll, { passive: true });
+};
+
 
 // ================= DARK MODE =================
 
@@ -204,6 +222,7 @@ const filterTools = () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     loadNavbar();
+    initNavbarScrollState();
     loadTheme();
     updateIcon();
 

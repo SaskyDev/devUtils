@@ -103,13 +103,14 @@ const reverseText = () => {
 // ================= TEXT DIFF =================
 
 function compareText() {
+
 const t1 = document.getElementById("text1").value;
 const t2 = document.getElementById("text2").value;
 const output = document.getElementById("output");
 
 if (!t1 || !t2) {
-    output.textContent = "Enter both texts";
-    return;
+output.textContent = "Enter both texts";
+return;
 }
 
 let result = "";
@@ -117,12 +118,21 @@ let result = "";
 const maxLength = Math.max(t1.length, t2.length);
 
 for (let i = 0; i < maxLength; i++) {
-    if (t1[i] === t2[i]) {
-    result += t1[i] || "";
-    } else {
-    result += `[${t1[i] || ""}|${t2[i] || ""}]`;
+
+const char1 = t1[i] || "";
+const char2 = t2[i] || "";
+
+if (char1 === char2) {
+    result += char1;
+} else {
+    if (char1) {
+    result += `<span style="background:#fee2e2;color:#991b1b;padding:1px 2px;border-radius:3px;">${char1}</span>`;
+    }
+    if (char2) {
+    result += `<span style="background:#dcfce7;color:#166534;padding:1px 2px;border-radius:3px;">${char2}</span>`;
     }
 }
+}
 
-output.textContent = result;
-};
+output.innerHTML = result;
+}

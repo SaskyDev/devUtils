@@ -32,12 +32,14 @@ This tool is commonly used when working with APIs, authentication headers and en
 
 <button onclick="encodeBase64()">Encode</button>
 <button onclick="decodeBase64()">Decode</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Encode or decode first" data-copy-success="Base64 result copied">Copy</button>
 <button onclick="clearBase64()">Clear</button>
 
 
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <!-- DOCUMENTATION -->

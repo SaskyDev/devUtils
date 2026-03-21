@@ -9,6 +9,14 @@ Tools included:
 * Base64 Encoder / Decoder
 * Timestamp Converter
 * UUID Generator
+* JWT Encoder / Decoder
+* Hash Generator
+* Date Formatter
+* CSV to JSON
+* JSON to CSV
+* URL Parser
+* Query String Parser
+* Color Converter
 
 Goal of the project:
 

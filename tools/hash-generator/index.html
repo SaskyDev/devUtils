@@ -30,11 +30,12 @@ Generate MD5, SHA1 and SHA256 hashes from any text input.
 <button onclick="generateHash('md5')">MD5</button>
 <button onclick="generateHash('SHA-1')">SHA1</button>
 <button onclick="generateHash('SHA-256')">SHA256</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Generate a hash first" data-copy-success="Hash copied">Copy</button>
 
 </div>
 
 <pre id="output"></pre>
-
+<div id="status"></div>
 
 <h2>What is a hash?</h2>
 

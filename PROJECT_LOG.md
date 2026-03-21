@@ -1,8 +1,8 @@
 # Project Log
 
-## Savepoint – 20 Tools Implemented
+## Savepoint – 30 Tools Implemented
 
-Date: 2026-03-13
+Date: 2026-03-21
 
 Current status of the DevUtils project.
 
@@ -181,8 +181,11 @@ Encoding Tools
 Security Tools
 
 - Password Generator
+- Password Strength Checker
 - Hash Generator
 - JWT Decoder
+- JWT Encoder
+- Hash Compare
 
 Text Tools
 
@@ -191,18 +194,28 @@ Text Tools
 - Word Counter
 - Lorem Ipsum Generator
 - Text Reverser
+- Text Diff Checker (optional)
 
 Utility Tools
 
 - Random Number Generator
+- Query String Parser
 - Color Converter
+- Color Picker
 - Timestamp Generator
+- Date Formatter
+- Base Converter
+
+Data Tools
+
+- CSV to JSON
+- JSON to CSV
 
 ---
 
 ## Current Tool Count
 
-20 tools implemented.
+30 tools implemented.
 
 ---
 
@@ -230,7 +243,7 @@ The foundation of the project is complete:
 
 Planned improvements for the next development sessions:
 
-- Expand tool collection (target: 30 tools)
+- Expand tool collection (target: 40 tools)
 - Continue improving UI polish
 - Improve the All Tools page
 - Standardize icons across tools

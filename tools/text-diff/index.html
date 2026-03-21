@@ -37,6 +37,7 @@ Compare two texts and instantly see the differences between them.
 <textarea id="text2" placeholder="Enter second text..."></textarea>
 
 <button onclick="compareText()">Compare</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Compare two texts first" data-copy-success="Diff copied">Copy</button>
 
 </div>
 
@@ -44,6 +45,7 @@ Compare two texts and instantly see the differences between them.
 <!-- RESULT -->
 
 <pre id="output"></pre>
+<div id="status"></div>
 
 
 <!-- TOOL DOCUMENTATION -->

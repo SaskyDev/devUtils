@@ -34,7 +34,16 @@ const minifyJSON = () => {
 };
 
 
-const copyJSON = () => {
+const copyJSON = (buttonEl) => {
+
+    if (typeof window.copyOutput === "function") {
+        window.copyOutput(buttonEl, {
+            outputId: "output",
+            emptyMessage: "Format or minify JSON first",
+            successMessage: "JSON copied"
+        });
+        return;
+    }
 
     navigator.clipboard.writeText($("output").textContent);
 
