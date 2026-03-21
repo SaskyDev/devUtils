@@ -105,9 +105,10 @@ const reverseText = () => {
 function compareText() {
 const t1 = document.getElementById("text1").value;
 const t2 = document.getElementById("text2").value;
+const output = document.getElementById("output");
 
 if (!t1 || !t2) {
-    document.getElementById("diffResult").textContent = "Enter both texts";
+    output.textContent = "Enter both texts";
     return;
 }
 
@@ -123,5 +124,5 @@ for (let i = 0; i < maxLength; i++) {
     }
 }
 
-document.getElementById("diffResult").textContent = result;
+output.textContent = result;
 };
