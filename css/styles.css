@@ -245,7 +245,8 @@ margin:0 auto 16px auto;
 }
 
 .hero h1{
-font-size:40px;
+font-size:36px;
+margin-top:0;
 margin-bottom:25px;
 max-width:18ch;
 margin-left:auto;
@@ -414,12 +415,12 @@ line-height:1.4;
 /* ===================================================== */
 
 .logo{
-width:180px;
+width:320px;
 max-width:100%;
 height:auto;
 display:block;
 margin:auto;
-margin-bottom:20px;
+margin-bottom:0px;
 }
 
 
