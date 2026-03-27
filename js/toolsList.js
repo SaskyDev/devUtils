@@ -35,6 +35,7 @@ const tools = [
 { name: "🔢 Base Converter", url: "tools/base-converter/", category: "Utility Tools" },
 { name: "📅 Date Formatter", url: "tools/date-formatter/", category: "Utility Tools" },
 { name: "🧬 Hash Compare", url: "tools/hash-compare/", category: "Security Tools" },
+{ name: "🖥 HTML Preview Editor", url: "tools/html-preview/", category: "Developer Tools" },
 ];
 
 

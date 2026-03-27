@@ -155,7 +155,10 @@ gap:10px;
 }
 
 .nav-right a.nav-btn{
-display:inline-block;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+white-space:nowrap;
 margin-left:0;
 text-decoration:none;
 background:linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
@@ -164,7 +167,6 @@ font-weight:500;
 font-size:15px;
 padding:0 16px;
 border-radius:var(--radius-sm);
-line-height:40px;
 height:40px;
 transition:.2s ease;
 border:1px solid #1d4ed8;
@@ -420,7 +422,7 @@ max-width:100%;
 height:auto;
 display:block;
 margin:auto;
-margin-bottom:0px;
+margin-bottom:0;
 }
 
 
@@ -938,7 +940,6 @@ linear-gradient(180deg, #101d38 0%, #0a1020 240px);
 color:var(--text);
 }
 
-body.dark .navbar,
 body.dark .hero,
 body.dark section,
 body.dark .tool-container,
@@ -1217,6 +1218,10 @@ transition:none !important;
 }
 }
 
+/* ===================================================== */
+/* ====================== STATUS ======================= */
+/* ===================================================== */
+
 #status{
 margin-top:10px;
 font-weight:600;
@@ -1235,4 +1240,69 @@ border:1px solid #86efac;
 background:#fee2e2;
 color:#991b1b;
 border:1px solid #fca5a5;
+}
+
+/* ===================================================== */
+/* =================== HTML EDITOR ===================== */
+/* ===================================================== */
+
+.html-editor{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.editor-wrapper,
+.preview-wrapper{
+display:flex;
+flex-direction:column;
+height:350px;
+}
+
+.html-editor textarea{
+flex:1;
+height:auto;
+font-family:monospace;
+border-radius:10px;
+border:1px solid #e5e7eb;
+padding:15px;
+resize:none;
+}
+
+.preview-label{
+font-size:13px;
+margin-bottom:5px;
+color:#6b7280;
+}
+
+.html-editor iframe{
+flex:1;
+height:auto;
+border-radius:10px;
+border:1px solid #e5e7eb;
+background:white;
+}
+
+/* DARK MODE */
+
+body.dark .html-editor textarea,
+body.dark .html-editor iframe{
+background:#1f2937;
+border-color:#374151;
+color:#e5e7eb;
+}
+
+/* MOBILE */
+
+@media (max-width:800px){
+.html-editor{
+grid-template-columns:1fr;
+}
+}
+
+.tool-actions{
+margin-top:15px;
+display:flex;
+justify-content:flex-start;
+gap:10px;
 }

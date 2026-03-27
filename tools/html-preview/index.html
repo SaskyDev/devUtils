@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML Preview Editor - DevUtils</title>
+
+<meta name="description" content="Write HTML and preview it instantly in your browser. Live editor with real-time rendering.">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>HTML Preview Editor</h1>
+
+<p class="tool-description">
+Write HTML and see the result instantly. Perfect for testing layouts and snippets.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Editor</h2>
+
+<div class="html-editor">
+
+<div class="editor-wrapper">
+<div class="preview-label">HTML</div>
+<textarea id="htmlInput"></textarea>
+</div>
+
+<div class="preview-wrapper">
+<div class="preview-label">Preview</div>
+<iframe id="preview"></iframe>
+</div>
+
+</div>
+
+<!-- BOTONS BAIX -->
+<div class="tool-actions">
+<button onclick="loadExample()">Example</button>
+<button onclick="clearEditor()">Clear</button>
+<button onclick="copyCode()">Copy</button>
+</div>
+
+</section>
+
+
+<!-- DOCUMENTATION -->
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool allows you to write HTML code and instantly see the result. It is useful for testing layouts, debugging code and experimenting with UI ideas.
+</p>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Write or paste your HTML code</li>
+<li>The preview updates automatically</li>
+<li>Use buttons to clear, copy or load an example</li>
+</ol>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;This is a preview&lt;/p&gt;
+</pre>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- SCRIPTS -->
+<script src="../../js/ui.js"></script>
+<script src="../../js/html-preview.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

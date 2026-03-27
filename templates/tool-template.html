@@ -4,13 +4,10 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>TOOL NAME - DevUtils</title>
-
 <meta name="description" content="Short description of the tool.">
-
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="../../css/styles.css">
@@ -20,84 +17,103 @@
 
 <body>
 
+<!-- HERO TOOL -->
+<section class="tool-container">
+
 <h1>TOOL NAME</h1>
 
-<p>
+<p class="tool-description">
 Short explanation of what this tool does and why it is useful.
 </p>
 
+</section>
+
 
 <!-- TOOL INTERFACE -->
+<section class="tool-container">
 
-<div class="tool-container">
+<h2>Tool</h2>
 
-<!-- Inputs / buttons here -->
+<div class="tool-ui">
+
+<!-- Inputs -->
+<textarea placeholder="Paste your input here..."></textarea>
+
+<!-- Buttons -->
+<div class="tool-actions">
+<button>Run</button>
+<button>Clear</button>
+</div>
+
+<!-- Output -->
+<pre id="output">Result will appear here...</pre>
 
 </div>
 
-
-<!-- RESULT -->
-
-<pre id="output"></pre>
+</section>
 
 
-<!-- TOOL DOCUMENTATION -->
-
-<h2>What is this tool?</h2>
-
-<p>
-Explain the concept behind the tool.
-</p>
-
-
-<h2>How to use this tool</h2>
-
-<ol>
-
-<li>Step 1</li>
-
-<li>Step 2</li>
-
-<li>Step 3</li>
-
-</ol>
-
+<!-- EXAMPLE -->
+<section class="tool-container">
 
 <h2>Example</h2>
 
 <pre>Example input</pre>
 
-<p>Example output:</p>
+<p><strong>Output:</strong></p>
 
 <pre>Example output</pre>
+
+</section>
+
+
+<!-- HOW TO USE -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Step 1</li>
+<li>Step 2</li>
+<li>Step 3</li>
+</ol>
+
+</section>
+
+
+<!-- EXPLANATION (SEO 🔥) -->
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+Explain the concept behind the tool. (IMPORTANT per SEO)
+</p>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+<section class="tool-container">
 
 <h2>Related tools</h2>
 
 <div class="tools-grid">
 
-<div class="tool-card">
-<a href="../json-formatter/">JSON Formatter</a>
-</div>
+<a href="../json-formatter/" class="tool-card">JSON Formatter</a>
 
-<div class="tool-card">
-<a href="../base64/">Base64 Encoder</a>
-</div>
+<a href="../base64/" class="tool-card">Base64 Encoder</a>
 
-<div class="tool-card">
-<a href="../regex-tester/">Regex Tester</a>
-</div>
+<a href="../regex-tester/" class="tool-card">Regex Tester</a>
 
 </div>
+
+</section>
 
 
 <script src="../../js/ui.js"></script>
-
-<!-- TOOL JS FILE -->
-
 <script src="../../js/toolCategory.js"></script>
-
 <script src="../../js/main.js"></script>
 
 </body>
-
 </html>
