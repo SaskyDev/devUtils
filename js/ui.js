@@ -59,6 +59,7 @@ const navToolsList = [
     { name: "UUID Generator",            icon: "🆔", url: "tools/uuid-generator/",       category: "Developer Tools"  },
     { name: "UUID Validator",            icon: "🔎", url: "tools/uuid-validator/",       category: "Developer Tools"  },
     { name: "Word Counter",              icon: "📊", url: "tools/word-counter/",         category: "Text Tools"       },
+    { name: "🖼 Image to Base64",         icon: "🖼", url: "tools/image-base64/",         category: "Encoding Tools" },
 ];
 
 const loadNavbar = () => {

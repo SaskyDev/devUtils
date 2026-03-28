@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to Base64 Converter - DevUtils</title>
+<meta name="description" content="Convert images to Base64 instantly. Upload an image and get the encoded string.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>Image to Base64 Converter</h1>
+
+<p class="tool-description">
+Upload an image and convert it into a Base64 string instantly.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="file" id="fileInput" accept="image/*">
+
+<div class="tool-actions">
+<button onclick="convertImage()">Convert</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyOutput()">Copy</button>
+</div>
+
+<pre id="output">Base64 result will appear here...</pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<p>Upload any image file (PNG, JPG, etc.)</p>
+
+<p><strong>Output:</strong></p>
+
+<pre>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Select an image file</li>
+<li>Click Convert</li>
+<li>Copy the Base64 string</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+Base64 encoding converts binary data like images into text format.
+It is commonly used for embedding images directly into HTML, CSS or JSON.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+<a href="../html-preview/" class="tool-card">
+<span class="tool-icon">🖥</span>
+<span class="tool-title">HTML Preview</span>
+</a>
+
+<a href="../css-minifier/" class="tool-card">
+<span class="tool-icon">🎨</span>
+<span class="tool-title">CSS Minifier</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/image-base64.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
