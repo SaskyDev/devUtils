@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>URL Extractor - DevUtils</title>
+<meta name="description" content="Extract all URLs from any text instantly.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+
+<h1>URL Extractor</h1>
+
+<p class="tool-description">
+Extract all URLs from any text quickly and easily.
+</p>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste text here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="extractURLs()">Extract</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyOutput()">Copy</button>
+</div>
+
+<pre id="output">URLs will appear here...</pre>
+
+</div>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+Visit https://example.com and http://test.com
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+https://example.com
+http://test.com
+</pre>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste text</li>
+<li>Click Extract</li>
+<li>Copy URLs</li>
+</ol>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool scans text and extracts all URLs automatically.
+Useful for data analysis, scraping and debugging.
+</p>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../url-parser/" class="tool-card">
+<span class="tool-icon">🔎</span>
+<span class="tool-title">URL Parser</span>
+</a>
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/url-extractor.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

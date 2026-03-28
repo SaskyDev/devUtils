@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON Minifier - DevUtils</title>
+<meta name="description" content="Minify JSON by removing whitespace and reducing size instantly.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+
+<h1>JSON Minifier</h1>
+
+<p class="tool-description">
+Minify JSON data by removing unnecessary spaces and formatting.
+</p>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste your JSON here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="minifyJSON()">Minify</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyOutput()">Copy</button>
+</div>
+
+<pre id="output">Result will appear here...</pre>
+
+</div>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+{
+  "name": "Example",
+  "value": 123
+}
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>{"name":"Example","value":123}</pre>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste JSON</li>
+<li>Click Minify</li>
+<li>Copy result</li>
+</ol>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+A JSON minifier removes whitespace and reduces JSON size while keeping data intact.
+Useful for APIs and data transfer optimization.
+</p>
+
+</section>
+
+
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-compare/" class="tool-card">
+<span class="tool-icon">🆚</span>
+<span class="tool-title">JSON Compare</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/json-minifier.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

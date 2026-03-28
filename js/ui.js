@@ -59,7 +59,9 @@ const navToolsList = [
     { name: "UUID Generator",            icon: "🆔", url: "tools/uuid-generator/",       category: "Developer Tools"  },
     { name: "UUID Validator",            icon: "🔎", url: "tools/uuid-validator/",       category: "Developer Tools"  },
     { name: "Word Counter",              icon: "📊", url: "tools/word-counter/",         category: "Text Tools"       },
-    { name: "🖼 Image to Base64",         icon: "🖼", url: "tools/image-base64/",         category: "Encoding Tools" },
+    { name: "Image to Base64",           icon: "🖼", url: "tools/image-base64/",         category: "Encoding Tools"   },
+    { name: "JSON Minifier",             icon: "🧹", url: "tools/json-minifier/",        category: "Developer Tools"  },
+    { name: "URL Extractor",             icon: "🔗", url: "tools/url-extractor/",        category: "Developer Tools"  },
 ];
 
 const loadNavbar = () => {
