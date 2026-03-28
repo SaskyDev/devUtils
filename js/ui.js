@@ -19,43 +19,46 @@ const getSiteBasePath = () => {
     return source.slice(0, -"js/ui.js".length);
 };
 
+// ⚠️ ÚNICA FONT DE VERITAT — afegir noves tools aquí
+// Automàticament s'inclou al cercador del navbar i a all-tools.html
 const navToolsList = [
-    { name: "JSON Formatter", icon: "🧩", url: "tools/json-formatter/" },
-    { name: "JSON Validator", icon: "✔️", url: "tools/json-validator/" },
-    { name: "JSON Compare", icon: "🆚", url: "tools/json-compare/" },
-    { name: "JSON ↔ YAML Converter", icon: "🔄", url: "tools/json-yaml/" },
-    { name: "CSV → JSON", icon: "📄", url: "tools/csv-to-json/" },
-    { name: "JSON → CSV", icon: "📄", url: "tools/json-to-csv/" },
-    { name: "Regex Tester", icon: "🧪", url: "tools/regex-tester/" },
-    { name: "UUID Generator", icon: "🆔", url: "tools/uuid-generator/" },
-    { name: "UUID Validator", icon: "🔎", url: "tools/uuid-validator/" },
-    { name: "Timestamp Converter", icon: "⏱", url: "tools/timestamp-converter/" },
-    { name: "Timestamp Generator", icon: "⏱", url: "tools/timestamp-generator/" },
-    { name: "Query String Parser", icon: "🔍", url: "tools/query-string-parser/" },
-    { name: "URL Parser", icon: "🔎", url: "tools/url-parser/" },
-    { name: "URL Encoder / Decoder", icon: "🔗", url: "tools/url-encoder/" },
-    { name: "Base64 Encoder / Decoder", icon: "🔐", url: "tools/base64/" },
-    { name: "Password Generator", icon: "🔑", url: "tools/password-generator/" },
-    { name: "Password Strength Checker", icon: "🛡", url: "tools/password-strength/" },
-    { name: "Hash Generator", icon: "🔐", url: "tools/hash-generator/" },
-    { name: "Hash Compare", icon: "🧬", url: "tools/hash-compare/" },
-    { name: "JWT Decoder", icon: "🔓", url: "tools/jwt-decoder/" },
-    { name: "JWT Encoder", icon: "🔓", url: "tools/jwt-encoder/" },
-    { name: "Text Case Converter", icon: "🔤", url: "tools/text-case/" },
-    { name: "Slug Generator", icon: "🔗", url: "tools/slug-generator/" },
-    { name: "Word Counter", icon: "📊", url: "tools/word-counter/" },
-    { name: "Lorem Ipsum Generator", icon: "📄", url: "tools/lorem-generator/" },
-    { name: "Text Reverser", icon: "🔁", url: "tools/text-reverser/" },
-    { name: "Text Diff Checker", icon: "📏", url: "tools/text-diff/" },
-    { name: "Random Number Generator", icon: "🎲", url: "tools/random-number/" },
-    { name: "Color Picker", icon: "🎨", url: "tools/color-picker/" },
-    { name: "Color Converter", icon: "🎨", url: "tools/color-converter/" },
-    { name: "Base Converter", icon: "🔢", url: "tools/base-converter/" },
-    { name: "Date Formatter", icon: "📅", url: "tools/date-formatter/" },
-    { name: "HTML Preview Editor", icon: "🖥", url: "tools/html-preview/" },
-    { name: "HTML Minifier", icon: "🧹", url: "tools/html-minifier/" },
-    { name: "CSS Minifier", icon: "🎨", url: "tools/css-minifier/" },
-    { name: "JavaScript Minifier", icon: "🧹", url: "tools/js-minifier/" },
+    { name: "Base Converter",            icon: "🔢", url: "tools/base-converter/",       category: "Utility Tools"    },
+    { name: "Base64 Encoder / Decoder",  icon: "🔐", url: "tools/base64/",               category: "Encoding Tools"   },
+    { name: "Color Converter",           icon: "🎨", url: "tools/color-converter/",      category: "Utility Tools"    },
+    { name: "Color Picker",              icon: "🎨", url: "tools/color-picker/",         category: "Utility Tools"    },
+    { name: "CSS Minifier",              icon: "🎨", url: "tools/css-minifier/",         category: "Developer Tools"  },
+    { name: "CSV → JSON",               icon: "📄", url: "tools/csv-to-json/",          category: "Developer Tools"  },
+    { name: "Date Formatter",            icon: "📅", url: "tools/date-formatter/",       category: "Utility Tools"    },
+    { name: "Hash Compare",              icon: "🧬", url: "tools/hash-compare/",         category: "Security Tools"   },
+    { name: "Hash Generator",            icon: "🔐", url: "tools/hash-generator/",       category: "Security Tools"   },
+    { name: "HTML Minifier",             icon: "🧹", url: "tools/html-minifier/",        category: "Developer Tools"  },
+    { name: "HTML Preview Editor",       icon: "🖥",  url: "tools/html-preview/",         category: "Developer Tools"  },
+    { name: "JavaScript Minifier",       icon: "🧹", url: "tools/js-minifier/",          category: "Developer Tools"  },
+    { name: "JSON Compare",              icon: "🆚", url: "tools/json-compare/",         category: "Developer Tools"  },
+    { name: "JSON Formatter",            icon: "🧩", url: "tools/json-formatter/",       category: "Developer Tools"  },
+    { name: "JSON ↔ YAML Converter",    icon: "🔄", url: "tools/json-yaml/",            category: "Developer Tools"  },
+    { name: "JSON → CSV",               icon: "📄", url: "tools/json-to-csv/",          category: "Developer Tools"  },
+    { name: "JSON Validator",            icon: "✔️", url: "tools/json-validator/",       category: "Developer Tools"  },
+    { name: "JWT Decoder",               icon: "🔓", url: "tools/jwt-decoder/",          category: "Security Tools"   },
+    { name: "JWT Encoder",               icon: "🔓", url: "tools/jwt-encoder/",          category: "Security Tools"   },
+    { name: "Lorem Ipsum Generator",     icon: "📄", url: "tools/lorem-generator/",      category: "Text Tools"       },
+    { name: "Markdown to HTML",          icon: "📝", url: "tools/markdown-to-html/",     category: "Developer Tools"  },
+    { name: "Password Generator",        icon: "🔑", url: "tools/password-generator/",   category: "Security Tools"   },
+    { name: "Password Strength Checker", icon: "🛡",  url: "tools/password-strength/",    category: "Security Tools"   },
+    { name: "Query String Parser",       icon: "🔍", url: "tools/query-string-parser/",  category: "Developer Tools"  },
+    { name: "Random Number Generator",   icon: "🎲", url: "tools/random-number/",        category: "Utility Tools"    },
+    { name: "Regex Tester",              icon: "🧪", url: "tools/regex-tester/",         category: "Developer Tools"  },
+    { name: "Slug Generator",            icon: "🔗", url: "tools/slug-generator/",       category: "Text Tools"       },
+    { name: "Text Case Converter",       icon: "🔤", url: "tools/text-case/",            category: "Text Tools"       },
+    { name: "Text Diff Checker",         icon: "📏", url: "tools/text-diff/",            category: "Text Tools"       },
+    { name: "Text Reverser",             icon: "🔁", url: "tools/text-reverser/",        category: "Text Tools"       },
+    { name: "Timestamp Converter",       icon: "⏱",  url: "tools/timestamp-converter/",  category: "Developer Tools"  },
+    { name: "Timestamp Generator",       icon: "⏱",  url: "tools/timestamp-generator/",  category: "Utility Tools"    },
+    { name: "URL Encoder / Decoder",     icon: "🔗", url: "tools/url-encoder/",          category: "Encoding Tools"   },
+    { name: "URL Parser",                icon: "🔎", url: "tools/url-parser/",           category: "Developer Tools"  },
+    { name: "UUID Generator",            icon: "🆔", url: "tools/uuid-generator/",       category: "Developer Tools"  },
+    { name: "UUID Validator",            icon: "🔎", url: "tools/uuid-validator/",       category: "Developer Tools"  },
+    { name: "Word Counter",              icon: "📊", url: "tools/word-counter/",         category: "Text Tools"       },
 ];
 
 const loadNavbar = () => {
@@ -140,9 +143,10 @@ const renderNavResults = (query, basePath) => {
 
     const filter = query.toLowerCase().trim();
 
-    const matched = filter
+    const matched = (filter
         ? navToolsList.filter(t => t.name.toLowerCase().includes(filter))
-        : navToolsList;
+        : [...navToolsList]
+    ).sort((a, b) => a.name.localeCompare(b.name));
 
     if (matched.length === 0) {
         results.innerHTML = `<div class="search-no-results">No tools found</div>`;
