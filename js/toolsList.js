@@ -1,11 +1,14 @@
 // ================= DATA =================
 // Derivat de navToolsList (definit a ui.js) — afegir noves tools només a navToolsList de ui.js
 
-const tools = navToolsList.map(t => ({
-    name: t.icon + " " + t.name,
-    url: t.url,
-    category: t.category
-}));
+const tools = navToolsList
+    .map(t => ({
+        icon: t.icon,
+        title: t.name,
+        url: t.url,
+        category: t.category
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }));
 
 
 // ================= INIT =================
@@ -42,8 +45,8 @@ card.setAttribute("data-category", tool.category);
 
 card.innerHTML = `
 <a href="${tool.url}">
-<span class="tool-icon">${tool.name.split(" ")[0]}</span>
-<span class="tool-title">${tool.name.replace(tool.name.split(" ")[0], "").trim()}</span>
+<span class="tool-icon">${tool.icon}</span>
+<span class="tool-title">${tool.title}</span>
 </a>
 `;
 

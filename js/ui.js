@@ -27,7 +27,7 @@ const navToolsList = [
     { name: "Color Converter",           icon: "🎨", url: "tools/color-converter/",      category: "Utility Tools"    },
     { name: "Color Picker",              icon: "🎨", url: "tools/color-picker/",         category: "Utility Tools"    },
     { name: "CSS Minifier",              icon: "🎨", url: "tools/css-minifier/",         category: "Developer Tools"  },
-    { name: "CSV → JSON",               icon: "📄", url: "tools/csv-to-json/",          category: "Developer Tools"  },
+    { name: "CSV → JSON",                icon: "📄", url: "tools/csv-to-json/",          category: "Developer Tools"  },
     { name: "Date Formatter",            icon: "📅", url: "tools/date-formatter/",       category: "Utility Tools"    },
     { name: "Hash Compare",              icon: "🧬", url: "tools/hash-compare/",         category: "Security Tools"   },
     { name: "Hash Generator",            icon: "🔐", url: "tools/hash-generator/",       category: "Security Tools"   },
@@ -36,15 +36,15 @@ const navToolsList = [
     { name: "JavaScript Minifier",       icon: "🧹", url: "tools/js-minifier/",          category: "Developer Tools"  },
     { name: "JSON Compare",              icon: "🆚", url: "tools/json-compare/",         category: "Developer Tools"  },
     { name: "JSON Formatter",            icon: "🧩", url: "tools/json-formatter/",       category: "Developer Tools"  },
-    { name: "JSON ↔ YAML Converter",    icon: "🔄", url: "tools/json-yaml/",            category: "Developer Tools"  },
-    { name: "JSON → CSV",               icon: "📄", url: "tools/json-to-csv/",          category: "Developer Tools"  },
+    { name: "JSON ↔ YAML Converter",     icon: "🔄", url: "tools/json-yaml/",            category: "Developer Tools"  },
+    { name: "JSON → CSV",                icon: "📄", url: "tools/json-to-csv/",          category: "Developer Tools"  },
     { name: "JSON Validator",            icon: "✔️", url: "tools/json-validator/",       category: "Developer Tools"  },
     { name: "JWT Decoder",               icon: "🔓", url: "tools/jwt-decoder/",          category: "Security Tools"   },
     { name: "JWT Encoder",               icon: "🔓", url: "tools/jwt-encoder/",          category: "Security Tools"   },
     { name: "Lorem Ipsum Generator",     icon: "📄", url: "tools/lorem-generator/",      category: "Text Tools"       },
     { name: "Markdown to HTML",          icon: "📝", url: "tools/markdown-to-html/",     category: "Developer Tools"  },
     { name: "Password Generator",        icon: "🔑", url: "tools/password-generator/",   category: "Security Tools"   },
-    { name: "Password Strength Checker", icon: "🛡",  url: "tools/password-strength/",    category: "Security Tools"   },
+    { name: "Password Strength Checker", icon: "🛡",  url: "tools/password-strength/",   category: "Security Tools"   },
     { name: "Query String Parser",       icon: "🔍", url: "tools/query-string-parser/",  category: "Developer Tools"  },
     { name: "Random Number Generator",   icon: "🎲", url: "tools/random-number/",        category: "Utility Tools"    },
     { name: "Regex Tester",              icon: "🧪", url: "tools/regex-tester/",         category: "Developer Tools"  },
@@ -277,30 +277,30 @@ const classifyOutputState = (text) => {
     return "info";
 };
 
-const applyOutputStateClass = (preEl) => {
+const applyOutputStateClass = (outputEl) => {
 
-    if (!preEl) return;
+    if (!outputEl) return;
 
-    const state = classifyOutputState(preEl.textContent);
+    const state = classifyOutputState(outputEl.textContent);
 
-    preEl.classList.add("output-state");
-    preEl.classList.remove("output-success", "output-error", "output-info");
-    preEl.classList.add(`output-${state}`);
+    outputEl.classList.add("output-state");
+    outputEl.classList.remove("output-success", "output-error", "output-info");
+    outputEl.classList.add(`output-${state}`);
 };
 
 const initOutputStateObserver = () => {
 
-    const outputs = document.querySelectorAll("pre#output");
+    const outputs = document.querySelectorAll("pre#output, div#status");
 
-    outputs.forEach((pre) => {
+    outputs.forEach((outputEl) => {
 
-        applyOutputStateClass(pre);
+        applyOutputStateClass(outputEl);
 
         const observer = new MutationObserver(() => {
-            applyOutputStateClass(pre);
+            applyOutputStateClass(outputEl);
         });
 
-        observer.observe(pre, {
+        observer.observe(outputEl, {
             childList: true,
             characterData: true,
             subtree: true

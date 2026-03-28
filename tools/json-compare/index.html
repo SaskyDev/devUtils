@@ -14,7 +14,6 @@
 
 </head>
 
-
 <body>
 
 <!-- HERO -->
@@ -23,8 +22,7 @@
 <h1>JSON Compare Tool</h1>
 
 <p class="tool-description">
-Compare two JSON objects and highlight differences instantly.
-Perfect for debugging APIs and data changes.
+Compare two JSON objects and highlight differences visually.
 </p>
 
 </section>
@@ -48,7 +46,11 @@ Perfect for debugging APIs and data changes.
 <button onclick="copyResult()">Copy</button>
 </div>
 
-<pre id="output">Result will appear here...</pre>
+<!-- STATUS (COM VALIDATOR) -->
+<div id="status"></div>
+
+<!-- OUTPUT -->
+<div id="output" class="diff-side"></div>
 
 </div>
 
@@ -62,18 +64,15 @@ Perfect for debugging APIs and data changes.
 
 <pre>
 {
-"name": "User",
-"age": 25
+  "status": "ok",
+  "count": 10
 }
 </pre>
 
 <p><strong>Output:</strong></p>
 
 <pre>
-{
-"name": "User",
-"age": 30  ← changed
-}
+~ "count": 10 → 12
 </pre>
 
 </section>
@@ -87,7 +86,7 @@ Perfect for debugging APIs and data changes.
 <ol>
 <li>Paste both JSON objects</li>
 <li>Click compare</li>
-<li>View differences instantly</li>
+<li>View highlighted differences</li>
 </ol>
 
 </section>
@@ -99,8 +98,8 @@ Perfect for debugging APIs and data changes.
 <h2>What is this tool?</h2>
 
 <p>
-This tool compares two JSON objects and highlights differences.
-It is useful for debugging APIs, tracking changes and validating data structures.
+This tool compares two JSON objects and highlights differences in a readable way.
+It is especially useful for debugging APIs, detecting changes in responses and validating data structures.
 </p>
 
 </section>
@@ -113,9 +112,20 @@ It is useful for debugging APIs, tracking changes and validating data structures
 
 <div class="tools-grid">
 
-<a href="../json-formatter/" class="tool-card">JSON Formatter</a>
-<a href="../json-validator/" class="tool-card">JSON Validator</a>
-<a href="../base64/" class="tool-card">Base64 Encoder</a>
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-minifier/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">JSON Minifier</span>
+</a>
 
 </div>
 

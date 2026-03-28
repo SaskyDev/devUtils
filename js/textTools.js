@@ -104,35 +104,67 @@ const reverseText = () => {
 
 function compareText() {
 
-const t1 = document.getElementById("text1").value;
-const t2 = document.getElementById("text2").value;
-const output = document.getElementById("output");
+    const t1 = document.getElementById("text1").value.split("\n");
+    const t2 = document.getElementById("text2").value.split("\n");
 
-if (!t1 || !t2) {
-output.textContent = "Enter both texts";
-return;
-}
+    const output = document.getElementById("output");
+    const status = document.getElementById("status");
 
-let result = "";
-
-const maxLength = Math.max(t1.length, t2.length);
-
-for (let i = 0; i < maxLength; i++) {
-
-const char1 = t1[i] || "";
-const char2 = t2[i] || "";
-
-if (char1 === char2) {
-    result += char1;
-} else {
-    if (char1) {
-    result += `<span style="background:#fee2e2;color:#991b1b;padding:1px 2px;border-radius:3px;">${char1}</span>`;
+    if (!t1.length || !t2.length) {
+        status.textContent = "Enter both texts ❌";
+        status.style.color = "red";
+        return;
     }
-    if (char2) {
-    result += `<span style="background:#dcfce7;color:#166534;padding:1px 2px;border-radius:3px;">${char2}</span>`;
+
+    status.textContent = "Comparison done ✔";
+    status.style.color = "green";
+
+    let html = `
+    <div class="diff-table">
+        <div class="diff-header">Text 1</div>
+        <div class="diff-header">Text 2</div>
+    `;
+
+    const maxLength = Math.max(t1.length, t2.length);
+
+    for (let i = 0; i < maxLength; i++) {
+
+        const line1 = t1[i] || "";
+        const line2 = t2[i] || "";
+
+        let className = "";
+
+        if (!line1) className = "added";
+        else if (!line2) className = "removed";
+        else if (line1 !== line2) className = "changed";
+        else className = "same";
+
+        html += `
+            <div class="cell ${className}">
+                <span class="line-number">${i + 1}</span> ${line1}
+            </div>
+            <div class="cell ${className}">
+                <span class="line-number">${i + 1}</span> ${line2}
+            </div>
+        `;
     }
-}
+
+    html += `</div>`;
+
+    output.innerHTML = html;
 }
 
-output.innerHTML = result;
+
+function clearAll() {
+    document.getElementById("text1").value = "";
+    document.getElementById("text2").value = "";
+    document.getElementById("output").innerHTML = "";
+    document.getElementById("status").textContent = "";
+}
+
+
+function copyResult() {
+    navigator.clipboard.writeText(
+        document.getElementById("output").innerText
+    );
 }

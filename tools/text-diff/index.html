@@ -7,9 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Text Diff Checker - DevUtils</title>
-
-<meta name="description" content="Compare two texts and highlight differences instantly.">
-
+<meta name="description" content="Compare two texts and highlight differences line by line instantly.">
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="../../css/styles.css">
@@ -19,91 +17,120 @@
 
 <body>
 
+<!-- HERO TOOL -->
+<section class="tool-container">
+
 <h1>Text Diff Checker</h1>
 
-<p>
-Compare two texts and instantly see the differences between them.
+<p class="tool-description">
+Compare two texts and highlight differences line by line in a clear and visual way.
 </p>
+
+</section>
 
 
 <!-- TOOL INTERFACE -->
+<section class="tool-container">
 
-<div class="tool-container">
+<h2>Tool</h2>
 
-<label>Text 1</label>
-<textarea id="text1" placeholder="Enter first text..."></textarea>
+<div class="tool-ui">
 
-<label>Text 2</label>
-<textarea id="text2" placeholder="Enter second text..."></textarea>
+<div class="diff-grid">
+<textarea id="text1" placeholder="Paste first text here..."></textarea>
+<textarea id="text2" placeholder="Paste second text here..."></textarea>
+</div>
 
+<div class="tool-actions">
 <button onclick="compareText()">Compare</button>
-<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Compare two texts first" data-copy-success="Diff copied">Copy</button>
-
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyResult()">Copy</button>
 </div>
 
 
-<!-- RESULT -->
+<pre id="output">Result will appear here...</pre>
 
-<pre id="output"></pre>
-<div id="status"></div>
+</div>
+
+</section>
 
 
-<!-- TOOL DOCUMENTATION -->
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+Hello world
+This is line 2
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+Line 2 changed → "This is line 3"
+</pre>
+
+</section>
+
+
+<!-- HOW TO USE -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste both texts into the input fields</li>
+<li>Click the Compare button</li>
+<li>Review the highlighted differences</li>
+</ol>
+
+</section>
+
+
+<!-- EXPLANATION -->
+<section class="tool-container">
 
 <h2>What is this tool?</h2>
 
 <p>
-This tool compares two pieces of text and highlights where they differ character by character.
-It is useful for developers, writers, and anyone who needs to quickly spot differences.
+This tool compares two texts line by line and highlights the differences between them.
+It is useful for developers, writers and anyone who needs to track changes in content quickly.
 </p>
 
-
-<h2>How to use this tool</h2>
-
-<ol>
-
-<li>Enter the first text.</li>
-<li>Enter the second text.</li>
-<li>Click "Compare" to see the differences.</li>
-
-</ol>
+</section>
 
 
-<h2>Example</h2>
-
-<pre>Hello world</pre>
-
-<p>Example output:</p>
-
-<pre>Hello [w|W]orld</pre>
-
+<!-- RELATED TOOLS -->
+<section class="tool-container">
 
 <h2>Related tools</h2>
 
 <div class="tools-grid">
 
-<div class="tool-card">
-<a href="../text-case/">Text Case Converter</a>
+<a href="../json-compare/" class="tool-card">
+<span class="tool-icon">🆚</span>
+<span class="tool-title">JSON Compare</span>
+</a>
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+<a href="../word-counter/" class="tool-card">
+<span class="tool-icon">📊</span>
+<span class="tool-title">Word Counter</span>
+</a>
+
 </div>
 
-<div class="tool-card">
-<a href="../slug-generator/">Slug Generator</a>
-</div>
-
-<div class="tool-card">
-<a href="../word-counter/">Word Counter</a>
-</div>
-
-</div>
+</section>
 
 
 <script src="../../js/ui.js"></script>
-
-<!-- TOOL JS FILE -->
 <script src="../../js/textTools.js"></script>
-
 <script src="../../js/main.js"></script>
 
 </body>
-
 </html>
