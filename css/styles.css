@@ -294,7 +294,7 @@ font-size:16px;
 
 .navbar.nav-compact .nav-right a.nav-btn,
 .navbar.nav-compact .nav-right #themeToggle,
-.navbar.nav-compact .nav-search-btn{
+.navbar.nav-compact .nav-right .nav-btn.nav-search-btn{
 height:36px;
 line-height:36px;
 font-size:13px;
