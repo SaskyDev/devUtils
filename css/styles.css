@@ -288,18 +288,6 @@ box-shadow:0 10px 24px rgba(15,23,42,0.16);
 background:rgba(194,214,232,0.96);
 }
 
-.navbar.nav-compact .nav-brand{
-font-size:16px;
-}
-
-.navbar.nav-compact .nav-right a.nav-btn,
-.navbar.nav-compact .nav-right #themeToggle,
-.navbar.nav-compact .nav-right .nav-btn.nav-search-btn{
-height:36px;
-line-height:36px;
-font-size:13px;
-}
-
 .nav-brand{
 font-weight:700;
 font-size:18px;
@@ -349,6 +337,19 @@ padding:0 14px;
 display:inline-flex;
 align-items:center;
 justify-content:center;
+}
+
+/* COMPACT NAVBAR STATE - OVERRIDE */
+.navbar.nav-compact .nav-brand{
+font-size:16px;
+}
+
+.navbar.nav-compact .nav-right a.nav-btn,
+.navbar.nav-compact .nav-right #themeToggle,
+.navbar.nav-compact .nav-right .nav-btn.nav-search-btn{
+height:36px;
+line-height:36px;
+font-size:13px;
 }
 
 
