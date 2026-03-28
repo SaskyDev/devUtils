@@ -25,6 +25,11 @@
 --shadow-card-hover:0 20px 40px rgba(0,0,0,0.18);
 }
 
+html{
+min-height:100%;
+background:#8abef0;
+}
+
 body{
 font-family:"Avenir Next", "Segoe UI", Arial, sans-serif;
 background:
@@ -33,11 +38,13 @@ radial-gradient(920px 440px at 96% -24%, #62b5f8 0%, rgba(98,181,248,0) 60%),
 radial-gradient(780px 380px at 52% 10%, #1ea7ff 0%, rgba(30,167,255,0) 54%),
 linear-gradient(180deg, #8abef0 0%, #a8cbed 180px, var(--bg) 400px);
 max-width:1100px;
-margin:auto;
+margin:0 auto;
 padding:88px var(--space-6) var(--space-6);
+min-height:100dvh;
 color:var(--text);
 transition:background .25s,color .25s;
 line-height:1.55;
+overflow-x:hidden;
 }
 
 main{
@@ -112,6 +119,10 @@ cursor:pointer;
 white-space:nowrap;
 width:auto;
 margin:0;
+}
+
+.nav-search-label{
+display:inline;
 }
 
 button.nav-btn.nav-search-btn:hover{
@@ -1291,12 +1302,12 @@ display:block;
 @media (max-width:600px){
 
 body{
-padding:84px 16px 24px;
+padding:84px 12px 20px;
 }
 
 .navbar{
-width:calc(100vw - 24px);
-padding:10px 12px;
+width:calc(100vw - 12px);
+padding:10px;
 top:0;
 }
 
@@ -1306,25 +1317,38 @@ padding:8px 10px;
 }
 
 .nav-brand{
-font-size:16px;
+font-size:15px;
+}
+
+.nav-left{
+flex:0 0 auto;
 }
 
 .nav-right{
-gap:8px;
+gap:6px;
+flex-wrap:wrap;
+justify-content:flex-end;
 }
 
 .nav-right a.nav-btn,
 .nav-right #themeToggle,
 .nav-search-btn{
-height:36px;
-line-height:36px;
-font-size:13px;
-padding:0 12px;
+height:34px;
+line-height:34px;
+font-size:12px;
+padding:0 10px;
+width:auto;
+flex:0 0 auto;
 }
 
 button.nav-btn.nav-search-btn{
-font-size:13px;
-padding:0 12px;
+font-size:12px;
+padding:0 10px;
+min-width:34px;
+}
+
+.nav-search-label{
+display:none;
 }
 
 .hero{
@@ -1354,6 +1378,12 @@ max-width:none;
 
 button{
 width:100%;
+margin-right:0;
+}
+
+.navbar button,
+.navbar a.nav-btn{
+width:auto;
 margin-right:0;
 }
 

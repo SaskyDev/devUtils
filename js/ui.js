@@ -72,7 +72,7 @@ const loadNavbar = () => {
         <div class="nav-right">
             <a href="${basePath}index.html" class="nav-btn">Home</a>
             <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
-            <button id="navSearchBtn" type="button" aria-label="Search tools" class="nav-btn nav-search-btn">🔍 Search</button>
+            <button id="navSearchBtn" type="button" aria-label="Search tools" class="nav-btn nav-search-btn"><span aria-hidden="true">🔍</span><span class="nav-search-label">Search</span></button>
             <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
         </div>
 
