@@ -41,6 +41,7 @@ const tools = [
 { name: "🧹 HTML Minifier", url: "tools/html-minifier/", category: "Developer Tools" },
 { name: "🎨 CSS Minifier", url: "tools/css-minifier/", category: "Developer Tools" },
 { name: "🧹 JavaScript Minifier", url: "tools/js-minifier/", category: "Developer Tools" },
+{ name: "📝 Markdown to HTML", url: "tools/markdown-to-html/", category: "Developer Tools" },
 
 ];
 

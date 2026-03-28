@@ -72,7 +72,7 @@ const loadNavbar = () => {
         <div class="nav-right">
             <a href="${basePath}index.html" class="nav-btn">Home</a>
             <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
-            <button id="navSearchBtn" type="button" aria-label="Search tools" class="nav-btn nav-search-btn"><span aria-hidden="true">🔍</span><span class="nav-search-label">Search</span></button>
+            <a href="#" id="navSearchBtn" aria-label="Search tools" class="nav-btn nav-search-btn"><span aria-hidden="true">🔍</span><span class="nav-search-label">Search</span></a>
             <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
         </div>
 
@@ -111,7 +111,10 @@ const initNavSearch = (basePath) => {
         input.value = "";
     };
 
-    btn.addEventListener("click", openSearch);
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSearch();
+    });
 
     overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeSearch();
