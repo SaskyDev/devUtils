@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON ↔ YAML Converter - DevUtils</title>
+<meta name="description" content="Convert JSON to YAML and YAML to JSON instantly.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>JSON ↔ YAML Converter</h1>
+
+<p class="tool-description">
+Convert JSON to YAML and YAML to JSON instantly. Useful for APIs, configs and data transformation.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<!-- MODE -->
+<div class="converter-mode">
+<button class="mode-btn active" onclick="setMode('json')">JSON → YAML</button>
+<button class="mode-btn" onclick="setMode('yaml')">YAML → JSON</button>
+</div>
+
+<!-- INPUT -->
+<textarea id="input" placeholder="Paste your code here..."></textarea>
+
+<!-- BUTTONS -->
+<div class="tool-actions">
+<button onclick="convert()">Convert</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyOutput()">Copy</button>
+</div>
+
+<!-- OUTPUT -->
+<pre id="output">Result will appear here...</pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+{
+"name": "John",
+"age": 45
+}
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+name: John
+age: 45
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Select conversion mode</li>
+<li>Paste your JSON or YAML</li>
+<li>Click convert</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool converts JSON to YAML and YAML to JSON instantly. It is useful for developers working with APIs, configuration files and structured data formats.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">JSON Formatter</a>
+<a href="../json-validator/" class="tool-card">JSON Validator</a>
+<a href="../base64/" class="tool-card">Base64 Encoder</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/json-yaml.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

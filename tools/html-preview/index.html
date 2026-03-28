@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HTML Preview Editor - DevUtils</title>
+<title>HTML & CSS Preview Editor - DevUtils</title>
 
-<meta name="description" content="Write HTML and preview it instantly in your browser. Live editor with real-time rendering.">
+<meta name="description" content="Write HTML and CSS and preview it instantly in your browser. Live editor with real-time rendering.">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
@@ -20,10 +20,10 @@
 <!-- HERO -->
 <section class="tool-container">
 
-<h1>HTML Preview Editor</h1>
+<h1>HTML & CSS Preview Editor</h1>
 
 <p class="tool-description">
-Write HTML and see the result instantly. Perfect for testing layouts and snippets.
+Write HTML and CSS and see the result instantly. Perfect for testing layouts, styles and snippets.
 </p>
 
 </section>
@@ -34,11 +34,16 @@ Write HTML and see the result instantly. Perfect for testing layouts and snippet
 
 <h2>Editor</h2>
 
-<div class="html-editor">
+<div class="editor-grid">
 
 <div class="editor-wrapper">
 <div class="preview-label">HTML</div>
-<textarea id="htmlInput"></textarea>
+<textarea id="htmlInput" placeholder="Write your HTML here..."></textarea>
+</div>
+
+<div class="editor-wrapper">
+<div class="preview-label">CSS</div>
+<textarea id="cssInput" placeholder="Write your CSS here..."></textarea>
 </div>
 
 <div class="preview-wrapper">
@@ -64,7 +69,7 @@ Write HTML and see the result instantly. Perfect for testing layouts and snippet
 <h2>What is this tool?</h2>
 
 <p>
-This tool allows you to write HTML code and instantly see the result. It is useful for testing layouts, debugging code and experimenting with UI ideas.
+This tool allows you to write HTML and CSS code and instantly see the combined result. It is useful for testing layouts, styling, debugging code and experimenting with UI ideas.
 </p>
 
 </section>
@@ -75,8 +80,9 @@ This tool allows you to write HTML code and instantly see the result. It is usef
 <h2>How to use</h2>
 
 <ol>
-<li>Write or paste your HTML code</li>
-<li>The preview updates automatically</li>
+<li>Write or paste your HTML code in the left editor</li>
+<li>Add CSS styles in the right editor</li>
+<li>The preview updates automatically below</li>
 <li>Use buttons to clear, copy or load an example</li>
 </ol>
 
@@ -88,8 +94,31 @@ This tool allows you to write HTML code and instantly see the result. It is usef
 <h2>Example</h2>
 
 <pre>
-&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;This is a preview&lt;/p&gt;
+&lt;!-- HTML --&gt;
+&lt;h1&gt;Hello DevUtils 🚀&lt;/h1&gt;
+&lt;p&gt;Edit this HTML and CSS to see changes live.&lt;/p&gt;
+
+&lt;div class="card"&gt;
+&lt;h2&gt;What is HTML?&lt;/h2&gt;
+&lt;p&gt;HTML defines the structure of a web page.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;a href="#" class="btn"&gt;I'm a button ✨&lt;/a&gt;
+
+/* CSS */
+.card {
+background: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 10px;
+padding: 16px 20px;
+}
+
+.btn {
+background: #2563eb;
+color: white;
+padding: 10px 22px;
+border-radius: 8px;
+}
 </pre>
 
 </section>

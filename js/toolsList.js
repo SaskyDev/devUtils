@@ -36,6 +36,12 @@ const tools = [
 { name: "📅 Date Formatter", url: "tools/date-formatter/", category: "Utility Tools" },
 { name: "🧬 Hash Compare", url: "tools/hash-compare/", category: "Security Tools" },
 { name: "🖥 HTML Preview Editor", url: "tools/html-preview/", category: "Developer Tools" },
+{ name: "🔄 JSON ↔ YAML Converter", url: "tools/json-yaml/", category: "Developer Tools" },
+{ name: "🆚 JSON Compare", url: "tools/json-compare/", category: "Developer Tools" },
+{ name: "🧹 HTML Minifier", url: "tools/html-minifier/", category: "Developer Tools" },
+{ name: "🎨 CSS Minifier", url: "tools/css-minifier/", category: "Developer Tools" },
+{ name: "🧹 JavaScript Minifier", url: "tools/js-minifier/", category: "Developer Tools" },
+
 ];
 
 
@@ -50,6 +56,17 @@ if (!container) return;
 // ================= STATE =================
 
 let currentCategory = "All";
+
+// Read category from URL param if present
+const urlParams = new URLSearchParams(window.location.search);
+const paramCategory = urlParams.get("category");
+
+if (paramCategory) {
+    const validCategories = ["Developer Tools", "Encoding Tools", "Security Tools", "Text Tools", "Utility Tools"];
+    if (validCategories.includes(paramCategory)) {
+        currentCategory = paramCategory;
+    }
+}
 
 
 // ================= RENDER =================
@@ -114,6 +131,17 @@ applyFilters();
 
 });
 
+// Activate matching button if category came from URL
+if (paramCategory && btn.getAttribute("data-category") === currentCategory) {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+}
+
 });
+
+// Apply initial filter if category param was set
+if (paramCategory) {
+    applyFilters();
+}
 
 });

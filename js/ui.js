@@ -19,6 +19,45 @@ const getSiteBasePath = () => {
     return source.slice(0, -"js/ui.js".length);
 };
 
+const navToolsList = [
+    { name: "JSON Formatter", icon: "🧩", url: "tools/json-formatter/" },
+    { name: "JSON Validator", icon: "✔️", url: "tools/json-validator/" },
+    { name: "JSON Compare", icon: "🆚", url: "tools/json-compare/" },
+    { name: "JSON ↔ YAML Converter", icon: "🔄", url: "tools/json-yaml/" },
+    { name: "CSV → JSON", icon: "📄", url: "tools/csv-to-json/" },
+    { name: "JSON → CSV", icon: "📄", url: "tools/json-to-csv/" },
+    { name: "Regex Tester", icon: "🧪", url: "tools/regex-tester/" },
+    { name: "UUID Generator", icon: "🆔", url: "tools/uuid-generator/" },
+    { name: "UUID Validator", icon: "🔎", url: "tools/uuid-validator/" },
+    { name: "Timestamp Converter", icon: "⏱", url: "tools/timestamp-converter/" },
+    { name: "Timestamp Generator", icon: "⏱", url: "tools/timestamp-generator/" },
+    { name: "Query String Parser", icon: "🔍", url: "tools/query-string-parser/" },
+    { name: "URL Parser", icon: "🔎", url: "tools/url-parser/" },
+    { name: "URL Encoder / Decoder", icon: "🔗", url: "tools/url-encoder/" },
+    { name: "Base64 Encoder / Decoder", icon: "🔐", url: "tools/base64/" },
+    { name: "Password Generator", icon: "🔑", url: "tools/password-generator/" },
+    { name: "Password Strength Checker", icon: "🛡", url: "tools/password-strength/" },
+    { name: "Hash Generator", icon: "🔐", url: "tools/hash-generator/" },
+    { name: "Hash Compare", icon: "🧬", url: "tools/hash-compare/" },
+    { name: "JWT Decoder", icon: "🔓", url: "tools/jwt-decoder/" },
+    { name: "JWT Encoder", icon: "🔓", url: "tools/jwt-encoder/" },
+    { name: "Text Case Converter", icon: "🔤", url: "tools/text-case/" },
+    { name: "Slug Generator", icon: "🔗", url: "tools/slug-generator/" },
+    { name: "Word Counter", icon: "📊", url: "tools/word-counter/" },
+    { name: "Lorem Ipsum Generator", icon: "📄", url: "tools/lorem-generator/" },
+    { name: "Text Reverser", icon: "🔁", url: "tools/text-reverser/" },
+    { name: "Text Diff Checker", icon: "📏", url: "tools/text-diff/" },
+    { name: "Random Number Generator", icon: "🎲", url: "tools/random-number/" },
+    { name: "Color Picker", icon: "🎨", url: "tools/color-picker/" },
+    { name: "Color Converter", icon: "🎨", url: "tools/color-converter/" },
+    { name: "Base Converter", icon: "🔢", url: "tools/base-converter/" },
+    { name: "Date Formatter", icon: "📅", url: "tools/date-formatter/" },
+    { name: "HTML Preview Editor", icon: "🖥", url: "tools/html-preview/" },
+    { name: "HTML Minifier", icon: "🧹", url: "tools/html-minifier/" },
+    { name: "CSS Minifier", icon: "🎨", url: "tools/css-minifier/" },
+    { name: "JavaScript Minifier", icon: "🧹", url: "tools/js-minifier/" },
+];
+
 const loadNavbar = () => {
 
     const basePath = getSiteBasePath();
@@ -33,13 +72,86 @@ const loadNavbar = () => {
         <div class="nav-right">
             <a href="${basePath}index.html" class="nav-btn">Home</a>
             <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
+            <button id="navSearchBtn" type="button" aria-label="Search tools" class="nav-btn nav-search-btn">🔍 Search</button>
             <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
         </div>
 
     </nav>
+
+    <div id="searchOverlay" class="search-overlay hidden">
+        <div class="search-modal">
+            <input type="text" id="navSearchInput" placeholder="Search tools..." autocomplete="off">
+            <div id="navSearchResults" class="search-results"></div>
+        </div>
+    </div>
     `;
 
     document.body.insertAdjacentHTML("afterbegin", navbar);
+    initNavSearch(basePath);
+};
+
+const initNavSearch = (basePath) => {
+
+    const overlay = document.getElementById("searchOverlay");
+    const input = document.getElementById("navSearchInput");
+    const results = document.getElementById("navSearchResults");
+    const btn = document.getElementById("navSearchBtn");
+
+    if (!overlay || !input || !results || !btn) return;
+
+    const openSearch = () => {
+        overlay.classList.remove("hidden");
+        input.value = "";
+        renderNavResults("", basePath);
+        requestAnimationFrame(() => input.focus());
+    };
+
+    const closeSearch = () => {
+        overlay.classList.add("hidden");
+        input.value = "";
+    };
+
+    btn.addEventListener("click", openSearch);
+
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeSearch();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+            e.preventDefault();
+            overlay.classList.contains("hidden") ? openSearch() : closeSearch();
+        }
+        if (e.key === "Escape") closeSearch();
+    });
+
+    input.addEventListener("input", () => {
+        renderNavResults(input.value, basePath);
+    });
+};
+
+const renderNavResults = (query, basePath) => {
+
+    const results = document.getElementById("navSearchResults");
+    if (!results) return;
+
+    const filter = query.toLowerCase().trim();
+
+    const matched = filter
+        ? navToolsList.filter(t => t.name.toLowerCase().includes(filter))
+        : navToolsList;
+
+    if (matched.length === 0) {
+        results.innerHTML = `<div class="search-no-results">No tools found</div>`;
+        return;
+    }
+
+    results.innerHTML = matched.map(t =>
+        `<a href="${basePath}${t.url}" class="search-result-item">
+            <span class="search-result-icon">${t.icon}</span>
+            <span class="search-result-name">${t.name}</span>
+        </a>`
+    ).join("");
 };
 
 const updateNavbarOnScroll = () => {

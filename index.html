@@ -5,10 +5,20 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 
 <title>DevUtils - Free Online Developer Tools</title>
 
 <meta name="description" content="Free developer tools that run directly in your browser. JSON formatter, Base64 encoder, regex tester, UUID generator and more.">
+
+<meta property="og:title" content="DevUtils - Free Online Developer Tools">
+<meta property="og:description" content="Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds. No sign-up, no installs, no backend required.">
+<meta property="og:image" content="assets/logo-devutils.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DevUtils - Free Online Developer Tools">
+<meta name="twitter:description" content="Free browser-based developer toolkit with 36+ tools.">
+<meta name="twitter:image" content="assets/logo-devutils.png">
 
 <link rel="stylesheet" href="css/styles.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -26,7 +36,7 @@
 
 <p class="hero-eyebrow">Fast browser-based developer toolkit</p>
 
-<img src="assets/logo DevUtils10.png" alt="DevUtils logo" class="logo">
+<img src="assets/logo-devutils.png" alt="DevUtils logo" class="logo">
 
 <h1>Ship faster with practical tools for daily dev work</h1>
 
@@ -44,7 +54,7 @@ placeholder="Search tools: json, base64, jwt, csv, url..."
 onkeyup="filterTools()">
 </div>
 
-<p class="hero-note">30 tools available and growing</p>
+<p class="hero-note"><span id="heroToolCount"></span> tools available and growing</p>
 
 <div class="hero-actions">
 <a href="all-tools.html" class="btn-primary">View all tools</a>
@@ -53,7 +63,7 @@ onkeyup="filterTools()">
 
 <div class="hero-stats">
 <div class="stat-card">
-<strong>30</strong>
+<strong id="statToolCount"></strong>
 <span>Tools</span>
 </div>
 <div class="stat-card">
@@ -175,31 +185,31 @@ Each tool is lightweight, direct and designed to return useful output fast.
 
 <div class="tools-grid category-grid">
 
-<a href="all-tools.html" class="tool-card category-card">
+<a href="all-tools.html?category=Developer+Tools" class="tool-card category-card">
 <span class="tool-icon">🧩</span>
 <span class="tool-title">Developer Tools</span>
 <span class="category-meta">JSON, Regex, UUID, URL, CSV</span>
 </a>
 
-<a href="all-tools.html" class="tool-card category-card">
+<a href="all-tools.html?category=Encoding+Tools" class="tool-card category-card">
 <span class="tool-icon">🔐</span>
 <span class="tool-title">Encoding Tools</span>
 <span class="category-meta">Base64 and URL encoding helpers</span>
 </a>
 
-<a href="all-tools.html" class="tool-card category-card">
+<a href="all-tools.html?category=Security+Tools" class="tool-card category-card">
 <span class="tool-icon">🛡</span>
 <span class="tool-title">Security Tools</span>
 <span class="category-meta">Password, hash and JWT utilities</span>
 </a>
 
-<a href="all-tools.html" class="tool-card category-card">
+<a href="all-tools.html?category=Text+Tools" class="tool-card category-card">
 <span class="tool-icon">🔤</span>
 <span class="tool-title">Text Tools</span>
 <span class="category-meta">Case, slug, counters and diff</span>
 </a>
 
-<a href="all-tools.html" class="tool-card category-card">
+<a href="all-tools.html?category=Utility+Tools" class="tool-card category-card">
 <span class="tool-icon">⚙️</span>
 <span class="tool-title">Utility Tools</span>
 <span class="category-meta">Dates, timestamps, random and color</span>
@@ -232,6 +242,17 @@ Each tool is lightweight, direct and designed to return useful output fast.
 
 <script src="js/ui.js"></script>
 <script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const count = typeof navToolsList !== "undefined" ? navToolsList.length : 0;
+    const heroEl = document.getElementById("heroToolCount");
+    const statEl = document.getElementById("statToolCount");
+    const shortcutEl = document.getElementById("searchShortcut");
+    if (heroEl) heroEl.textContent = count;
+    if (statEl) statEl.textContent = count;
+    if (shortcutEl) shortcutEl.textContent = navigator.platform.includes("Mac") ? "⌘K" : "Ctrl+K";
+});
+</script>
 
 </body>
 </html>

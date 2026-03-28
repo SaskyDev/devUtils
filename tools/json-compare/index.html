@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON Compare Tool - DevUtils</title>
+<meta name="description" content="Compare two JSON objects and highlight differences instantly.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>JSON Compare Tool</h1>
+
+<p class="tool-description">
+Compare two JSON objects and highlight differences instantly.
+Perfect for debugging APIs and data changes.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<div class="diff-grid">
+<textarea id="json1" placeholder="JSON 1..."></textarea>
+<textarea id="json2" placeholder="JSON 2..."></textarea>
+</div>
+
+<div class="tool-actions">
+<button onclick="compareJSON()">Compare</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyResult()">Copy</button>
+</div>
+
+<pre id="output">Result will appear here...</pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+{
+"name": "User",
+"age": 25
+}
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+{
+"name": "User",
+"age": 30  ← changed
+}
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste both JSON objects</li>
+<li>Click compare</li>
+<li>View differences instantly</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is this tool?</h2>
+
+<p>
+This tool compares two JSON objects and highlights differences.
+It is useful for debugging APIs, tracking changes and validating data structures.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">JSON Formatter</a>
+<a href="../json-validator/" class="tool-card">JSON Validator</a>
+<a href="../base64/" class="tool-card">Base64 Encoder</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/ui.js"></script>
+<script src="../../js/jsonTools.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
