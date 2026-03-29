@@ -1,5 +1,85 @@
 # Project Log
 
+## Savepoint – SEO Expansion, UX Fixes and Domain Live
+
+Date: 2026-03-29
+
+Progress summary of the latest iteration.
+
+Main outcomes:
+
+- Expanded SEO metadata and content in multiple tool pages
+- Improved UX feedback in selected JavaScript tools
+- Updated `sitemap.xml` with URL priorities
+- Confirmed production domain purchase and configuration
+
+---
+
+## Domain and Production Status
+
+- Domain purchased: `devutilskit.com`
+- `CNAME` configured and active for production publishing
+- Project is live under the custom domain
+
+---
+
+## Files Updated in This Iteration
+
+- `sitemap.xml`
+- `js/securityTools.js`
+- `js/url-extractor.js`
+- `tools/base64/index.html`
+- `tools/json-compare/index.html`
+- `tools/json-formatter/index.html`
+- `tools/password-generator/index.html`
+- `tools/regex-tester/index.html`
+- `tools/text-diff/index.html`
+- `tools/url-extractor/index.html`
+
+---
+
+## Functional Improvements
+
+Password Generator:
+
+- Added dynamic character-set selection support in generator logic
+- Added status and toast feedback when passwords are generated
+- Restored `copyPassword` flow to prevent runtime failures in tool page
+
+URL Extractor:
+
+- Added status output with URL count feedback
+- Added toast feedback for extraction and copy actions
+- Corrected script loading in tool page so extractor functions are available
+
+---
+
+## SEO and Content Improvements
+
+- Updated titles and descriptions with stronger search intent wording
+- Added canonical links to updated tool pages
+- Added `robots` metadata where missing
+- Improved on-page structure with tool, example, how-to and SEO blocks
+
+Updated pages:
+
+- Base64
+- JSON Compare
+- JSON Formatter
+- Regex Tester
+- Text Diff
+- URL Extractor
+
+---
+
+## Technical Validation
+
+- JavaScript syntax checks passed for updated JS files
+- `sitemap.xml` validated as well-formed XML
+- No unresolved merge conflict markers detected
+
+---
+
 ## Savepoint – 30 Tools Implemented
 
 Date: 2026-03-21

@@ -4,7 +4,21 @@ const generatePassword = () => {
 
     const length = $("length").value;
 
-    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+    const useUpper = document.getElementById("uppercase")?.checked;
+    const useLower = document.getElementById("lowercase")?.checked;
+    const useNumbers = document.getElementById("numbers")?.checked;
+    const useSymbols = document.getElementById("symbols")?.checked;
+
+    let chars = "";
+
+    if (useUpper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (useLower) chars += "abcdefghijklmnopqrstuvwxyz";
+    if (useNumbers) chars += "0123456789";
+    if (useSymbols) chars += "!@#$%^&*()_+[]{}";
+
+    if (!chars) {
+        chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+    }
 
     let password = "";
 
@@ -14,14 +28,19 @@ const generatePassword = () => {
     }
 
     $("output").textContent = password;
+
+    const status = document.getElementById("status");
+    if (status) status.textContent = "Password generated ✔";
+
+    if (window.showToast) {
+        window.showToast("Password generated", "success");
+    }
 };
 
-
-// ✅ FORA de la funció
 async function copyPassword(buttonEl) {
 
     const output = document.getElementById("output");
-    const password = output.textContent.trim();
+    const password = output ? output.textContent.trim() : "";
     const copyButton = buttonEl || document.getElementById("copyPasswordButton");
 
     if (!password) {
@@ -32,14 +51,17 @@ async function copyPassword(buttonEl) {
                 copyButton.textContent = originalText;
             }, 1200);
         }
+
         if (window.showToast) {
             window.showToast("Generate a password first", "info");
         }
+
         return;
     }
 
     try {
         await navigator.clipboard.writeText(password);
+
         if (copyButton) {
             const originalText = copyButton.textContent;
             copyButton.textContent = "Copied!";
@@ -48,6 +70,7 @@ async function copyPassword(buttonEl) {
                 copyButton.textContent = originalText;
             }, 1200);
         }
+
         if (window.showToast) {
             window.showToast("Password copied", "success");
         }
@@ -55,23 +78,61 @@ async function copyPassword(buttonEl) {
         if (copyButton) {
             const originalText = copyButton.textContent;
             copyButton.textContent = "Copy failed";
+
             setTimeout(() => {
                 copyButton.textContent = originalText;
             }, 1200);
         }
+
         if (window.showToast) {
             window.showToast("Clipboard blocked", "error");
         }
     }
 }
 
+
+
 // ---------- UUID TOOL ----------
 
 const generateUUID = () => {
 
-    $("output").textContent = crypto.randomUUID();
+    const quantity = document.getElementById("quantity").value;
+    let result = "";
 
+    for (let i = 0; i < quantity; i++) {
+        result += crypto.randomUUID() + "\n";
+    }
+
+    document.getElementById("output").textContent = result.trim();
+    document.getElementById("status").textContent = "UUID generated ✔";
+
+    if (window.showToast) {
+        window.showToast("UUID generated", "success");
+    }
 };
+
+const clearUUID = () => {
+    document.getElementById("output").textContent = "";
+    document.getElementById("status").textContent = "";
+};
+
+async function copyUUID(buttonEl) {
+
+    const output = document.getElementById("output").textContent.trim();
+
+    if (!output) {
+        if (window.showToast) {
+            window.showToast("Generate UUID first", "info");
+        }
+        return;
+    }
+
+    await navigator.clipboard.writeText(output);
+
+    if (window.showToast) {
+        window.showToast("Copied", "success");
+    }
+}
 
 const validateUUID = () => {
 

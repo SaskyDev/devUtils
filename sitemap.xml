@@ -2,56 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <!-- MAIN -->
-<url><loc>https://devutilskit.com/</loc></url>
-<url><loc>https://devutilskit.com/all-tools.html</loc></url>
+<url>
+<loc>https://devutilskit.com/</loc>
+<priority>1.0</priority>
+</url>
 
-<!-- DEVELOPER TOOLS -->
-<url><loc>https://devutilskit.com/tools/json-formatter/</loc></url>
-<url><loc>https://devutilskit.com/tools/json-validator/</loc></url>
-<url><loc>https://devutilskit.com/tools/regex-tester/</loc></url>
-<url><loc>https://devutilskit.com/tools/uuid-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/uuid-validator/</loc></url>
-<url><loc>https://devutilskit.com/tools/timestamp-converter/</loc></url>
-<url><loc>https://devutilskit.com/tools/query-string-parser/</loc></url>
-<url><loc>https://devutilskit.com/tools/csv-to-json/</loc></url>
-<url><loc>https://devutilskit.com/tools/json-to-csv/</loc></url>
-<url><loc>https://devutilskit.com/tools/url-parser/</loc></url>
-<url><loc>https://devutilskit.com/tools/html-preview/</loc></url>
-<url><loc>https://devutilskit.com/tools/html-minifier/</loc></url>
-<url><loc>https://devutilskit.com/tools/js-minifier/</loc></url>
-<url><loc>https://devutilskit.com/tools/json-compare/</loc></url>
-<url><loc>https://devutilskit.com/tools/json-yaml/</loc></url>
-<url><loc>https://devutilskit.com/tools/markdown-to-html/</loc></url>
-<url><loc>https://devutilskit.com/tools/json-minifier/</loc></url>
-<url><loc>https://devutilskit.com/tools/url-extractor/</loc></url>
+<url>
+<loc>https://devutilskit.com/all-tools.html</loc>
+<priority>0.9</priority>
+</url>
+
+<!-- TOOLS -->
+<url><loc>https://devutilskit.com/tools/json-formatter/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/json-validator/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/regex-tester/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/uuid-generator/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/uuid-validator/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/timestamp-converter/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/query-string-parser/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/csv-to-json/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/json-to-csv/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/url-parser/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/html-preview/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/html-minifier/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/js-minifier/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/json-compare/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/json-yaml/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/markdown-to-html/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/json-minifier/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/url-extractor/</loc><priority>0.9</priority></url>
 
 <!-- ENCODING -->
-<url><loc>https://devutilskit.com/tools/base64/</loc></url>
-<url><loc>https://devutilskit.com/tools/url-encoder/</loc></url>
-<url><loc>https://devutilskit.com/tools/image-base64/</loc></url>
+<url><loc>https://devutilskit.com/tools/base64/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/url-encoder/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/image-base64/</loc><priority>0.8</priority></url>
 
 <!-- SECURITY -->
-<url><loc>https://devutilskit.com/tools/password-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/password-strength/</loc></url>
-<url><loc>https://devutilskit.com/tools/hash-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/hash-compare/</loc></url>
-<url><loc>https://devutilskit.com/tools/jwt-decoder/</loc></url>
-<url><loc>https://devutilskit.com/tools/jwt-encoder/</loc></url>
+<url><loc>https://devutilskit.com/tools/password-generator/</loc><priority>0.9</priority></url>
+<url><loc>https://devutilskit.com/tools/password-strength/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/hash-generator/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/hash-compare/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/jwt-decoder/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/jwt-encoder/</loc><priority>0.8</priority></url>
 
 <!-- TEXT -->
-<url><loc>https://devutilskit.com/tools/text-case/</loc></url>
-<url><loc>https://devutilskit.com/tools/slug-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/word-counter/</loc></url>
-<url><loc>https://devutilskit.com/tools/lorem-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/text-reverser/</loc></url>
-<url><loc>https://devutilskit.com/tools/text-diff/</loc></url>
+<url><loc>https://devutilskit.com/tools/text-case/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/slug-generator/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/word-counter/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/lorem-generator/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/text-reverser/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/text-diff/</loc><priority>0.9</priority></url>
 
 <!-- UTILITY -->
-<url><loc>https://devutilskit.com/tools/random-number/</loc></url>
-<url><loc>https://devutilskit.com/tools/color-picker/</loc></url>
-<url><loc>https://devutilskit.com/tools/color-converter/</loc></url>
-<url><loc>https://devutilskit.com/tools/timestamp-generator/</loc></url>
-<url><loc>https://devutilskit.com/tools/date-formatter/</loc></url>
-<url><loc>https://devutilskit.com/tools/base-converter/</loc></url>
+<url><loc>https://devutilskit.com/tools/random-number/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/color-picker/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/color-converter/</loc><priority>0.7</priority></url>
+<url><loc>https://devutilskit.com/tools/timestamp-generator/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/date-formatter/</loc><priority>0.8</priority></url>
+<url><loc>https://devutilskit.com/tools/base-converter/</loc><priority>0.7</priority></url>
 
 </urlset>

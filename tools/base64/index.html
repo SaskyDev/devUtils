@@ -5,9 +5,13 @@
 
 <meta charset="UTF-8">
 
-<title>Base64 Encoder / Decoder - DevUtils</title>
+<title>Base64 Encode & Decode Online - Free Base64 Converter</title>
 
-<meta name="description" content="Encode and decode Base64 strings instantly with this simple online Base64 encoder and decoder tool.">
+<meta name="description" content="Encode and decode Base64 instantly with this free online tool. Convert text to Base64 or decode Base64 strings easily and securely.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/base64/">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
@@ -16,93 +20,119 @@
 
 <body>
 
-<h1>Base64 Encoder / Decoder</h1>
+<!-- HERO -->
+<section class="tool-container">
 
-<p>
-Encode plain text into Base64 format or decode Base64 strings back into readable text.
-This tool is commonly used when working with APIs, authentication headers and encoded data.
+<h1>Base64 Encode & Decode Online</h1>
+
+<p class="tool-description">
+Convert text to Base64 or decode Base64 strings instantly. Fast, simple and secure encoding tool for developers.
 </p>
 
+</section>
 
-<!-- TOOL INTERFACE -->
 
-<textarea id="input" placeholder="Enter text or Base64 string"></textarea>
+<!-- TOOL -->
+<section class="tool-container">
 
-<br><br>
+<h2>Tool</h2>
 
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Enter text or Base64 string..."></textarea>
+
+<div class="tool-actions">
 <button onclick="encodeBase64()">Encode</button>
 <button onclick="decodeBase64()">Decode</button>
-<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Encode or decode first" data-copy-success="Base64 result copied">Copy</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
 <button onclick="clearBase64()">Clear</button>
-
-
-<!-- RESULT -->
+</div>
 
 <pre id="output"></pre>
 <div id="status"></div>
 
+</div>
 
-<!-- DOCUMENTATION -->
-
-<h2>What is Base64 encoding?</h2>
-
-<p>
-Base64 is a binary-to-text encoding scheme that converts binary data into ASCII text.
-It is widely used to transmit data safely through systems that only support text.
-</p>
+</section>
 
 
-<h2>How to use this tool</h2>
-
-<ol>
-
-<li>Enter the text you want to encode or decode.</li>
-
-<li>Click Encode to convert text into Base64.</li>
-
-<li>Click Decode to convert Base64 back into plain text.</li>
-
-</ol>
-
+<!-- EXAMPLE -->
+<section class="tool-container">
 
 <h2>Example</h2>
 
-<h3>Input text</h3>
+<pre>Hello World</pre>
 
-<pre>Hello DevUtils</pre>
+<p><strong>Encoded:</strong></p>
 
-<h3>Encoded result</h3>
+<pre>SGVsbG8gV29ybGQ=</pre>
 
-<pre>SGVsbG8gRGV2VXRpbHM=</pre>
+<p><strong>Decoded:</strong></p>
+
+<pre>Hello World</pre>
+
+</section>
 
 
-<h2>Tip</h2>
+<!-- HOW TO USE -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Enter text or Base64 string</li>
+<li>Click "Encode" or "Decode"</li>
+<li>Copy the result if needed</li>
+</ol>
+
+</section>
+
+
+<!-- SEO CONTENT -->
+<section class="tool-container">
+
+<h2>What is Base64 Encoding?</h2>
 
 <p>
-Base64 is often used in HTTP authentication headers, data URLs and email attachments.
-Developers frequently use Base64 when working with APIs and encoded data.
+Base64 encoding is a method used to convert binary data into ASCII text. It is commonly used in web development to safely transmit data through systems that only support text.
 </p>
 
+<p>
+Developers often use Base64 when working with APIs, authentication headers, email attachments and data URLs. It ensures that data remains intact without being corrupted during transfer.
+</p>
 
-<!-- RELATED TOOLS -->
+<p>
+This tool allows you to quickly encode and decode Base64 strings directly in your browser without sending data to any server.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
 
 <h2>Related tools</h2>
 
 <div class="tools-grid">
 
-<div class="tool-card">
-<a href="../url-encoder/">🔗 URL Encoder / Decoder</a>
+<a href="../url-encoder/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">URL Encoder / Decoder</span>
+</a>
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
 </div>
 
-<div class="tool-card">
-<a href="../json-formatter/">🧩 JSON Formatter</a>
-</div>
-
-<div class="tool-card">
-<a href="../regex-tester/">🧪 Regex Tester</a>
-</div>
-
-</div>
+</section>
 
 
 <script src="../../js/encodingTools.js"></script>

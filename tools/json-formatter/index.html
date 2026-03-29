@@ -2,109 +2,129 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
-<title>JSON Formatter - DevUtils</title>
+<title>JSON Formatter Online - Format, Validate & Minify JSON</title>
 
-<meta name="description" content="Format, validate and minify JSON directly in your browser with this free online JSON formatter tool.">
+<meta name="description" content="Format, validate and minify JSON instantly with this free online JSON formatter. Beautify JSON and fix errors easily.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/json-formatter/">
 
 <link rel="stylesheet" href="../../css/styles.css">
-
 </head>
-
 
 <body>
 
-<h1>JSON Formatter</h1>
+<!-- HERO -->
+<section class="tool-container">
 
-<p>
-Format and validate JSON easily with this free online JSON formatter.
-Paste your JSON in the input box and the tool will instantly format it into a readable structure.
+<h1>JSON Formatter Online</h1>
+
+<p class="tool-description">
+Format, validate and minify JSON instantly. Improve readability and debug structured data faster.
 </p>
 
+</section>
 
-<!-- TOOL INTERFACE -->
 
-<textarea id="input" placeholder="Paste your JSON here"></textarea>
+<!-- TOOL -->
+<section class="tool-container">
 
-<br><br>
+<h2>Tool</h2>
 
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste your JSON here..."></textarea>
+
+<div class="tool-actions">
 <button onclick="formatJSON()">Format</button>
 <button onclick="minifyJSON()">Minify</button>
-<button class="btn-copy" onclick="copyJSON(this)">Copy formatted JSON</button>
+<button class="btn-copy" onclick="copyJSON(this)">Copy</button>
 <button onclick="clearJSON()">Clear</button>
+</div>
 
-
-<!-- RESULT -->
-
-<pre id="output"></pre>
+<pre id="output">Formatted JSON will appear here...</pre>
 <div id="status"></div>
 
-<!-- DOCUMENTATION -->
+</div>
 
-<h2>What is JSON formatting?</h2>
-
-<p>
-JSON formatting converts compact JSON data into a structured and readable format.
-This helps developers debug APIs, understand data structures and work with JSON more efficiently.
-</p>
+</section>
 
 
-<h2>How to use this tool</h2>
-
-<ol>
-
-<li>Paste your JSON into the input box.</li>
-
-<li>Click the Format button.</li>
-
-<li>The formatted JSON will appear below.</li>
-
-</ol>
-
+<!-- EXAMPLE -->
+<section class="tool-container">
 
 <h2>Example</h2>
 
-<h3>Input example</h3>
+<pre>{"name":"John","age":30}</pre>
 
-<pre>{"name":"Luis","age":45}</pre>
-
-<h3>Formatted result</h3>
+<p><strong>Formatted output:</strong></p>
 
 <pre>{
-  "name": "Luis",
-  "age": 45
+  "name": "John",
+  "age": 30
 }</pre>
 
+</section>
 
-<h2>Tip</h2>
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste your JSON</li>
+<li>Click "Format"</li>
+<li>Copy or minify if needed</li>
+</ol>
+
+</section>
+
+
+<!-- SEO CONTENT -->
+<section class="tool-container">
+
+<h2>What is a JSON Formatter?</h2>
 
 <p>
-Formatting JSON makes it easier to read nested structures and debug API responses.
-Most developers use JSON formatters when working with REST APIs.
+A JSON formatter converts raw JSON data into a readable structure. It helps developers debug APIs, understand data and work with JSON more efficiently.
 </p>
 
+<p>
+Formatted JSON makes nested objects easier to read and helps detect syntax errors quickly. This tool is commonly used when working with APIs and data processing.
+</p>
 
-<!-- RELATED TOOLS -->
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
 
 <h2>Related tools</h2>
 
 <div class="tools-grid">
 
-<div class="tool-card">
-<a href="../json-validator/">✔️ JSON Validator</a>
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-minifier/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">JSON Minifier</span>
+</a>
+
+<a href="../json-compare/" class="tool-card">
+<span class="tool-icon">🆚</span>
+<span class="tool-title">JSON Compare</span>
+</a>
+
 </div>
 
-<div class="tool-card">
-<a href="../base64/">🔐 Base64 Encoder / Decoder</a>
-</div>
-
-<div class="tool-card">
-<a href="../regex-tester/">🧪 Regex Tester</a>
-</div>
-
-</div>
+</section>
 
 
 <script src="../../js/jsonTools.js"></script>
@@ -112,5 +132,4 @@ Most developers use JSON formatters when working with REST APIs.
 <script src="../../js/main.js"></script>
 
 </body>
-
 </html>
