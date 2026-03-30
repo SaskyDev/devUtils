@@ -166,3 +166,123 @@ function copyResult() {
         document.getElementById("output").innerText
     );
 }
+
+function formatSQL() {
+
+    const input = document.getElementById("input").value;
+    const output = document.getElementById("output");
+
+    if (!input.trim()) {
+        output.textContent = "Enter SQL query ❌";
+        output.className = "output-box error";
+        return;
+    }
+
+    try {
+        let formatted = input
+            .replace(/\s+/g, " ")
+            .replace(/SELECT/gi, "\nSELECT")
+            .replace(/FROM/gi, "\nFROM")
+            .replace(/WHERE/gi, "\nWHERE")
+            .replace(/ORDER BY/gi, "\nORDER BY")
+            .replace(/GROUP BY/gi, "\nGROUP BY")
+            .replace(/\bAND\b/gi, "\n  AND")
+            .replace(/\bOR\b/gi, "\n  OR");
+
+        output.textContent = formatted.trim();
+        output.className = "output-box success";
+
+        if (window.showToast) {
+            window.showToast("SQL formatted", "success");
+        }
+
+    } catch {
+        output.textContent = "Error formatting SQL ❌";
+        output.className = "output-box error";
+    }
+}
+
+function clearAll() {
+    document.getElementById("input").value = "";
+    const output = document.getElementById("output");
+    output.textContent = "";
+    output.className = "output-box";
+}
+
+function copyResult(buttonEl) {
+    if (window.copyOutput) {
+        window.copyOutput(buttonEl, { sourceId: "output" });
+        return;
+    }
+    const text = document.getElementById("output").textContent;
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    if (window.showToast) window.showToast("Copied", "success");
+}
+
+function convertToMarkdown() {
+
+    const input = document.getElementById("input").value;
+    const output = document.getElementById("output");
+
+    if (!input.trim()) {
+        output.textContent = "Enter HTML ❌";
+        output.className = "output-box error";
+        return;
+    }
+
+    try {
+        let markdown = input;
+
+        markdown = markdown
+            .replace(/<h1>(.*?)<\/h1>/gi, "# $1\n\n")
+            .replace(/<h2>(.*?)<\/h2>/gi, "## $1\n\n")
+            .replace(/<h3>(.*?)<\/h3>/gi, "### $1\n\n")
+            .replace(/<strong>(.*?)<\/strong>/gi, "**$1**")
+            .replace(/<b>(.*?)<\/b>/gi, "**$1**")
+            .replace(/<em>(.*?)<\/em>/gi, "*$1*")
+            .replace(/<i>(.*?)<\/i>/gi, "*$1*")
+            .replace(/<a\s+href=["'](.*?)["'].*?>(.*?)<\/a>/gi, "[$2]($1)")
+            .replace(/<li>(.*?)<\/li>/gi, "- $1\n")
+            .replace(/<p>(.*?)<\/p>/gi, "$1\n\n")
+            .replace(/<br\s*\/?>/gi, "\n")
+            .replace(/<[^>]+>/g, "")
+            .replace(/\n{3,}/g, "\n\n");
+
+        output.textContent = markdown.trim();
+        output.className = "output-box success";
+
+        if (window.showToast) {
+            window.showToast("Converted to Markdown", "success");
+        }
+
+    } catch {
+        output.textContent = "Error converting ❌";
+        output.className = "output-box error";
+    }
+}
+
+function clearAll() {
+    document.getElementById("input").value = "";
+    const output = document.getElementById("output");
+    output.textContent = "";
+    output.className = "output-box";
+}
+
+function copyResult(buttonEl) {
+    if (typeof window.copyOutput === "function") {
+        window.copyOutput(buttonEl, {
+            emptyMessage: "Nothing to copy yet",
+            successMessage: "Copied to clipboard"
+        });
+        return;
+    }
+
+    const text = document.getElementById("output").textContent;
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+
+    if (window.showToast) {
+        window.showToast("Copied", "success");
+    }
+}
