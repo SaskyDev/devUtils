@@ -29,9 +29,6 @@ const generatePassword = () => {
 
     $("output").textContent = password;
 
-    const status = document.getElementById("status");
-    if (status) status.textContent = "Password generated ✔";
-
     if (window.showToast) {
         window.showToast("Password generated", "success");
     }
@@ -104,7 +101,6 @@ const generateUUID = () => {
     }
 
     document.getElementById("output").textContent = result.trim();
-    document.getElementById("status").textContent = "UUID generated ✔";
 
     if (window.showToast) {
         window.showToast("UUID generated", "success");
@@ -113,7 +109,6 @@ const generateUUID = () => {
 
 const clearUUID = () => {
     document.getElementById("output").textContent = "";
-    document.getElementById("status").textContent = "";
 };
 
 async function copyUUID(buttonEl) {

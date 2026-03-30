@@ -1,33 +1,42 @@
 let mode = "json"; // json -> yaml
 
-const setMode = (newMode) => {
+const setMode = (newMode, event) => {
     mode = newMode;
 
     document.querySelectorAll(".mode-btn").forEach(btn => {
         btn.classList.remove("active");
     });
 
-    event.target.classList.add("active");
+    if (event?.target) {
+        event.target.classList.add("active");
+    }
 };
 
 
 const convert = () => {
 
-    const input = document.getElementById("input").value;
+    const input = document.getElementById("input").value.trim();
     const output = document.getElementById("output");
+
+    if (!input) {
+        output.textContent = "Enter JSON or YAML input";
+        if (window.showToast) window.showToast("Enter JSON or YAML input", "info");
+        return;
+    }
 
     try {
 
         if(mode === "json"){
             const obj = JSON.parse(input);
-            output.value = jsonToYaml(obj);
+            output.textContent = jsonToYaml(obj);
         } else {
             const obj = yamlToJson(input);
-            output.value = JSON.stringify(obj, null, 2);
+            output.textContent = JSON.stringify(obj, null, 2);
         }
 
     } catch (e) {
-        output.value = "Error: Invalid input";
+        output.textContent = "Error: Invalid input";
+        if (window.showToast) window.showToast("Invalid input", "error");
     }
 };
 
@@ -71,9 +80,9 @@ const yamlToJson = (yaml) => {
 
 const clearAll = () => {
     document.getElementById("input").value = "";
-    document.getElementById("output").value = "";
+    document.getElementById("output").textContent = "";
 };
 
 const copyOutput = () => {
-    navigator.clipboard.writeText(document.getElementById("output").value);
+    navigator.clipboard.writeText(document.getElementById("output").textContent);
 };

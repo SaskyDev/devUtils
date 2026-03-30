@@ -9,6 +9,8 @@
 <title>TOOL NAME - DevUtils</title>
 <meta name="description" content="Short description of the tool.">
 <meta name="robots" content="index, follow">
+<!-- ⚠️ CANVIA tool-slug pel nom real de la tool: ex. base64, json-formatter... -->
+<link rel="canonical" href="https://devutilskit.com/tools/tool-slug/">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
@@ -37,16 +39,19 @@ Short explanation of what this tool does and why it is useful.
 <div class="tool-ui">
 
 <!-- Inputs -->
-<textarea placeholder="Paste your input here..."></textarea>
+<textarea id="input" placeholder="Paste your input here..."></textarea>
 
 <!-- Buttons -->
 <div class="tool-actions">
-<button>Run</button>
-<button>Clear</button>
+<button onclick="runToolAction()">Run</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Nothing to copy yet" data-copy-success="Result copied">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
 </div>
 
 <!-- Output -->
+<div class="result-block">
 <pre id="output">Result will appear here...</pre>
+</div>
 
 </div>
 
@@ -81,7 +86,7 @@ Short explanation of what this tool does and why it is useful.
 </section>
 
 
-<!-- EXPLANATION (SEO 🔥) -->
+<!-- EXPLANATION (SEO) -->
 <section class="tool-container">
 
 <h2>What is this tool?</h2>
@@ -111,8 +116,9 @@ Explain the concept behind the tool. (IMPORTANT per SEO)
 </section>
 
 
+<!-- TOOL JS FILE -->
+<script src="../../js/your-tool-file.js"></script>
 <script src="../../js/ui.js"></script>
-<script src="../../js/toolCategory.js"></script>
 <script src="../../js/main.js"></script>
 
 </body>

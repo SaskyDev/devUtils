@@ -108,16 +108,15 @@ function compareText() {
     const t2 = document.getElementById("text2").value.split("\n");
 
     const output = document.getElementById("output");
-    const status = document.getElementById("status");
 
     if (!t1.length || !t2.length) {
-        status.textContent = "Enter both texts ❌";
-        status.style.color = "red";
+        output.textContent = "Enter both texts";
         return;
     }
 
-    status.textContent = "Comparison done ✔";
-    status.style.color = "green";
+    if (window.showToast) {
+        window.showToast("Comparison done", "success");
+    }
 
     let html = `
     <div class="diff-table">
@@ -159,7 +158,6 @@ function clearAll() {
     document.getElementById("text1").value = "";
     document.getElementById("text2").value = "";
     document.getElementById("output").innerHTML = "";
-    document.getElementById("status").textContent = "";
 }
 
 

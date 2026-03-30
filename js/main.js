@@ -1,19 +1,21 @@
 // Helper per seleccionar elements
 const $ = (id) => document.getElementById(id);
 function setSuccess(message = "Success") {
-const status = document.getElementById("status");
+const status = document.getElementById("status") || document.getElementById("output");
 if (!status) return;
 
 status.textContent = message + " ✅";
-status.className = "status-success";
+status.classList.remove("status-error");
+status.classList.add("status-success");
 }
 
 function setError(message = "Error") {
-const status = document.getElementById("status");
+const status = document.getElementById("status") || document.getElementById("output");
 if (!status) return;
 
 status.textContent = message + " ❌";
-status.className = "status-error";
+status.classList.remove("status-success");
+status.classList.add("status-error");
 }
 
 function setTemporaryButtonText(buttonEl, text, duration = 1200) {

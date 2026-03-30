@@ -80,18 +80,13 @@ const compareJSON = () => {
     const j1 = document.getElementById("json1").value;
     const j2 = document.getElementById("json2").value;
     const output = document.getElementById("output");
-    const status = document.getElementById("status");
 
     try {
         const obj1 = JSON.parse(j1);
         const obj2 = JSON.parse(j2);
 
-        if (typeof window.setSuccess === "function") {
-            window.setSuccess("Valid JSON");
-        } else if (status) {
-            status.textContent = "Valid JSON";
-            status.classList.remove("status-error");
-            status.classList.add("status-success");
+        if (window.showToast) {
+            window.showToast("Valid JSON", "success");
         }
 
         let html = `
@@ -135,15 +130,7 @@ const compareJSON = () => {
 
     } catch (e) {
 
-        if (typeof window.setError === "function") {
-            window.setError("Error: " + e.message);
-        } else if (status) {
-            status.textContent = "Error: " + e.message;
-            status.classList.remove("status-success");
-            status.classList.add("status-error");
-        }
-
-        output.innerHTML = "";
+        output.textContent = "Error: " + e.message;
     }
 };
 
@@ -152,12 +139,6 @@ const clearAll = () => {
     document.getElementById("json1").value = "";
     document.getElementById("json2").value = "";
     document.getElementById("output").innerHTML = "";
-
-    const status = document.getElementById("status");
-    if (status) {
-        status.textContent = "";
-        status.classList.remove("status-success", "status-error", "output-state", "output-success", "output-error", "output-info");
-    }
 };
 
 

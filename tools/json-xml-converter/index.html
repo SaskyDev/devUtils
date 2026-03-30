@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>JSON to XML Converter Online - Convert JSON to XML Instantly</title>
+
+<meta name="description" content="Convert JSON to XML instantly with this free online converter. Transform structured data easily and improve workflow.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/json-to-xml/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>JSON to XML Converter</h1>
+
+<p class="tool-description">
+Convert JSON to XML instantly. Transform structured data into XML format for APIs, configs and integrations.
+</p>
+
+</section>
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste JSON here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="convertToXML()">Convert</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id = "output" class = "output-box"></pre>
+
+</div>
+
+</section>
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+{"name":"John","age":30}
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+<root>
+  <name>John</name>
+  <age>30</age>
+</root>
+</pre>
+
+</section>
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste your JSON data</li>
+<li>Click Convert</li>
+<li>Copy the XML result</li>
+</ol>
+
+</section>
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is JSON to XML conversion?</h2>
+
+<p>
+JSON to XML conversion transforms JSON data into XML format. This is useful when working with systems that require XML input such as legacy APIs or configuration files.
+</p>
+
+<p>
+You can also validate your JSON using our 
+<a href="../json-validator/">JSON Validator</a> or format it with the 
+<a href="../json-formatter/">JSON Formatter</a>.
+</p>
+
+</section>
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-to-csv/" class="tool-card">
+<span class="tool-icon">📄</span>
+<span class="tool-title">JSON to CSV</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/dataTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

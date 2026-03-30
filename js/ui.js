@@ -62,6 +62,7 @@ const navToolsList = [
     { name: "Image to Base64",           icon: "🖼", url: "tools/image-base64/",         category: "Encoding Tools"   },
     { name: "JSON Minifier",             icon: "🧹", url: "tools/json-minifier/",        category: "Developer Tools"  },
     { name: "URL Extractor",             icon: "🔗", url: "tools/url-extractor/",        category: "Developer Tools"  },
+    { name: "JSON to XML Converter",     icon: "🔄", url: "tools/json-to-xml/",          category: "Developer Tools"  },
 ];
 
 const loadNavbar = () => {
@@ -290,7 +291,7 @@ const applyOutputStateClass = (outputEl) => {
 
 const initOutputStateObserver = () => {
 
-    const outputs = document.querySelectorAll("pre#output, div#status");
+    const outputs = document.querySelectorAll("#output");
 
     outputs.forEach((outputEl) => {
 
