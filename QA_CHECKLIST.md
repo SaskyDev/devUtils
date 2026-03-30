@@ -4,7 +4,7 @@ Date: 2026-03-19
 
 Use this checklist to validate all tools quickly in browser.
 
-## Developer Tools
+## Core Dev
 
 ### JSON Formatter
 
@@ -26,15 +26,39 @@ Use this checklist to validate all tools quickly in browser.
 - Action: Click Generate.
 - Expected: UUID v4-like format `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`.
 
+### SQL Formatter
+
+- Action: Paste `SELECT name,age FROM users WHERE age>18 ORDER BY age DESC;` and click Format SQL.
+- Expected: Query is split into readable lines for `SELECT`, `FROM`, `WHERE` and `ORDER BY`.
+
+### Code Beautifier
+
+- Action: Select `JSON`, paste `{"a":1,"b":{"c":2}}`, then switch to `HTML` and `JavaScript` with compact code.
+- Expected: Each mode returns a readable formatted output without errors.
+
+## Validation Tools
+
 ### UUID Validator
 
 - Action: Validate `550e8400-e29b-41d4-a716-446655440000` and `123`.
 - Expected: First valid, second invalid.
 
-### Timestamp Converter
+### Email Validator
 
-- Action: Base `1970-01-01T00:00:00Z`, timestamp `0`; then base `2000-01-01T00:00:00Z`, timestamp `86400`.
-- Expected: First resolves to Unix epoch; second resolves to one day after 2000-01-01.
+- Action: Validate `test@email.com` and `invalid-email`.
+- Expected: First valid, second invalid.
+
+### IP Validator
+
+- Action: Validate `192.168.1.1` and `256.100.50.1`.
+- Expected: First valid, second invalid.
+
+### Password Strength Checker
+
+- Action: Test `abc`, `Abc12345`, `Abc12345!`.
+- Expected: Weak, Medium, Strong respectively.
+
+## Core Dev Data Tools
 
 ### Query String Parser
 
@@ -74,11 +98,6 @@ Use this checklist to validate all tools quickly in browser.
 
 - Action: Length `12`, Generate, then Copy.
 - Expected: Password with 12 chars and copy feedback in button (without overwriting password output).
-
-### Password Strength Checker
-
-- Action: Test `abc`, `Abc12345`, `Abc12345!`.
-- Expected: Weak, Medium, Strong respectively.
 
 ### Hash Generator
 
@@ -138,6 +157,11 @@ Use this checklist to validate all tools quickly in browser.
 
 - Action: Min `1`, Max `3`, generate multiple times.
 - Expected: Only values 1, 2 or 3.
+
+### Timestamp Converter
+
+- Action: Base `1970-01-01T00:00:00Z`, timestamp `0`; then base `2000-01-01T00:00:00Z`, timestamp `86400`.
+- Expected: First resolves to Unix epoch; second resolves to one day after 2000-01-01.
 
 ### Color Picker
 

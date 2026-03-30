@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>IP Validator - Check if IP Address is Valid</title>
+
+<meta name="description" content="Validate IP addresses instantly. Check if an IPv4 or IPv6 address is valid with this free tool.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/ip-validator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>IP Validator</h1>
+
+<p class="tool-description">
+Validate IP addresses instantly. Check if IPv4 or IPv6 addresses are correctly formatted.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Enter one or multiple IPs (one per line)..."></textarea>
+
+<div class="result-block">
+<div class="tool-actions">
+<button onclick="validateIPs()">Validate</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+192.168.1.1
+256.100.50.1
+2001:0db8:85a3::8a2e:0370:7334
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+✔ 192.168.1.1
+❌ 256.100.50.1
+✔ 2001:0db8:85a3::8a2e:0370:7334
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Enter one or more IP addresses</li>
+<li>Click Validate</li>
+<li>Check results instantly</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is an IP Validator?</h2>
+
+<p>
+An IP validator checks whether an IP address is correctly formatted. It supports both IPv4 and IPv6 formats.
+</p>
+
+<p>
+You can also parse URLs using our 
+<a href="../url-parser/">URL Parser</a> or extract links with the 
+<a href="../url-extractor/">URL Extractor</a>.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../url-parser/" class="tool-card">
+<span class="tool-icon">🔎</span>
+<span class="tool-title">URL Parser</span>
+</a>
+
+<a href="../url-extractor/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">URL Extractor</span>
+</a>
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/validationTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

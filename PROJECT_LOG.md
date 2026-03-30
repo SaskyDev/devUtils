@@ -119,12 +119,14 @@ Example structure:
 
 js/ui.js → navbar and UI elements  
 js/main.js → global helper functions  
-js/jsonTools.js → JSON tools  
-js/encodingTools.js → encoding tools  
-js/securityTools.js → security tools  
-js/textTools.js → text related tools  
-js/utilsTools.js → general utilities  
-js/timeTools.js → timestamp related tools
+js/devTools.js → core developer tools  
+js/encodingTools.js → encoding and escaping tools  
+js/validationTools.js → validators and password strength  
+js/securityTools.js → hashes, JWT and password generation  
+js/textTools.js → text manipulation tools  
+js/utilityTools.js → dates, timestamps and numeric helpers  
+js/colorTools.js → color conversion and picker helpers  
+js/htmlTools.js → HTML and Markdown tools
 
 ---
 
@@ -243,7 +245,7 @@ These changes allow search engines to start indexing the site.
 
 ## Tools Implemented
 
-Developer Tools
+Core Dev
 
 - JSON Formatter
 - JSON Validator
@@ -258,10 +260,16 @@ Encoding Tools
 - Base64 Encoder / Decoder
 - URL Encoder / Decoder
 
+Validation Tools
+
+- Email Validator
+- IP Validator
+- UUID Validator
+- Password Strength Checker
+
 Security Tools
 
 - Password Generator
-- Password Strength Checker
 - Hash Generator
 - JWT Decoder
 - JWT Encoder

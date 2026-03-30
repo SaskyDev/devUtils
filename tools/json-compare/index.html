@@ -47,7 +47,7 @@ Compare two JSON objects and instantly highlight differences. Perfect for debugg
 <div class="tool-actions">
 <button onclick="compareJSON()">Compare</button>
 <button onclick="clearAll()">Clear</button>
-<button onclick="copyResult()">Copy</button>
+<button onclick="copyResult(this)">Copy</button>
 </div>
 
 <div id="output" class="diff-side"></div>
@@ -149,7 +149,7 @@ Whether you are testing APIs or comparing configuration files, a JSON diff tool 
 
 
 <script src="../../js/ui.js"></script>
-<script src="../../js/jsonTools.js"></script>
+<script src="../../js/devTools.js"></script>
 <script src="../../js/main.js"></script>
 
 </body>

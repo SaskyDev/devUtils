@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Email Validator - Check if Email is Valid Online</title>
+
+<meta name="description" content="Validate email addresses instantly. Check if an email is correctly formatted with this free online email validator.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/email-validator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>Email Validator</h1>
+
+<p class="tool-description">
+Validate email addresses instantly. Check if an email is correctly formatted and usable.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Enter one or multiple emails (one per line)..."></textarea>
+
+<div class="tool-actions">
+<button onclick="validateEmails()">Validate</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+test@email.com
+invalid-email
+hello@domain.org
+</pre>
+
+<p><strong>Output:</strong></p>
+
+<pre>
+✔ test@email.com
+❌ invalid-email
+✔ hello@domain.org
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Enter one or multiple emails</li>
+<li>Click "Validate"</li>
+<li>Check valid and invalid results</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is an Email Validator?</h2>
+
+<p>
+An email validator checks if an email address is correctly formatted. It ensures that the email follows standard syntax rules.
+</p>
+
+<p>
+You can also test patterns with our 
+<a href="../regex-tester/">Regex Tester</a> or clean text using the 
+<a href="../text-case/">Text Case Converter</a>.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+<a href="../text-case/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Text Case Converter</span>
+</a>
+
+<a href="../slug-generator/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">Slug Generator</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/validationTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

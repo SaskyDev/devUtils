@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Escape JSON String - Encode JSON Text Safely</title>
+
+<meta name="description" content="Escape JSON strings instantly. Encode special characters like quotes and backslashes for safe JSON usage.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/json-string-escape/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>Escape JSON String</h1>
+
+<p class="tool-description">
+Escape JSON strings instantly. Encode quotes, backslashes and special characters for safe usage in APIs and code.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste JSON string here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="escapeJSON()">Escape</button>
+<button onclick="unescapeJSON()">Unescape</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+Hello "world"
+</pre>
+
+<p><strong>Escaped:</strong></p>
+
+<pre>
+Hello \"world\"
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste your text</li>
+<li>Click Escape or Unescape</li>
+<li>Copy the result</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is JSON string escaping?</h2>
+
+<p>
+JSON string escaping converts special characters like quotes and backslashes into a safe format. This is necessary when embedding text inside JSON.
+</p>
+
+<p>
+You can also format full JSON using our 
+<a href="../json-formatter/">JSON Formatter</a> or validate it with the 
+<a href="../json-validator/">JSON Validator</a>.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-minifier/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">JSON Minifier</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/encodingTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

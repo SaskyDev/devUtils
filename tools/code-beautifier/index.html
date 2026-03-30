@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Code Beautifier - Format Code Online (JSON, HTML, JS)</title>
+
+<meta name="description" content="Format and beautify code instantly. Supports JSON, HTML and JavaScript formatting online.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/code-beautifier/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+
+<h1>Code Beautifier</h1>
+
+<p class="tool-description">
+Format and beautify code instantly. Supports JSON, HTML and JavaScript.
+</p>
+
+</section>
+
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<select id="type">
+<option value="json">JSON</option>
+<option value="html">HTML</option>
+<option value="js">JavaScript</option>
+</select>
+
+<textarea id="input" placeholder="Paste code here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="formatCode()">Format</button>
+<button onclick="clearAll()">Clear</button>
+<button onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+
+</div>
+
+</section>
+
+<script src="../../js/devTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

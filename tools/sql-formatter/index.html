@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>SQL Formatter Online - Format and Beautify SQL Queries</title>
+
+<meta name="description" content="Format SQL queries instantly with this free SQL formatter. Beautify and organize SQL code for better readability.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/sql-formatter/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>SQL Formatter</h1>
+
+<p class="tool-description">
+Format and beautify SQL queries instantly. Improve readability and structure of your SQL code.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste SQL query here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="formatSQL()">Format SQL</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+SELECT name,age FROM users WHERE age&gt;18 ORDER BY age DESC;
+</pre>
+
+<p><strong>Formatted:</strong></p>
+
+<pre>
+SELECT name, age
+FROM users
+WHERE age &gt; 18
+ORDER BY age DESC;
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste your SQL query</li>
+<li>Click "Format SQL"</li>
+<li>Copy the formatted result</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is a SQL Formatter?</h2>
+
+<p>
+A SQL formatter is a tool that organizes SQL queries into a readable structure. It helps developers understand and debug queries faster.
+</p>
+
+<p>
+You can also analyze your data using our 
+<a href="../json-formatter/">JSON Formatter</a> or extract data with the 
+<a href="../query-string-parser/">Query String Parser</a>.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../query-string-parser/" class="tool-card">
+<span class="tool-icon">🔍</span>
+<span class="tool-title">Query String Parser</span>
+</a>
+
+<a href="../text-case/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Text Case Converter</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../js/devTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

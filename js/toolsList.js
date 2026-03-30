@@ -28,7 +28,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const paramCategory = urlParams.get("category");
 
 if (paramCategory) {
-    const validCategories = ["Developer Tools", "Encoding Tools", "Security Tools", "Text Tools", "Utility Tools"];
+    const validCategories = [...new Set(tools.map(tool => tool.category))];
     if (validCategories.includes(paramCategory)) {
         currentCategory = paramCategory;
     }

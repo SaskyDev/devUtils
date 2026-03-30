@@ -4,12 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JWT Debugger - Decode and Inspect JWT Tokens</title>
+
+<meta name="description" content="Decode and inspect JWT tokens instantly. View header, payload and signature easily.">
+
 <meta name="robots" content="index, follow">
 
-<title>JWT Decoder - DevUtils</title>
-
-<meta name="description" content="Decode JSON Web Tokens and inspect header and payload easily.">
+<link rel="canonical" href="https://devutilskit.com/tools/jwt-decoder/">
 
 <link rel="stylesheet" href="../../css/styles.css">
 
@@ -17,73 +19,40 @@
 
 <body>
 
-<h1>JWT Decoder</h1>
+<section class="tool-container">
 
-<p>
-Decode a JSON Web Token and inspect its header and payload.
+<h1>JWT Debugger</h1>
+
+<p class="tool-description">
+Decode and inspect JWT tokens instantly. View header and payload clearly.
 </p>
 
-<div class="tool-container">
+</section>
 
-<textarea id="jwtInput" placeholder="Paste JWT token here"></textarea>
+<section class="tool-container">
 
-<button onclick="decodeJWT()">Decode JWT</button>
+<h2>Tool</h2>
 
-</div>
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste JWT token..."></textarea>
 
 <div class="result-block">
-<pre id="output"></pre>
+<div class="tool-actions">
+<button onclick="decodeJWT()">Decode</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
 </div>
 
-
-<h2>What is a JWT?</h2>
-
-<p>
-A JSON Web Token (JWT) is a compact token format used for authentication and information exchange.
-It consists of three parts: header, payload and signature.
-</p>
-
-
-<h2>How to use this tool</h2>
-
-<ol>
-
-<li>Paste your JWT token.</li>
-<li>Click decode.</li>
-<li>View header and payload.</li>
-
-</ol>
-
-
-<h2>Example</h2>
-
-<pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</pre>
-
-<p>Decoded payload example:</p>
-
-<pre>{ "user": "Alex", "admin": true }</pre>
-
-
-<h2>Related tools</h2>
-
-<div class="tools-grid">
-
-<div class="tool-card">
-<a href="../base64/">Base64 Encoder / Decoder</a>
-</div>
-
-<div class="tool-card">
-<a href="../json-formatter/">JSON Formatter</a>
-</div>
-
-<div class="tool-card">
-<a href="../uuid-generator/">UUID Generator</a>
+<pre id="output" class="output-box"></pre>
 </div>
 
 </div>
 
-<script src="../../js/ui.js"></script>
+</section>
+
 <script src="../../js/securityTools.js"></script>
+<script src="../../js/ui.js"></script>
 <script src="../../js/main.js"></script>
 
 </body>

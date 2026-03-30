@@ -145,46 +145,58 @@ const validateUUID = () => {
 
 function decodeJWT() {
 
-const token = document.getElementById("jwtInput").value.trim();
-const output = document.getElementById("output");
+    const input = document.getElementById("input").value;
+    const output = document.getElementById("output");
 
-try {
+    try {
+        const parts = input.split(".");
 
-const parts = token.split(".");
+        if (parts.length !== 3) throw "Invalid";
 
-if (parts.length !== 3) {
-output.textContent = "Invalid JWT format";
-return;
+        const decode = (str) => {
+            const base64 = str
+                .replace(/-/g, "+")
+                .replace(/_/g, "/")
+                .padEnd(Math.ceil(str.length / 4) * 4, "=");
+
+            const binary = atob(base64);
+            const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+            const jsonText = new TextDecoder().decode(bytes);
+
+            return JSON.parse(jsonText);
+        };
+
+        const header = decode(parts[0]);
+        const payload = decode(parts[1]);
+
+        output.textContent =
+            "HEADER:\n" + JSON.stringify(header, null, 2) +
+            "\n\nPAYLOAD:\n" + JSON.stringify(payload, null, 2);
+
+        output.className = "output-box success";
+
+    } catch {
+        output.textContent = "Invalid JWT ❌";
+        output.className = "output-box error";
+    }
 }
 
-const decodeBase64UrlJSON = (segment) => {
-const base64 = segment
-    .replace(/-/g, "+")
-    .replace(/_/g, "/")
-    .padEnd(Math.ceil(segment.length / 4) * 4, "=");
-
-const binary = atob(base64);
-const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
-const jsonText = new TextDecoder().decode(bytes);
-
-return JSON.parse(jsonText);
-};
-
-const header = decodeBase64UrlJSON(parts[0]);
-const payload = decodeBase64UrlJSON(parts[1]);
-
-output.textContent =
-"HEADER:\n" +
-JSON.stringify(header, null, 2) +
-"\n\nPAYLOAD:\n" +
-JSON.stringify(payload, null, 2);
-
-} catch {
-
-output.textContent = "Unable to decode token";
-
+function clearAll() {
+    document.getElementById("input").value = "";
+    const output = document.getElementById("output");
+    output.textContent = "";
+    output.className = "output-box";
 }
 
+function copyResult(buttonEl) {
+    if (window.copyOutput) {
+        window.copyOutput(buttonEl, { sourceId: "output" });
+        return;
+    }
+    const text = document.getElementById("output").textContent;
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    if (window.showToast) window.showToast("Copied", "success");
 }
 
 async function generateHash(type) {

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>HTML Encoder / Decoder - Encode and Decode HTML Online</title>
+
+<meta name="description" content="Encode and decode HTML instantly. Convert special characters into HTML entities or decode them easily.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/html-encoder/">
+
+<link rel="stylesheet" href="../../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+
+<h1>HTML Encoder / Decoder</h1>
+
+<p class="tool-description">
+Encode and decode HTML instantly. Convert special characters into HTML entities or decode them easily.
+</p>
+
+</section>
+
+
+<!-- TOOL -->
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste text or HTML here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="encodeHTML()">Encode</button>
+<button onclick="decodeHTML()">Decode</button>
+<button onclick="clearAll()">Clear</button>
+<button class="btn-copy" onclick="copyResult(this)">Copy</button>
+</div>
+
+<pre id="output" class="output-box"></pre>
+
+</div>
+
+</section>
+
+
+<!-- EXAMPLE -->
+<section class="tool-container">
+
+<h2>Example</h2>
+
+<pre>
+&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;
+</pre>
+
+<p><strong>Encoded:</strong></p>
+
+<pre>
+&lt;div&gt;Hello&lt;/div&gt;
+</pre>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="tool-container">
+
+<h2>How to use</h2>
+
+<ol>
+<li>Paste your text or HTML</li>
+<li>Click Encode or Decode</li>
+<li>Copy the result</li>
+</ol>
+
+</section>
+
+
+<!-- SEO -->
+<section class="tool-container">
+
+<h2>What is HTML encoding?</h2>
+
+<p>
+HTML encoding converts special characters into HTML entities. This is useful for displaying code safely without rendering it as HTML.
+</p>
+
+<p>
+You can also preview HTML using our 
+<a href="../../html-preview/">HTML Preview Editor</a> or clean code with the 
+<a href="../../html-minifier/">HTML Minifier</a>.
+</p>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="tool-container">
+
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../../html-preview/" class="tool-card">
+<span class="tool-icon">🖥</span>
+<span class="tool-title">HTML Preview</span>
+</a>
+
+<a href="../../html-minifier/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">HTML Minifier</span>
+</a>
+
+<a href="../../code-beautifier/" class="tool-card">
+<span class="tool-icon">✨</span>
+<span class="tool-title">Code Beautifier</span>
+</a>
+
+</div>
+
+</section>
+
+
+<script src="../../../js/encodingTools.js"></script>
+<script src="../../../js/ui.js"></script>
+<script src="../../../js/main.js"></script>
+
+</body>
+</html>
