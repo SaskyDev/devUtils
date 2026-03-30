@@ -1,6 +1,6 @@
 # QA Smoke Checklist (All Tools)
 
-Date: 2026-03-19
+Date: 2026-03-31
 
 Use this checklist to validate all tools quickly in browser.
 
@@ -58,7 +58,7 @@ Use this checklist to validate all tools quickly in browser.
 - Action: Test `abc`, `Abc12345`, `Abc12345!`.
 - Expected: Weak, Medium, Strong respectively.
 
-## Core Dev Data Tools
+## Core Dev Routing and Data
 
 ### Query String Parser
 
@@ -80,6 +80,11 @@ Use this checklist to validate all tools quickly in browser.
 - Action: Input `https://example.com/path?a=1#top`.
 - Expected: protocol, hostname, pathname, query and hash separated.
 
+### URL Extractor
+
+- Action: Input text containing two full URLs.
+- Expected: Each URL appears on its own line and copy keeps the extracted list intact.
+
 ## Encoding Tools
 
 ### Base64 Encoder/Decoder
@@ -91,6 +96,16 @@ Use this checklist to validate all tools quickly in browser.
 
 - Action: Encode `hello world?x=1&y=2`, then decode result.
 - Expected: Encoded URL-safe text and exact original recovered on decode.
+
+### HTML Encoder/Decoder
+
+- Action: Encode `<div>Hello</div>` and then decode `&lt;div&gt;Hello&lt;/div&gt;`.
+- Expected: Encoded entities and exact HTML restored on decode.
+
+### JSON String Escape
+
+- Action: Escape `Hello "world"` and then unescape the result.
+- Expected: Quotes and backslashes are escaped and restored correctly.
 
 ## Security Tools
 
@@ -163,20 +178,10 @@ Use this checklist to validate all tools quickly in browser.
 - Action: Base `1970-01-01T00:00:00Z`, timestamp `0`; then base `2000-01-01T00:00:00Z`, timestamp `86400`.
 - Expected: First resolves to Unix epoch; second resolves to one day after 2000-01-01.
 
-### Color Picker
-
-- Action: Pick `#ff0000`.
-- Expected: HEX and RGB values shown consistently.
-
 ### Timestamp Generator
 
 - Action: Base `1970-01-01T00:00:00Z`, then custom base `2000-01-01T00:00:00Z`.
 - Expected: Shows seconds and milliseconds elapsed from selected base, plus base and current UTC.
-
-### Color Converter
-
-- Action: HEX to RGB with `#00ff00`; RGB to HEX with `255,0,0`.
-- Expected: `rgb(0, 255, 0)` and `#ff0000`.
 
 ### Base Converter
 
@@ -187,3 +192,37 @@ Use this checklist to validate all tools quickly in browser.
 
 - Action: Input ISO date `2026-03-19T10:30:00Z` and Unix timestamp `1710456123`.
 - Expected: Outputs ISO, Local and Unix values for valid dates.
+
+## Color Tools
+
+### Color Converter
+
+- Action: HEX to RGB with `#00ff00`; RGB to HEX with `255,0,0`.
+- Expected: `rgb(0, 255, 0)` and `#ff0000`.
+
+### Color Picker
+
+- Action: Pick `#ff0000`.
+- Expected: HEX and RGB values shown consistently.
+
+## HTML Tools
+
+### HTML Minifier
+
+- Action: Paste multiline HTML with extra spaces.
+- Expected: Output is compacted without unnecessary whitespace between tags.
+
+### HTML Preview Editor
+
+- Action: Load the example, then edit HTML and CSS.
+- Expected: Preview updates live and reflects both markup and style changes.
+
+### HTML to Markdown
+
+- Action: Convert `<h1>Hello</h1><p>This is <strong>bold</strong></p>`.
+- Expected: Markdown output contains heading and bold text, and the page example is shown escaped rather than rendered.
+
+### Markdown to HTML
+
+- Action: Convert `# Hello` plus `**bold**`.
+- Expected: Output contains `<h1>` and `<strong>` HTML tags.
