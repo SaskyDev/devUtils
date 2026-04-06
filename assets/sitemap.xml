@@ -1,64 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- MAIN -->
   <url>
     <loc>https://devutilskit.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-06</lastmod>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://devutilskit.com/all-tools.html</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-06</lastmod>
+    <priority>0.9</priority>
   </url>
 
-  <url><loc>https://devutilskit.com/tools/json-formatter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-validator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/regex-tester/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/uuid-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/uuid-validator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/timestamp-converter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/query-string-parser/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/csv-to-json/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-to-csv/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/url-parser/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/url-extractor/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/html-preview/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/html-minifier/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/js-minifier/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/css-minifier/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/code-beautifier/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/sql-formatter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-compare/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-yaml/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-minifier/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-string-escape/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/json-xml-converter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/markdown-to-html/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/html-to-markdown/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/email-validator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/ip-validator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/base64/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/url-encoder/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/image-base64/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/html-encoder/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/html-encoder/decoder/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/password-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/password-strength/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/hash-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/hash-compare/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/jwt-decoder/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/jwt-encoder/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/text-case/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/slug-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/word-counter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/lorem-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/text-reverser/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/text-diff/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/random-number/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/color-picker/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/color-converter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/timestamp-generator/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/date-formatter/</loc><lastmod>2026-04-01</lastmod></url>
-  <url><loc>https://devutilskit.com/tools/base-converter/</loc><lastmod>2026-04-01</lastmod></url>
+  <!-- CORE DEV -->
+  <url><loc>https://devutilskit.com/tools/code-beautifier/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/css-minifier/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/csv-to-json/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/js-minifier/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-compare/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-formatter/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-minifier/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-string-escape/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-to-csv/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-validator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-xml-converter/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/json-yaml/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/query-string-parser/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/regex-tester/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/sql-formatter/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/url-extractor/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/url-parser/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+
+  <!-- ENCODING -->
+  <url><loc>https://devutilskit.com/tools/base64/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/html-encoder/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/html-encoder/decoder/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/image-base64/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/url-encoder/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+
+  <!-- SECURITY -->
+  <url><loc>https://devutilskit.com/tools/hash-compare/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/hash-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/jwt-decoder/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/jwt-encoder/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/password-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/uuid-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+
+  <!-- TEXT -->
+  <url><loc>https://devutilskit.com/tools/lorem-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/slug-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/text-case/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/text-diff/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://devutilskit.com/tools/text-reverser/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/word-counter/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+
+  <!-- UTILITY -->
+  <url><loc>https://devutilskit.com/tools/base-converter/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/date-formatter/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/random-number/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/timestamp-converter/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/timestamp-generator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+
+  <!-- VALIDATION -->
+  <url><loc>https://devutilskit.com/tools/email-validator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/ip-validator/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/password-strength/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://devutilskit.com/tools/uuid-validator/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+
+  <!-- HTML -->
+  <url><loc>https://devutilskit.com/tools/html-minifier/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/html-preview/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/html-to-markdown/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/markdown-to-html/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+
+  <!-- COLOR -->
+  <url><loc>https://devutilskit.com/tools/color-converter/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/color-picker/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
 
 </urlset>
