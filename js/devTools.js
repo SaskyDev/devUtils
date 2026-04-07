@@ -478,20 +478,6 @@ function minifyCSS() {
     }
 }
 
-function testRegex() {
-    const output = getDevOutput();
-    if (!output) return;
-
-    try {
-        const regex = new RegExp(document.getElementById("pattern").value);
-        output.textContent = String(regex.test(document.getElementById("text").value));
-        output.className = "output-box success";
-    } catch {
-        output.textContent = "Invalid Regex";
-        output.className = "output-box error";
-    }
-}
-
 function extractURLs() {
     const input = document.getElementById("input").value;
     const output = getDevOutput();

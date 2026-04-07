@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Remove Duplicate Lines - DevUtils</title>
+<meta name="description" content="Remove duplicate lines from text instantly. Clean your data, logs or lists with one click.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://devutilskit.com/tools/remove-duplicate-lines/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Remove Duplicate Lines</h1>
+<p class="tool-description">
+Remove duplicate lines from your text quickly and keep only unique values.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste your text here..."></textarea>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Remove Duplicates</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Nothing to copy yet" data-copy-success="Result copied">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste your text</li>
+<li>Click "Remove Duplicates"</li>
+<li>Copy the cleaned result</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What does this tool do?</h2>
+<p>
+This tool removes duplicate lines from any text input, keeping only unique entries. Useful for cleaning datasets, logs, or lists.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../sort-lines/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Sort Lines</span>
+</a>
+
+<a href="../text-cleaner/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">Text Cleaner</span>
+</a>
+
+<a href="../text-diff/" class="tool-card">
+<span class="tool-icon">📏</span>
+<span class="tool-title">Text Diff Checker</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/textTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

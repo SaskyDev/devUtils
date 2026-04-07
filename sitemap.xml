@@ -79,4 +79,14 @@
   <url><loc>https://devutilskit.com/tools/color-converter/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://devutilskit.com/tools/color-picker/</loc><lastmod>2026-04-06</lastmod><priority>0.7</priority></url>
 
+  <!-- REGEX -->
+  <url><loc>https://devutilskit.com/tools/email-regex-generator/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/regex-cheatsheet/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/regex-replace/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+
+  <!-- TEXT (new) -->
+  <url><loc>https://devutilskit.com/tools/remove-duplicate-lines/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/sort-lines/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://devutilskit.com/tools/text-cleaner/</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+
 </urlset>

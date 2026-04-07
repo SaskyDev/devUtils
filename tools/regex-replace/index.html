@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Regex Replace Tool - DevUtils</title>
+<meta name="description" content="Find and replace text using regular expressions. Supports global and case-insensitive options.">
+<link rel="canonical" href="https://devutilskit.com/tools/regex-replace/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Regex Replace Tool</h1>
+<p class="tool-description">
+Find and replace text using regular expressions with advanced options.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Enter your text..."></textarea>
+
+<input type="text" id="pattern" placeholder="Regex pattern (e.g. \d+)">
+<input type="text" id="replacement" placeholder="Replacement (e.g. number)">
+
+<!-- OPTIONS -->
+<div class="tool-options">
+<label><input type="checkbox" id="global" checked> Global (g)</label>
+<label><input type="checkbox" id="ignoreCase"> Ignore case (i)</label>
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Replace</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter your text</li>
+<li>Write a regex pattern</li>
+<li>Set replacement value</li>
+<li>Click replace</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is regex replace?</h2>
+<p>
+Regex replace allows you to search for patterns in text and replace them with custom values. It is widely used in data processing and development.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+<a href="../email-regex-generator/" class="tool-card">
+<span class="tool-icon">📧</span>
+<span class="tool-title">Email Regex Generator</span>
+</a>
+
+<a href="../regex-cheatsheet/" class="tool-card">
+<span class="tool-icon">📚</span>
+<span class="tool-title">Regex Cheatsheet</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/regexTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

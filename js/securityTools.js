@@ -21,10 +21,11 @@ const generatePassword = () => {
     }
 
     let password = "";
+    const randomValues = new Uint32Array(length);
+    crypto.getRandomValues(randomValues);
 
     for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * chars.length);
-        password += chars[randomIndex];
+        password += chars[randomValues[i] % chars.length];
     }
 
     $("output").textContent = password;
@@ -190,7 +191,7 @@ function clearAll() {
 
 function copyResult(buttonEl) {
     if (window.copyOutput) {
-        window.copyOutput(buttonEl, { sourceId: "output" });
+        window.copyOutput(buttonEl, { outputId: "output" });
         return;
     }
     const text = document.getElementById("output").textContent;

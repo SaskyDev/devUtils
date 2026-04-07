@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sort Lines - DevUtils</title>
+<meta name="description" content="Sort lines alphabetically, numerically, or reverse order. Clean and organize text instantly.">
+<link rel="canonical" href="https://devutilskit.com/tools/sort-lines/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Sort Lines</h1>
+<p class="tool-description">
+Sort text lines alphabetically, numerically or in reverse order with advanced options.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste your text here..."></textarea>
+
+<!-- OPTIONS -->
+<div class="tool-options">
+
+<label>
+<select id="sortType">
+<option value="az">A → Z</option>
+<option value="za">Z → A</option>
+<option value="num">Numeric</option>
+</select>
+</label>
+
+<label>
+<input type="checkbox" id="ignoreCase"> Ignore case
+</label>
+
+<label>
+<input type="checkbox" id="trim"> Trim spaces
+</label>
+
+<label>
+<input type="checkbox" id="removeEmpty"> Remove empty lines
+</label>
+
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Sort</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-success="Copied">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste your text</li>
+<li>Select sorting type</li>
+<li>Adjust options</li>
+<li>Click sort</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What does this tool do?</h2>
+<p>
+This tool sorts text line by line using different methods such as alphabetical, reverse, or numeric sorting. It helps organize data quickly and efficiently.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../remove-duplicate-lines/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">Remove Duplicate Lines</span>
+</a>
+
+<a href="../text-cleaner/" class="tool-card">
+<span class="tool-icon">🧽</span>
+<span class="tool-title">Text Cleaner</span>
+</a>
+
+<a href="../word-counter/" class="tool-card">
+<span class="tool-icon">📊</span>
+<span class="tool-title">Word Counter</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/textTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

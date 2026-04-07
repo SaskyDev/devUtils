@@ -286,3 +286,125 @@ function copyResult(buttonEl) {
         window.showToast("Copied", "success");
     }
 }
+
+// REMOVE DUPLICATE LINES
+
+function initRemoveDuplicateLines() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.runToolAction = function () {
+        const lines = input.value.split("\n");
+
+        const uniqueLines = [...new Set(lines)];
+
+        output.textContent = uniqueLines.join("\n");
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initRemoveDuplicateLines);
+
+// SORT LINES
+
+function initSortLines() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    const sortType = document.getElementById("sortType");
+    const ignoreCase = document.getElementById("ignoreCase");
+    const trim = document.getElementById("trim");
+    const removeEmpty = document.getElementById("removeEmpty");
+
+    if (!input || !output) return;
+
+    window.runToolAction = function () {
+        let lines = input.value.split("\n");
+
+        if (trim.checked) {
+            lines = lines.map(l => l.trim());
+        }
+
+        if (removeEmpty.checked) {
+            lines = lines.filter(l => l !== "");
+        }
+
+        lines.sort((a, b) => {
+            let A = ignoreCase.checked ? a.toLowerCase() : a;
+            let B = ignoreCase.checked ? b.toLowerCase() : b;
+
+            if (sortType.value === "num") {
+                return Number(A) - Number(B);
+            }
+
+            if (A < B) return -1;
+            if (A > B) return 1;
+            return 0;
+        });
+
+        if (sortType.value === "za") {
+            lines.reverse();
+        }
+
+        output.textContent = lines.join("\n");
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initSortLines);
+
+// TEXT CLEANER
+
+function initTextCleaner() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.runToolAction = function () {
+        let text = input.value;
+
+        if (document.getElementById("trimSpaces").checked) {
+            text = text.split("\n").map(l => l.trim()).join("\n");
+        }
+
+        if (document.getElementById("removeExtraSpaces").checked) {
+            text = text.replace(/\s+/g, " ");
+        }
+
+        if (document.getElementById("removeEmptyLines").checked) {
+            text = text.split("\n").filter(l => l.trim() !== "").join("\n");
+        }
+
+        if (document.getElementById("removeLineBreaks").checked) {
+            text = text.replace(/\n/g, " ");
+        }
+
+        if (document.getElementById("lowercase").checked) {
+            text = text.toLowerCase();
+        }
+
+        if (document.getElementById("uppercase").checked) {
+            text = text.toUpperCase();
+        }
+
+        output.textContent = text;
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initTextCleaner);

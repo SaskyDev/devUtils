@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Email Regex Generator & Tester - DevUtils</title>
+<meta name="description" content="Generate and test email validation regex patterns instantly. Choose between simple, strict, and RFC-like validation.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://devutilskit.com/tools/email-regex-generator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+<h1>Email Regex Generator & Tester</h1>
+
+<p class="tool-description">
+Generate email validation regex patterns and test them in real-time. Choose different validation levels depending on your needs.
+</p>
+</section>
+
+<!-- TOOL -->
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<!-- TYPE SELECT -->
+<select id="regexType">
+<option value="simple">Simple</option>
+<option value="strict">Strict</option>
+<option value="rfc">RFC-like</option>
+</select>
+
+<!-- EMAIL INPUT -->
+<input type="text" id="emailInput" placeholder="Enter email to test...">
+
+<!-- OUTPUT -->
+<div class="result-block">
+<pre id="output"></pre>
+</div>
+
+<!-- RESULT -->
+<p id="validationResult"></p>
+
+<!-- BUTTONS -->
+<div class="tool-actions">
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Nothing to copy yet" data-copy-success="Regex copied">Copy Regex</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+</div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Select the validation type</li>
+<li>Enter an email</li>
+<li>Check if it is valid instantly</li>
+<li>Copy the regex if needed</li>
+</ol>
+</section>
+
+<!-- EXPLANATION -->
+<section class="tool-container">
+<h2>What is an email regex?</h2>
+<p>
+An email regex is a pattern used to validate if a string follows a valid email format. Different levels of strictness exist depending on how precise the validation needs to be.
+</p>
+</section>
+
+<!-- RELATED TOOLS (REGEX CLUSTER) -->
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../regex-tester/" class="tool-card">
+<span class="tool-icon">🧪</span>
+<span class="tool-title">Regex Tester</span>
+</a>
+
+<!-- futuras -->
+<a href="../regex-cheatsheet/" class="tool-card">
+<span class="tool-icon">📚</span>
+<span class="tool-title">Regex Cheatsheet</span>
+</a>
+
+<a href="../regex-replace/" class="tool-card">
+<span class="tool-icon">🔁</span>
+<span class="tool-title">Regex Replace Tool</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/regexTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

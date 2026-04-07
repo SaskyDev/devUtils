@@ -30,6 +30,7 @@ const navToolsList = [
     { name: "CSS Minifier",              icon: "🎨", url: "tools/css-minifier/",          category: "Core Dev"         },
     { name: "CSV → JSON",                icon: "📄", url: "tools/csv-to-json/",           category: "Core Dev"         },
     { name: "Date Formatter",            icon: "📅", url: "tools/date-formatter/",        category: "Utility Tools"    },
+    { name: "Email Regex Generator",     icon: "📧", url: "tools/email-regex-generator/", category: "Regex Tools"      },
     { name: "Email Validator",           icon: "📧", url: "tools/email-validator/",       category: "Validation Tools" },
     { name: "Hash Compare",              icon: "🧬", url: "tools/hash-compare/",          category: "Security Tools"   },
     { name: "Hash Generator",            icon: "🔐", url: "tools/hash-generator/",        category: "Security Tools"   },
@@ -56,7 +57,7 @@ const navToolsList = [
     { name: "Password Strength Checker", icon: "🛡",  url: "tools/password-strength/",    category: "Validation Tools" },
     { name: "Query String Parser",       icon: "🔍", url: "tools/query-string-parser/",   category: "Core Dev"         },
     { name: "Random Number Generator",   icon: "🎲", url: "tools/random-number/",         category: "Utility Tools"    },
-    { name: "Regex Tester",              icon: "🧪", url: "tools/regex-tester/",          category: "Core Dev"         },
+    { name: "Regex Tester",              icon: "🧪", url: "tools/regex-tester/",          category: "Regex Tools"      },
     { name: "Slug Generator",            icon: "🔗", url: "tools/slug-generator/",        category: "Text Tools"       },
     { name: "SQL Formatter",             icon: "🗄️", url: "tools/sql-formatter/",         category: "Core Dev"         },
     { name: "Text Case Converter",       icon: "🔤", url: "tools/text-case/",             category: "Text Tools"       },
@@ -70,6 +71,11 @@ const navToolsList = [
     { name: "UUID Generator",            icon: "🆔", url: "tools/uuid-generator/",        category: "Security Tools"   },
     { name: "UUID Validator",            icon: "🔎", url: "tools/uuid-validator/",        category: "Validation Tools" },
     { name: "Word Counter",              icon: "📊", url: "tools/word-counter/",          category: "Text Tools"       },
+    { name: "Remove Duplicate Lines",    icon: "🧹", url: "tools/remove-duplicate-lines/", category: "Text Tools"    },
+    { name: "Sort Lines",                icon: "🔤", url: "tools/sort-lines/",             category: "Text Tools" },
+    { name: "Text Cleaner",              icon: "🧽", url: "tools/text-cleaner/",           category: "Text Tools" },
+    { name: "Regex Cheatsheet",          icon: "📚", url: "tools/regex-cheatsheet/",       category: "Regex Tools" },
+    { name: "Regex Replace",             icon: "🔁", url: "tools/regex-replace/",          category: "Regex Tools" },
 
 ];
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Text Cleaner - DevUtils</title>
+<meta name="description" content="Clean and normalize text by removing spaces, line breaks, duplicates and unwanted characters instantly.">
+<link rel="canonical" href="https://devutilskit.com/tools/text-cleaner/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Text Cleaner</h1>
+<p class="tool-description">
+Clean and normalize your text by removing unnecessary spaces, empty lines and unwanted characters.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste your text here..."></textarea>
+
+<!-- OPTIONS -->
+<div class="tool-options">
+
+<label><input type="checkbox" id="trimSpaces"> Trim spaces</label>
+<label><input type="checkbox" id="removeExtraSpaces"> Remove extra spaces</label>
+<label><input type="checkbox" id="removeEmptyLines"> Remove empty lines</label>
+<label><input type="checkbox" id="removeLineBreaks"> Remove line breaks</label>
+<label><input type="checkbox" id="lowercase"> Lowercase</label>
+<label><input type="checkbox" id="uppercase"> Uppercase</label>
+
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Clean Text</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-success="Copied">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste your text</li>
+<li>Select cleaning options</li>
+<li>Click clean</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What does this tool do?</h2>
+<p>
+This tool helps you clean and normalize text by removing unwanted spaces, line breaks, and formatting inconsistencies. Ideal for developers, writers, and data cleaning tasks.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../remove-duplicate-lines/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">Remove Duplicate Lines</span>
+</a>
+
+<a href="../sort-lines/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Sort Lines</span>
+</a>
+
+<a href="../text-case/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Text Case Converter</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/textTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
