@@ -1,5 +1,44 @@
 # Project Log
 
+## Savepoint – New Tools, Security Fix and SEO Cleanup
+
+Date: 2026-04-07
+
+### Main outcomes
+
+- Added 6 new tool pages: Email Regex Generator, Regex Cheatsheet, Regex Replace, Remove Duplicate Lines, Sort Lines and Text Cleaner
+- Created `js/regexTools.js` with logic for all Regex category tools (tester, email-regex-generator, cheatsheet, replace)
+- Registered Regex Replace in `js/ui.js` navToolsList — catalog now has 54 tools
+- Added Regex Tools filter button to `all-tools.html`
+- Fixed password generator: replaced insecure `Math.random()` with `crypto.getRandomValues()` in `js/securityTools.js`
+- Fixed `copyResult` using wrong key (`sourceId` → `outputId`) in `js/securityTools.js`
+- Enhanced Regex Cheatsheet: expanded content (quantifiers, groups, lookaround), mini-tester shows all matches with count, added Copy/Clear buttons
+- Added canonical links to ~33 tool pages that were missing them
+- Added Google Analytics tag to 6 tool pages that were missing it
+- Updated `sitemap.xml` with 6 new entries — now 57 URLs total
+- Removed 126 AppleDouble (`._*`) files from the repository
+
+### Current catalog snapshot
+
+- Total tools in the catalog: 54
+- Active categories: Core Dev, Encoding Tools, Validation Tools, Security Tools, Text Tools, Utility Tools, Color Tools, HTML Tools and Regex Tools
+- Source of truth for the live catalog: `js/ui.js`
+
+### Architecture snapshot
+
+- `js/regexTools.js` groups regex tester, email regex generator, regex cheatsheet and regex replace logic
+- All other domain JS files unchanged from previous savepoint
+
+### Validation completed
+
+- 54 entries in navToolsList match 54 tool folders
+- Sitemap has 57 URLs (54 tools + 2 main pages + 1 sub-page)
+- All tool pages have Google Analytics (G-FXL6J1QX2M) and canonical links
+- No lint or editor diagnostics errors in changed files
+- Commit `d4d4e80` pushed to main
+
+---
+
 ## Savepoint – Domain Refactor and Catalog Cleanup
 
 Date: 2026-03-31
@@ -97,6 +136,6 @@ At that point the project had a smaller catalog and simpler JavaScript organizat
 ## Current Direction
 
 - Keep the catalog documentation synchronized with `js/ui.js`
-- Continue expanding the tool set beyond the current 48 tools
+- Continue expanding the tool set beyond the current 54 tools
 - Maintain a consistent output UX and shared tool-page structure
 - Preserve SEO correctness when routes, canonicals or category links change
