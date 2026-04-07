@@ -1,5 +1,52 @@
 # Project Log
 
+## Savepoint – SEO Improvements & Category Restructure
+
+Date: 2026-04-08
+
+### Main outcomes
+
+- **Category restructure**: Split "Core Dev" (17 tools) into 3 focused categories:
+  - **JSON Tools** (8): JSON Formatter, Minifier, Validator, Compare, →XML, ↔YAML, →CSV, CSV→JSON
+  - **Code Tools** (5): Code Beautifier, CSS Minifier, JS Minifier, SQL Formatter, Cron Generator
+  - **Parser Tools** (4): Query String Parser, URL Extractor, URL Parser, HTTP Headers Parser
+- Updated `js/ui.js` navToolsList with new category assignments
+- Updated `all-tools.html` filter buttons (replaced Core Dev with JSON, Code, Parser)
+- Updated `index.html` Explore Categories section (3 new category cards + added Regex Tools card)
+- Updated `all-tools.html` title/meta to reflect 68 tools
+- **SEO improvements** on 8 high-potential tools:
+  - Added FAQ Schema (JSON-LD) to: json-formatter, base64, regex-tester, password-generator, uuid-generator, hash-generator, color-converter, jwt-decoder
+  - Rebuilt jwt-decoder page: fixed H1 ("JWT Debugger" → "JWT Decoder Online"), added educational content (~200 words), example, 4 related tools
+  - Expanded hash-generator content with MD5 vs SHA-1 vs SHA-256 comparison
+  - Expanded color-converter content + added 2 more related tools (now 3)
+- Fixed orphan `</div>` tags in hash-generator and color-converter
+- Rewrote `sitemap.xml` with new 11-category structure, all dates updated to 2026-04-08
+
+### Current catalog snapshot
+
+- Total tools in the catalog: 68
+- Active categories (11): JSON Tools, Code Tools, Parser Tools, Encoding Tools, Validation Tools, Security Tools, Text Tools, Utility Tools, Color Tools, HTML Tools, Regex Tools
+- Sitemap URLs: 71 (68 tools + html-encoder/decoder sub-page + 2 main pages)
+- Source of truth for the live catalog: `js/ui.js`
+
+### Category distribution
+
+| Category | Count |
+|---|---|
+| Text Tools | 10 |
+| JSON Tools | 8 |
+| Security Tools | 8 |
+| Encoding Tools | 7 |
+| Validation Tools | 7 |
+| Utility Tools | 7 |
+| HTML Tools | 6 |
+| Code Tools | 5 |
+| Parser Tools | 4 |
+| Regex Tools | 4 |
+| Color Tools | 2 |
+
+---
+
 ## Savepoint – New Tools, Security Fix and SEO Cleanup
 
 Date: 2026-04-07

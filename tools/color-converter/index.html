@@ -23,6 +23,31 @@
 
 <link rel="stylesheet" href="../../css/styles.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between HEX and RGB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HEX uses a six-character hexadecimal notation (e.g. #ff0000) while RGB uses decimal values for red, green and blue channels (e.g. rgb(255, 0, 0)). Both represent the same colors but HEX is more common in CSS and RGB is used in design tools and JavaScript."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is HSL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HSL stands for Hue, Saturation and Lightness. It is a more intuitive color model that makes it easier to create color variations by adjusting saturation or lightness without changing the hue."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -51,7 +76,7 @@ Convert colors between HEX and RGB formats.
 <h2>What is a color converter?</h2>
 
 <p>
-A color converter allows developers and designers to convert colors between different formats such as HEX and RGB.
+A color converter translates color values between different formats such as HEX, RGB and HSL. Designers use HEX codes in CSS, while RGB values are common in JavaScript and image editing. Converting between formats saves time and prevents errors.
 </p>
 
 
@@ -74,8 +99,6 @@ A color converter allows developers and designers to convert colors between diff
 
 <pre>rgb(255, 0, 0)</pre>
 
-</div>
-
 
 <!-- RELATED -->
 <section class="tool-container">
@@ -86,6 +109,16 @@ A color converter allows developers and designers to convert colors between diff
 <a href="../color-picker/" class="tool-card">
 <span class="tool-icon">🎨</span>
 <span class="tool-title">Color Picker</span>
+</a>
+
+<a href="../css-formatter/" class="tool-card">
+<span class="tool-icon">🎨</span>
+<span class="tool-title">CSS Formatter</span>
+</a>
+
+<a href="../text-case/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Text Case Converter</span>
 </a>
 
 </div>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cron Expression Generator - DevUtils</title>
+<meta name="description" content="Generate cron expressions easily with visual inputs and readable explanations.">
+<link rel="canonical" href="https://devutilskit.com/tools/cron-expression-generator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Cron Expression Generator</h1>
+<p class="tool-description">
+Create cron expressions easily with visual inputs and human-readable explanations.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<label>Minutes</label>
+<input type="text" id="minutes" value="*">
+
+<label>Hours</label>
+<input type="text" id="hours" value="*">
+
+<label>Day of Month</label>
+<input type="text" id="day" value="*">
+
+<label>Month</label>
+<input type="text" id="month" value="*">
+
+<label>Day of Week</label>
+<input type="text" id="weekday" value="*">
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Generate</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Cron expression will appear here...</pre>
+</div>
+
+<div class="result-block">
+<pre id="human">Readable explanation will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>Quick examples</h2>
+
+<div class="tool-actions">
+<button onclick="setExample('* * * * *')">Every minute</button>
+<button onclick="setExample('0 * * * *')">Every hour</button>
+<button onclick="setExample('0 0 * * *')">Every day</button>
+<button onclick="setExample('0 0 * * 0')">Every Sunday</button>
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>What is a cron expression?</h2>
+<p>
+A cron expression is used to schedule tasks in Unix-based systems. It defines when a job should run.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../timestamp-converter/" class="tool-card">
+<span class="tool-icon">⏱</span>
+<span class="tool-title">Timestamp Converter</span>
+</a>
+
+<a href="../date-formatter/" class="tool-card">
+<span class="tool-icon">📅</span>
+<span class="tool-title">Date Formatter</span>
+</a>
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/devTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

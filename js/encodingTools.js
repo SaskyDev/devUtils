@@ -171,3 +171,95 @@ function convertImage() {
     };
     reader.readAsDataURL(file);
 }
+
+// BINARY ↔ TEXT CONVERTER
+
+function initBinaryTextConverter() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.textToBinary = function () {
+        const text = input.value;
+
+        if (!text) {
+            output.textContent = "❌ Enter text";
+            return;
+        }
+
+        const binary = text
+            .split("")
+            .map(char => char.charCodeAt(0).toString(2).padStart(8, "0"))
+            .join(" ");
+
+        output.textContent = binary;
+    };
+
+    window.binaryToText = function () {
+        try {
+            const text = input.value
+                .trim()
+                .split(" ")
+                .map(bin => String.fromCharCode(parseInt(bin, 2)))
+                .join("");
+
+            output.textContent = text;
+        } catch (e) {
+            output.textContent = "❌ Invalid binary input";
+        }
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initBinaryTextConverter);
+
+// ASCII ↔ TEXT CONVERTER
+
+function initAsciiTextConverter() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.textToAscii = function () {
+        const text = input.value;
+
+        if (!text) {
+            output.textContent = "❌ Enter text";
+            return;
+        }
+
+        const ascii = text
+            .split("")
+            .map(char => char.charCodeAt(0))
+            .join(" ");
+
+        output.textContent = ascii;
+    };
+
+    window.asciiToText = function () {
+        try {
+            const text = input.value
+                .trim()
+                .split(" ")
+                .map(num => String.fromCharCode(parseInt(num)))
+                .join("");
+
+            output.textContent = text;
+        } catch (e) {
+            output.textContent = "❌ Invalid ASCII input";
+        }
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initAsciiTextConverter);

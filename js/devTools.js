@@ -495,3 +495,223 @@ function extractURLs() {
     output.className = "output-box success";
     if (window.showToast) window.showToast(matches.length + " URL(s) found", "success");
 }
+
+// CRON GENERATOR (PRO)
+
+function initCronGenerator() {
+    const output = document.getElementById("output");
+    const human = document.getElementById("human");
+
+    if (!output) return;
+
+    function generateCron() {
+        const m = document.getElementById("minutes").value;
+        const h = document.getElementById("hours").value;
+        const d = document.getElementById("day").value;
+        const mo = document.getElementById("month").value;
+        const w = document.getElementById("weekday").value;
+
+        return `${m} ${h} ${d} ${mo} ${w}`;
+    }
+
+    function explain(cron) {
+        if (cron === "* * * * *") return "Runs every minute";
+        if (cron === "0 * * * *") return "Runs every hour";
+        if (cron === "0 0 * * *") return "Runs every day at midnight";
+        if (cron === "0 0 * * 0") return "Runs every Sunday";
+
+        return "Custom schedule";
+    }
+
+    window.runToolAction = function () {
+        const cron = generateCron();
+        output.textContent = cron;
+        human.textContent = explain(cron);
+    };
+
+    window.setExample = function (cron) {
+        const parts = cron.split(" ");
+
+        document.getElementById("minutes").value = parts[0];
+        document.getElementById("hours").value = parts[1];
+        document.getElementById("day").value = parts[2];
+        document.getElementById("month").value = parts[3];
+        document.getElementById("weekday").value = parts[4];
+
+        window.runToolAction();
+    };
+
+    window.clearToolAction = function () {
+        output.textContent = "Cron expression will appear here...";
+        human.textContent = "Readable explanation will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initCronGenerator);
+
+// HTTP HEADERS PARSER
+
+function initHttpHeadersParser() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.runToolAction = function () {
+        const lines = input.value.split("\n");
+
+        let headers = {};
+
+        lines.forEach(line => {
+            const index = line.indexOf(":");
+
+            if (index > -1) {
+                const key = line.slice(0, index).trim();
+                const value = line.slice(index + 1).trim();
+
+                headers[key] = value;
+            }
+        });
+
+        output.textContent = JSON.stringify(headers, null, 2);
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Parsed headers will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initHttpHeadersParser);
+
+// HTML VALIDATOR (PRO)
+
+function initHtmlValidator() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    window.runToolAction = function () {
+        const html = input.value.trim();
+
+        if (!html) {
+            output.textContent = "❌ No HTML provided";
+            return;
+        }
+
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+
+            let errors = [];
+
+            // Detect parser errors
+            const parserErrors = doc.querySelectorAll("parsererror");
+            if (parserErrors.length > 0) {
+                errors.push("❌ HTML parsing error detected");
+            }
+
+            // Basic structure checks
+            const voidTags = new Set(["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]);
+            const allTags = input.value.match(/<\/?([a-z]+)[^>]*>/gi) || [];
+
+            let stack = [];
+
+            allTags.forEach(tag => {
+                const isClosing = tag.startsWith("</");
+                const tagName = tag.replace(/<\/?([a-z]+).*/i, "$1").toLowerCase();
+
+                if (voidTags.has(tagName)) return;
+
+                if (!isClosing) {
+                    stack.push(tagName);
+                } else {
+                    const last = stack.pop();
+                    if (last !== tagName) {
+                        errors.push(`❌ Mismatched tag: expected </${last}> but found </${tagName}>`);
+                    }
+                }
+            });
+
+            if (stack.length > 0) {
+                errors.push("❌ Some tags are not closed properly");
+            }
+
+            if (errors.length === 0) {
+                output.textContent = "✅ HTML looks valid (basic validation)";
+            } else {
+                output.textContent = errors.join("\n");
+            }
+
+        } catch (e) {
+            output.textContent = "❌ Error parsing HTML";
+        }
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Validation result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initHtmlValidator);
+
+// CSS FORMATTER (PRO)
+
+function initCssFormatter() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+    const indentSelect = document.getElementById("indent");
+
+    if (!input || !output) return;
+
+    function beautify(css, indentSize) {
+        let indent = " ".repeat(indentSize);
+        let level = 0;
+
+        return css
+            .replace(/\{/g, " {\n")
+            .replace(/\}/g, "\n}\n")
+            .replace(/;/g, ";\n")
+            .split("\n")
+            .map(line => {
+                line = line.trim();
+
+                if (line.includes("}")) level--;
+
+                let formatted = indent.repeat(Math.max(level, 0)) + line;
+
+                if (line.includes("{")) level++;
+
+                return formatted;
+            })
+            .join("\n")
+            .replace(/\n+/g, "\n");
+    }
+
+    function minify(css) {
+        return css
+            .replace(/\s+/g, " ")
+            .replace(/\s*{\s*/g, "{")
+            .replace(/\s*}\s*/g, "}")
+            .replace(/\s*;\s*/g, ";")
+            .trim();
+    }
+
+    window.beautifyCSS = function () {
+        const indentSize = parseInt(indentSelect.value);
+        output.textContent = beautify(input.value, indentSize);
+    };
+
+    window.minifyCSS = function () {
+        output.textContent = minify(input.value);
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initCssFormatter);

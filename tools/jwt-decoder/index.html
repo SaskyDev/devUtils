@@ -24,16 +24,49 @@
 
 <link rel="stylesheet" href="../../css/styles.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a JWT token?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A JSON Web Token (JWT) is a compact, URL-safe token format used for securely transmitting information between parties. It consists of three Base64URL-encoded parts separated by dots: header, payload and signature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to decode JWT tokens online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this tool decodes JWT tokens entirely in your browser. No data is sent to any server. The token never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between JWT decoding and verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Decoding reads the header and payload without checking the signature. Verification also validates the signature using a secret or public key to confirm the token has not been tampered with."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <section class="tool-container">
 
-<h1>JWT Debugger</h1>
+<h1>JWT Decoder Online</h1>
 
 <p class="tool-description">
-Decode and inspect JWT tokens instantly. View header and payload clearly.
+Decode and inspect JWT tokens instantly. View header, payload and expiration details directly in your browser — no data is sent to any server.
 </p>
 
 </section>
@@ -61,6 +94,34 @@ Decode and inspect JWT tokens instantly. View header and payload clearly.
 </section>
 
 
+<section class="tool-container">
+<h2>What is a JWT token?</h2>
+<p>
+A JSON Web Token (JWT) is a compact, URL-safe format for transmitting claims between two parties. JWTs are widely used for authentication and authorization in web applications and APIs.
+</p>
+<p>
+Every JWT has three parts separated by dots: the <strong>header</strong> (algorithm and token type), the <strong>payload</strong> (claims like user ID, expiration and permissions) and the <strong>signature</strong> (used to verify the token has not been tampered with).
+</p>
+</section>
+
+<section class="tool-container">
+<h2>How to use this tool</h2>
+<ol>
+<li>Paste your JWT token in the input field.</li>
+<li>Click <strong>Decode</strong> to view the header and payload.</li>
+<li>The tool shows expiration status and formatted JSON for each part.</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>Example</h2>
+<p>Input:</p>
+<pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</pre>
+<p>Decoded payload:</p>
+<pre>{ "sub": "1234567890", "name": "John Doe", "iat": 1516239022 }</pre>
+</section>
+
+
 <!-- RELATED -->
 <section class="tool-container">
 
@@ -72,14 +133,19 @@ Decode and inspect JWT tokens instantly. View header and payload clearly.
 <span class="tool-title">JWT Encoder</span>
 </a>
 
+<a href="../jwt-debugger/" class="tool-card">
+<span class="tool-icon">🧠</span>
+<span class="tool-title">JWT Debugger</span>
+</a>
+
 <a href="../hash-generator/" class="tool-card">
 <span class="tool-icon">🔐</span>
 <span class="tool-title">Hash Generator</span>
 </a>
 
-<a href="../hash-compare/" class="tool-card">
-<span class="tool-icon">🧬</span>
-<span class="tool-title">Hash Compare</span>
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
 </a>
 
 </div>

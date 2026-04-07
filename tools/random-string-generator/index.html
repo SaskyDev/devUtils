@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Random String Generator - DevUtils</title>
+<meta name="description" content="Generate random strings with custom length, characters and options. Ideal for passwords and tokens.">
+<link rel="canonical" href="https://devutilskit.com/tools/random-string-generator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Random String Generator</h1>
+<p class="tool-description">
+Generate random strings with custom options for length, characters and complexity.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="number" id="length" placeholder="Length (e.g. 16)" value="16">
+
+<input type="number" id="count" placeholder="How many?" value="1">
+
+<div class="tool-options">
+<label><input type="checkbox" id="letters" checked> Letters</label>
+<label><input type="checkbox" id="numbers" checked> Numbers</label>
+<label><input type="checkbox" id="symbols"> Symbols</label>
+<label><input type="checkbox" id="excludeAmbiguous"> Exclude ambiguous</label>
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Generate</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Set length and amount</li>
+<li>Select character types</li>
+<li>Generate strings</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is a random string?</h2>
+<p>
+Random strings are used for passwords, tokens and unique identifiers. This tool allows flexible generation based on your needs.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../uuid-generator/" class="tool-card">
+<span class="tool-icon">🆔</span>
+<span class="tool-title">UUID Generator</span>
+</a>
+
+<a href="../password-generator/" class="tool-card">
+<span class="tool-icon">🔑</span>
+<span class="tool-title">Password Generator</span>
+</a>
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/utilityTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

@@ -600,3 +600,150 @@ if (h1 === h2) {
     document.getElementById("output").textContent = "Do not match ❌";
 }
 };
+
+// HMAC GENERATOR (PRO)
+
+async function initHmacGenerator() {
+    const message = document.getElementById("message");
+    const secret = document.getElementById("secret");
+    const algo = document.getElementById("algo");
+    const output = document.getElementById("output");
+
+    if (!message || !secret) return;
+
+    async function generateHMAC(message, key, algorithm) {
+        const enc = new TextEncoder();
+
+        const cryptoKey = await crypto.subtle.importKey(
+            "raw",
+            enc.encode(key),
+            { name: "HMAC", hash: algorithm },
+            false,
+            ["sign"]
+        );
+
+        const signature = await crypto.subtle.sign(
+            "HMAC",
+            cryptoKey,
+            enc.encode(message)
+        );
+
+        return Array.from(new Uint8Array(signature))
+            .map(b => b.toString(16).padStart(2, "0"))
+            .join("");
+    }
+
+    window.runToolAction = async function () {
+        if (!message.value || !secret.value) {
+            output.textContent = "❌ Message and secret required";
+            return;
+        }
+
+        try {
+            const result = await generateHMAC(
+                message.value,
+                secret.value,
+                algo.value
+            );
+
+            output.textContent = result;
+        } catch (e) {
+            output.textContent = "Error generating HMAC";
+        }
+    };
+
+    window.clearToolAction = function () {
+        message.value = "";
+        secret.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initHmacGenerator);
+
+// JWT DEBUGGER (PRO)
+
+function initJwtDebugger() {
+    const tokenInput = document.getElementById("token");
+    const secretInput = document.getElementById("secret");
+    const output = document.getElementById("output");
+
+    if (!tokenInput) return;
+
+    function base64UrlDecode(str) {
+        return JSON.parse(atob(str.replace(/-/g, "+").replace(/_/g, "/")));
+    }
+
+    function formatDate(ts) {
+        if (!ts) return "N/A";
+        return new Date(ts * 1000).toLocaleString();
+    }
+
+    window.runToolAction = async function () {
+        try {
+            const token = tokenInput.value.trim();
+            const [header, payload, signature] = token.split(".");
+
+            if (!header || !payload) {
+                output.textContent = "❌ Invalid JWT format";
+                return;
+            }
+
+            const decodedHeader = base64UrlDecode(header);
+            const decodedPayload = base64UrlDecode(payload);
+
+            let result = "=== HEADER ===\n";
+            result += JSON.stringify(decodedHeader, null, 2) + "\n\n";
+
+            result += "=== PAYLOAD ===\n";
+            result += JSON.stringify(decodedPayload, null, 2) + "\n\n";
+
+            // TIME INFO
+            if (decodedPayload.exp) {
+                result += `Expires: ${formatDate(decodedPayload.exp)}\n`;
+                const isExpired = Date.now() >= decodedPayload.exp * 1000;
+                result += isExpired ? "❌ Token expired\n" : "✅ Token valid\n";
+            }
+
+            // VERIFY (HS256 only)
+            if (secretInput.value && decodedHeader.alg === "HS256") {
+                const encoder = new TextEncoder();
+
+                const key = await crypto.subtle.importKey(
+                    "raw",
+                    encoder.encode(secretInput.value),
+                    { name: "HMAC", hash: "SHA-256" },
+                    false,
+                    ["sign"]
+                );
+
+                const data = encoder.encode(`${header}.${payload}`);
+
+                const signatureBuffer = await crypto.subtle.sign("HMAC", key, data);
+
+                const expectedSig = btoa(
+                    String.fromCharCode(...new Uint8Array(signatureBuffer))
+                ).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+
+                if (expectedSig === signature) {
+                    result += "✅ Signature valid\n";
+                } else {
+                    result += "❌ Signature invalid\n";
+                }
+            }
+
+            output.textContent = result;
+
+        } catch (e) {
+            output.textContent = "❌ Error parsing token";
+        }
+    };
+
+    window.clearToolAction = function () {
+        tokenInput.value = "";
+        secretInput.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initJwtDebugger);

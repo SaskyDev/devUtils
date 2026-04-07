@@ -408,3 +408,57 @@ function initTextCleaner() {
 }
 
 document.addEventListener("DOMContentLoaded", initTextCleaner);
+
+// TEXT TO SLUG ADVANCED
+
+function initSlugAdvanced() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    function removeAccents(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    window.runToolAction = function () {
+        let text = input.value.trim();
+
+        if (!text) {
+            output.textContent = "❌ Enter text";
+            return;
+        }
+
+        if (document.getElementById("removeAccents").checked) {
+            text = removeAccents(text);
+        }
+
+        if (document.getElementById("removeSpecial").checked) {
+            text = text.replace(/[^a-zA-Z0-9\s]/g, "");
+        }
+
+        const separator = document.getElementById("separator").value;
+
+        text = text.replace(/\s+/g, separator);
+
+        if (document.getElementById("lowercase").checked) {
+            text = text.toLowerCase();
+        }
+
+        // remove duplicates separators
+        const sep = separator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        text = text.replace(new RegExp(`${sep}+`, "g"), separator);
+
+        // trim separators
+        text = text.replace(new RegExp(`^${sep}|${sep}$`, "g"), "");
+
+        output.textContent = text;
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Slug will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initSlugAdvanced);

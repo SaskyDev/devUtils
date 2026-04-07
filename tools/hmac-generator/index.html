@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HMAC Generator - DevUtils</title>
+<meta name="description" content="Generate HMAC hashes using SHA-256, SHA-1 or SHA-512. Perfect for API authentication and security testing.">
+<link rel="canonical" href="https://devutilskit.com/tools/hmac-generator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>HMAC Generator</h1>
+<p class="tool-description">
+Generate HMAC hashes using different algorithms. Useful for API authentication and security testing.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="message" placeholder="Enter message..."></textarea>
+<input type="text" id="secret" placeholder="Enter secret key">
+
+<select id="algo">
+<option value="SHA-256">SHA-256</option>
+<option value="SHA-1">SHA-1</option>
+<option value="SHA-512">SHA-512</option>
+</select>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Generate HMAC</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter message</li>
+<li>Enter secret key</li>
+<li>Select algorithm</li>
+<li>Generate HMAC</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is HMAC?</h2>
+<p>
+HMAC (Hash-based Message Authentication Code) is a cryptographic method used to verify data integrity and authenticity using a secret key.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../hash-generator/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Hash Generator</span>
+</a>
+
+<a href="../jwt-encoder/" class="tool-card">
+<span class="tool-icon">🔓</span>
+<span class="tool-title">JWT Encoder</span>
+</a>
+
+<a href="../jwt-decoder/" class="tool-card">
+<span class="tool-icon">🔓</span>
+<span class="tool-title">JWT Decoder</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

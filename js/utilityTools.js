@@ -141,3 +141,127 @@ function generateTimestamp() {
     output.className = "output-box success";
     if (window.showToast) window.showToast("Timestamp generated", "success", 1400);
 }
+
+// RANDOM STRING GENERATOR (PRO)
+
+function initRandomStringGenerator() {
+    const output = document.getElementById("output");
+
+    if (!output) return;
+
+    function getCharset() {
+        let chars = "";
+
+        if (document.getElementById("letters").checked) {
+            chars += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+
+        if (document.getElementById("numbers").checked) {
+            chars += "0123456789";
+        }
+
+        if (document.getElementById("symbols").checked) {
+            chars += "!@#$%^&*()_+[]{}<>?";
+        }
+
+        if (document.getElementById("excludeAmbiguous").checked) {
+            chars = chars.replace(/[0OIl1]/g, "");
+        }
+
+        return chars;
+    }
+
+    function generateString(length, chars) {
+        let result = "";
+        const array = new Uint32Array(length);
+        crypto.getRandomValues(array);
+
+        for (let i = 0; i < length; i++) {
+            result += chars[array[i] % chars.length];
+        }
+
+        return result;
+    }
+
+    window.runToolAction = function () {
+        const length = parseInt(document.getElementById("length").value) || 16;
+        const count = parseInt(document.getElementById("count").value) || 1;
+
+        const chars = getCharset();
+
+        if (!chars) {
+            output.textContent = "❌ Select at least one character type";
+            return;
+        }
+
+        let results = [];
+
+        for (let i = 0; i < count; i++) {
+            results.push(generateString(length, chars));
+        }
+
+        output.textContent = results.join("\n");
+    };
+
+    window.clearToolAction = function () {
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initRandomStringGenerator);
+
+// UUID CONVERTER (PRO)
+
+function initUuidConverter() {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    if (!input || !output) return;
+
+    function isValidUUID(uuid) {
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uuid);
+    }
+
+    function getVersion(uuid) {
+        return uuid[14];
+    }
+
+    window.runToolAction = function () {
+        let value = input.value.trim();
+
+        if (!isValidUUID(value)) {
+            output.textContent = "❌ Invalid UUID";
+            return;
+        }
+
+        const version = getVersion(value);
+
+        if (document.getElementById("removeDashes").checked) {
+            value = value.replace(/-/g, "");
+        }
+
+        if (document.getElementById("uppercase").checked) {
+            value = value.toUpperCase();
+        }
+
+        if (document.getElementById("lowercase").checked) {
+            value = value.toLowerCase();
+        }
+
+        output.textContent = `
+✅ Valid UUID
+
+Version: v${version}
+
+Result:
+${value}
+`;
+    };
+
+    window.clearToolAction = function () {
+        input.value = "";
+        output.textContent = "Result will appear here...";
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initUuidConverter);

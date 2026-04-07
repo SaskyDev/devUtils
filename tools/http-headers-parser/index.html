@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTTP Headers Parser - DevUtils</title>
+<meta name="description" content="Parse HTTP headers into JSON format. Easily analyze request and response headers.">
+<link rel="canonical" href="https://devutilskit.com/tools/http-headers-parser/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>HTTP Headers Parser</h1>
+<p class="tool-description">
+Parse raw HTTP headers into a clean JSON format instantly.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste headers here...
+Content-Type: application/json
+Authorization: Bearer token"></textarea>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Parse</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Parsed headers will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste raw HTTP headers</li>
+<li>Click parse</li>
+<li>Copy JSON output</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What are HTTP headers?</h2>
+<p>
+HTTP headers are key-value pairs sent in requests and responses to provide additional information about the request or response.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../url-parser/" class="tool-card">
+<span class="tool-icon">🔎</span>
+<span class="tool-title">URL Parser</span>
+</a>
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/devTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

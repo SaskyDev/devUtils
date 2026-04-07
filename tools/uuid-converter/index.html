@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UUID Converter - DevUtils</title>
+<meta name="description" content="Validate, convert and analyze UUIDs. Detect version and format instantly.">
+<link rel="canonical" href="https://devutilskit.com/tools/uuid-converter/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>UUID Converter</h1>
+<p class="tool-description">
+Validate and convert UUIDs. Detect version and format with different output options.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="text" id="input" placeholder="Enter UUID...">
+
+<div class="tool-options">
+<label><input type="checkbox" id="removeDashes"> Remove dashes</label>
+<label><input type="checkbox" id="uppercase"> Uppercase</label>
+<label><input type="checkbox" id="lowercase"> Lowercase</label>
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Convert</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter a UUID</li>
+<li>Select options</li>
+<li>Convert</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is a UUID?</h2>
+<p>
+A UUID (Universally Unique Identifier) is a 128-bit identifier used to uniquely identify information in systems.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../uuid-generator/" class="tool-card">
+<span class="tool-icon">🆔</span>
+<span class="tool-title">UUID Generator</span>
+</a>
+
+<a href="../random-string-generator/" class="tool-card">
+<span class="tool-icon">🎲</span>
+<span class="tool-title">Random String Generator</span>
+</a>
+
+<a href="../hash-generator/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Hash Generator</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/utilityTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

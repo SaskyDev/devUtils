@@ -23,6 +23,39 @@
 
 <link rel="stylesheet" href="../../css/styles.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between MD5, SHA-1 and SHA-256?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MD5 produces a 128-bit hash (32 hex characters), SHA-1 produces 160 bits (40 hex) and SHA-256 produces 256 bits (64 hex). SHA-256 is the most secure of the three. MD5 and SHA-1 are considered cryptographically broken for security purposes but are still used for checksums."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you reverse a hash?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Hash functions are one-way by design. You cannot recover the original input from a hash. However, weak passwords can be found using precomputed tables (rainbow tables) or brute force."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this hash generator secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All hashing is performed in your browser using the Web Crypto API (SHA) and CryptoJS (MD5). No data is sent to any server."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -51,7 +84,10 @@ Generate MD5, SHA1 and SHA256 hashes from any text input.
 <h2>What is a hash?</h2>
 
 <p>
-A hash function converts data into a fixed-length string of characters. Hashes are commonly used for passwords, security and data integrity.
+A hash function converts data of any size into a fixed-length string of characters. The same input always produces the same hash, but even a tiny change in input produces a completely different output.
+</p>
+<p>
+Hashes are used for password storage, file integrity verification, digital signatures and data deduplication. Common algorithms include MD5 (fast but insecure), SHA-1 (deprecated for security) and SHA-256 (recommended for most use cases).
 </p>
 
 
@@ -73,8 +109,6 @@ A hash function converts data into a fixed-length string of characters. Hashes a
 <p>Example SHA256 hash:</p>
 
 <pre>a948904f2f0f479b8f8197694b30184b0d2e42...</pre>
-
-</div>
 
 
 <!-- RELATED -->

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Credit Card Validator - DevUtils</title>
+<meta name="description" content="Validate credit card numbers using the Luhn algorithm and detect card type instantly.">
+<link rel="canonical" href="https://devutilskit.com/tools/credit-card-validator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Credit Card Validator</h1>
+<p class="tool-description">
+Check if a credit card number is valid and detect its type using the Luhn algorithm.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="text" id="input" placeholder="Enter card number">
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Validate</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter a card number</li>
+<li>Click validate</li>
+<li>See result and type</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is the Luhn algorithm?</h2>
+<p>
+The Luhn algorithm is a checksum formula used to validate identification numbers such as credit cards.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../url-validator/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">URL Validator</span>
+</a>
+
+<a href="../email-validator/" class="tool-card">
+<span class="tool-icon">📧</span>
+<span class="tool-title">Email Validator</span>
+</a>
+
+<a href="../hash-generator/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Hash Generator</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/validationTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

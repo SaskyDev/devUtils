@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>URL Validator - DevUtils</title>
+<meta name="description" content="Validate and parse URLs instantly. Check protocol, hostname, path and more.">
+<link rel="canonical" href="https://devutilskit.com/tools/url-validator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>URL Validator</h1>
+<p class="tool-description">
+Validate URLs and extract components like protocol, hostname, path and query.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="text" id="input" placeholder="https://example.com/page?x=1">
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Validate</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter a URL</li>
+<li>Click validate</li>
+<li>See parsed result</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What does this tool do?</h2>
+<p>
+This tool validates URLs and breaks them into components such as protocol, hostname, pathname and query parameters.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../email-validator/" class="tool-card">
+<span class="tool-icon">📧</span>
+<span class="tool-title">Email Validator</span>
+</a>
+
+<a href="../ip-validator/" class="tool-card">
+<span class="tool-icon">🌐</span>
+<span class="tool-title">IP Validator</span>
+</a>
+
+<a href="../query-string-parser/" class="tool-card">
+<span class="tool-icon">🔍</span>
+<span class="tool-title">Query String Parser</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/validationTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

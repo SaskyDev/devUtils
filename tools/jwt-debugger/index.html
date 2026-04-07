@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JWT Debugger - DevUtils</title>
+<meta name="description" content="Decode, verify and analyze JWT tokens. Check expiration, payload and signature instantly.">
+<link rel="canonical" href="https://devutilskit.com/tools/jwt-debugger/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>JWT Debugger</h1>
+<p class="tool-description">
+Decode, verify and inspect JWT tokens with signature validation and readable timestamps.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="token" placeholder="Paste JWT token..."></textarea>
+<input type="text" id="secret" placeholder="Secret (optional for verification)">
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Analyze</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste your JWT token</li>
+<li>(Optional) Add secret to verify signature</li>
+<li>Click analyze</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is a JWT?</h2>
+<p>
+A JSON Web Token (JWT) is used for securely transmitting information between parties as a JSON object.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../jwt-encoder/" class="tool-card">
+<span class="tool-icon">🔓</span>
+<span class="tool-title">JWT Encoder</span>
+</a>
+
+<a href="../jwt-decoder/" class="tool-card">
+<span class="tool-icon">🔓</span>
+<span class="tool-title">JWT Decoder</span>
+</a>
+
+<a href="../hmac-generator/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">HMAC Generator</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/securityTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

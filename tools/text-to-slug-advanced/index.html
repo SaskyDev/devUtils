@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Text to Slug Generator - DevUtils</title>
+<meta name="description" content="Convert text into SEO-friendly slugs with advanced options and customization.">
+<link rel="canonical" href="https://devutilskit.com/tools/text-to-slug-advanced/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Text to Slug (Advanced)</h1>
+<p class="tool-description">
+Convert text into SEO-friendly slugs with advanced customization options.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<input type="text" id="input" placeholder="Enter your text...">
+
+<div class="tool-options">
+
+<label>Separator:
+<select id="separator">
+<option value="-">- (dash)</option>
+<option value="_">_ (underscore)</option>
+</select>
+</label>
+
+<label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+<label><input type="checkbox" id="removeAccents" checked> Remove accents</label>
+<label><input type="checkbox" id="removeSpecial" checked> Remove special characters</label>
+
+</div>
+
+<div class="tool-actions">
+<button onclick="runToolAction()">Generate Slug</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Slug will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter text</li>
+<li>Select options</li>
+<li>Generate slug</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is a slug?</h2>
+<p>
+A slug is a URL-friendly version of text used in web addresses. It improves readability and SEO.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../slug-generator/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">Slug Generator</span>
+</a>
+
+<a href="../text-case/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">Text Case Converter</span>
+</a>
+
+<a href="../word-counter/" class="tool-card">
+<span class="tool-icon">📊</span>
+<span class="tool-title">Word Counter</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/textTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

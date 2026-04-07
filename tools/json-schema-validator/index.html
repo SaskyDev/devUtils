@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON Schema Validator - DevUtils</title>
+<meta name="description" content="Validate JSON data against a JSON schema instantly with detailed error messages.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://devutilskit.com/tools/json-schema-validator/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+
+<!-- AJV -->
+<script src="https://cdn.jsdelivr.net/npm/ajv@8/dist/ajv.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="tool-container">
+<h1>JSON Schema Validator</h1>
+<p class="tool-description">
+Validate JSON data against a schema and get detailed validation errors instantly.
+</p>
+</section>
+
+<!-- TOOL -->
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<label>JSON Data</label>
+<textarea id="jsonInput" placeholder='{"name": "John", "age": 30}'></textarea>
+
+<label>JSON Schema</label>
+<textarea id="schemaInput" placeholder='{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"number"}},"required":["name","age"]}'></textarea>
+
+<div class="tool-actions">
+<button onclick="loadExample()">Load Example</button>
+<button onclick="runToolAction()">Validate</button>
+<button class="btn-copy" onclick="copyOutput(this)" data-copy-empty="Nothing to copy yet" data-copy-success="Result copied">Copy Result</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Validation result will appear here...</pre>
+</div>
+
+</div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste your JSON data</li>
+<li>Paste your JSON schema</li>
+<li>Click validate</li>
+</ol>
+</section>
+
+<!-- EXPLANATION -->
+<section class="tool-container">
+<h2>What is JSON Schema?</h2>
+<p>
+JSON Schema is a standard used to validate the structure and data types of JSON documents. It ensures your data matches expected formats.
+</p>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../json-formatter/" class="tool-card">
+<span class="tool-icon">🧩</span>
+<span class="tool-title">JSON Formatter</span>
+</a>
+
+<a href="../json-validator/" class="tool-card">
+<span class="tool-icon">✔️</span>
+<span class="tool-title">JSON Validator</span>
+</a>
+
+<a href="../json-compare/" class="tool-card">
+<span class="tool-icon">🆚</span>
+<span class="tool-title">JSON Compare</span>
+</a>
+
+</div>
+
+</section>
+
+<!-- JS -->
+<script src="../../js/validationTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSS Formatter - DevUtils</title>
+<meta name="description" content="Format and beautify CSS code or minify it instantly. Clean and optimize your styles easily.">
+<link rel="canonical" href="https://devutilskit.com/tools/css-formatter/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>CSS Formatter</h1>
+<p class="tool-description">
+Format, beautify or minify CSS code instantly with clean output.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Paste CSS here..."></textarea>
+
+<div class="tool-options">
+<label>Indent:
+<select id="indent">
+<option value="2">2 spaces</option>
+<option value="4">4 spaces</option>
+</select>
+</label>
+</div>
+
+<div class="tool-actions">
+<button onclick="beautifyCSS()">Beautify</button>
+<button onclick="minifyCSS()">Minify</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Paste CSS code</li>
+<li>Choose beautify or minify</li>
+<li>Copy result</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What does this tool do?</h2>
+<p>
+This tool formats CSS code to improve readability or compresses it to reduce file size for production use.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../html-validator/" class="tool-card">
+<span class="tool-icon">🧹</span>
+<span class="tool-title">HTML Validator</span>
+</a>
+
+<a href="../css-minifier/" class="tool-card">
+<span class="tool-icon">🎨</span>
+<span class="tool-title">CSS Minifier</span>
+</a>
+
+<a href="../html-preview/" class="tool-card">
+<span class="tool-icon">🖥</span>
+<span class="tool-title">HTML Preview Editor</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/devTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

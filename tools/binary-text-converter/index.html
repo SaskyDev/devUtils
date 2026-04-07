@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FXL6J1QX2M');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Binary to Text Converter - DevUtils</title>
+<meta name="description" content="Convert text to binary and binary to text instantly. Easy and fast encoding tool.">
+<link rel="canonical" href="https://devutilskit.com/tools/binary-text-converter/">
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<section class="tool-container">
+<h1>Binary ↔ Text Converter</h1>
+<p class="tool-description">
+Convert text to binary and binary back to text instantly.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
+<textarea id="input" placeholder="Enter text or binary..."></textarea>
+
+<div class="tool-actions">
+<button onclick="textToBinary()">Text → Binary</button>
+<button onclick="binaryToText()">Binary → Text</button>
+<button class="btn-copy" onclick="copyOutput(this)">Copy</button>
+<button onclick="clearToolAction()">Clear</button>
+</div>
+
+<div class="result-block">
+<pre id="output">Result will appear here...</pre>
+</div>
+
+</div>
+
+</section>
+
+<section class="tool-container">
+<h2>How to use</h2>
+<ol>
+<li>Enter text or binary</li>
+<li>Choose conversion direction</li>
+<li>Copy result</li>
+</ol>
+</section>
+
+<section class="tool-container">
+<h2>What is binary encoding?</h2>
+<p>
+Binary encoding represents text using sequences of 0s and 1s. Each character is converted into its binary ASCII representation.
+</p>
+</section>
+
+<section class="tool-container">
+<h2>Related tools</h2>
+
+<div class="tools-grid">
+
+<a href="../base64/" class="tool-card">
+<span class="tool-icon">🔐</span>
+<span class="tool-title">Base64 Encoder</span>
+</a>
+
+<a href="../html-encoder/" class="tool-card">
+<span class="tool-icon">🔤</span>
+<span class="tool-title">HTML Encoder</span>
+</a>
+
+<a href="../url-encoder/" class="tool-card">
+<span class="tool-icon">🔗</span>
+<span class="tool-title">URL Encoder</span>
+</a>
+
+</div>
+
+</section>
+
+<script src="../../js/encodingTools.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>
