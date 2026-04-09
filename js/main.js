@@ -1,5 +1,49 @@
 // Helper per seleccionar elements
 const $ = (id) => document.getElementById(id);
+
+
+// ================= GA4 TOOL USAGE TRACKING =================
+
+const initToolTracking = () => {
+    if (typeof gtag !== "function") return;
+
+    const path = window.location.pathname;
+    const match = path.match(/\/tools\/([^/]+)/);
+    if (!match) return;
+
+    const toolSlug = match[1];
+
+    // Track actual tool actions (not copy/clear)
+    const ignoredActions = ["copyOutput", "copyResult", "copyPassword", "clearAll", "clearToolAction", "clearJSON", "clearBase64"];
+
+    document.querySelectorAll("button[onclick], .tool-actions button").forEach(btn => {
+        const onclick = btn.getAttribute("onclick") || "";
+        const fnName = onclick.replace(/\(.*$/, "");
+
+        if (!fnName || ignoredActions.some(ignored => onclick.includes(ignored))) return;
+
+        btn.addEventListener("click", () => {
+            gtag("event", "tool_use", {
+                tool_name: toolSlug,
+                action: fnName
+            });
+        }, { once: false, passive: true });
+    });
+
+    // Track page engagement (user interacted with inputs)
+    let interacted = false;
+    document.querySelectorAll("textarea, input:not([type=hidden])").forEach(el => {
+        el.addEventListener("input", () => {
+            if (interacted) return;
+            interacted = true;
+            gtag("event", "tool_interact", {
+                tool_name: toolSlug
+            });
+        }, { once: true, passive: true });
+    });
+};
+
+document.addEventListener("DOMContentLoaded", initToolTracking);
 function setSuccess(message = "Success") {
 const status = document.getElementById("status") || document.getElementById("output");
 if (!status) return;

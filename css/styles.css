@@ -1701,3 +1701,31 @@ background:#78350f;
 .output-box.error {
     border: 1px solid #ef4444;
 }
+
+/* Breadcrumbs */
+.breadcrumb {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    color: #6b7280;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.breadcrumb a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.breadcrumb span {
+    color: #9ca3af;
+}
+body.dark .breadcrumb {
+    color: #9ca3af;
+}
+body.dark .breadcrumb a {
+    color: #60a5fa;
+}
+body.dark .breadcrumb span {
+    color: #6b7280;
+}

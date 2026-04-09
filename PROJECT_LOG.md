@@ -1,5 +1,63 @@
 # Project Log
 
+## Savepoint – Full SEO/UX Audit Implementation
+
+Date: 2026-04-09
+
+### Main outcomes
+
+- **P1 Critical fixes**:
+  - Added `<meta name="viewport">` to 25 tools that were missing it (68/68 now)
+  - Moved `robots.txt` from `/assets/` to project root (correct location)
+  - Deleted duplicate `/assets/sitemap.xml`
+  - Fixed homepage title 50+ → 68+ (including og:title, twitter:title)
+  - Added `<link rel="canonical">` to `index.html` and `all-tools.html`
+  - Renamed "HTML Encoder / Decoder" → "HTML Encoder - Decoder" in ui.js
+
+- **P2 Tracking & structured data**:
+  - Added GA4 custom events (`tool_use` + `tool_interact`) in `main.js` — auto-detects tool slug from URL
+  - Added `WebApplication` JSON-LD schema to all 68 tools
+
+- **P3 Content & interlinking**:
+  - Rewrote 22 tool titles for CTR optimization (added "Online Free", descriptive keywords)
+  - Added SEO content sections ("What is" / "How to use") to 10 thin tools
+  - Fixed 5 bad related tool links (regex-tester, json-validator, credit-card-validator, color-converter, csv-to-json)
+  - Normalized HTML structure of 12 old tools with `<section class="tool-container">` wrappers
+
+- **P4 Growth infrastructure**:
+  - Created 11 category landing pages at root (`/json-tools/`, `/text-tools/`, etc.) with CollectionPage JSON-LD
+  - Added breadcrumbs to all 68 tools (visual `<nav>` + `BreadcrumbList` JSON-LD)
+  - Added breadcrumb CSS to `styles.css`
+  - Moved CSS Formatter from "HTML Tools" → "Code Tools" in ui.js + breadcrumbs
+  - Added `og:title`, `og:description`, `og:url`, `twitter:card` meta to all 68 tools
+  - Updated `sitemap.xml` with 11 new category URLs (82 total entries)
+
+### Current catalog snapshot
+
+- Total tools: 68
+- Active categories (11): JSON Tools, Code Tools, Parser Tools, Encoding Tools, Validation Tools, Security Tools, Text Tools, Utility Tools, Color Tools, HTML Tools, Regex Tools
+- Sitemap URLs: 82 (68 tools + 11 category pages + 2 main pages + 1 sub-page)
+- Category landing pages: 11 (at root: `json-tools/`, `text-tools/`, etc.)
+- All 68 tools have: viewport, canonical, GA4, WebApplication JSON-LD, BreadcrumbList JSON-LD, og:meta, breadcrumbs
+
+### Category distribution
+
+| Category | Count |
+|---|---|
+| Text Tools | 10 |
+| JSON Tools | 8 |
+| Security Tools | 8 |
+| Encoding Tools | 7 |
+| Validation Tools | 7 |
+| Utility Tools | 7 |
+| HTML Tools | 5 |
+| Code Tools | 6 |
+| Parser Tools | 4 |
+| Regex Tools | 4 |
+| Color Tools | 2 |
+
+---
+
 ## Savepoint – SEO Improvements & Category Restructure
 
 Date: 2026-04-08
