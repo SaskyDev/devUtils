@@ -965,7 +965,8 @@ justify-content:center;
 font:inherit;
 font-size:14px;
 line-height:1.2;
-color:#374151;
+color:#374151 !important;
+-webkit-text-fill-color:#374151;
 background:transparent;
 background-image:none;
 border:none;
@@ -1313,7 +1314,8 @@ box-shadow:0 12px 36px rgba(0,0,0,0.38), 0 0 0 1px rgba(34, 211, 238, 0.06);
 
 body.dark .footer-links a,
 body.dark .footer .footer-link-button{
-color:#aebed1;
+color:#aebed1 !important;
+-webkit-text-fill-color:#aebed1;
 }
 
 body.dark.legal-document-page{
