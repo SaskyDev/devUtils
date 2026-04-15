@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.DEVUTILS_GA_ID = 'G-FXL6J1QX2M';
+  const consentState = (() => {
+    try {
+      return localStorage.getItem('devutils_cookie_consent');
+    } catch {
+      return null;
+    }
+  })();
+
+  gtag('consent', 'default', {
+    analytics_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_user_data: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_personalization: consentState === 'accepted' ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-FXL6J1QX2M', {
+    anonymize_ip: true,
+    send_page_view: consentState === 'accepted'
+  });
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Cookie Policy - DevUtils</title>
+
+<meta name="description" content="Cookie Policy for DevUtils. Learn which cookies or browser storage items are used for essential preferences, analytics and advertising.">
+<meta property="og:title" content="Cookie Policy - DevUtils">
+<meta property="og:description" content="Cookie Policy for DevUtils and its browser-based developer tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devutilskit.com/cookie-policy/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cookie Policy - DevUtils">
+<meta name="twitter:description" content="Cookie Policy for DevUtils and its browser-based developer tools.">
+<link rel="canonical" href="https://devutilskit.com/cookie-policy/">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cookie Policy",
+  "url": "https://devutilskit.com/cookie-policy/",
+  "description": "Cookie Policy for DevUtils."
+}
+</script>
+</head>
+
+<body>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../">Home</a> &rsaquo; <span>Cookie Policy</span>
+</nav>
+
+<section class="tool-container legal-hero">
+<p class="legal-meta">Last updated: April 15, 2026</p>
+<h1>Cookie Policy</h1>
+<p>
+This Cookie Policy explains how DevUtils, a SaskyDev project managed by Alex Gomez Barres in Valencia, Spain, uses cookies and similar browser storage technologies when you visit devutilskit.com.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Responsible party</h2>
+<ul class="legal-list">
+<li>Brand: SaskyDev</li>
+<li>Responsible person: Alex Gomez Barres</li>
+<li>Location: Valencia, Spain</li>
+<li>Contact email: <a href="mailto:agomezbarres@gmail.com">agomezbarres@gmail.com</a></li>
+</ul>
+</section>
+
+<section class="tool-container legal-page">
+<h2>What cookies are used for</h2>
+<p>
+Cookies and local storage items help DevUtils remember preferences, manage consent choices, understand site usage and support monetization features where enabled.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Essential storage</h2>
+<ul class="legal-list">
+<li>Theme preference so the site can remember light or dark mode.</li>
+<li>Cookie consent status so the site knows whether optional tracking has been accepted or rejected.</li>
+</ul>
+<p>
+These items are used for core site behavior and preference management.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Analytics cookies</h2>
+<p>
+If you accept optional cookies, DevUtils may use analytics technologies such as Google Analytics to understand page visits, traffic sources, engagement patterns and tool usage.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Advertising cookies</h2>
+<p>
+If advertising is enabled now or in the future, DevUtils may use advertising-related cookies or signals to measure campaign performance, limit abuse and support ad delivery or monetization through services such as Google Ads.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>How to manage cookies</h2>
+<ul class="legal-list">
+<li>Use the consent banner when it appears on first visit.</li>
+<li>Use the Cookie settings button in the site footer to reopen your choice panel.</li>
+<li>Clear cookies and local storage manually from your browser settings if needed.</li>
+<li>Configure your browser to block or delete cookies, noting that some preferences may reset.</li>
+</ul>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Policy updates</h2>
+<p>
+This Cookie Policy may be updated when tools, legal requirements or third-party services change. The newest version will remain available on this page.
+</p>
+</section>
+
+<section class="tool-container legal-page">
+<h2>Questions about cookies</h2>
+<p>
+If you have questions about cookie usage or want to ask about your consent settings, you can write to <a href="mailto:agomezbarres@gmail.com">agomezbarres@gmail.com</a>.
+</p>
+</section>
+
+<script src="../js/ui.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

@@ -6,9 +6,29 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  window.DEVUTILS_GA_ID = 'G-FXL6J1QX2M';
+  const consentState = (() => {
+    try {
+      return localStorage.getItem('devutils_cookie_consent');
+    } catch {
+      return null;
+    }
+  })();
+
+  gtag('consent', 'default', {
+    analytics_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_user_data: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_personalization: consentState === 'accepted' ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
+
   gtag('js', new Date());
 
-  gtag('config', 'G-FXL6J1QX2M');
+  gtag('config', 'G-FXL6J1QX2M', {
+    anonymize_ip: true,
+    send_page_view: consentState === 'accepted'
+  });
 </script>
 
 <meta charset="UTF-8">

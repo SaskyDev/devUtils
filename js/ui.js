@@ -19,6 +19,162 @@ const getSiteBasePath = () => {
     return source.slice(0, -"js/ui.js".length);
 };
 
+const COOKIE_CONSENT_KEY = "devutils_cookie_consent";
+
+const getCookieConsentState = () => {
+
+    try {
+        return localStorage.getItem(COOKIE_CONSENT_KEY);
+    } catch {
+        return null;
+    }
+};
+
+const updateGoogleConsent = (state, previousState = null) => {
+
+    if (typeof gtag !== "function") return;
+
+    const granted = state === "accepted";
+
+    gtag("consent", "update", {
+        analytics_storage: granted ? "granted" : "denied",
+        ad_storage: granted ? "granted" : "denied",
+        ad_user_data: granted ? "granted" : "denied",
+        ad_personalization: granted ? "granted" : "denied"
+    });
+
+    if (granted && previousState !== "accepted") {
+        gtag("event", "page_view", {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname
+        });
+    }
+};
+
+const hideCookieBanner = () => {
+
+    const banner = document.getElementById("cookieBanner");
+
+    if (!banner) return;
+
+    banner.classList.add("hidden");
+    banner.setAttribute("aria-hidden", "true");
+};
+
+const showCookieBanner = (force = false) => {
+
+    const banner = document.getElementById("cookieBanner");
+
+    if (!banner) return;
+
+    const currentState = getCookieConsentState();
+
+    if (!force && currentState) return;
+
+    banner.classList.remove("hidden");
+    banner.setAttribute("aria-hidden", "false");
+};
+
+const handleCookieConsent = (state) => {
+
+    const previousState = getCookieConsentState();
+
+    try {
+        localStorage.setItem(COOKIE_CONSENT_KEY, state);
+    } catch {
+        // Mantener el banner funcional aunque el storage falle.
+    }
+
+    updateGoogleConsent(state, previousState);
+    hideCookieBanner();
+
+    if (window.showToast) {
+        window.showToast(
+            state === "accepted"
+                ? "Analytics and advertising cookies enabled"
+                : "Only essential cookies remain active",
+            "info",
+            1800
+        );
+    }
+};
+
+const loadSiteFooter = () => {
+
+    if (document.querySelector(".footer")) return;
+
+    const basePath = getSiteBasePath();
+
+    const footer = `
+    <footer class="footer">
+
+        <div class="footer-content">
+            <p>© 2026 DevUtils — by SaskyDev</p>
+
+            <div class="footer-links">
+                <a href="${basePath}privacy-policy/">Privacy Policy</a>
+                <a href="${basePath}terms-of-use/">Terms of Use</a>
+                <a href="${basePath}cookie-policy/">Cookie Policy</a>
+                <button type="button" class="footer-link-button" id="openCookieSettings">Cookie settings</button>
+            </div>
+        </div>
+
+    </footer>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", footer);
+
+    const settingsButton = document.getElementById("openCookieSettings");
+
+    if (settingsButton) {
+        settingsButton.addEventListener("click", () => {
+            showCookieBanner(true);
+        });
+    }
+};
+
+const loadCookieBanner = () => {
+
+    if (document.getElementById("cookieBanner")) return;
+
+    const basePath = getSiteBasePath();
+
+    const banner = `
+    <aside id="cookieBanner" class="cookie-banner hidden" aria-hidden="true" aria-live="polite">
+        <div class="cookie-banner-copy">
+            <strong>Cookies and consent</strong>
+            <p>
+                DevUtils uses essential cookies plus optional analytics and advertising cookies to understand usage and support future monetization.
+                Read the <a href="${basePath}cookie-policy/">Cookie Policy</a> for details.
+            </p>
+        </div>
+
+        <div class="cookie-banner-actions">
+            <button type="button" class="btn-secondary" id="rejectCookiesBtn">Reject optional cookies</button>
+            <button type="button" class="btn-primary" id="acceptCookiesBtn">Accept all cookies</button>
+        </div>
+    </aside>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", banner);
+
+    const acceptButton = document.getElementById("acceptCookiesBtn");
+    const rejectButton = document.getElementById("rejectCookiesBtn");
+
+    if (acceptButton) {
+        acceptButton.addEventListener("click", () => {
+            handleCookieConsent("accepted");
+        });
+    }
+
+    if (rejectButton) {
+        rejectButton.addEventListener("click", () => {
+            handleCookieConsent("rejected");
+        });
+    }
+};
+
 // ⚠️ ÚNICA FONT DE VERITAT — afegir noves tools aquí
 // Automàticament s'inclou al cercador del navbar i a all-tools.html
 const navToolsList = [
@@ -372,6 +528,8 @@ const filterTools = () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     loadNavbar();
+    loadSiteFooter();
+    loadCookieBanner();
     initNavbarScrollState();
     loadTheme();
     updateIcon();
@@ -379,6 +537,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initOutputStateObserver();
 
     window.showToast = showToast;
+
+    showCookieBanner();
+    window.openCookiePreferences = () => showCookieBanner(true);
 
     requestAnimationFrame(() => {
         document.body.classList.add("ui-ready");
