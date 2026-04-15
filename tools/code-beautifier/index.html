@@ -1,6 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.DEVUTILS_GA_ID = 'G-FXL6J1QX2M';
+  const consentState = (() => {
+    try {
+      return localStorage.getItem('devutils_cookie_consent');
+    } catch {
+      return null;
+    }
+  })();
+
+  gtag('consent', 'default', {
+    analytics_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_storage: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_user_data: consentState === 'accepted' ? 'granted' : 'denied',
+    ad_personalization: consentState === 'accepted' ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXL6J1QX2M', {
+    anonymize_ip: true,
+    send_page_view: consentState === 'accepted'
+  });
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Code Beautifier & Formatter (JSON, HTML, JS) - DevUtils</title>
+
+<meta name="description" content="Format and beautify code instantly. Supports JSON, HTML and JavaScript formatting online.">
+<meta property="og:title" content="Code Beautifier & Formatter (JSON, HTML, JS) - DevUtils">
+<meta property="og:description" content="Format and beautify code instantly. Supports JSON, HTML and JavaScript formatting online.">
+<meta property="og:url" content="https://devutilskit.com/tools/code-beautifier/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DevUtils">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code Beautifier & Formatter (JSON, HTML, JS) - DevUtils">
+<meta name="twitter:description" content="Format and beautify code instantly. Supports JSON, HTML and JavaScript formatting online.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://devutilskit.com/tools/code-beautifier/">
+<link rel="stylesheet" href="../../css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Code Beautifier & Formatter (JSON, HTML, JS)",
+  "url": "https://devutilskit.com/tools/code-beautifier/",
+  "description": "Format and beautify code instantly. Supports JSON, HTML and JavaScript formatting online.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://devutilskit.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Code Tools", "item": "https://devutilskit.com/code-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Code Beautifier" }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../../">Home</a> &rsaquo; <a href="../../code-tools/">Code Tools</a> &rsaquo; <span>Code Beautifier</span>
+</nav>
+
+<section class="tool-container">
+
+<h1>Code Beautifier</h1>
+
+<p class="tool-description">
+Format and beautify code instantly. Supports JSON, HTML and JavaScript.
+</p>
+
+</section>
+
+<section class="tool-container">
+
+<h2>Tool</h2>
+
+<div class="tool-ui">
+
 <select id="type">
 <option value="json">JSON</option>
 <option value="html">HTML</option>
@@ -21,23 +124,18 @@
 
 </section>
 
-
-
-<!-- HOW TO USE -->
 <section class="tool-container">
 
 <h2>How to use</h2>
 
 <ol>
 <li>Paste your code (JSON, HTML or JavaScript) into the input box</li>
-<li>Click "Beautify" to format and indent your code</li>
-<li>Copy the formatted result or make further edits</li>
+<li>Click "Format" to beautify and indent your code</li>
+<li>Copy the formatted result or keep editing as needed</li>
 </ol>
 
 </section>
 
-
-<!-- SEO CONTENT -->
 <section class="tool-container">
 
 <h2>What is a Code Beautifier?</h2>
@@ -56,8 +154,6 @@ This tool supports JSON, HTML and JavaScript formatting. It runs entirely in you
 
 </section>
 
-
-<!-- EXAMPLE -->
 <section class="tool-container">
 
 <h2>Example</h2>
@@ -74,114 +170,6 @@ This tool supports JSON, HTML and JavaScript formatting. It runs entirely in you
 
 </section>
 
-
-
-<!-- HOW TO USE -->
-<section class="tool-container">
-
-<h2>How to use</h2>
-
-<ol>
-<li>Paste your code (JSON, HTML or JavaScript) into the input box</li>
-<li>Click "Beautify" to format and indent your code</li>
-<li>Copy the formatted result or make further edits</li>
-</ol>
-
-</section>
-
-
-<!-- SEO CONTENT -->
-<section class="tool-container">
-
-<h2>What is a Code Beautifier?</h2>
-
-<p>
-A code beautifier is a tool that automatically formats and indents source code to improve readability. It takes minified or poorly formatted code and adds proper indentation, line breaks and consistent spacing.
-</p>
-
-<p>
-Developers use code beautifiers when working with minified production code, debugging API responses or cleaning up code from different sources. Properly formatted code is easier to read, review and maintain.
-</p>
-
-<p>
-This tool supports JSON, HTML and JavaScript formatting. It runs entirely in your browser so your code stays private and is never sent to any server.
-</p>
-
-</section>
-
-
-<!-- EXAMPLE -->
-<section class="tool-container">
-
-<h2>Example</h2>
-
-<pre>{"name":"John","age":30,"active":true}</pre>
-
-<p><strong>Beautified output:</strong></p>
-
-<pre>{
-  "name": "John",
-  "age": 30,
-  "active": true
-}</pre>
-
-</section>
-
-
-
-<!-- HOW TO USE -->
-<section class="tool-container">
-
-<h2>How to use</h2>
-
-<ol>
-<li>Paste your code (JSON, HTML or JavaScript) into the input box</li>
-<li>Click "Beautify" to format and indent your code</li>
-<li>Copy the formatted result or make further edits</li>
-</ol>
-
-</section>
-
-
-<!-- SEO CONTENT -->
-<section class="tool-container">
-
-<h2>What is a Code Beautifier?</h2>
-
-<p>
-A code beautifier is a tool that automatically formats and indents source code to improve readability. It takes minified or poorly formatted code and adds proper indentation, line breaks and consistent spacing.
-</p>
-
-<p>
-Developers use code beautifiers when working with minified production code, debugging API responses or cleaning up code from different sources. Properly formatted code is easier to read, review and maintain.
-</p>
-
-<p>
-This tool supports JSON, HTML and JavaScript formatting. It runs entirely in your browser so your code stays private and is never sent to any server.
-</p>
-
-</section>
-
-
-<!-- EXAMPLE -->
-<section class="tool-container">
-
-<h2>Example</h2>
-
-<pre>{"name":"John","age":30,"active":true}</pre>
-
-<p><strong>Beautified output:</strong></p>
-
-<pre>{
-  "name": "John",
-  "age": 30,
-  "active": true
-}</pre>
-
-</section>
-
-
-<!-- RELATED -->
 <section class="tool-container">
 
 <h2>Related tools</h2>
