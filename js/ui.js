@@ -450,11 +450,15 @@ const classifyOutputState = (text) => {
         return "info";
     }
 
+    if (/(will appear here|appear here\.\.\.|paste .* here|formatted json will appear here|parsed headers will appear here|readable explanation will appear here)/.test(normalized)) {
+        return "info";
+    }
+
     if (/(invalid|error|failed|unable|do not match|required|enter both|enter text|copy failed)/.test(normalized)) {
         return "error";
     }
 
-    if (/(match|valid|strong|copied|generated|success|rgb\(|^#([0-9a-f]{6}|[0-9a-f]{3}))/i.test(normalized)) {
+    if (/(\bmatch(?:es)?\b|\bvalid\b|\bstrong\b|\bcopied\b|\bgenerated\b|\bsuccess\b|rgb\(|^#([0-9a-f]{6}|[0-9a-f]{3}))/i.test(normalized)) {
         return "success";
     }
 
