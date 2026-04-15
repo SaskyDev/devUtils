@@ -1,18 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
   <defs>
-    <linearGradient id="bg" x1="10" y1="10" x2="86" y2="86" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#101828"/>
-      <stop offset="1" stop-color="#1f2937"/>
-    </linearGradient>
-    <linearGradient id="leftGlow" x1="16" y1="48" x2="34" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff4fd8"/>
-      <stop offset="1" stop-color="#b84dff"/>
-    </linearGradient>
-    <linearGradient id="rightGlow" x1="62" y1="48" x2="80" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38bdf8"/>
-      <stop offset="1" stop-color="#22d3ee"/>
-    </linearGradient>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48 48) rotate(90) scale(58)">
+      <stop stop-color="#44566f"/>
+      <stop offset="0.55" stop-color="#263548"/>
+      <stop offset="1" stop-color="#111827"/>
+    </radialGradient>
+    <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="1.8" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
@@ -21,13 +14,10 @@
     </filter>
   </defs>
 
-  <rect width="96" height="96" rx="22" fill="url(#bg)"/>
+  <rect width="96" height="96" rx="22" fill="url(#bgGlow)"/>
 
-  <path d="M25 19C19.5 24.5 19.5 71.5 25 77" stroke="url(#leftGlow)" stroke-width="7" stroke-linecap="round" filter="url(#softGlow)"/>
-  <path d="M18 34L7 48L18 62" stroke="url(#leftGlow)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+  <text x="18" y="64" fill="#ff5ad9" filter="url(#softGlow)" font-size="58" font-family="Arial, Helvetica, sans-serif" font-weight="700">{</text>
+  <text x="78" y="64" fill="#28d7f7" filter="url(#softGlow)" font-size="58" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="end">}</text>
 
-  <path d="M71 19C76.5 24.5 76.5 71.5 71 77" stroke="url(#rightGlow)" stroke-width="7" stroke-linecap="round" filter="url(#softGlow)"/>
-  <path d="M78 34L89 48L78 62" stroke="url(#rightGlow)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
-
-  <path d="M34 29H45.5C56.8 29 63 35 63 48C63 61 56.8 67 45.5 67H34V29ZM42 36V60H45C51.9 60 55 56.5 55 48C55 39.5 51.9 36 45 36H42Z" fill="#F8FAFC"/>
+  <text x="48" y="60" fill="#f8fafc" font-size="28" font-family="Arial, Helvetica, sans-serif" font-weight="800" text-anchor="middle" letter-spacing="-1.5">DU</text>
 </svg>
