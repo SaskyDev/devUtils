@@ -16,8 +16,8 @@
 
   <rect width="96" height="96" rx="22" fill="url(#bgGlow)"/>
 
-  <text x="18" y="64" fill="#ff5ad9" filter="url(#softGlow)" font-size="58" font-family="Arial, Helvetica, sans-serif" font-weight="700">{</text>
-  <text x="78" y="64" fill="#28d7f7" filter="url(#softGlow)" font-size="58" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="end">}</text>
+  <text x="12" y="64" fill="#ff5ad9" filter="url(#softGlow)" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="500">{</text>
+  <text x="84" y="64" fill="#28d7f7" filter="url(#softGlow)" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="500" text-anchor="end">}</text>
 
   <text x="48" y="60" fill="#f8fafc" font-size="28" font-family="Arial, Helvetica, sans-serif" font-weight="800" text-anchor="middle" letter-spacing="-1.5">DU</text>
 </svg>
