@@ -1065,7 +1065,9 @@ border:1px solid rgba(37,99,235,0.14);
 }
 
 body.legal-document-page{
-max-width:1180px;
+max-width:none;
+width:100%;
+margin:0;
 background:
 linear-gradient(180deg, #e8f1f8 0%, #edf4fa 220px, #f4f8fb 100%);
 }
