@@ -18,6 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
 const container = document.getElementById("allTools");
 if (!container) return;
 
+const categoryPageMap = {
+    "JSON Tools": "json-tools/",
+    "Code Tools": "code-tools/",
+    "Parser Tools": "parser-tools/",
+    "Encoding Tools": "encoding-tools/",
+    "Validation Tools": "validation-tools/",
+    "Security Tools": "security-tools/",
+    "Text Tools": "text-tools/",
+    "Utility Tools": "utility-tools/",
+    "Color Tools": "color-tools/",
+    "HTML Tools": "html-tools/",
+    "Regex Tools": "regex-tools/"
+};
+
 
 // ================= STATE =================
 
@@ -28,9 +42,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const paramCategory = urlParams.get("category");
 
 if (paramCategory) {
-    const validCategories = [...new Set(tools.map(tool => tool.category))];
-    if (validCategories.includes(paramCategory)) {
-        currentCategory = paramCategory;
+    const targetCategoryPage = categoryPageMap[paramCategory];
+    if (targetCategoryPage) {
+        window.location.replace(targetCategoryPage);
+        return;
     }
 }
 

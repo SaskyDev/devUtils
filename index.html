@@ -2,57 +2,59 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.DEVUTILS_GA_ID = 'G-FXL6J1QX2M';
-  const consentState = (() => {
-    try {
-      return localStorage.getItem('devutils_cookie_consent');
-    } catch {
-      return null;
-    }
-  })();
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FXL6J1QX2M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.DEVUTILS_GA_ID = 'G-FXL6J1QX2M';
+    const consentState = (() => {
+      try {
+        return localStorage.getItem('devutils_cookie_consent');
+      } catch {
+        return null;
+      }
+    })();
 
-  gtag('consent', 'default', {
-    analytics_storage: consentState === 'accepted' ? 'granted' : 'denied',
-    ad_storage: consentState === 'accepted' ? 'granted' : 'denied',
-    ad_user_data: consentState === 'accepted' ? 'granted' : 'denied',
-    ad_personalization: consentState === 'accepted' ? 'granted' : 'denied',
-    wait_for_update: 500
-  });
+    gtag('consent', 'default', {
+      analytics_storage: consentState === 'accepted' ? 'granted' : 'denied',
+      ad_storage: consentState === 'accepted' ? 'granted' : 'denied',
+      ad_user_data: consentState === 'accepted' ? 'granted' : 'denied',
+      ad_personalization: consentState === 'accepted' ? 'granted' : 'denied',
+      wait_for_update: 500
+    });
 
-  gtag('js', new Date());
+    gtag('js', new Date());
 
-  gtag('config', 'G-FXL6J1QX2M', {
-    anonymize_ip: true,
-    send_page_view: consentState === 'accepted'
-  });
-</script>
+    gtag('config', 'G-FXL6J1QX2M', {
+      anonymize_ip: true,
+      send_page_view: consentState === 'accepted'
+    });
+  </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
 
-<title>DevUtils - 68+ Free Online Developer Tools</title>
+  <title>DevUtils - 68+ Free Online Developer Tools</title>
 
-<meta name="description" content="Free developer tools that run in your browser. JSON formatter, Base64 encoder, regex tester, UUID generator, hash tools, timestamp converter and more. No sign-up required.">
+  <meta name="description"
+    content="Free developer tools that run in your browser. JSON formatter, Base64 encoder, regex tester, UUID generator, hash tools, timestamp converter and more. No sign-up required.">
 
-<meta property="og:title" content="DevUtils - 68+ Free Online Developer Tools">
-<meta property="og:description" content="Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds. No sign-up, no installs, no backend required.">
-<meta property="og:image" content="assets/logo-devutils.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://devutilskit.com/">
-<link rel="canonical" href="https://devutilskit.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DevUtils - 68+ Free Online Developer Tools">
-<meta name="twitter:description" content="Free browser-based developer toolkit with 68+ tools. No sign-up required.">
-<meta name="twitter:image" content="assets/logo-devutils.png">
+  <meta property="og:title" content="DevUtils - 68+ Free Online Developer Tools">
+  <meta property="og:description"
+    content="Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds. No sign-up, no installs, no backend required.">
+  <meta property="og:image" content="assets/logo-devutils.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devutilskit.com/">
+  <link rel="canonical" href="https://devutilskit.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DevUtils - 68+ Free Online Developer Tools">
+  <meta name="twitter:description" content="Free browser-based developer toolkit with 68+ tools. No sign-up required.">
+  <meta name="twitter:image" content="assets/logo-devutils.png">
 
-<link rel="stylesheet" href="css/styles.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 </head>
 
@@ -60,249 +62,247 @@
 <body>
 
 
-<!-- NAVBAR es carrega amb JS -->
+  <!-- NAVBAR es carrega amb JS -->
 
 
-<header class="hero">
+  <header class="hero">
 
-<p class="hero-eyebrow">Fast browser-based developer toolkit</p>
+    <p class="hero-eyebrow">Fast browser-based developer toolkit</p>
 
-<img src="assets/logo-devutils.png" alt="DevUtils logo" class="logo">
+    <img src="assets/logo-devutils.png" alt="DevUtils logo" class="logo">
 
-<h1>Ship faster with practical tools for daily dev work</h1>
+    <h1>Ship faster with practical tools for daily dev work</h1>
 
-<p class="hero-subtitle">
-Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds.
-No sign-up, no installs, no backend required.
+    <p class="hero-subtitle">
+      Format data, inspect payloads, generate secure values and solve repetitive tasks in seconds.
+      No sign-up, no installs, no backend required.
 
-</p>
+    </p>
 
-<div class="hero-search-wrap">
-<input
-type="text"
-id="toolSearch"
-placeholder="Search tools: json, base64, jwt, csv, url..."
-onkeyup="filterTools()">
-</div>
+    <div class="hero-search-wrap">
+      <input type="text" id="toolSearch" placeholder="Search tools: json, base64, jwt, csv, url..."
+        onkeyup="filterTools()">
+    </div>
 
-<p class="hero-note"><span id="heroToolCount"></span> tools available and growing</p>
+    <p class="hero-note"><span id="heroToolCount"></span> tools available and growing</p>
 
-<div class="hero-actions">
-<a href="all-tools.html" class="btn-primary">View all tools</a>
-<a href="#categories" class="btn-secondary">Explore categories</a>
-</div>
+    <div class="hero-actions">
+      <a href="all-tools.html" class="btn-primary">View all tools</a>
+      <a href="#categories" class="btn-secondary">Explore categories</a>
+    </div>
 
-<div class="hero-stats">
-<div class="stat-card">
-<strong id="statToolCount"></strong>
-<span>Tools</span>
-</div>
-<div class="stat-card">
-<strong>100%</strong>
-<span>Client-side</span>
-</div>
-<div class="stat-card">
-<strong>0</strong>
-<span>Sign-up friction</span>
-</div>
-</div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <strong id="statToolCount"></strong>
+        <span>Tools</span>
+      </div>
+      <div class="stat-card">
+        <strong>100%</strong>
+        <span>Client-side</span>
+      </div>
+      <div class="stat-card">
+        <strong>0</strong>
+        <span>Sign-up friction</span>
+      </div>
+    </div>
 
-<div class="quick-links">
-<a href="tools/json-formatter/" class="quick-chip">JSON Formatter</a>
-<a href="tools/base64/" class="quick-chip">Base64</a>
-<a href="tools/jwt-encoder/" class="quick-chip">JWT Encoder</a>
-<a href="tools/hash-generator/" class="quick-chip">Hash Generator</a>
-<a href="tools/csv-to-json/" class="quick-chip">CSV to JSON</a>
-<a href="tools/timestamp-converter/" class="quick-chip">Timestamp</a>
-</div>
+    <div class="quick-links">
+      <a href="tools/json-formatter/" class="quick-chip">JSON Formatter</a>
+      <a href="tools/base64/" class="quick-chip">Base64</a>
+      <a href="tools/jwt-encoder/" class="quick-chip">JWT Encoder</a>
+      <a href="tools/hash-generator/" class="quick-chip">Hash Generator</a>
+      <a href="tools/csv-to-json/" class="quick-chip">CSV to JSON</a>
+      <a href="tools/timestamp-converter/" class="quick-chip">Timestamp</a>
+    </div>
 
-</header>
+  </header>
 
 
-<main>
+  <main>
 
 
-<section>
+    <section>
 
-<div class="home-intro">
-<h2>Built For Real Development Workflows</h2>
-<p>
-DevUtils focuses on practical utilities you need while building APIs, debugging payloads,
-testing data formats and handling security-related strings.
-</p>
-<p>
-Each tool is lightweight, direct and designed to return useful output fast.
-</p>
-</div>
+      <div class="home-intro">
+        <h2>Built For Real Development Workflows</h2>
+        <p>
+          DevUtils focuses on practical utilities you need while building APIs, debugging payloads,
+          testing data formats and handling security-related strings.
+        </p>
+        <p>
+          Each tool is lightweight, direct and designed to return useful output fast.
+        </p>
+      </div>
 
-</section>
-
-
-<section>
-
-<h2>Featured Tools</h2>
-
-<div class="tools-grid">
-
-<a href="tools/json-formatter/" class="tool-card tool-item">
-<span class="tool-icon">🧩</span>
-<span class="tool-title">JSON Formatter</span>
-</a>
-
-<a href="tools/regex-tester/" class="tool-card tool-item">
-<span class="tool-icon">🧪</span>
-<span class="tool-title">Regex Tester</span>
-</a>
-
-<a href="tools/base64/" class="tool-card tool-item">
-<span class="tool-icon">🔐</span>
-<span class="tool-title">Base64 Encoder / Decoder</span>
-</a>
-
-<a href="tools/password-generator/" class="tool-card tool-item">
-<span class="tool-icon">🔑</span>
-<span class="tool-title">Password Generator</span>
-</a>
-
-<a href="tools/password-strength/" class="tool-card tool-item">
-<span class="tool-icon">🛡</span>
-<span class="tool-title">Password Strength Checker</span>
-</a>
-
-<a href="tools/color-picker/" class="tool-card tool-item">
-<span class="tool-icon">🎨</span>
-<span class="tool-title">Color Picker</span>
-</a>
-
-</div>
-
-</section>
+    </section>
 
 
-<section>
+    <section>
 
-<h2>Popular Tools</h2>
+      <h2>Featured Tools</h2>
 
-<div class="tools-grid">
+      <div class="tools-grid">
 
-<a href="tools/uuid-generator/" class="tool-card tool-item">
-<span class="tool-icon">🆔</span>
-<span class="tool-title">UUID Generator</span>
-</a>
+        <a href="tools/json-formatter/" class="tool-card tool-item">
+          <span class="tool-icon">🧩</span>
+          <span class="tool-title">JSON Formatter</span>
+        </a>
 
-<a href="tools/timestamp-converter/" class="tool-card tool-item">
-<span class="tool-icon">⏱</span>
-<span class="tool-title">Timestamp Converter</span>
-</a>
+        <a href="tools/regex-tester/" class="tool-card tool-item">
+          <span class="tool-icon">🧪</span>
+          <span class="tool-title">Regex Tester</span>
+        </a>
 
-<a href="tools/slug-generator/" class="tool-card tool-item">
-<span class="tool-icon">🔗</span>
-<span class="tool-title">Slug Generator</span>
-</a>
+        <a href="tools/base64/" class="tool-card tool-item">
+          <span class="tool-icon">🔐</span>
+          <span class="tool-title">Base64 Encoder / Decoder</span>
+        </a>
 
-<a href="tools/word-counter/" class="tool-card tool-item">
-<span class="tool-icon">📊</span>
-<span class="tool-title">Word Counter</span>
-</a>
+        <a href="tools/password-generator/" class="tool-card tool-item">
+          <span class="tool-icon">🔑</span>
+          <span class="tool-title">Password Generator</span>
+        </a>
 
-</div>
+        <a href="tools/password-strength/" class="tool-card tool-item">
+          <span class="tool-icon">🛡</span>
+          <span class="tool-title">Password Strength Checker</span>
+        </a>
 
-</section>
+        <a href="tools/color-picker/" class="tool-card tool-item">
+          <span class="tool-icon">🎨</span>
+          <span class="tool-title">Color Picker</span>
+        </a>
 
+      </div>
 
-<section id="categories">
-
-<h2>Explore Categories</h2>
-
-<div class="tools-grid category-grid">
-
-<a href="all-tools.html?category=JSON+Tools" class="tool-card category-card">
-<span class="tool-icon">🧩</span>
-<span class="tool-title">JSON Tools</span>
-<span class="category-meta">Format, validate, compare, convert and minify JSON</span>
-</a>
-
-<a href="all-tools.html?category=Code+Tools" class="tool-card category-card">
-<span class="tool-icon">💻</span>
-<span class="tool-title">Code Tools</span>
-<span class="category-meta">Beautify, minify and format CSS, JS, SQL and cron</span>
-</a>
-
-<a href="all-tools.html?category=Parser+Tools" class="tool-card category-card">
-<span class="tool-icon">🔍</span>
-<span class="tool-title">Parser Tools</span>
-<span class="category-meta">Parse URLs, query strings and HTTP headers</span>
-</a>
-
-<a href="all-tools.html?category=Encoding+Tools" class="tool-card category-card">
-<span class="tool-icon">🔐</span>
-<span class="tool-title">Encoding Tools</span>
-<span class="category-meta">Base64, HTML, URL, image and JSON escaping</span>
-</a>
-
-<a href="all-tools.html?category=Validation+Tools" class="tool-card category-card">
-<span class="tool-icon">🧪</span>
-<span class="tool-title">Validation Tools</span>
-<span class="category-meta">Email, IP, UUID and password checks</span>
-</a>
-
-<a href="all-tools.html?category=Security+Tools" class="tool-card category-card">
-<span class="tool-icon">🛡</span>
-<span class="tool-title">Security Tools</span>
-<span class="category-meta">Password, hash and JWT utilities</span>
-</a>
-
-<a href="all-tools.html?category=Text+Tools" class="tool-card category-card">
-<span class="tool-icon">🔤</span>
-<span class="tool-title">Text Tools</span>
-<span class="category-meta">Case, slug, counters and diff</span>
-</a>
-
-<a href="all-tools.html?category=Utility+Tools" class="tool-card category-card">
-<span class="tool-icon">⚙️</span>
-<span class="tool-title">Utility Tools</span>
-<span class="category-meta">Dates, timestamps, random numbers and base conversion</span>
-</a>
-
-<a href="all-tools.html?category=Color+Tools" class="tool-card category-card">
-<span class="tool-icon">🎨</span>
-<span class="tool-title">Color Tools</span>
-<span class="category-meta">Pick colors and convert HEX and RGB values</span>
-</a>
-
-<a href="all-tools.html?category=HTML+Tools" class="tool-card category-card">
-<span class="tool-icon">📄</span>
-<span class="tool-title">HTML Tools</span>
-<span class="category-meta">Preview, minify and convert HTML and Markdown</span>
-</a>
-
-<a href="all-tools.html?category=Regex+Tools" class="tool-card category-card">
-<span class="tool-icon">🧪</span>
-<span class="tool-title">Regex Tools</span>
-<span class="category-meta">Test, replace and explore regular expressions</span>
-</a>
-
-</div>
-
-</section>
+    </section>
 
 
-</main>
+    <section>
+
+      <h2>Popular Tools</h2>
+
+      <div class="tools-grid">
+
+        <a href="tools/uuid-generator/" class="tool-card tool-item">
+          <span class="tool-icon">🆔</span>
+          <span class="tool-title">UUID Generator</span>
+        </a>
+
+        <a href="tools/timestamp-converter/" class="tool-card tool-item">
+          <span class="tool-icon">⏱</span>
+          <span class="tool-title">Timestamp Converter</span>
+        </a>
+
+        <a href="tools/slug-generator/" class="tool-card tool-item">
+          <span class="tool-icon">🔗</span>
+          <span class="tool-title">Slug Generator</span>
+        </a>
+
+        <a href="tools/word-counter/" class="tool-card tool-item">
+          <span class="tool-icon">📊</span>
+          <span class="tool-title">Word Counter</span>
+        </a>
+
+      </div>
+
+    </section>
 
 
-<script src="js/ui.js"></script>
-<script src="js/main.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const count = typeof navToolsList !== "undefined" ? navToolsList.length : 0;
-    const heroEl = document.getElementById("heroToolCount");
-    const statEl = document.getElementById("statToolCount");
-    const shortcutEl = document.getElementById("searchShortcut");
-    if (heroEl) heroEl.textContent = count;
-    if (statEl) statEl.textContent = count;
-    if (shortcutEl) shortcutEl.textContent = navigator.platform.includes("Mac") ? "⌘K" : "Ctrl+K";
-});
-</script>
+    <section id="categories">
+
+      <h2>Explore Categories</h2>
+
+      <div class="tools-grid category-grid">
+
+        <a href="json-tools/" class="tool-card category-card">
+          <span class="tool-icon">🧩</span>
+          <span class="tool-title">JSON Tools</span>
+          <span class="category-meta">Format, validate, compare, convert and minify JSON</span>
+        </a>
+
+        <a href="code-tools/" class="tool-card category-card">
+          <span class="tool-icon">💻</span>
+          <span class="tool-title">Code Tools</span>
+          <span class="category-meta">Beautify, minify and format CSS, JS, SQL and cron</span>
+        </a>
+
+        <a href="parser-tools/" class="tool-card category-card">
+          <span class="tool-icon">🔍</span>
+          <span class="tool-title">Parser Tools</span>
+          <span class="category-meta">Parse URLs, query strings and HTTP headers</span>
+        </a>
+
+        <a href="encoding-tools/" class="tool-card category-card">
+          <span class="tool-icon">🔐</span>
+          <span class="tool-title">Encoding Tools</span>
+          <span class="category-meta">Base64, HTML, URL, image and JSON escaping</span>
+        </a>
+
+        <a href="validation-tools/" class="tool-card category-card">
+          <span class="tool-icon">🧪</span>
+          <span class="tool-title">Validation Tools</span>
+          <span class="category-meta">Email, IP, UUID and password checks</span>
+        </a>
+
+        <a href="security-tools/" class="tool-card category-card">
+          <span class="tool-icon">🛡</span>
+          <span class="tool-title">Security Tools</span>
+          <span class="category-meta">Password, hash and JWT utilities</span>
+        </a>
+
+        <a href="text-tools/" class="tool-card category-card">
+          <span class="tool-icon">🔤</span>
+          <span class="tool-title">Text Tools</span>
+          <span class="category-meta">Case, slug, counters and diff</span>
+        </a>
+
+        <a href="utility-tools/" class="tool-card category-card">
+          <span class="tool-icon">⚙️</span>
+          <span class="tool-title">Utility Tools</span>
+          <span class="category-meta">Dates, timestamps, random numbers and base conversion</span>
+        </a>
+
+        <a href="color-tools/" class="tool-card category-card">
+          <span class="tool-icon">🎨</span>
+          <span class="tool-title">Color Tools</span>
+          <span class="category-meta">Pick colors and convert HEX and RGB values</span>
+        </a>
+
+        <a href="html-tools/" class="tool-card category-card">
+          <span class="tool-icon">📄</span>
+          <span class="tool-title">HTML Tools</span>
+          <span class="category-meta">Preview, minify and convert HTML and Markdown</span>
+        </a>
+
+        <a href="regex-tools/" class="tool-card category-card">
+          <span class="tool-icon">🧪</span>
+          <span class="tool-title">Regex Tools</span>
+          <span class="category-meta">Test, replace and explore regular expressions</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const count = typeof navToolsList !== "undefined" ? navToolsList.length : 0;
+      const heroEl = document.getElementById("heroToolCount");
+      const statEl = document.getElementById("statToolCount");
+      const shortcutEl = document.getElementById("searchShortcut");
+      if (heroEl) heroEl.textContent = count;
+      if (statEl) statEl.textContent = count;
+      if (shortcutEl) shortcutEl.textContent = navigator.platform.includes("Mac") ? "⌘K" : "Ctrl+K";
+    });
+  </script>
 
 </body>
+
 </html>

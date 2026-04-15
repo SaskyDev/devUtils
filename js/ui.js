@@ -256,11 +256,11 @@ const loadNavbar = () => {
     <nav class="navbar">
 
         <div class="nav-left">
-            <a href="${basePath}index.html" class="nav-brand">DevUtils</a>
+            <a href="${basePath}" class="nav-brand">DevUtils</a>
         </div>
 
         <div class="nav-right">
-            <a href="${basePath}index.html" class="nav-btn">Home</a>
+            <a href="${basePath}" class="nav-btn">Home</a>
             <a href="${basePath}all-tools.html" class="nav-btn">All tools</a>
             <a href="#" id="navSearchBtn" aria-label="Search tools" class="nav-btn nav-search-btn"><span aria-hidden="true">🔍</span><span class="nav-search-label">Search</span></a>
             <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
