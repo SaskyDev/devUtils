@@ -66,7 +66,29 @@ function validateIPs() {
 
     const lines = input.split("\n");
     const ipv4 = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
-    const ipv6 = /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
+    const isValidIPv6 = (value) => {
+        if (!value.includes(":") || value.includes(":::")) return false;
+
+        const compressionParts = value.split("::");
+        if (compressionParts.length > 2) return false;
+
+        const parseSide = (side) => {
+            if (!side) return [];
+            return side.split(":");
+        };
+
+        const left = parseSide(compressionParts[0]);
+        const right = parseSide(compressionParts[1] || "");
+        const groups = [...left, ...right];
+
+        if (groups.some((group) => !/^[0-9a-fA-F]{1,4}$/.test(group))) return false;
+
+        if (compressionParts.length === 2) {
+            return groups.length < 8;
+        }
+
+        return groups.length === 8;
+    };
 
     let result = "";
     let hasError = false;
@@ -75,7 +97,7 @@ function validateIPs() {
         const value = ip.trim();
         if (!value) return;
 
-        if (ipv4.test(value) || ipv6.test(value)) result += "✔ " + value + "\n";
+        if (ipv4.test(value) || isValidIPv6(value)) result += "✔ " + value + "\n";
         else {
             result += "❌ " + value + "\n";
             hasError = true;

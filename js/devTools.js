@@ -198,34 +198,168 @@ function convert() {
 }
 
 function jsonToYaml(obj, indent = 0) {
-    let yaml = "";
-    const spacing = "  ".repeat(indent);
+    const quoteScalar = (value) => {
+        if (value === null) return "null";
+        if (typeof value === "boolean" || typeof value === "number") return String(value);
 
-    for (const key in obj) {
-        const value = obj[key];
-        if (typeof value === "object" && value !== null) {
-            yaml += `${spacing}${key}:\n`;
-            yaml += jsonToYaml(value, indent + 1);
-        } else {
-            yaml += `${spacing}${key}: ${value}\n`;
+        const text = String(value);
+        const needsQuotes =
+            text === "" ||
+            /^\s|\s$/.test(text) ||
+            /[:#\n\r,[\]{}&*!|>'"%@`]/.test(text) ||
+            /^(true|false|null|~|[-+]?(?:\d+|\d*\.\d+))$/i.test(text);
+
+        return needsQuotes ? JSON.stringify(text) : text;
+    };
+
+    const lines = [];
+    const writeValue = (value, level, prefix = "") => {
+        const spacing = "  ".repeat(level);
+
+        if (Array.isArray(value)) {
+            if (value.length === 0) {
+                lines.push(`${spacing}${prefix}[]`);
+                return;
+            }
+            value.forEach((item) => {
+                if (item !== null && typeof item === "object") {
+                    lines.push(`${spacing}${prefix}-`);
+                    writeValue(item, level + 1);
+                } else {
+                    lines.push(`${spacing}${prefix}- ${quoteScalar(item)}`);
+                }
+            });
+            return;
         }
-    }
 
-    return yaml;
+        if (value !== null && typeof value === "object") {
+            const entries = Object.entries(value);
+            if (entries.length === 0) {
+                lines.push(`${spacing}${prefix}{}`);
+                return;
+            }
+            entries.forEach(([key, child]) => {
+                const safeKey = /^[A-Za-z_][\w-]*$/.test(key) ? key : JSON.stringify(key);
+                if (child !== null && typeof child === "object") {
+                    lines.push(`${spacing}${prefix}${safeKey}:`);
+                    writeValue(child, level + 1);
+                } else {
+                    lines.push(`${spacing}${prefix}${safeKey}: ${quoteScalar(child)}`);
+                }
+            });
+            return;
+        }
+
+        lines.push(`${spacing}${prefix}${quoteScalar(value)}`);
+    };
+
+    writeValue(obj, indent);
+    return lines.join("\n") + "\n";
 }
 
 function yamlToJson(yaml) {
-    const lines = yaml.split("\n");
-    const obj = {};
-
-    lines.forEach((line) => {
-        const [key, ...rest] = line.split(":");
-        if (key) {
-            obj[key.trim()] = rest.join(":").trim();
+    const parseScalar = (raw) => {
+        const value = raw.trim();
+        if (value === "null" || value === "~") return null;
+        if (value === "true") return true;
+        if (value === "false") return false;
+        if (/^[-+]?(?:\d+|\d*\.\d+)$/.test(value)) return Number(value);
+        if (
+            (value.startsWith('"') && value.endsWith('"')) ||
+            (value.startsWith("'") && value.endsWith("'"))
+        ) {
+            return value.startsWith('"')
+                ? JSON.parse(value)
+                : value.slice(1, -1).replace(/''/g, "'");
         }
-    });
+        if (value === "[]") return [];
+        if (value === "{}") return {};
+        return value;
+    };
 
-    return obj;
+    const sourceLines = yaml
+        .split(/\r?\n/)
+        .filter((line) => line.trim() && !line.trimStart().startsWith("#"));
+
+    if (sourceLines.some((line) => /^\s*\t/.test(line))) {
+        throw new Error("Tabs are not supported for YAML indentation");
+    }
+
+    const parseBlock = (startIndex, indent) => {
+        const first = sourceLines[startIndex];
+        const isArray = first.trimStart().startsWith("-");
+        const container = isArray ? [] : {};
+        let index = startIndex;
+
+        while (index < sourceLines.length) {
+            const line = sourceLines[index];
+            const currentIndent = line.match(/^ */)[0].length;
+            if (currentIndent < indent) break;
+            if (currentIndent > indent) throw new Error("Invalid YAML indentation");
+
+            const content = line.trim();
+            if (isArray) {
+                if (!content.startsWith("-")) throw new Error("Mixed YAML collection");
+                const rawValue = content.slice(1).trim();
+                if (!rawValue) {
+                    const next = sourceLines[index + 1];
+                    if (!next) {
+                        container.push(null);
+                        index++;
+                        continue;
+                    }
+                    const nextIndent = next.match(/^ */)[0].length;
+                    if (nextIndent <= indent) {
+                        container.push(null);
+                        index++;
+                        continue;
+                    }
+                    const parsed = parseBlock(index + 1, nextIndent);
+                    container.push(parsed.value);
+                    index = parsed.index;
+                    continue;
+                }
+                container.push(parseScalar(rawValue));
+                index++;
+                continue;
+            }
+
+            const separator = content.indexOf(":");
+            if (separator <= 0) throw new Error("Invalid YAML mapping");
+            const rawKey = content.slice(0, separator).trim();
+            const key = parseScalar(rawKey);
+            if (typeof key !== "string") throw new Error("YAML keys must be strings");
+            const rawValue = content.slice(separator + 1).trim();
+
+            if (rawValue) {
+                container[key] = parseScalar(rawValue);
+                index++;
+                continue;
+            }
+
+            const next = sourceLines[index + 1];
+            if (!next) {
+                container[key] = null;
+                index++;
+                continue;
+            }
+            const nextIndent = next.match(/^ */)[0].length;
+            if (nextIndent <= indent) {
+                container[key] = null;
+                index++;
+                continue;
+            }
+
+            const parsed = parseBlock(index + 1, nextIndent);
+            container[key] = parsed.value;
+            index = parsed.index;
+        }
+
+        return { value: container, index };
+    };
+
+    if (sourceLines.length === 0) return {};
+    return parseBlock(0, sourceLines[0].match(/^ */)[0].length).value;
 }
 
 function convertToXML() {
@@ -273,24 +407,22 @@ function convertCSVtoJSON() {
     }
 
     try {
-        const lines = csv
-            .split(/\r?\n/)
-            .map((line) => line.trim())
-            .filter((line) => line !== "");
+        const rows = parseCSV(csv);
 
-        if (lines.length < 2) {
+        if (rows.length < 2) {
             output.textContent = "CSV must have headers and at least one row";
             output.className = "output-box error";
             return;
         }
 
-        const headers = lines[0].split(",").map((header) => header.trim());
-        const result = lines.slice(1).map((line) => {
-            const values = line.split(",");
+        const headers = rows[0].map((header) => header.trim());
+        if (headers.some((header) => !header)) throw new Error("CSV headers cannot be empty");
+
+        const result = rows.slice(1).map((values) => {
             const row = {};
 
             headers.forEach((header, index) => {
-                row[header] = values[index]?.trim() || "";
+                row[header] = values[index] ?? "";
             });
 
             return row;
@@ -302,6 +434,60 @@ function convertCSVtoJSON() {
         output.textContent = "Invalid CSV data";
         output.className = "output-box error";
     }
+}
+
+function parseCSV(csv) {
+    const rows = [];
+    let row = [];
+    let field = "";
+    let inQuotes = false;
+
+    for (let index = 0; index < csv.length; index++) {
+        const char = csv[index];
+        const next = csv[index + 1];
+
+        if (inQuotes) {
+            if (char === '"' && next === '"') {
+                field += '"';
+                index++;
+            } else if (char === '"') {
+                inQuotes = false;
+            } else {
+                field += char;
+            }
+            continue;
+        }
+
+        if (char === '"') {
+            if (field !== "") throw new Error("Unexpected quote in CSV field");
+            inQuotes = true;
+        } else if (char === ",") {
+            row.push(field);
+            field = "";
+        } else if (char === "\n" || char === "\r") {
+            if (char === "\r" && next === "\n") index++;
+            row.push(field);
+            if (row.some((value) => value !== "")) rows.push(row);
+            row = [];
+            field = "";
+        } else {
+            field += char;
+        }
+    }
+
+    if (inQuotes) throw new Error("Unclosed quoted CSV field");
+    row.push(field);
+    if (row.some((value) => value !== "")) rows.push(row);
+    return rows;
+}
+
+function escapeCSVField(value) {
+    const text = value === null || value === undefined
+        ? ""
+        : typeof value === "object"
+            ? JSON.stringify(value)
+            : String(value);
+    return /[",\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
 function convertJSONtoCSV() {
@@ -318,11 +504,15 @@ function convertJSONtoCSV() {
             return;
         }
 
-        const headers = Object.keys(data[0]);
-        const csvRows = [headers.join(",")];
+        if (data.some((item) => item === null || typeof item !== "object" || Array.isArray(item))) {
+            throw new Error("JSON rows must be objects");
+        }
+
+        const headers = [...new Set(data.flatMap((item) => Object.keys(item)))];
+        const csvRows = [headers.map(escapeCSVField).join(",")];
 
         data.forEach((obj) => {
-            const values = headers.map((header) => obj[header]);
+            const values = headers.map((header) => escapeCSVField(obj[header]));
             csvRows.push(values.join(","));
         });
 

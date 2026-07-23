@@ -1,8 +1,12 @@
 // ---------- BASE64 TOOL ----------
 
 const encodeBase64 = () => {
-
-    $("output").textContent = btoa($("input").value);
+    const bytes = new TextEncoder().encode($("input").value);
+    let binary = "";
+    bytes.forEach((byte) => {
+        binary += String.fromCharCode(byte);
+    });
+    $("output").textContent = btoa(binary);
 
 };
 
@@ -10,8 +14,9 @@ const encodeBase64 = () => {
 const decodeBase64 = () => {
 
     try {
-
-        $("output").textContent = atob($("input").value);
+        const binary = atob($("input").value);
+        const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+        $("output").textContent = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
 
     } catch {
 
