@@ -256,6 +256,14 @@ test("Global UI gives orphaned form controls an accessible fallback name", () =>
     assert.match(ui, /initAccessibleFormControls\(\)/);
 });
 
+test("Global UI output state honors explicit tool classes", () => {
+    const ui = fs.readFileSync(path.join(root, "js/ui.js"), "utf8");
+
+    assert.match(ui, /explicitState = \["success", "error", "info"\]/);
+    assert.match(ui, /outputEl\.classList\.contains\(state\)/);
+    assert.match(ui, /attributeFilter: \["class"\]/);
+});
+
 test("Every sitemap URL is unique and resolves to a local page", () => {
     const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
     const urls = [...sitemap.matchAll(/<loc>(https:\/\/devutilskit\.com\/[^<]*)<\/loc>/g)]

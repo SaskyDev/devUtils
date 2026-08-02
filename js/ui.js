@@ -470,7 +470,9 @@ const applyOutputStateClass = (outputEl) => {
 
     if (!outputEl) return;
 
-    const state = classifyOutputState(outputEl.textContent);
+    const explicitState = ["success", "error", "info"]
+        .find(state => outputEl.classList.contains(state));
+    const state = explicitState || classifyOutputState(outputEl.textContent);
 
     outputEl.classList.add("output-state");
     outputEl.classList.remove("output-success", "output-error", "output-info");
@@ -490,6 +492,8 @@ const initOutputStateObserver = () => {
         });
 
         observer.observe(outputEl, {
+            attributes: true,
+            attributeFilter: ["class"],
             childList: true,
             characterData: true,
             subtree: true
