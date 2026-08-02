@@ -35,16 +35,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HTML Minifier Online - Compress HTML Code Free - DevUtils</title>
-<meta name="description" content="Minify HTML code online by removing whitespace, comments and reducing file size. Free HTML compressor for faster pages.">
-<meta property="og:title" content="HTML Minifier Online - Compress HTML Code Free - DevUtils">
-<meta property="og:description" content="Minify HTML code online by removing whitespace, comments and reducing file size. Free HTML compressor for faster pages.">
+<title>Safe HTML Minifier Online - Remove Comments | DevUtils</title>
+<meta name="description" content="Remove ordinary HTML comments safely while preserving text spacing, scripts, styles, preformatted and template content.">
+<meta property="og:title" content="Safe HTML Minifier Online - Remove Comments | DevUtils">
+<meta property="og:description" content="Remove ordinary HTML comments safely while preserving text spacing, scripts, styles, preformatted and template content.">
 <meta property="og:url" content="https://devutilskit.com/tools/html-minifier/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevUtils">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML Minifier Online - Compress HTML Code Free - DevUtils">
-<meta name="twitter:description" content="Minify HTML code online by removing whitespace, comments and reducing file size. Free HTML compressor for faster pages.">
+<meta name="twitter:title" content="Safe HTML Minifier Online - Remove Comments | DevUtils">
+<meta name="twitter:description" content="Remove ordinary HTML comments safely while preserving text spacing, scripts, styles, preformatted and template content.">
 <link rel="canonical" href="https://devutilskit.com/tools/html-minifier/">
 <meta name="robots" content="index, follow">
 
@@ -55,9 +55,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "HTML Minifier Online - Compress HTML Code Free",
+  "name": "Safe HTML Minifier Online",
   "url": "https://devutilskit.com/tools/html-minifier/",
-  "description": "Minify HTML code online by removing whitespace, comments and reducing file size. Free HTML compressor for faster pages.",
+  "description": "Remove ordinary HTML comments safely while preserving text spacing, scripts, styles, preformatted and template content.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "All",
   "offers": {
@@ -91,11 +91,10 @@
 <!-- HERO -->
 <section class="tool-container">
 
-<h1>HTML Minifier</h1>
+<h1>Safe HTML Minifier</h1>
 
 <p class="tool-description">
-Minify HTML code by removing whitespace and unnecessary characters.
-Improve performance and reduce file size.
+Remove ordinary HTML comments and outer whitespace without rewriting text, scripts, styles or template content.
 </p>
 
 </section>
@@ -108,7 +107,8 @@ Improve performance and reduce file size.
 
 <div class="tool-ui">
 
-<textarea id="input" placeholder="Paste your HTML code here..."></textarea>
+<label for="input">HTML code</label>
+<textarea id="input" spellcheck="false" placeholder="Paste your HTML code here..."></textarea>
 
 <div class="tool-actions">
 <button onclick="minifyHTML()">Minify</button>
@@ -116,7 +116,7 @@ Improve performance and reduce file size.
 <button onclick="copyOutput()">Copy</button>
 </div>
 
-<pre id="output">Result will appear here...</pre>
+<pre id="output" class="output-box" role="status" aria-live="polite">Result will appear here...</pre>
 
 </div>
 
@@ -129,6 +129,7 @@ Improve performance and reduce file size.
 <h2>Example</h2>
 
 <pre>
+&lt;!-- remove this comment --&gt;
 &lt;div&gt;
     &lt;h1&gt;Title&lt;/h1&gt;
 &lt;/div&gt;
@@ -136,7 +137,9 @@ Improve performance and reduce file size.
 
 <p><strong>Output:</strong></p>
 
-<pre>&lt;div&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/div&gt;</pre>
+<pre>&lt;div&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+&lt;/div&gt;</pre>
 
 </section>
 
@@ -161,9 +164,10 @@ Improve performance and reduce file size.
 <h2>What is this tool?</h2>
 
 <p>
-An HTML minifier removes unnecessary whitespace, comments and characters from HTML code.
-It helps improve loading speed and optimize performance.
+This conservative HTML minifier removes ordinary comments and whitespace around the whole document. It intentionally preserves internal whitespace because spaces between inline elements, content in <code>&lt;pre&gt;</code>, scripts, styles and template fragments can be meaningful.
 </p>
+
+<p>For production builds, use an HTML-aware parser with settings matched to your framework. This tool favors preserving behavior over claiming the smallest possible output.</p>
 
 </section>
 
@@ -195,7 +199,7 @@ It helps improve loading speed and optimize performance.
 
 
 <script src="../../js/ui.js"></script>
-<script src="../../js/htmlTools.js"></script>
+<script src="../../js/htmlTools.js?v=20260726-2"></script>
 <script src="../../js/main.js"></script>
 
 </body>

@@ -36,15 +36,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CSS Minifier Online - Compress CSS Code Free - DevUtils</title>
-<meta name="description" content="Minify CSS code online by removing whitespace, comments and reducing file size. Free CSS compressor for faster websites.">
+<meta name="description" content="Minify CSS online while preserving strings, calc spacing and license comments. Lightweight browser-based CSS compressor.">
 <meta property="og:title" content="CSS Minifier Online - Compress CSS Code Free - DevUtils">
-<meta property="og:description" content="Minify CSS code online by removing whitespace, comments and reducing file size. Free CSS compressor for faster websites.">
+<meta property="og:description" content="Minify CSS online while preserving strings, calc spacing and license comments. Lightweight browser-based CSS compressor.">
 <meta property="og:url" content="https://devutilskit.com/tools/css-minifier/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevUtils">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS Minifier Online - Compress CSS Code Free - DevUtils">
-<meta name="twitter:description" content="Minify CSS code online by removing whitespace, comments and reducing file size. Free CSS compressor for faster websites.">
+<meta name="twitter:description" content="Minify CSS online while preserving strings, calc spacing and license comments. Lightweight browser-based CSS compressor.">
 <link rel="canonical" href="https://devutilskit.com/tools/css-minifier/">
 <meta name="robots" content="index, follow">
 
@@ -57,7 +57,7 @@
   "@type": "WebApplication",
   "name": "CSS Minifier Online - Compress CSS Code Free",
   "url": "https://devutilskit.com/tools/css-minifier/",
-  "description": "Minify CSS code online by removing whitespace, comments and reducing file size. Free CSS compressor for faster websites.",
+  "description": "Minify CSS online while preserving strings, calc spacing and license comments.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "All",
   "offers": {
@@ -107,7 +107,8 @@ Minify CSS code to reduce file size and improve performance.
 
 <div class="tool-ui">
 
-<textarea id="input" placeholder="Paste your CSS here..."></textarea>
+<label for="input">CSS code</label>
+<textarea id="input" spellcheck="false" placeholder="Paste your CSS here..."></textarea>
 
 <div class="tool-actions">
 <button onclick="minifyCSS()">Minify</button>
@@ -115,7 +116,7 @@ Minify CSS code to reduce file size and improve performance.
 <button onclick="copyOutput()">Copy</button>
 </div>
 
-<pre id="output">Result will appear here...</pre>
+<pre id="output" class="output-box" role="status" aria-live="polite">Result will appear here...</pre>
 
 </div>
 
@@ -161,9 +162,10 @@ body {
 <h2>What is this tool?</h2>
 
 <p>
-A CSS minifier removes unnecessary whitespace and characters from CSS code.
-It helps reduce file size and improve loading performance.
+This CSS minifier removes ordinary comments and unnecessary whitespace while preserving quoted strings, spaces required by expressions such as <code>calc()</code> and important license comments beginning with <code>/*!</code>.
 </p>
+
+<p>Always test generated CSS before replacing a production file. Invalid or browser-specific CSS may need a full parser rather than a lightweight browser tool.</p>
 
 </section>
 
@@ -195,7 +197,7 @@ It helps reduce file size and improve loading performance.
 
 
 <script src="../../js/ui.js"></script>
-<script src="../../js/devTools.js"></script>
+<script src="../../js/devTools.js?v=20260726-2"></script>
 <script src="../../js/main.js"></script>
 
 </body>

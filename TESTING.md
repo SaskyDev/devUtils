@@ -9,7 +9,18 @@ audit:
 - compressed IPv6 validation.
 - quoted, escaped and multiline CSV fields.
 - nested JSON/YAML values and scalar types.
+- JSON to XML escaping, arrays, null values and invalid XML tag names.
+- Conservative JavaScript, CSS and HTML minification safety cases.
 - sandboxing of the HTML Preview iframe.
+- Regex Tester flags, literal syntax, capture groups, match indexes and
+  zero-length match safety, including a 1,000-result display cap and isolated
+  worker wiring.
+- User-controlled comparison output avoids `innerHTML`.
+- Legacy form controls receive a shared accessible-name fallback when no
+  explicit or wrapping label exists.
+- Sitemap URLs are unique and resolve to local pages.
+- The 68 catalog routes exist and have core SEO metadata plus valid JSON-LD.
+- Local links, stylesheets, scripts and images referenced by HTML pages exist.
 
 Run it with Node.js:
 

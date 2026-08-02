@@ -10,7 +10,6 @@ function resetDevOutput() {
     const output = getDevOutput();
     if (!output) return;
     output.textContent = "";
-    output.innerHTML = "";
     output.className = output.dataset.baseClass || "output-box";
 }
 
@@ -113,11 +112,14 @@ function compareJSON() {
             window.showToast("Valid JSON", "success");
         }
 
-        let html = `
-        <div class="diff-table">
-            <div class="diff-header">JSON 1</div>
-            <div class="diff-header">JSON 2</div>
-        `;
+        const table = document.createElement("div");
+        table.className = "diff-table";
+        ["JSON 1", "JSON 2"].forEach((label) => {
+            const header = document.createElement("div");
+            header.className = "diff-header";
+            header.textContent = label;
+            table.appendChild(header);
+        });
 
         const allKeys = Array.from(new Set([
             ...Object.keys(obj1),
@@ -134,20 +136,20 @@ function compareJSON() {
             else if (JSON.stringify(val1) !== JSON.stringify(val2)) className = "changed";
             else className = "same";
 
-            html += `
-                <div class="cell ${className}">
-                    <strong>${key}:</strong>
-                    ${val1 !== undefined ? JSON.stringify(val1) : ""}
-                </div>
-                <div class="cell ${className}">
-                    <strong>${key}:</strong>
-                    ${val2 !== undefined ? JSON.stringify(val2) : ""}
-                </div>
-            `;
+            [val1, val2].forEach((value) => {
+                const cell = document.createElement("div");
+                cell.className = `cell ${className}`;
+                const keyLabel = document.createElement("strong");
+                keyLabel.textContent = `${key}: `;
+                cell.appendChild(keyLabel);
+                cell.appendChild(document.createTextNode(
+                    value !== undefined ? JSON.stringify(value) : ""
+                ));
+                table.appendChild(cell);
+            });
         });
 
-        html += "</div>";
-        output.innerHTML = html;
+        output.replaceChildren(table);
         output.className = output.dataset.baseClass || output.className || "";
     } catch (error) {
         output.textContent = "Error: " + error.message;
@@ -362,6 +364,62 @@ function yamlToJson(yaml) {
     return parseBlock(0, sourceLines[0].match(/^ */)[0].length).value;
 }
 
+function escapeXMLText(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+}
+
+function escapeXMLAttribute(value) {
+    return escapeXMLText(value)
+        .replaceAll("\"", "&quot;")
+        .replaceAll("'", "&apos;");
+}
+
+function getXMLTag(key) {
+    const name = String(key);
+    if (/^[A-Za-z_][A-Za-z0-9_.-]*$/.test(name)) {
+        return { name, attribute: "" };
+    }
+    return {
+        name: "item",
+        attribute: ` key="${escapeXMLAttribute(name)}"`,
+    };
+}
+
+function valueToXML(value, key = "root", depth = 0) {
+    const tag = getXMLTag(key);
+    const indent = "  ".repeat(depth);
+    const open = `<${tag.name}${tag.attribute}>`;
+    const close = `</${tag.name}>`;
+
+    if (value === null) {
+        return `${indent}<${tag.name}${tag.attribute} />`;
+    }
+
+    if (Array.isArray(value)) {
+        if (value.length === 0) return `${indent}${open}${close}`;
+        const children = value.map((item) => valueToXML(item, "item", depth + 1)).join("\n");
+        return `${indent}${open}\n${children}\n${indent}${close}`;
+    }
+
+    if (typeof value === "object") {
+        const entries = Object.entries(value);
+        if (entries.length === 0) return `${indent}${open}${close}`;
+        const children = entries
+            .map(([childKey, childValue]) => valueToXML(childValue, childKey, depth + 1))
+            .join("\n");
+        return `${indent}${open}\n${children}\n${indent}${close}`;
+    }
+
+    return `${indent}${open}${escapeXMLText(value)}${close}`;
+}
+
+function jsonToXML(value) {
+    return `<?xml version="1.0" encoding="UTF-8"?>\n${valueToXML(value)}`;
+}
+
 function convertToXML() {
     const input = document.getElementById("input").value;
     const output = getDevOutput();
@@ -369,27 +427,11 @@ function convertToXML() {
 
     try {
         const obj = JSON.parse(input);
-
-        const toXML = (value, nodeName = "root") => {
-            let xml = `<${nodeName}>`;
-
-            for (const key in value) {
-                if (typeof value[key] === "object" && value[key] !== null) {
-                    xml += toXML(value[key], key);
-                } else {
-                    xml += `<${key}>${value[key]}</${key}>`;
-                }
-            }
-
-            xml += `</${nodeName}>`;
-            return xml;
-        };
-
-        output.textContent = toXML(obj);
+        output.textContent = jsonToXML(obj);
         output.className = "output-box success";
         if (window.showToast) window.showToast("Converted to XML", "success");
-    } catch {
-        output.textContent = "Invalid JSON ❌";
+    } catch (error) {
+        output.textContent = `Invalid JSON: ${error.message}`;
         output.className = "output-box error";
         if (window.showToast) window.showToast("Invalid JSON", "error");
     }
@@ -628,23 +670,98 @@ function formatCode() {
     }
 }
 
+function compactJavaScript(input) {
+    const normalized = input.replace(/\r\n?/g, "\n");
+
+    if (normalized.includes("`")) {
+        return normalized.trim();
+    }
+
+    return normalized
+        .split("\n")
+        .map((line) => line.trimEnd())
+        .filter((line) => line.trim() !== "")
+        .join("\n")
+        .trim();
+}
+
 function minifyJS() {
     const input = document.getElementById("input").value;
     const output = getDevOutput();
     if (!output) return;
 
-    try {
-        output.textContent = input
-            .replace(/\/\/.*$/gm, "")
-            .replace(/\n/g, "")
-            .replace(/\s+/g, " ")
-            .replace(/\s*([{}();,:])\s*/g, "$1")
-            .trim();
-        output.className = "output-box success";
-    } catch {
-        output.textContent = "Error processing JavaScript";
+    if (!input.trim()) {
+        output.textContent = "Enter JavaScript code";
         output.className = "output-box error";
+        return;
     }
+
+    output.textContent = compactJavaScript(input);
+    output.className = "output-box success";
+}
+
+function minifyCSSContent(input) {
+    let output = "";
+    let quote = "";
+    let pendingSpace = false;
+
+    for (let index = 0; index < input.length; index++) {
+        const char = input[index];
+        const next = input[index + 1];
+
+        if (quote) {
+            output += char;
+            if (char === "\\" && next !== undefined) {
+                output += next;
+                index++;
+            } else if (char === quote) {
+                quote = "";
+            }
+            continue;
+        }
+
+        if (char === "\"" || char === "'") {
+            if (pendingSpace && output && !/[{(:,;]/.test(output.at(-1))) output += " ";
+            pendingSpace = false;
+            quote = char;
+            output += char;
+            continue;
+        }
+
+        if (char === "/" && next === "*") {
+            const end = input.indexOf("*/", index + 2);
+            if (end === -1) throw new Error("Unclosed CSS comment");
+            const comment = input.slice(index, end + 2);
+            if (comment.startsWith("/*!")) {
+                if (pendingSpace && output && !output.endsWith(" ")) output += " ";
+                output += comment;
+            }
+            pendingSpace = true;
+            index = end + 1;
+            continue;
+        }
+
+        if (/\s/.test(char)) {
+            pendingSpace = true;
+            continue;
+        }
+
+        if (/[{}:;,]/.test(char)) {
+            output = output.trimEnd();
+            output += char;
+            pendingSpace = false;
+            continue;
+        }
+
+        if (pendingSpace && output && !/[{(:,;]/.test(output.at(-1))) {
+            output += " ";
+        }
+        pendingSpace = false;
+        output += char;
+    }
+
+    if (quote) throw new Error("Unclosed CSS string");
+    return output.replace(/;}/g, "}").trim();
 }
 
 function minifyCSS() {
@@ -652,18 +769,17 @@ function minifyCSS() {
     const output = getDevOutput();
     if (!output) return;
 
+    if (!input.trim()) {
+        output.textContent = "Enter CSS code";
+        output.className = "output-box error";
+        return;
+    }
+
     try {
-        output.textContent = input
-            .replace(/\s+/g, " ")
-            .replace(/\s*{\s*/g, "{")
-            .replace(/\s*}\s*/g, "}")
-            .replace(/\s*:\s*/g, ":")
-            .replace(/\s*;\s*/g, ";")
-            .replace(/;}/g, "}")
-            .trim();
+        output.textContent = minifyCSSContent(input);
         output.className = "output-box success";
-    } catch {
-        output.textContent = "Error processing CSS";
+    } catch (error) {
+        output.textContent = `Invalid CSS input: ${error.message}`;
         output.className = "output-box error";
     }
 }
@@ -854,7 +970,7 @@ function initCssFormatter() {
     const output = document.getElementById("output");
     const indentSelect = document.getElementById("indent");
 
-    if (!input || !output) return;
+    if (!input || !output || !indentSelect) return;
 
     function beautify(css, indentSize) {
         let indent = " ".repeat(indentSize);

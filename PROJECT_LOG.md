@@ -1,5 +1,66 @@
 # Project Log
 
+## Savepoint – Regex Opportunity, Safety and Repository Cleanup
+
+Date: 2026-07-26
+
+Status: local changes prepared for review; not committed or deployed.
+
+### Product and SEO
+
+- Rebuilt Regex Tester around the search opportunity observed in Search Console.
+- Added real `g`, `i`, `m`, `s` and `u` controls.
+- Added support for JavaScript literal syntax such as `/hello/gi`.
+- Results now report the compiled expression, match count, zero-based indexes
+  and capture groups.
+- Added Ctrl/Command + Enter and a predictable reset action.
+- Aligned visible copy and FAQ content with the actual functionality.
+- Updated `lastmod` only for pages with verified recent changes.
+- Removed the duplicate canonical `/tools/html-encoder/decoder/` from the
+  sitemap and marked the legacy page `noindex, follow`.
+
+### Reliability and safety
+
+- Added regression tests for Regex Tester flags, literal syntax, captures,
+  indexes and zero-length matches.
+- Moved Regex Tester execution to a dedicated Web Worker with a 1.5 second
+  timeout, so pathological expressions can be terminated without freezing the
+  page.
+- Replaced destructive regex-based JavaScript, CSS and HTML minification with
+  conservative transformations that preserve syntax-sensitive content.
+- Replaced user-controlled `innerHTML` rendering in JSON Compare and Text Diff
+  with DOM nodes and `textContent`.
+- Corrected JSON to XML conversion for escaped text, arrays, null values and
+  JSON keys that are not valid XML tag names.
+- Corrected output-state colors so successful and failed results remain
+  readable in light and dark modes.
+- Added a shared accessible-name fallback for legacy form controls that do not
+  yet have an associated HTML label.
+
+### Repository hygiene
+
+- Verified that 1,472 AppleDouble `._*` files were ignored and untracked.
+- Preserved a byte-for-byte backup outside the repository.
+- Removed the 1,472 metadata files and verified `git fsck --full`.
+- Existing `.gitignore` rules continue to prevent accidental versioning.
+- Packed 2,098 loose Git objects with normal `git gc` maintenance.
+- Repository disk usage fell from approximately 1 GB before cleanup to about
+  70 MB, while the worktree, history and pending changes remained intact.
+
+### Validation
+
+- 20/20 dependency-free regression tests pass.
+- All JavaScript files pass `node --check`.
+- `git diff --check` passes.
+- Regex Tester was exercised in a local browser with normal matches and a
+  catastrophic-backtracking case.
+- JavaScript, CSS and HTML minifiers were exercised in a local browser with
+  syntax-sensitive input.
+- The shared accessible-name fallback was verified in a local browser on Base
+  Converter.
+
+---
+
 ## Savepoint – Full SEO/UX Audit Implementation
 
 Date: 2026-04-09

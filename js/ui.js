@@ -5,8 +5,9 @@ const getSiteBasePath = () => {
     const script = Array.from(document.scripts).find(currentScript => {
 
         const source = currentScript.getAttribute("src") || "";
+        const sourcePath = source.split("?")[0];
 
-        return source.endsWith("js/ui.js");
+        return sourcePath.endsWith("js/ui.js");
 
     });
 
@@ -14,7 +15,7 @@ const getSiteBasePath = () => {
         return "./";
     }
 
-    const source = script.getAttribute("src") || "";
+    const source = (script.getAttribute("src") || "").split("?")[0];
 
     return source.slice(0, -"js/ui.js".length);
 };
@@ -496,6 +497,48 @@ const initOutputStateObserver = () => {
     });
 };
 
+const humanizeControlId = (id) => {
+
+    return (id || "")
+        .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+        .replace(/[-_]+/g, " ")
+        .trim()
+        .replace(/^./, character => character.toUpperCase());
+};
+
+const initAccessibleFormControls = () => {
+
+    const controls = document.querySelectorAll("input:not([type='hidden']), textarea, select");
+
+    controls.forEach(control => {
+
+        const id = control.id;
+        const hasExplicitLabel = id
+            ? Array.from(document.querySelectorAll("label[for]"))
+                .some(label => label.htmlFor === id)
+            : false;
+
+        if (
+            control.hasAttribute("aria-label") ||
+            control.hasAttribute("aria-labelledby") ||
+            control.hasAttribute("title") ||
+            control.closest("label") ||
+            hasExplicitLabel
+        ) {
+            return;
+        }
+
+        const fallbackLabel =
+            control.getAttribute("placeholder") ||
+            control.dataset.label ||
+            humanizeControlId(id);
+
+        if (fallbackLabel) {
+            control.setAttribute("aria-label", fallbackLabel);
+        }
+    });
+};
+
 document.addEventListener("click", (event) => {
 
     const { target } = event;
@@ -538,6 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTheme();
     updateIcon();
 
+    initAccessibleFormControls();
     initOutputStateObserver();
 
     window.showToast = showToast;

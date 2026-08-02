@@ -104,25 +104,31 @@ const reverseText = () => {
 
 function compareText() {
 
-    const t1 = document.getElementById("text1").value.split("\n");
-    const t2 = document.getElementById("text2").value.split("\n");
+    const text1 = document.getElementById("text1").value;
+    const text2 = document.getElementById("text2").value;
 
     const output = document.getElementById("output");
 
-    if (!t1.length || !t2.length) {
+    if (!text1 || !text2) {
         output.textContent = "Enter both texts";
         return;
     }
+
+    const t1 = text1.split("\n");
+    const t2 = text2.split("\n");
 
     if (window.showToast) {
         window.showToast("Comparison done", "success");
     }
 
-    let html = `
-    <div class="diff-table">
-        <div class="diff-header">Text 1</div>
-        <div class="diff-header">Text 2</div>
-    `;
+    const table = document.createElement("div");
+    table.className = "diff-table";
+    ["Text 1", "Text 2"].forEach((label) => {
+        const header = document.createElement("div");
+        header.className = "diff-header";
+        header.textContent = label;
+        table.appendChild(header);
+    });
 
     const maxLength = Math.max(t1.length, t2.length);
 
@@ -138,26 +144,26 @@ function compareText() {
         else if (line1 !== line2) className = "changed";
         else className = "same";
 
-        html += `
-            <div class="cell ${className}">
-                <span class="line-number">${i + 1}</span> ${line1}
-            </div>
-            <div class="cell ${className}">
-                <span class="line-number">${i + 1}</span> ${line2}
-            </div>
-        `;
+        [line1, line2].forEach((line) => {
+            const cell = document.createElement("div");
+            cell.className = `cell ${className}`;
+            const lineNumber = document.createElement("span");
+            lineNumber.className = "line-number";
+            lineNumber.textContent = String(i + 1);
+            cell.appendChild(lineNumber);
+            cell.appendChild(document.createTextNode(` ${line}`));
+            table.appendChild(cell);
+        });
     }
 
-    html += `</div>`;
-
-    output.innerHTML = html;
+    output.replaceChildren(table);
 }
 
 
 function clearAll() {
     document.getElementById("text1").value = "";
     document.getElementById("text2").value = "";
-    document.getElementById("output").innerHTML = "";
+    document.getElementById("output").textContent = "";
 }
 
 

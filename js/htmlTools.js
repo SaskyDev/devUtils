@@ -24,22 +24,40 @@ function copyResult(buttonEl) {
     if (window.showToast) window.showToast("Copied", "success");
 }
 
+function minifyHTMLContent(input) {
+    const source = input.trim();
+    const rawElement = /<(script|style|pre|textarea|template)\b[\s\S]*?<\/\1\s*>/gi;
+    const removeComments = (html) => html.replace(
+        /<!--(?!\s*(?:\[if|#))[\s\S]*?-->/gi,
+        ""
+    );
+    let output = "";
+    let cursor = 0;
+    let match;
+
+    while ((match = rawElement.exec(source)) !== null) {
+        output += removeComments(source.slice(cursor, match.index));
+        output += match[0];
+        cursor = rawElement.lastIndex;
+    }
+
+    output += removeComments(source.slice(cursor));
+    return output;
+}
+
 function minifyHTML() {
     const input = document.getElementById("input").value;
     const output = getHtmlOutput();
     if (!output) return;
 
-    try {
-        output.textContent = input
-            .replace(/\n/g, "")
-            .replace(/\s+/g, " ")
-            .replace(/>\s+</g, "><")
-            .trim();
-        output.className = "output-box success";
-    } catch {
-        output.textContent = "Error processing HTML";
+    if (!input.trim()) {
+        output.textContent = "Enter HTML code";
         output.className = "output-box error";
+        return;
     }
+
+    output.textContent = minifyHTMLContent(input);
+    output.className = "output-box success";
 }
 
 function convertToMarkdown() {

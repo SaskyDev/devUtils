@@ -111,8 +111,14 @@ Compare two texts and instantly highlight differences line by line. Perfect for 
 <div class="tool-ui">
 
 <div class="diff-grid">
+<div>
+<label for="text1">First text</label>
 <textarea id="text1" placeholder="Paste first text here..."></textarea>
+</div>
+<div>
+<label for="text2">Second text</label>
 <textarea id="text2" placeholder="Paste second text here..."></textarea>
+</div>
 </div>
 
 <div class="tool-actions">
@@ -121,7 +127,7 @@ Compare two texts and instantly highlight differences line by line. Perfect for 
 <button onclick="copyResult()">Copy</button>
 </div>
 
-<pre id="output">Result will appear here...</pre>
+<div id="output" class="diff-side" role="status" aria-live="polite">Result will appear here...</div>
 
 </div>
 

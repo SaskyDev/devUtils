@@ -1202,6 +1202,7 @@ pre.output-success,
 #output.output-success{
 border-left-color:#16a34a;
 background:#f0fdf4;
+color:#14532d;
 }
 
 pre.output-success::before,
@@ -1214,6 +1215,7 @@ pre.output-error,
 #output.output-error{
 border-left-color:#dc2626;
 background:#fef2f2;
+color:#7f1d1d;
 }
 
 pre.output-error::before,
@@ -1500,6 +1502,7 @@ body.dark pre.output-success,
 body.dark #output.output-success{
 background:#052e1a;
 border-left-color:#22c55e;
+color:#dcfce7;
 }
 
 body.dark pre.output-success::before,
@@ -1511,6 +1514,7 @@ body.dark pre.output-error,
 body.dark #output.output-error{
 background:#3a0b0b;
 border-left-color:#ef4444;
+color:#fee2e2;
 }
 
 body.dark pre.output-error::before,
@@ -1717,6 +1721,48 @@ margin-top:15px;
 display:flex;
 justify-content:flex-start;
 gap:10px;
+flex-wrap:wrap;
+}
+
+.regex-flags{
+border:1px solid #d1d5db;
+border-radius:10px;
+display:flex;
+flex-wrap:wrap;
+gap:10px 18px;
+margin:4px 0 12px;
+padding:12px 14px 14px;
+}
+
+.regex-flags legend{
+font-weight:700;
+padding:0 6px;
+}
+
+.regex-flags label{
+align-items:center;
+display:inline-flex;
+gap:6px;
+margin:0;
+}
+
+.regex-flags input{
+margin:0;
+width:auto;
+}
+
+.field-help{
+color:#4b5563;
+font-size:.9rem;
+margin:-2px 0 14px;
+}
+
+body.dark .regex-flags{
+border-color:#4b5563;
+}
+
+body.dark .field-help{
+color:#d1d5db;
 }
 
 .editor-grid{

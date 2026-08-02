@@ -110,8 +110,14 @@ Compare two JSON objects or API payloads and highlight added, removed and change
 <div class="tool-ui">
 
 <div class="diff-grid">
-<textarea id="json1" placeholder="Paste JSON 1..."></textarea>
-<textarea id="json2" placeholder="Paste JSON 2..."></textarea>
+<div>
+<label for="json1">First JSON</label>
+<textarea id="json1" spellcheck="false" placeholder="Paste JSON 1..."></textarea>
+</div>
+<div>
+<label for="json2">Second JSON</label>
+<textarea id="json2" spellcheck="false" placeholder="Paste JSON 2..."></textarea>
+</div>
 </div>
 
 <div class="tool-actions">
@@ -120,7 +126,7 @@ Compare two JSON objects or API payloads and highlight added, removed and change
 <button onclick="copyResult(this)">Copy</button>
 </div>
 
-<div id="output" class="diff-side"></div>
+<div id="output" class="diff-side" role="status" aria-live="polite"></div>
 
 </div>
 

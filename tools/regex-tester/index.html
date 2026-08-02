@@ -143,18 +143,30 @@ Test JavaScript regex patterns against sample text, debug flags and check matche
 
 <div class="tool-ui">
 
-<label>Regex pattern</label>
-<textarea id="pattern" placeholder="Enter regex pattern (e.g. \d+)"></textarea>
+<label for="pattern">Regex pattern</label>
+<textarea id="pattern" spellcheck="false" placeholder="Enter a pattern such as \d+ or /hello/gi"></textarea>
 
-<label>Test text</label>
-<textarea id="text" placeholder="Enter text to test..."></textarea>
+<fieldset class="regex-flags">
+<legend>JavaScript flags</legend>
+<label><input type="checkbox" id="regexFlagGlobal" checked> Global <code>g</code></label>
+<label><input type="checkbox" id="regexFlagIgnoreCase"> Ignore case <code>i</code></label>
+<label><input type="checkbox" id="regexFlagMultiline"> Multiline <code>m</code></label>
+<label><input type="checkbox" id="regexFlagDotAll"> Dot matches newline <code>s</code></label>
+<label><input type="checkbox" id="regexFlagUnicode"> Unicode <code>u</code></label>
+</fieldset>
+
+<p class="field-help">You can enter a raw pattern or paste JavaScript literal syntax such as <code>/hello/gi</code>. Literal flags are combined with the selected options.</p>
+
+<label for="text">Test text</label>
+<textarea id="text" spellcheck="false" placeholder="Enter text to test..."></textarea>
 
 <div class="tool-actions">
-<button onclick="testRegex()">Test Regex</button>
+<button type="button" id="testRegexButton" onclick="testRegex()">Test Regex</button>
+<button type="button" class="btn-secondary" onclick="clearRegexTester()">Clear</button>
 </div>
 
 <div class="result-block">
-<pre id="output"></pre>
+<pre id="output" class="output-box" role="status" aria-live="polite">Results will appear here.</pre>
 </div>
 
 </div>
@@ -167,15 +179,15 @@ Test JavaScript regex patterns against sample text, debug flags and check matche
 
 <h2>Example</h2>
 
-<pre>\d+</pre>
+<pre>/hello/gi</pre>
 
 <p><strong>Test text:</strong></p>
 
-<pre>Order number: 12345</pre>
+<pre>Hello hello</pre>
 
 <p><strong>Result:</strong></p>
 
-<pre>Match found ✔</pre>
+<pre>2 matches found at indexes 0 and 6</pre>
 
 </section>
 
@@ -186,10 +198,13 @@ Test JavaScript regex patterns against sample text, debug flags and check matche
 <h2>How to use</h2>
 
 <ol>
-<li>Enter your regex pattern</li>
-<li>Paste or type the text to test</li>
-<li>Click "Test Regex" to see matches</li>
+<li>Enter a raw pattern such as <code>\d+</code>, or paste a JavaScript regex literal such as <code>/hello/gi</code>.</li>
+<li>Select the flags you need. Global is enabled by default so every match is returned.</li>
+<li>Paste or type the text to test.</li>
+<li>Click “Test Regex” or press Ctrl/Command + Enter to see each match, its index and any capture groups.</li>
 </ol>
+
+<p>The result displays at most the first 1,000 matches. Testing runs away from the page interface and stops after 1.5 seconds, so an accidental expensive pattern cannot leave the tab permanently frozen.</p>
 
 </section>
 
@@ -200,7 +215,7 @@ Test JavaScript regex patterns against sample text, debug flags and check matche
 <h2>Common use cases</h2>
 
 <p>
-Regex Tester is useful for validating email or URL patterns, matching IDs in logs, extracting text fragments and checking whether a JavaScript regular expression behaves as expected before shipping it.
+Regex Tester is useful for checking JavaScript validation patterns, matching IDs in logs, extracting text fragments and debugging capture groups before shipping code. The result includes each match and its zero-based index so you can verify where the expression matched.
 </p>
 
 </section>
@@ -212,15 +227,15 @@ Regex Tester is useful for validating email or URL patterns, matching IDs in log
 <h2>What is a Regex Tester?</h2>
 
 <p>
-A regex tester is a tool that allows you to test regular expressions against text in real time. Regular expressions are widely used in programming for validation, searching and parsing data.
+A regex tester lets you run a regular expression against sample text before adding it to your code. This tester uses the browser's native JavaScript <code>RegExp</code> engine, so its syntax and behavior match modern browser, Node.js and TypeScript projects.
 </p>
 
 <p>
-Using a regex tester helps developers debug patterns, ensure correct matches and avoid errors when working with complex expressions. It is especially useful when validating emails, phone numbers or structured data.
+Flags change how the same pattern behaves. Use <code>g</code> to return every match, <code>i</code> to ignore letter case, <code>m</code> to make line anchors work per line, <code>s</code> to let a dot match newline characters and <code>u</code> for Unicode-aware parsing.
 </p>
 
 <p>
-This online regex tester provides a quick and simple way to experiment with patterns and improve your regex skills.
+For example, <code>/hello/gi</code> finds both “Hello” and “hello”. If a pattern is invalid, the tool shows the JavaScript error so you can correct it. All testing happens locally in your browser.
 </p>
 
 </section>
@@ -230,9 +245,11 @@ This online regex tester provides a quick and simple way to experiment with patt
 
 <h2>FAQ</h2>
 
+<p><strong>What is a regex tester?</strong><br>It runs a regular expression against sample text and reports the matches, positions and capture groups so you can debug a pattern before using it in code.</p>
+
 <p><strong>Is this regex tester compatible with JavaScript?</strong><br>Yes. It is designed around JavaScript RegExp behavior, which makes it useful for browser code, Node.js and TypeScript projects.</p>
 
-<p><strong>Can I test regex flags here?</strong><br>Yes. The tool supports common flags such as global, case-insensitive and multiline.</p>
+<p><strong>What regex flags are supported?</strong><br>The tool supports global (<code>g</code>), case-insensitive (<code>i</code>), multiline (<code>m</code>), dotAll (<code>s</code>) and Unicode (<code>u</code>). You can combine them or paste them in JavaScript literal syntax.</p>
 
 </section>
 
@@ -263,6 +280,7 @@ This online regex tester provides a quick and simple way to experiment with patt
 </section>
 
 
+<script src="../../js/regexEngine.js"></script>
 <script src="../../js/regexTools.js"></script>
 <script src="../../js/ui.js"></script>
 <script src="../../js/main.js"></script>

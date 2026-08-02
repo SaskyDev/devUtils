@@ -35,16 +35,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JavaScript Minifier Online - Compress JS Free - DevUtils</title>
-<meta name="description" content="Minify JavaScript code online to reduce file size and improve load times. Free JS compressor for web developers.">
-<meta property="og:title" content="JavaScript Minifier Online - Compress JS Free - DevUtils">
-<meta property="og:description" content="Minify JavaScript code online to reduce file size and improve load times. Free JS compressor for web developers.">
+<title>Safe JavaScript Minifier Online - Preserve Code | DevUtils</title>
+<meta name="description" content="Compact JavaScript whitespace online while preserving comments, strings and line boundaries. Conservative browser-based JS cleanup.">
+<meta property="og:title" content="Safe JavaScript Minifier Online - Preserve Code | DevUtils">
+<meta property="og:description" content="Compact JavaScript whitespace online while preserving comments, strings and line boundaries. Conservative browser-based JS cleanup.">
 <meta property="og:url" content="https://devutilskit.com/tools/js-minifier/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevUtils">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript Minifier Online - Compress JS Free - DevUtils">
-<meta name="twitter:description" content="Minify JavaScript code online to reduce file size and improve load times. Free JS compressor for web developers.">
+<meta name="twitter:title" content="Safe JavaScript Minifier Online - Preserve Code | DevUtils">
+<meta name="twitter:description" content="Compact JavaScript whitespace online while preserving comments, strings and line boundaries. Conservative browser-based JS cleanup.">
 <link rel="canonical" href="https://devutilskit.com/tools/js-minifier/">
 <meta name="robots" content="index, follow">
 
@@ -55,9 +55,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "JavaScript Minifier Online - Compress JS Free",
+  "name": "Safe JavaScript Minifier Online",
   "url": "https://devutilskit.com/tools/js-minifier/",
-  "description": "Minify JavaScript code online to reduce file size and improve load times. Free JS compressor for web developers.",
+  "description": "Compact JavaScript whitespace online while preserving comments, strings and line boundaries.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "All",
   "offers": {
@@ -91,10 +91,10 @@
 <!-- HERO -->
 <section class="tool-container">
 
-<h1>JavaScript Minifier</h1>
+<h1>Safe JavaScript Minifier</h1>
 
 <p class="tool-description">
-Minify JavaScript code by removing unnecessary spaces and reducing file size.
+Compact JavaScript conservatively without deleting comments, line boundaries or content inside strings.
 </p>
 
 </section>
@@ -107,7 +107,8 @@ Minify JavaScript code by removing unnecessary spaces and reducing file size.
 
 <div class="tool-ui">
 
-<textarea id="input" placeholder="Paste your JavaScript code here..."></textarea>
+<label for="input">JavaScript code</label>
+<textarea id="input" spellcheck="false" placeholder="Paste your JavaScript code here..."></textarea>
 
 <div class="tool-actions">
 <button onclick="minifyJS()">Minify</button>
@@ -115,7 +116,7 @@ Minify JavaScript code by removing unnecessary spaces and reducing file size.
 <button onclick="copyOutput()">Copy</button>
 </div>
 
-<pre id="output">Result will appear here...</pre>
+<pre id="output" class="output-box" role="status" aria-live="polite">Result will appear here...</pre>
 
 </div>
 
@@ -135,7 +136,9 @@ function test() {
 
 <p><strong>Output:</strong></p>
 
-<pre>function test(){console.log("Hello")}</pre>
+<pre>function test() {
+console.log("Hello");
+}</pre>
 
 </section>
 
@@ -160,9 +163,10 @@ function test() {
 <h2>What is this tool?</h2>
 
 <p>
-A JavaScript minifier removes unnecessary characters like spaces and line breaks.
-It helps reduce file size and improve loading speed.
+This browser tool removes blank lines and trailing whitespace while preserving comments and JavaScript line boundaries. That is deliberately more conservative than a parser-backed production minifier, because deleting comments or joining lines with regular expressions can corrupt URLs, regular-expression literals, template strings and automatic semicolon insertion.
 </p>
+
+<p>Use a parser-backed build tool such as Terser for production bundles. Use this tool for quick, low-risk cleanup when preserving behavior matters more than maximum compression.</p>
 
 </section>
 
@@ -194,7 +198,7 @@ It helps reduce file size and improve loading speed.
 
 
 <script src="../../js/ui.js"></script>
-<script src="../../js/devTools.js"></script>
+<script src="../../js/devTools.js?v=20260726-2"></script>
 <script src="../../js/main.js"></script>
 
 </body>

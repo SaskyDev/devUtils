@@ -1,6 +1,6 @@
 # QA Smoke Checklist (All Tools)
 
-Date: 2026-03-31
+Last updated: 2026-07-26
 
 Use this checklist to validate all tools quickly in browser.
 
@@ -18,8 +18,13 @@ Use this checklist to validate all tools quickly in browser.
 
 ### Regex Tester
 
-- Action: Regex `^a.+z$`, text `abcz` and `abc`.
-- Expected: Match for `abcz`, no match for `abc`.
+- Action: Pattern `(hello)`, text `Hello hello`, enable `g` and `i`.
+- Expected: Two matches at indexes 0 and 6, each with a captured `hello` value.
+- Action: Paste `/^a.+z$/i`, text `ABCZ`.
+- Expected: The literal flags combine safely with the selected controls and
+  return one match.
+- Action: Enter an invalid pattern such as `(`.
+- Expected: A JavaScript regex error explains what must be corrected.
 
 ### UUID Generator
 
@@ -35,6 +40,20 @@ Use this checklist to validate all tools quickly in browser.
 
 - Action: Select `JSON`, paste `{"a":1,"b":{"c":2}}`, then switch to `HTML` and `JavaScript` with compact code.
 - Expected: Each mode returns a readable formatted output without errors.
+
+### Safe minifiers
+
+- Action: In JavaScript Minifier, paste a URL containing `//`, a line comment
+  and two statements on separate lines.
+- Expected: The URL, comment and line boundary remain intact.
+- Action: In CSS Minifier, paste a quoted string with two spaces,
+  `calc(100% - 1px)`, an ordinary comment and a `/*! license */` comment.
+- Expected: Syntax-sensitive spaces and the license comment remain; the
+  ordinary comment is removed.
+- Action: In HTML Minifier, paste inline elements separated by a space plus
+  `pre`, `script`, an ordinary comment and a conditional comment.
+- Expected: The ordinary comment is removed without changing the other
+  content.
 
 ## Validation Tools
 
